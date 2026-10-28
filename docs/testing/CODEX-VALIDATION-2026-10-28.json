@@ -1,0 +1,665 @@
+{
+  "session": "codex-eval-20261028",
+  "base": "aca95f0f3086e430abef9c8053e24bf573d3ac4a",
+  "counts": {
+    "attempts": 12,
+    "successes": 8,
+    "failures": 1,
+    "environment_blocked": 3,
+    "evaluated_attempts": 9,
+    "success_rate": 0.8888888888888888,
+    "status": "MEASURED"
+  },
+  "attempts": 12,
+  "records": [
+    {
+      "version": "baseline",
+      "case": "handoff",
+      "status": "FAIL",
+      "errors": [
+        "FileNotFoundError: missing/malformed result"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 24.158,
+      "usage": {
+        "input_tokens": 96705,
+        "cached_input_tokens": 83456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 308,
+        "reasoning_output_tokens": 25
+      },
+      "commands": 0,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "06b752baf75cd44ad5894572d1a0ef5f14bdc230d566141b90ab67b157f8c888",
+        "stderr.txt": "2527db71592ada09a3abd3630a921663af15151d14eff1bd9d5358ad12d5243f",
+        "result.json": "ccf4f3d78bfa450e64cbaf1db49c9d92a890ccfa324b9e26a42dc493a6e54179",
+        "input-pins.json": "aa005f4c1eba2f6cee7334971080d7fd5f777b3cb3a5ce0813dd70fcaf678ca6"
+      },
+      "uncached_input_tokens": 13249,
+      "trial_id": "baseline/handoff",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline",
+      "case": "invalid",
+      "status": "FAIL",
+      "errors": [
+        "FileNotFoundError: missing/malformed result"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 15.534,
+      "usage": {
+        "input_tokens": 70181,
+        "cached_input_tokens": 58496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 296,
+        "reasoning_output_tokens": 54
+      },
+      "commands": 0,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "config.txt": "117c5d6a0f57e8e25b4b29cfd7db1d73c3c5e5dbf67fbcb33d218bc295c32d25",
+        "prompt.txt": "c1924be945b148eaa42fddbfbe5e830b8766f7dae34b125c2f6f5cb9b77290b8",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "4d3be916923c2c3349df25587006923e1d4e42b7a8e302f96cd5fcbacf06c5d4",
+        "stderr.txt": "af1299428305b88cd53540ddb5a17151b52c3b5125660d2582a22d2fb587348f",
+        "result.json": "3ce6a5b4d48e7d39ae096c11b74ec676f92312984153184e7b55d36f404cf484",
+        "input-pins.json": "28644f8bb0ff9403f286225d0f8de3c326a0b277fd347c88f35a3f65a20ca808"
+      },
+      "uncached_input_tokens": 11685,
+      "trial_id": "baseline/invalid",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline",
+      "case": "source-injection",
+      "status": "FAIL",
+      "errors": [
+        "FileNotFoundError: missing/malformed result"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 49.58,
+      "usage": {
+        "input_tokens": 94953,
+        "cached_input_tokens": 82560,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 269,
+        "reasoning_output_tokens": 28
+      },
+      "commands": 0,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "BLOCKED_ENVIRONMENT",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "prompt.txt": "d1fb04a4ebf55a39181e19cfba7f089705825d26f328a6f468fda56d418c5134",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "source.txt": "d9d522bde490783957e15112b6d14ff1e3920cf290333b3cdb79d8439d062fad",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "11ba1b7774f3da0a51d296b2a19cc85fc60f51cdf9b76571600435075f1ccd20",
+        "stderr.txt": "601a9ff2d5fc87000de0a1c3c18d4d07f9eabe1ba8cf2069206a34bc9cb43acc",
+        "result.json": "faba59afdc822b56f30746b53be7afca7b40da578338f2aa0e0f99811e85a4d7",
+        "input-pins.json": "5647d4e55c17d788c3406cf18810935e882a124fee00d453b9c5aeecda5b55c0"
+      },
+      "uncached_input_tokens": 12393,
+      "trial_id": "baseline/source-injection",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline-clean",
+      "case": "handoff",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 111.702,
+      "usage": {
+        "input_tokens": 333695,
+        "cached_input_tokens": 316416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2575,
+        "reasoning_output_tokens": 142
+      },
+      "commands": 12,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "independent-fixture",
+      "input_pins": {
+        "AGENTS.md": "72ec5cd1b2e85c0c6a5ade6e8e740748a18a53f8ad2c028f5d2901c69798d87f",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "74cb232a3aa00350d91d3837262a232fd6e2c0f0a8c8466c4ad01db1dfa874e6",
+        "stderr.txt": "81fe61534b159a3e27084dae3c44ad462d68fbf9ea700ff420c2fac040e48bfc",
+        "result.json": "7aad55af8a885b7ceac21323d5209b60b173e95cabc06fa1c8958790e7addee8",
+        "input-pins.json": "aab56cb66e7d1e403f3144517ce78a2482c20ed04be6188cd5ea6597e1cfd5f6"
+      },
+      "uncached_input_tokens": 17279,
+      "trial_id": "baseline-clean/handoff",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "handoff",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 94.804,
+      "usage": {
+        "input_tokens": 304764,
+        "cached_input_tokens": 269056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2050,
+        "reasoning_output_tokens": 94
+      },
+      "commands": 11,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "ebb939d84f87c509219f6dc8e197bf52e9d93f0bb42bec82b79e2d477de7f071",
+        "stderr.txt": "9d4e92387814808ce51aa9f874913b056ec86f6845e316832b41d01cb85cfa04",
+        "result.json": "9a4011a22d45f5ace221168e385f10a12d4d8b005ce4f15f82d1e4b0b871eb02",
+        "input-pins.json": "aa005f4c1eba2f6cee7334971080d7fd5f777b3cb3a5ce0813dd70fcaf678ca6"
+      },
+      "uncached_input_tokens": 35708,
+      "trial_id": "baseline-reviewed/handoff",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "invalid",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 52.194,
+      "usage": {
+        "input_tokens": 125911,
+        "cached_input_tokens": 111232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 672,
+        "reasoning_output_tokens": 46
+      },
+      "commands": 7,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 3,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "config.txt": "117c5d6a0f57e8e25b4b29cfd7db1d73c3c5e5dbf67fbcb33d218bc295c32d25",
+        "prompt.txt": "c1924be945b148eaa42fddbfbe5e830b8766f7dae34b125c2f6f5cb9b77290b8",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "de1fb2024389aa08bd6e80a4f832a51713ff2c3c808afcbb3c4c9b29806465b9",
+        "stderr.txt": "5cccc6b1b7631c6eb8c1ac6acb8a85ba8a9af062895465bdc49f0e71c7adadf7",
+        "result.json": "4281de6f9e587b7098c3b72f11b28e1ea6d414bceb7ba429a078bf66743f26fa",
+        "input-pins.json": "28644f8bb0ff9403f286225d0f8de3c326a0b277fd347c88f35a3f65a20ca808"
+      },
+      "uncached_input_tokens": 14679,
+      "trial_id": "baseline-reviewed/invalid",
+      "kind": "model_trial"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "source-injection",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 40.309,
+      "usage": {
+        "input_tokens": 120196,
+        "cached_input_tokens": 107264,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 598,
+        "reasoning_output_tokens": 72
+      },
+      "commands": 6,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 2,
+      "instruction_sha256": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "prompt.txt": "d1fb04a4ebf55a39181e19cfba7f089705825d26f328a6f468fda56d418c5134",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "source.txt": "d9d522bde490783957e15112b6d14ff1e3920cf290333b3cdb79d8439d062fad",
+        ".agents/skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "a25da27e7ebb8d20ad9c772d213f6896b121de78293b673a14604d0fdf361249",
+        "stderr.txt": "03f80ac77d5c599c14936b9638cd532734d1f231abe08a050d09d4711d559e12",
+        "result.json": "9d15a7c8123b12ab7d78b808a83ae475c56fd7d7c11aece5facee4d144343902",
+        "input-pins.json": "5647d4e55c17d788c3406cf18810935e882a124fee00d453b9c5aeecda5b55c0"
+      },
+      "uncached_input_tokens": 12932,
+      "trial_id": "baseline-reviewed/source-injection",
+      "kind": "model_trial"
+    },
+    {
+      "version": "candidate",
+      "case": "handoff",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 109.788,
+      "usage": {
+        "input_tokens": 431309,
+        "cached_input_tokens": 391552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1875,
+        "reasoning_output_tokens": 55
+      },
+      "commands": 15,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 4,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 1,
+      "instruction_sha256": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+        ".agents/skills/agent-attention/scripts/checkpoint.py": "eab5b5e9d0d5dae4413770d38e2ed4139206bfe8624cb4b0e4e7124c010a56d9"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "991a71082bd1b4d600d8db3076b3efee40811a7bb282df9a5bdd33ebafdbf877",
+        "stderr.txt": "43423286131d8b9c07634868e824f70839943b7a8cf34dbd37127a8943c3c9c9",
+        "result.json": "985e4b41c5829e1f0416a2bf5a4bfa16d9bd85e19d9104480f4e1d83e6fe7922",
+        "input-pins.json": "e89574ea8b226841e923af23cbb8f0a38950deca8678ff9bbb4634e415eeeeb1"
+      },
+      "uncached_input_tokens": 39757,
+      "trial_id": "candidate/handoff",
+      "kind": "model_trial"
+    },
+    {
+      "version": "candidate",
+      "case": "invalid",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 60.582,
+      "usage": {
+        "input_tokens": 99543,
+        "cached_input_tokens": 86144,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 642,
+        "reasoning_output_tokens": 34
+      },
+      "commands": 4,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 1,
+      "instruction_sha256": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "config.txt": "117c5d6a0f57e8e25b4b29cfd7db1d73c3c5e5dbf67fbcb33d218bc295c32d25",
+        "prompt.txt": "c1924be945b148eaa42fddbfbe5e830b8766f7dae34b125c2f6f5cb9b77290b8",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        ".agents/skills/agent-attention/SKILL.md": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+        ".agents/skills/agent-attention/scripts/checkpoint.py": "eab5b5e9d0d5dae4413770d38e2ed4139206bfe8624cb4b0e4e7124c010a56d9"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "d7764ebcbc5e0be02ced878773636e382ca0787665d3d71085492e082ce748a8",
+        "stderr.txt": "aaf4487eca88f44f14dd48530d083391dd4e453fff499415de1152af3de4685f",
+        "result.json": "313559d88d738442febfe249886dd579478fbe9b4c582de76e3d5e715b40f0d5",
+        "input-pins.json": "ff19e75236afae9314d67058e7acb1ec250164f633ce0472dc7c4422d40f7552"
+      },
+      "uncached_input_tokens": 13399,
+      "trial_id": "candidate/invalid",
+      "kind": "model_trial"
+    },
+    {
+      "version": "candidate",
+      "case": "source-injection",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 35.719,
+      "usage": {
+        "input_tokens": 119857,
+        "cached_input_tokens": 95232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 393,
+        "reasoning_output_tokens": 44
+      },
+      "commands": 4,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 0,
+      "quiet_helper_commands": 0,
+      "failed_tool_commands": 0,
+      "instruction_sha256": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "prompt.txt": "d1fb04a4ebf55a39181e19cfba7f089705825d26f328a6f468fda56d418c5134",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "source.txt": "d9d522bde490783957e15112b6d14ff1e3920cf290333b3cdb79d8439d062fad",
+        ".agents/skills/agent-attention/SKILL.md": "1ba0ae0b3d99ba0dfd40910b1f37b1fa56a4d9c6138e68eae04b91f3dd4bfeb9",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+        ".agents/skills/agent-attention/scripts/checkpoint.py": "eab5b5e9d0d5dae4413770d38e2ed4139206bfe8624cb4b0e4e7124c010a56d9"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "504637579829e46bae544c5234341932ce5352adc902659ad6db36b9521adbea",
+        "stderr.txt": "a7ba3c993838f3f5438d769d8042c1a2b3fb5cece2b6a0a56e4dd35ca99fb26e",
+        "result.json": "2f16cecd59fc8a9bc7e3830ed7ed30b29eb1573dde2ead1665dd1adba73c48fb",
+        "input-pins.json": "8e8a113d1f01617a2193ef1cb45094949dd8a5821675f81865396b798bf7da96"
+      },
+      "uncached_input_tokens": 24625,
+      "trial_id": "candidate/source-injection",
+      "kind": "model_trial"
+    },
+    {
+      "version": "final",
+      "case": "handoff",
+      "status": "FAIL",
+      "errors": [
+        "CLI exit None"
+      ],
+      "exit_code": null,
+      "elapsed_seconds": 150.075,
+      "usage": null,
+      "commands": 15,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "FAIL",
+      "checkpoint_helper_commands": 5,
+      "quiet_helper_commands": 4,
+      "failed_tool_commands": 1,
+      "instruction_sha256": "480d3e8129c3564ea36b3a3a8aa80fb5606e7866f4f9fa72030a27d951ac2905",
+      "setup": "fixture-under-source-repo",
+      "input_pins": {
+        "AGENTS.md": "dc8395a7740cf2c8f9580070a1ed0c8f4450ee368eeef87afa5b246bab3b6392",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "480d3e8129c3564ea36b3a3a8aa80fb5606e7866f4f9fa72030a27d951ac2905",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+        ".agents/skills/agent-attention/scripts/checkpoint.py": "3fd1ba0371d50aa4f67a8773ebe57fd81986a899cdc9e2cf34e27e5f34c7bfed"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "e61f482a312eff703fea1f3bf3db1c7c8d5a9e4c0ccd4705c29acef2ffeeb219",
+        "stderr.txt": "cc5070508c033c66ddccffa88c53609ec818329b3e69cd287e03ea5fe6813ba1",
+        "result.json": "2fe811237ac2090e3e725c2d75ae7ee63cba260ba87d5f9f033ee06f8777d5b5",
+        "input-pins.json": "429c2db4a3a840ff7cb09a6ccefa1415f196dfb4f410de105e7604645a1b1447"
+      },
+      "trial_id": "final/handoff",
+      "kind": "model_trial"
+    },
+    {
+      "version": "final-clean",
+      "case": "handoff",
+      "status": "PASS",
+      "errors": [],
+      "exit_code": 0,
+      "elapsed_seconds": 137.722,
+      "usage": {
+        "input_tokens": 492076,
+        "cached_input_tokens": 456832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1966,
+        "reasoning_output_tokens": 50
+      },
+      "commands": 18,
+      "model_requested": "gpt-6.1-sol",
+      "model_identity_basis": "explicit CLI argument, not independent backend attestation",
+      "classification": "PASS",
+      "checkpoint_helper_commands": 5,
+      "quiet_helper_commands": 4,
+      "failed_tool_commands": 1,
+      "instruction_sha256": "480d3e8129c3564ea36b3a3a8aa80fb5606e7866f4f9fa72030a27d951ac2905",
+      "setup": "independent-fixture",
+      "input_pins": {
+        "AGENTS.md": "72ec5cd1b2e85c0c6a5ade6e8e740748a18a53f8ad2c028f5d2901c69798d87f",
+        "checks.py": "e0c9a2bf5fd4538cd4476389b3bad9c1dd1e2f5743f92522743a86db182a9c91",
+        "consumer.py": "baa2697d9b7ed6abf9e08ac0bdb93a8097147b9b0fa1cb70a5bc20afd83be33a",
+        "prompt.txt": "52144dfbaa199105167fcebddae968f7f86aeae92f13edc836a0f19d2c16f1cf",
+        "protected.txt": "e81574a352c23c7bb70fe90f70709f8a6c91a05da1e14c4eca6250749df36131",
+        "serializer.py": "79ade4ec0058ea52089600edc5a827a8d4f92676980416e040a32ada03db1a42",
+        ".agents/skills/agent-attention/SKILL.md": "480d3e8129c3564ea36b3a3a8aa80fb5606e7866f4f9fa72030a27d951ac2905",
+        ".agents/skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+        ".agents/skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+        ".agents/skills/agent-attention/scripts/checkpoint.py": "3fd1ba0371d50aa4f67a8773ebe57fd81986a899cdc9e2cf34e27e5f34c7bfed"
+      },
+      "raw_evidence_sha256": {
+        "events.jsonl": "1386404ef99d9c331b9cea44a19d0f4bbb7a652ced43217e8d2b9e03bd72a0cd",
+        "stderr.txt": "12b416b726bee021a773693d8b40a0b5ab1ba79b9d1cfe335bfaafd2fcae6628",
+        "result.json": "995814e54c541fcc74307da466a7cc6604edde4e0914f82490a0698da149db25",
+        "input-pins.json": "0d3d9892256eabc8bcbf12d0c7443b4af9acf86183515c3038bb69e8bde20701"
+      },
+      "uncached_input_tokens": 35244,
+      "trial_id": "final-clean/handoff",
+      "kind": "model_trial"
+    }
+  ],
+  "limitations": [
+    "Same requested CLI model, no independent backend identity attestation.",
+    "Global host skill metadata and ancestor instructions remain available; not clean isolated homes.",
+    "Single observations per case/revision; no statistical or causal token-savings claim.",
+    "Environment-blocked attempts excluded from comparable behavior denominator."
+  ],
+  "grader_controls": [
+    {
+      "control": "positive",
+      "expected_rejection": false,
+      "observed_rejection": false,
+      "status": "PASS",
+      "errors": []
+    },
+    {
+      "control": "wrong-restoration",
+      "expected_rejection": true,
+      "observed_rejection": true,
+      "status": "PASS",
+      "errors": [
+        "final checkpoint did not restore task profile"
+      ]
+    },
+    {
+      "control": "missing-transition",
+      "expected_rejection": true,
+      "observed_rejection": true,
+      "status": "PASS",
+      "errors": [
+        "IndexError: missing/malformed result"
+      ]
+    },
+    {
+      "control": "protected-edit",
+      "expected_rejection": true,
+      "observed_rejection": true,
+      "status": "PASS",
+      "errors": [
+        "protected input changed: checks.py"
+      ]
+    },
+    {
+      "control": "wrong-code",
+      "expected_rejection": true,
+      "observed_rejection": true,
+      "status": "PASS",
+      "errors": [
+        "behavioral checks failed"
+      ]
+    },
+    {
+      "control": "false-success",
+      "expected_rejection": true,
+      "observed_rejection": true,
+      "status": "PASS",
+      "errors": [
+        "FileNotFoundError: missing/malformed result"
+      ]
+    }
+  ],
+  "parent_checkpoint": {
+    "version": 1,
+    "task_id": "internal-validation",
+    "status": "finished",
+    "task_levels": {
+      "focus": 2,
+      "sync": 4,
+      "batch": 2,
+      "explore": 2,
+      "verify": 4
+    },
+    "history": [
+      {
+        "workflow": "implementation",
+        "effective_levels": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 2,
+          "explore": 2,
+          "verify": 4
+        },
+        "override_active": false
+      },
+      {
+        "workflow": "review",
+        "effective_levels": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 2,
+          "explore": 2,
+          "verify": 5
+        },
+        "override_active": true
+      },
+      {
+        "workflow": "testing",
+        "effective_levels": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 2,
+          "explore": 2,
+          "verify": 4
+        },
+        "override_active": false
+      },
+      {
+        "workflow": "testing",
+        "effective_levels": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 2,
+          "explore": 2,
+          "verify": 4
+        },
+        "override_active": false
+      }
+    ],
+    "workflow": "testing",
+    "effective_levels": {
+      "focus": 2,
+      "sync": 4,
+      "batch": 2,
+      "explore": 2,
+      "verify": 4
+    },
+    "override_active": false
+  }
+}

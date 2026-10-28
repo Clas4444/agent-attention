@@ -11,8 +11,9 @@
 <text x="58" y="296" font-size="22" fill="#16313b" font-weight="700">One action</text>
 <text x="58" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
 <text x="58" y="413" font-size="17" fill="#415d67">One bounded action;</text>
-<text x="58" y="438" font-size="17" fill="#415d67">retain a pointer to the</text>
-<text x="58" y="463" font-size="17" fill="#415d67">shared task checkpoint.</text>
+<text x="58" y="438" font-size="17" fill="#415d67">retain pointers to</text>
+<text x="58" y="463" font-size="17" fill="#415d67">relevant dependencies in</text>
+<text x="58" y="488" font-size="17" fill="#415d67">task context.</text>
 <text x="58" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
 <text x="58" y="623" font-size="17" fill="#415d67">A small isolated task</text>
 <text x="58" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>

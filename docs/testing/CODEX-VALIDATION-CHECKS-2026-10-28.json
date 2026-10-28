@@ -1,0 +1,70 @@
+{
+  "session": "codex-eval-20261028",
+  "captured_at": "2026-10-28T14:02:09.069894+00:00",
+  "scope": "Internal working-tree source, not a published release or remote CI run.",
+  "status": "PASS",
+  "checks": [
+    {
+      "runtime": "Python 3.14",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_all_3125_profiles_preserve_requested_levels_and_invariants (test_attention.AttentionTests.test_all_3125_profiles_preserve_requested_levels_and_invariants) ... ok\ntest_bad_base_or_overrides_rejected (test_attention.AttentionTests.test_bad_base_or_overrides_rejected) ... ok\ntest_default_and_balanced_add_no_overrides (test_attention.AttentionTests.test_default_and_balanced_add_no_overrides) ... ok\ntest_five_illustrations_explain_every_level (test_attention.AttentionTests.test_five_illustrations_explain_every_level) ... ok\ntest_generated_resources_match (test_attention.AttentionTests.test_generated_resources_match) ... ok\ntest_invalid_profiles_and_command_labels_fail (test_attention.AttentionTests.test_invalid_profiles_and_command_labels_fail) ... ok\ntest_risky_profile_warns_without_rewriting (test_attention.AttentionTests.test_risky_profile_warns_without_rewriting) ... ok\ntest_single_installed_skill_runs_isolated_and_preserves_unrelated_files (test_attention.AttentionTests.test_single_installed_skill_runs_isolated_and_preserves_unrelated_files) ... ok\ntest_step_override_inherits_and_does_not_mutate_task (test_attention.AttentionTests.test_step_override_inherits_and_does_not_mutate_task) ... ok\ntest_workflow_switch_preserves_task_configuration (test_attention.AttentionTests.test_workflow_switch_preserves_task_configuration) ... ok\ntest_boolean_version_and_non_object_history_rejected (test_checkpoint.CheckpointTests.test_boolean_version_and_non_object_history_rejected) ... ok\ntest_compact_cli_preserves_full_history_on_disk (test_checkpoint.CheckpointTests.test_compact_cli_preserves_full_history_on_disk) ... ok\ntest_duplicate_json_and_directory_destination_rejected (test_checkpoint.CheckpointTests.test_duplicate_json_and_directory_destination_rejected) ... ok\ntest_false_override_flag_cannot_hide_drift (test_checkpoint.CheckpointTests.test_false_override_flag_cannot_hide_drift) ... ok\ntest_finished_task_cannot_leak_into_new_work (test_checkpoint.CheckpointTests.test_finished_task_cannot_leak_into_new_work) ... ok\ntest_hardlinked_state_is_rejected_without_changing_original (test_checkpoint.CheckpointTests.test_hardlinked_state_is_rejected_without_changing_original) ... ok\ntest_installed_checkpoint_runs_with_isolated_python (test_checkpoint.CheckpointTests.test_installed_checkpoint_runs_with_isolated_python) ... ok\ntest_invalid_profiles_write_nothing (test_checkpoint.CheckpointTests.test_invalid_profiles_write_nothing) ... ok\ntest_malformed_history_rejected (test_checkpoint.CheckpointTests.test_malformed_history_rejected) ... ok\ntest_show_is_read_only_and_task_profile_cannot_be_replaced (test_checkpoint.CheckpointTests.test_show_is_read_only_and_task_profile_cannot_be_replaced) ... ok\ntest_switch_override_and_restore_are_observable (test_checkpoint.CheckpointTests.test_switch_override_and_restore_are_observable) ... ok\ntest_wrong_task_and_duplicate_init_never_overwrite (test_checkpoint.CheckpointTests.test_wrong_task_and_duplicate_init_never_overwrite) ... ok\ntest_duplicate_copied_results_and_controls_do_not_inflate_denominators (test_validation_metrics.ValidationMetricsTests.test_duplicate_copied_results_and_controls_do_not_inflate_denominators) ... ok\ntest_environment_failures_do_not_become_skill_improvements (test_validation_metrics.ValidationMetricsTests.test_environment_failures_do_not_become_skill_improvements) ... ok\ntest_no_behavior_execution_is_not_a_pass (test_validation_metrics.ValidationMetricsTests.test_no_behavior_execution_is_not_a_pass) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.445s\n\nOK\n"
+    },
+    {
+      "runtime": "Python 3.12",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_all_3125_profiles_preserve_requested_levels_and_invariants (test_attention.AttentionTests.test_all_3125_profiles_preserve_requested_levels_and_invariants) ... ok\ntest_bad_base_or_overrides_rejected (test_attention.AttentionTests.test_bad_base_or_overrides_rejected) ... ok\ntest_default_and_balanced_add_no_overrides (test_attention.AttentionTests.test_default_and_balanced_add_no_overrides) ... ok\ntest_five_illustrations_explain_every_level (test_attention.AttentionTests.test_five_illustrations_explain_every_level) ... ok\ntest_generated_resources_match (test_attention.AttentionTests.test_generated_resources_match) ... ok\ntest_invalid_profiles_and_command_labels_fail (test_attention.AttentionTests.test_invalid_profiles_and_command_labels_fail) ... ok\ntest_risky_profile_warns_without_rewriting (test_attention.AttentionTests.test_risky_profile_warns_without_rewriting) ... ok\ntest_single_installed_skill_runs_isolated_and_preserves_unrelated_files (test_attention.AttentionTests.test_single_installed_skill_runs_isolated_and_preserves_unrelated_files) ... ok\ntest_step_override_inherits_and_does_not_mutate_task (test_attention.AttentionTests.test_step_override_inherits_and_does_not_mutate_task) ... ok\ntest_workflow_switch_preserves_task_configuration (test_attention.AttentionTests.test_workflow_switch_preserves_task_configuration) ... ok\ntest_boolean_version_and_non_object_history_rejected (test_checkpoint.CheckpointTests.test_boolean_version_and_non_object_history_rejected) ... ok\ntest_compact_cli_preserves_full_history_on_disk (test_checkpoint.CheckpointTests.test_compact_cli_preserves_full_history_on_disk) ... ok\ntest_duplicate_json_and_directory_destination_rejected (test_checkpoint.CheckpointTests.test_duplicate_json_and_directory_destination_rejected) ... ok\ntest_false_override_flag_cannot_hide_drift (test_checkpoint.CheckpointTests.test_false_override_flag_cannot_hide_drift) ... ok\ntest_finished_task_cannot_leak_into_new_work (test_checkpoint.CheckpointTests.test_finished_task_cannot_leak_into_new_work) ... ok\ntest_hardlinked_state_is_rejected_without_changing_original (test_checkpoint.CheckpointTests.test_hardlinked_state_is_rejected_without_changing_original) ... ok\ntest_installed_checkpoint_runs_with_isolated_python (test_checkpoint.CheckpointTests.test_installed_checkpoint_runs_with_isolated_python) ... ok\ntest_invalid_profiles_write_nothing (test_checkpoint.CheckpointTests.test_invalid_profiles_write_nothing) ... ok\ntest_malformed_history_rejected (test_checkpoint.CheckpointTests.test_malformed_history_rejected) ... ok\ntest_show_is_read_only_and_task_profile_cannot_be_replaced (test_checkpoint.CheckpointTests.test_show_is_read_only_and_task_profile_cannot_be_replaced) ... ok\ntest_switch_override_and_restore_are_observable (test_checkpoint.CheckpointTests.test_switch_override_and_restore_are_observable) ... ok\ntest_wrong_task_and_duplicate_init_never_overwrite (test_checkpoint.CheckpointTests.test_wrong_task_and_duplicate_init_never_overwrite) ... ok\ntest_duplicate_copied_results_and_controls_do_not_inflate_denominators (test_validation_metrics.ValidationMetricsTests.test_duplicate_copied_results_and_controls_do_not_inflate_denominators) ... ok\ntest_environment_failures_do_not_become_skill_improvements (test_validation_metrics.ValidationMetricsTests.test_environment_failures_do_not_become_skill_improvements) ... ok\ntest_no_behavior_execution_is_not_a_pass (test_validation_metrics.ValidationMetricsTests.test_no_behavior_execution_is_not_a_pass) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.342s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/attention_assets.py"
+      ],
+      "exit_code": 0,
+      "output": "PASS: attention resources and diagram\n"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "source_sha256": {
+    "scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+    "scripts/attention_assets.py": "827f3f00e3f95b68738e7c052fe2888cf009c0d431f1767b040918755cd8972e",
+    "scripts/attention_illustrations.py": "2ae2e981040a49c44dc06c829c70de5eee68e1cabe23266134aa9239cae34ddc",
+    "scripts/checkpoint.py": "ed832bc6fcb26d8e991fe5a5da0f32e97779b8872bd8880a0c776723f132ab66",
+    "scripts/validation_metrics.py": "524d39de0d42ec3411f118a4c8a38c792c1fcc792eb64423f11a4d8594a2e108",
+    "skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+    "skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+    "skills/agent-attention/scripts/checkpoint.py": "ed832bc6fcb26d8e991fe5a5da0f32e97779b8872bd8880a0c776723f132ab66",
+    "skills/agent-attention/SKILL.md": "480d3e8129c3564ea36b3a3a8aa80fb5606e7866f4f9fa72030a27d951ac2905",
+    "tests/test_attention.py": "e0a683cfed4671a21d9c83844f25d49091a36a98d0ab36e757d802a0aac8f125",
+    "tests/test_checkpoint.py": "b7cd89a866a1a4367e7c6d4b6603ed0414a4c72ed16b952294f3487946c91a3a",
+    "tests/test_validation_metrics.py": "00ab3ddd4a8e147ebcb16d6a7650c0794e30f0ac6c1d4297f6d66c9664990c43"
+  }
+}

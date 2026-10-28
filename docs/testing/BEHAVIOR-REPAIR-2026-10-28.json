@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-28",
+  "kind": "behavioral_smoke_trials",
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "backend_identity": "CLI argument; no independent backend attestation",
+  "cases": [
+    {
+      "label": "narrow",
+      "profile": "focus=1,sync=2,batch=1,explore=1,verify=2",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 32.926,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 148934,
+        "cached_input_tokens": 124416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 534,
+        "reasoning_output_tokens": 0
+      },
+      "revision": "intermediate",
+      "trace_sha256": "dc3173eec917f1742a8bd8c660bcddd0ce932a0bf1f27e3a865450d542950337",
+      "skill_sha256": "c7ecfd6aaa182a06b8b8172d385204c499d98c944bbea91669ab20775bafa0d4",
+      "trace_actions": [
+        {
+          "id": "item_1",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_2",
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "C:\\Code\\attention-behavior-20261028\\narrow\\discount.py",
+              "kind": "update"
+            }
+          ],
+          "status": "completed"
+        },
+        {
+          "id": "item_3",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content discount.py; Get-Content shipping.py; python -B -c \\\"from discount import discount; assert discount(0) == 0; assert discount(101) == 90; assert type(discount(101)) is int; assert discount(10**18 + 1) == (10**18 + 1) * 9 // 10; print('discount PASS')\\\"\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_4",
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "C:\\Code\\attention-behavior-20261028\\narrow\\checkout.py",
+              "kind": "update"
+            }
+          ],
+          "status": "completed"
+        },
+        {
+          "id": "item_5",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content checkout.py; $env:PYTHONDONTWRITEBYTECODE = '\"'1'; python checks.py; python -B -c \\\"from checkout import total; from shipping import shipping; assert total(5555) == 5499; assert total(5556) == 5000; assert shipping(4999) == 500; assert shipping(5000) == 0; print('threshold boundaries PASS')\\\"\"",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "profile_helper_calls": [],
+      "state_files": []
+    },
+    {
+      "label": "wide",
+      "profile": "focus=5,sync=4,batch=4,explore=5,verify=4",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 40.689,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 123892,
+        "cached_input_tokens": 110464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 616,
+        "reasoning_output_tokens": 11
+      },
+      "revision": "intermediate",
+      "trace_sha256": "0648eab35f68cfb2fc4d5cc72f4fb0ff4155e3454e511bd2ae50b44b1667aeab",
+      "skill_sha256": "c7ecfd6aaa182a06b8b8172d385204c499d98c944bbea91669ab20775bafa0d4",
+      "trace_actions": [
+        {
+          "id": "item_1",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_2",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content shipping.py; git status --short'",
+          "exit_code": 1,
+          "status": "failed"
+        },
+        {
+          "id": "item_4",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"@'\ndef discount(cents):\n    return cents * 9 // 10\n'@ | Set-Content -LiteralPath discount.py\n@'\nfrom discount import discount\nfrom shipping import shipping\n\ndef total(cents):\n    discounted = discount(cents)\n    return discounted + shipping(discounted)\n'@ | Set-Content -LiteralPath checkout.py\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_5",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$env:PYTHONDONTWRITEBYTECODE = '\"'1'\npython checks.py\n@'\nfrom discount import discount\nfrom checkout import total\nfrom shipping import shipping\nfor cents in (0, 1, 9, 10, 101, 5555, 5556, 10**18 + 1):\n    result = discount(cents)\n    assert type(result) is int\n    assert result * 10 <= cents * 9 < (result + 1) * 10\nassert discount(5555) == 4999 and total(5555) == 5499\nassert discount(5556) == 5000 and total(5556) == 5000\nassert shipping(4999) == 500 and shipping(5000) == 0\nprint('Boundary checks PASS')\n'@ | python -\nGet-Content discount.py\nGet-Content checkout.py\"",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "profile_helper_calls": [],
+      "state_files": []
+    },
+    {
+      "label": "narrow",
+      "profile": "focus=1,sync=2,batch=1,explore=1,verify=2",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 50.634,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 172113,
+        "cached_input_tokens": 145920,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 629,
+        "reasoning_output_tokens": 31
+      },
+      "revision": "final",
+      "trace_sha256": "a9855a1d1a2c562ea063a06bba76aa525ba7cb48d19c119ceaefebef3d4a056e",
+      "skill_sha256": "cb58cf35e92584a1d738b28b975d9ab741c6d3f3cc51b43b4c8fc82627dde325",
+      "trace_actions": [
+        {
+          "id": "item_1",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_2",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_4",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Set-Content -LiteralPath discount.py -Value \"def discount(cents):`n    return cents * 9 // 10\"'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_5",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"python -B -c \\\"from discount import discount; assert discount(101) == 90 and type(discount(101)) is int; assert discount(0) == 0; assert discount(10) == 9; print('discount PASS')\\\"; Get-Content shipping.py; Get-Content discount.py\"",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_6",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Set-Content -LiteralPath checkout.py -Value \"from discount import discount`nfrom shipping import shipping`n`ndef total(cents):`n    discounted_cents = discount(cents)`n    return discounted_cents + shipping(discounted_cents)\"'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_7",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$env:PYTHONDONTWRITEBYTECODE = '\"'1'\npython checks.py\npython -B -c \\\"from checkout import total; assert total(5555) == 5499; assert total(5556) == 5000; print('threshold PASS')\\\"\nGet-Content checkout.py\"",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "profile_helper_calls": [],
+      "state_files": []
+    },
+    {
+      "label": "wide",
+      "profile": "focus=5,sync=4,batch=4,explore=5,verify=4",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 120.158,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 122919,
+        "cached_input_tokens": 109696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 615,
+        "reasoning_output_tokens": 34
+      },
+      "revision": "final",
+      "trace_sha256": "dd3e10f388a557fec2acaaac0d236c6a47a167ed8b964657028bc71ff488613f",
+      "skill_sha256": "cb58cf35e92584a1d738b28b975d9ab741c6d3f3cc51b43b4c8fc82627dde325",
+      "trace_actions": [
+        {
+          "id": "item_1",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_2",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content shipping.py; Get-ChildItem -Name; git status --short'",
+          "exit_code": 1,
+          "status": "failed"
+        },
+        {
+          "id": "item_4",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Set-Content -LiteralPath discount.py -Value \"def discount(cents):`n    return cents * 9 // 10\"; Set-Content -LiteralPath checkout.py -Value \"from discount import discount`nfrom shipping import shipping`n`ndef total(cents):`n    discounted = discount(cents)`n    return discounted + shipping(discounted)\"'",
+          "exit_code": 0,
+          "status": "completed"
+        },
+        {
+          "id": "item_5",
+          "type": "command_execution",
+          "command": "\"C:\\\\Users\\\\tranh\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$env:PYTHONDONTWRITEBYTECODE='\"'1'; python checks.py; python -c \\\"from discount import discount; from shipping import shipping; from checkout import total; assert all(type(discount(c)) is int and discount(c) == c * 9 // 10 for c in (0, 1, 9, 10, 101, 5555, 5556, 10**18 + 1)); assert discount(5555) == 4999 and total(5555) == 5499; assert discount(5556) == 5000 and total(5556) == 5000; assert total(0) == 500; assert shipping(4999) == 500 and shipping(5000) == 0; print('Boundary checks PASS')\\\"; Get-Content discount.py; Get-Content checkout.py\"",
+          "exit_code": 0,
+          "status": "completed"
+        }
+      ],
+      "profile_helper_calls": [],
+      "state_files": []
+    }
+  ],
+  "source_sha256": {
+    "skills/agent-attention/SKILL.md": "cb58cf35e92584a1d738b28b975d9ab741c6d3f3cc51b43b4c8fc82627dde325",
+    "scripts/attention.py": "66b97a47ecfdaba22980bf6310e086c30cd8392b639e26923fbc5e673c55acfb",
+    "scripts/attention_assets.py": "3e41cdc82504438a7ca00fdda9f69455b3a429b2701fc89a50fa75b0ae25619a",
+    "docs/GUIDE.md": "dcd8c38912b38eb0ea12214e7d7cf90d117039eb75d34f951e90e780d9f5d3a5"
+  },
+  "limitations": [
+    "Two composite profiles, one task, two instruction revisions; not five independent axis evaluations.",
+    "Fixed narrow-then-wide order; no randomization or repeated final-version samples.",
+    "Global host instructions and cache remain possible confounds.",
+    "Acceptance PASS is separate from behavioral interpretation. No cost-saving or quality-superiority claim."
+  ],
+  "checks": {
+    "unittest_python_3_14": "25/25 PASS outside sandbox",
+    "unittest_python_3_12": "25/25 PASS outside sandbox",
+    "generated_assets": "PASS",
+    "docs_navigation": "PASS: 6 Markdown files, 17 local links",
+    "git_diff_check": "PASS",
+    "initial_sandbox_unit_run": "BLOCKED_ENVIRONMENT: temporary-file permissions"
+  }
+}

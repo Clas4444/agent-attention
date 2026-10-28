@@ -4,7 +4,7 @@ An independent attention layer for AI agents: **five axes, five levels each,
 balanced by default**. Choose a task profile once and carry it across direct work,
 Loop or other skills. No downstream skill modification is required.
 
-Experimental version: **0.1.0**. This is behavioral guidance, not a model
+Experimental version: **0.1.1**. This is behavioral guidance, not a model
 reasoning-effort setting or an enforced scheduler. Token savings are unmeasured.
 
 ![Five independent behavior choices](docs/assets/attention-controls.svg)
@@ -34,19 +34,30 @@ python scripts/attention.py --attention balanced --workflow loop-code
 The workflow label does not invoke anything. All unspecified axes remain 3.
 No attention request means ordinary host/workflow behavior.
 
+Apply the profile directly to the next read, change and check. Activation requires
+no helper calls, state files or transition summaries. Optional persistence is a
+separate explicit request, not the mechanism that makes the mode work.
+
 ## What changes
 
 | Axis | Controls | Balanced |
 |---|---|---|
 | focus | active attention width | existing task scope |
 | sync | reconciliation cadence | important task boundaries |
-| batch | work per iteration | complete bounded item |
+| batch | decomposition and intermediate inspection depth | complete bounded item |
 | explore | discovery breadth | expand for concrete unknowns |
 | verify | additional checking depth | existing risk-based checks |
 
 Permissions, mandatory checks and correctness requirements remain. Shared-contract
 changes always trigger reconciliation before dependent work. More is not always
 better: broad context adds cost; narrow context can increase rework.
+
+All axes now follow the same effort direction: 1–2 reduce discretionary work,
+3 is balanced, 4–5 increase it. Token use is expected to follow that direction,
+but retries, required checks and cache effects can change total usage.
+**0.1.0 migration:** `batch` previously meant batch size; in 0.1.1 it means
+decomposition depth. Re-select non-default batch levels instead of reusing old
+profiles unchanged. Older checkpoint files do not identify the semantic revision.
 
 [Full guide, level illustrations and tradeoffs](docs/GUIDE.md) ·
 [Offline configuration preview](docs/attention-playground.html) ·

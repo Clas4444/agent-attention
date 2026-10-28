@@ -1,12 +1,23 @@
 # Standalone repository validation
 
+Current 0.1.1 checks: [effort direction and measurements](EFFORT-DIRECTION-2026-10-28.md)
+reports lower/balanced/higher settings, token/cache breakdowns and limitations.
+
+Historical pre-0.1.1 repair: [behavioral mode smoke tests](BEHAVIOR-REPAIR-2026-10-28.md)
+separates observable work decisions from the earlier checkpoint-state tests.
+
+Local follow-up: [Codex validation, 2026-10-28](CODEX-VALIDATION-2026-10-28.md)
+records real CLI attempts, environment blocks, a timeout, checkpoint repairs and
+the limits of the observed effects. The initial release results below remain
+historical; they do not certify the locally changed source.
+
 Initial version: 0.1.0. Date: 2026-10-28.
 
 This repository was extracted from a Loop attention prototype and then changed
 into an independent task-wide instruction layer. The prototype's 14-gate campaign
 and 352-test result belong to the original repository, not this new one.
 
-## Current checks
+## Initial 0.1.0 checks (historical)
 
 Ten deterministic tests pass on the available Windows Python 3.14 runtime:
 

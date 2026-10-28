@@ -15,12 +15,12 @@ DETAILS = {
   ('Balanced', 'Normal task boundaries', 'Reconcile at important milestones.', 'Treat a saved plan as current proof.'),
   ('After shared changes', 'Several callers share a contract', 'Compare dependencies before proceeding.', 'Recheck unrelated state after every edit.'),
   ('After shared-state steps', 'Closely coupled or changing inputs', 'Keep short, explicit reconciliations.', 'Let coordination replace useful work.')]),
- 'batch': ('Work per iteration', 'How much work is planned before the next loop checkpoint?', [
-  ('One action', 'One hypothesis or risky operation', 'Observe the result before moving on.', 'Change several debug hypotheses together.'),
-  ('Small change', 'A narrow reversible edit', 'Keep rollback and checks local.', 'Split work into meaningless fragments.'),
+ 'batch': ('Decomposition depth', 'How much intermediate planning and inspection should the work receive?', [
+  ('Minimal decomposition', 'Straightforward related changes', 'Group related edits; check the outcome.', 'Skip required checks or mix unrelated work.'),
+  ('Coarse work items', 'A familiar low-risk task', 'Inspect consequential boundaries.', 'Add optional micro-steps by habit.'),
   ('Balanced', 'A complete bounded work item', 'Finish a useful acceptance item.', 'Require extra rounds after completion.'),
-  ('Related group', 'Changes sharing one acceptance goal', 'Check each dependency boundary.', 'Bundle unrelated fixes.'),
-  ('Larger stage', 'A coherent authorized stage', 'Keep reversible internal checkpoints.', 'Make one unreviewable giant change.')]),
+  ('Dependency steps', 'Coupled changes or uncertain results', 'Split and inspect meaningful boundaries.', 'Group changes that hide the cause of failure.'),
+  ('Detailed reversible steps', 'Consequential dependent changes', 'Inspect each result before proceeding.', 'Invent steps or repeat unchanged checks.')]),
  'explore': ('Exploration breadth', 'Where should the loop look before selecting its next action?', [
   ('Supplied sources*', 'A known target with clear inputs', 'Follow required dependencies if found.', 'Ignore evidence outside the first file.'),
   ('Immediate references', 'A localized task', 'Read direct imports and contracts.', 'Assume names prove behavior.'),

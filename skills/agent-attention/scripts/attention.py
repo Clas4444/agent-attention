@@ -4,9 +4,11 @@ import argparse
 import json
 import re
 
+SEMANTICS_VERSION = '0.1.1'
+
 AXES = {
     'focus': (
-        'One bounded action; retain a pointer to the shared task checkpoint.',
+        'One bounded action; retain pointers to relevant dependencies in task context.',
         'One component and its immediate contract.',
         'Use the existing skill task scope; expand context when needed.',
         'Keep the changed component and its direct dependents in view.',
@@ -18,11 +20,11 @@ AXES = {
         'Reconcile after each change that affects another component.',
         'Reconcile after each step that changes shared state or assumptions.'),
     'batch': (
-        'One observable action per iteration.',
-        'One small reversible change per iteration.',
+        'Group straightforward related changes; use one acceptance check without optional intermediate decomposition.',
+        'Use a few coherent work items; inspect only consequential intermediate boundaries.',
         'Use the existing skill batch size for a complete bounded work item.',
-        'Group related changes only when they share acceptance criteria.',
-        'Plan a larger authorized stage, retaining reversible internal checkpoints.'),
+        'Split related changes at dependency boundaries and inspect each meaningful intermediate result.',
+        'Decompose consequential work into explicit reversible steps; inspect each result before the next dependent change.'),
     'explore': (
         'Start from supplied sources; follow required dependencies when discovered.',
         'Inspect the target and immediate references first.',
@@ -79,13 +81,13 @@ def resolve(value=None, workflow='direct'):
     levels = parse_attention(value)
     warnings = []
     if levels['focus'] <= 2 and levels['batch'] >= 4:
-        warnings.append('Narrow attention with a large batch can hide dependencies; split at contract boundaries.')
+        warnings.append('Narrow focus with detailed decomposition can lose the shared goal; retain dependency pointers without repeated summaries.')
     if levels['sync'] <= 2 and (levels['focus'] <= 2 or levels['batch'] >= 4):
         warnings.append('Sparse reconciliation can accumulate drift; reconcile immediately on shared-contract changes.')
     if levels['explore'] >= 4 and levels['focus'] <= 2:
         warnings.append('Broad exploration may dominate a narrow task; record findings, then return to the selected action.')
     return {
-        'version': 1, 'workflow': workflow, 'levels': levels,
+        'version': 1, 'semantics_version': SEMANTICS_VERSION, 'workflow': workflow, 'levels': levels,
         'mode': 'balanced' if all(n == 3 for n in levels.values()) else 'custom',
         'directives': {name: AXES[name][level-1] for name, level in levels.items() if level != 3},
         'warnings': warnings,
@@ -94,7 +96,7 @@ def resolve(value=None, workflow='direct'):
             'Never require a minimum iteration count or wait to consume a time budget.',
             'Stop on completion, deadline, missing prerequisites or repeated non-progress.',
             'On shared-contract changes, reconcile before dependent work regardless of sync level.',
-            'Record configuration and deviations; do not silently change requested levels.',
+            'Retain the profile in task context; explain material deviations without mandatory state writes.',
             'No model reasoning-effort setting, token budget or token savings is implied.'],
         'execution': 'NONE', 'writes': 'NONE'}
 

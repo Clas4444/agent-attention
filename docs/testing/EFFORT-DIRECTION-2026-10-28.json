@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-28",
+  "release": "0.1.1",
+  "status": "MEASURED_SMOKE_ONLY",
+  "model_requested": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "identity_basis": "explicit CLI request, no independent backend attestation",
+  "order": [
+    "low",
+    "balanced",
+    "high",
+    "high",
+    "balanced",
+    "low"
+  ],
+  "profiles": {
+    "low": "focus=1,sync=1,batch=1,explore=1,verify=1",
+    "balanced": "focus=3,sync=3,batch=3,explore=3,verify=3",
+    "high": "focus=5,sync=5,batch=5,explore=5,verify=5"
+  },
+  "task": "Use the installed .agents/skills/agent-attention/SKILL.md explicitly with {profile} for this task. Fix discount.py to return integer cents rounded down; fix checkout.py so free shipping uses the discounted amount. Preserve the shipping API. Only edit discount.py and checkout.py. Run python checks.py. Apply the profile to your working decisions. Stop when complete; keep the final response concise.",
+  "acceptance_oracle": "from discount import discount\nfrom shipping import shipping\nfrom checkout import total\nassert discount(101) == 90 and type(discount(101)) is int\nassert discount(10**18 + 1) == (10**18 + 1) * 9 // 10\nassert shipping(5000) == 0 and shipping(4999) == 500\nassert total(5500) == 5450 and total(6000) == 5400\nassert total(5555) == 5499 and total(5556) == 5000\nprint('PASS')\n",
+  "frozen_skill_sha256": {
+    "SKILL.md": "6a2d1e88074403c3e8057fd37fb5c07c1d45b847345d4244661bb44efc0f7879",
+    "references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "scripts/attention.py": "618e901600dcc14fe1710d11819d56c0a14d393c5bcd5247236661e9cb333fa0",
+    "scripts/checkpoint.py": "ed832bc6fcb26d8e991fe5a5da0f32e97779b8872bd8880a0c776723f132ab66"
+  },
+  "release_source_sha256": {
+    "skills/agent-attention/SKILL.md": "6a2d1e88074403c3e8057fd37fb5c07c1d45b847345d4244661bb44efc0f7879",
+    "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "scripts/checkpoint.py": "c14e1c6467bd5944312416d4e913d65e10423824a32bf0be5a06893d95cb8192",
+    "scripts/evaluate_effort.py": "0825e3eed2472c9d855d4815add0e756c8df1459692bd8f7deb88f11e6527a07",
+    "scripts/attention_assets.py": "c74d2e411b6407822436f6f455a90dce1b1d89190c3b6588734b0c724e652e16",
+    "scripts/attention_illustrations.py": "43439b11f2e1d5556cb10a08cae7aa4631ff875f7ef915d7fb95147cfc7ee399"
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "profile": "low",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 23.416,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 72539,
+        "cached_input_tokens": 47616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 292,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 24923,
+        "total_tokens": 72831
+      },
+      "trace_sha256": "6ef7f46246521b6a87667fa66f68501c5abd99e853c41d7070d9e7bfc0b51c72",
+      "command_count": 2,
+      "nonzero_commands": [],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    },
+    {
+      "trial": 2,
+      "profile": "balanced",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 21.44,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 97831,
+        "cached_input_tokens": 72320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 311,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 25511,
+        "total_tokens": 98142
+      },
+      "trace_sha256": "dc66b3767fb9919c64df1f868cecbc7c13c18c88f1bcf96eea70f32d8e911d33",
+      "command_count": 2,
+      "nonzero_commands": [],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    },
+    {
+      "trial": 3,
+      "profile": "high",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 167.292,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 98602,
+        "cached_input_tokens": 85248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 622,
+        "reasoning_output_tokens": 20,
+        "uncached_input_tokens": 13354,
+        "total_tokens": 99224
+      },
+      "trace_sha256": "c3bcb30a9e761b5892ef68c9f5df50f3996746348e432e293c3f2b96da2d3d51",
+      "command_count": 3,
+      "nonzero_commands": [
+        {
+          "exit_code": 1,
+          "id": "item_4"
+        }
+      ],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    },
+    {
+      "trial": 4,
+      "profile": "high",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 42.673,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 149544,
+        "cached_input_tokens": 135808,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 880,
+        "reasoning_output_tokens": 81,
+        "uncached_input_tokens": 13736,
+        "total_tokens": 150424
+      },
+      "trace_sha256": "b4c80ca79dfab8a1ca2dc03f8b75ab9d067eb3e85e40261760037284821e6eb4",
+      "command_count": 5,
+      "nonzero_commands": [
+        {
+          "exit_code": 1,
+          "id": "item_6"
+        }
+      ],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    },
+    {
+      "trial": 5,
+      "profile": "balanced",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 38.528,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 98018,
+        "cached_input_tokens": 84864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 323,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 13154,
+        "total_tokens": 98341
+      },
+      "trace_sha256": "08a11eb802f302dd3eb95ee253b16d8c0e9056aabb816ba8e37a24494962f328",
+      "command_count": 2,
+      "nonzero_commands": [
+        {
+          "exit_code": 1,
+          "id": "item_3"
+        }
+      ],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    },
+    {
+      "trial": 6,
+      "profile": "low",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 23.854,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 98015,
+        "cached_input_tokens": 72448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 345,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 25567,
+        "total_tokens": 98360
+      },
+      "trace_sha256": "e2b8f24793a25f85b0087963af053b0958284ebc169ef6d0e4b77b7ce19966cb",
+      "command_count": 3,
+      "nonzero_commands": [],
+      "helper_calls": 0,
+      "unexpected_json_files": []
+    }
+  ],
+  "means": {
+    "low": {
+      "attempts": 2,
+      "pass": 2,
+      "input_tokens": 85277,
+      "cached_input_tokens": 60032,
+      "uncached_input_tokens": 25245,
+      "output_tokens": 318.5,
+      "total_tokens": 85595.5,
+      "elapsed_seconds": 23.634999999999998
+    },
+    "balanced": {
+      "attempts": 2,
+      "pass": 2,
+      "input_tokens": 97924.5,
+      "cached_input_tokens": 78592,
+      "uncached_input_tokens": 19332.5,
+      "output_tokens": 317,
+      "total_tokens": 98241.5,
+      "elapsed_seconds": 29.984
+    },
+    "high": {
+      "attempts": 2,
+      "pass": 2,
+      "input_tokens": 124073,
+      "cached_input_tokens": 110528,
+      "uncached_input_tokens": 13545,
+      "output_tokens": 751,
+      "total_tokens": 124824,
+      "elapsed_seconds": 104.9825
+    }
+  },
+  "unit_tests": {
+    "python_3_14": "29/29 PASS",
+    "python_3_12": "29/29 PASS"
+  },
+  "browser_preview": "PASS: all five levels across all axes match Python, balanced reset; initial checker label assertions were corrected, no product failure",
+  "illustration_review": "PASS: batch SVG rendered and visually inspected",
+  "limitations": [
+    "One task and two observations per composite profile; not five independent axis experiments.",
+    "Cumulative input includes repeated global host context across tool turns; cached input is a subset, not additional tokens.",
+    "Fixed counterbalanced order reduces order bias but does not isolate cache, host metadata or service latency.",
+    "Optional-helper semantic-version pin was added after freezing behavioral skill resources; SKILL.md behavior instructions are unchanged. Helpers were not invoked in these trials.",
+    "Correctness PASS does not excuse failed tool commands; nonzero command outcomes are retained separately.",
+    "No price estimate, native thinking control or guaranteed monotonic token use is claimed."
+  ],
+  "git_fixture_regressions": [
+    {
+      "trial": 1,
+      "profile": "high",
+      "status": "PASS",
+      "exit_code": 0,
+      "elapsed_seconds": 39.383,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "usage": {
+        "input_tokens": 123365,
+        "cached_input_tokens": 96896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 837,
+        "reasoning_output_tokens": 168,
+        "uncached_input_tokens": 26469,
+        "total_tokens": 124202
+      },
+      "trace_sha256": "4790887ba6efaabc2ac7403b16a47d70ef07f3aa99010e6d40369e6179f2c03f",
+      "nonzero_commands": [],
+      "classification": "PASS"
+    },
+    {
+      "trial": 2,
+      "profile": "balanced",
+      "status": "FAIL",
+      "exit_code": null,
+      "elapsed_seconds": 180.108,
+      "protected_changes": [],
+      "acceptance_exit": 1,
+      "usage": null,
+      "trace_sha256": "6faa7830b36b5824696f98ccf0ccc1cc3ad403a859934cfc545a88c42bb0c27f",
+      "nonzero_commands": [],
+      "classification": "BLOCKED_ENVIRONMENT",
+      "reason": "CLI timed out at 180 seconds before any task action; stderr contains HTTP 429 Too Many Requests with retry backoff. Usage unavailable."
+    }
+  ],
+  "attempt_counts": {
+    "model_attempts": 8,
+    "acceptance_successes": 7,
+    "task_execution_failures": 0,
+    "environment_blocked_before_task_actions": 1,
+    "nonzero_tool_commands_in_original_six": 3
+  }
+}

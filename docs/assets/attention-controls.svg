@@ -25,13 +25,15 @@
 <text x="1181" y="317" font-size="17" fill="#415d67">5 / After</text>
 <text x="1181" y="342" font-size="17" fill="#415d67">shared-state steps</text>
 <rect x="40" y="399" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
-<text x="58" y="429" font-size="20" fill="#16313b" font-weight="700">Work per iteration</text>
+<text x="58" y="429" font-size="20" fill="#16313b" font-weight="700">Decomposition depth</text>
 <text x="58" y="457" font-size="15" fill="#126957">batch</text>
-<text x="365" y="429" font-size="17" fill="#415d67">1 / One action</text>
-<text x="569" y="429" font-size="17" fill="#415d67">2 / Small change</text>
+<text x="365" y="429" font-size="17" fill="#415d67">1 / Minimal</text>
+<text x="365" y="454" font-size="17" fill="#415d67">decomposition</text>
+<text x="569" y="429" font-size="17" fill="#415d67">2 / Coarse work items</text>
 <text x="773" y="429" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
-<text x="977" y="429" font-size="17" fill="#415d67">4 / Related group</text>
-<text x="1181" y="429" font-size="17" fill="#415d67">5 / Larger stage</text>
+<text x="977" y="429" font-size="17" fill="#415d67">4 / Dependency steps</text>
+<text x="1181" y="429" font-size="17" fill="#415d67">5 / Detailed</text>
+<text x="1181" y="454" font-size="17" fill="#415d67">reversible steps</text>
 <rect x="40" y="511" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
 <text x="58" y="541" font-size="20" fill="#16313b" font-weight="700">Exploration breadth</text>
 <text x="58" y="569" font-size="15" fill="#126957">explore</text>

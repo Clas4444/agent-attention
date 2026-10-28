@@ -15,17 +15,20 @@ else:
 
 def reference():
     lines = ['# Optional attention profile (experimental)', '',
-        'Load this layer once for the task, then carry its checkpoint across workflow changes.',
+        'Load this layer once for the task, then retain its profile across workflow changes.',
         'No settings or `balanced` means the existing host/workflow behavior, with all axes at 3.',
         'These are five independent behavior controls, not model reasoning effort.', '',
+        'Levels 1–2 reduce discretionary effort; 3 is balanced; 4–5 increase effort.',
+        'Expected token direction follows effort, not a guaranteed total-token ordering.',
+        'Since 0.1.1, batch means decomposition depth, not batch size; re-select old non-default profiles.', '',
         '## How to apply', '',
-        '1. Read explicit attention assignments separately from the task. Run',
+        '1. Read explicit attention assignments separately from the task. Optional preview:',
         '   `python <skill-dir>/scripts/attention.py --workflow direct --attention "focus=1,sync=4"`.',
-        '   If Python is unavailable, use the table below and disclose no helper check.',
+        '   Clear profiles can be applied directly; no helper execution is required.',
         '   Unknown axes, duplicate assignments or levels outside 1–5 require correction;',
         '   do not guess or silently coerce. Missing axes remain 3.',
-        '2. Keep a short task checkpoint: goal/acceptance criteria, current action,',
-        '   source/revision pointers, shared contracts, verified results and next action.',
+        '2. Use the selected levels before choosing each read, change or check.',
+        '   Retain dependency pointers in task context; no new state file is required.',
         '   Narrow focus reduces active detail, not access to necessary evidence.',
         '3. Apply non-default directives to the current task and any selected workflow. Keep',
         '   authorization, mandatory checks, deadlines and break conditions intact.',
@@ -33,24 +36,24 @@ def reference():
         '4. Reconcile before dependent work whenever a shared contract changes,',
         '   regardless of sync level. If a profile prevents safe/correct work, explain',
         '   the conflict and propose a revised profile; never silently switch modes.',
-        '5. Report requested/effective levels, deviations with reasons, checks and',
+        '5. Report outcomes, material deviations with reasons, checks and',
         '   remaining gaps. Stop when complete; no minimum number of iterations.', '',
         '## Five levels per axis', '', '| Axis | Level | Guidance |', '|---|---|---|']
     for axis, levels in AXES.items():
         for level, text in enumerate(levels, 1):
             lines.append(f'| {axis} | {level}'+(' (balanced)' if level == 3 else '')+f' | {text} |')
     lines += ['', '## Task-specific interpretation', '',
-        '- Code: a batch is a reversible implementation item; sync reconciles caller/schema/test contracts.',
-        '- Debug: focus bounds one hypothesis; batch size never justifies changing several untested hypotheses at once.',
-        '- Review: a batch is a review angle or contract; wider scope does not authorize edits or require a finding quota.', '',
+        '- Code: batch controls decomposition and intermediate inspection; sync reconciles caller/schema/test contracts.',
+        '- Debug: preserve hypothesis attribution even at low decomposition; required risk controls take precedence.',
+        '- Review: higher decomposition separates consequential review angles; no finding quota or edit authorization.', '',
         '## Tradeoffs', '',
         'Narrow focus can reduce repeated context, but may cause stale assumptions and rework.',
         'Wide focus can improve cross-component awareness, but may increase reading and distract',
         'from the next concrete action. Frequent sync can reduce drift but adds overhead.',
-        'Large batches can reduce handoffs but make rollback and attribution harder.',
+        'Low decomposition can reduce handoffs but make rollback and attribution harder.',
         'More exploration and verification consume effort without guaranteeing useful findings.',
         'Token savings and task-quality effects are hypotheses until measured.', '',
-        'Avoid narrow focus + large batches + sparse sync for shared-contract changes.',
+        'Avoid narrow focus + low decomposition + sparse sync for shared-contract changes.',
         'Do not lower mandatory checks, widen scope, run extra agents, or wait just',
         'because a slider is high. This helper prints guidance; it never executes tasks.', '']
     return '\n'.join(lines)
@@ -86,8 +89,8 @@ li{margin:10px 0}#warnings{color:#9a4c32}a{color:#126957}select{font:inherit;pad
 <p>Request → bounded action → check → reconcile when needed → next action or stop.</p>
 </main><script>
 const axes = '''+data+''';
-const labels = {focus:'Attention width',sync:'Reconciliation cadence',batch:'Work per iteration',explore:'Exploration breadth',verify:'Verification depth'};
-const ends = {focus:['One action','Relevant flow'],sync:['At completion*','Shared-state steps'],batch:['One action','Larger stage'],explore:['Supplied sources*','Map relevant flow'],verify:['Direct result*','Independent checks']};
+const labels = {focus:'Attention width',sync:'Reconciliation cadence',batch:'Decomposition depth',explore:'Exploration breadth',verify:'Verification depth'};
+const ends = {focus:['One action','Relevant flow'],sync:['At completion*','Shared-state steps'],batch:['Minimal decomposition','Detailed reversible steps'],explore:['Supplied sources*','Map relevant flow'],verify:['Direct result*','Independent checks']};
 const inputs = {};
 for (const key of Object.keys(axes)) {
   const box = document.createElement('div'); box.className='control';
@@ -113,7 +116,7 @@ function render() {
     document.getElementById(key+'-note').textContent=axes[key][n-1];
     if(n!==3)directives.push(key+': '+axes[key][n-1]);
   }
-  if(levels.focus<=2&&levels.batch>=4)warnings.push('Narrow attention with a large batch can hide dependencies; split at contract boundaries.');
+  if(levels.focus<=2&&levels.batch>=4)warnings.push('Narrow focus with detailed decomposition can lose the shared goal; retain dependency pointers without repeated summaries.');
   if(levels.sync<=2&&(levels.focus<=2||levels.batch>=4))warnings.push('Sparse reconciliation can accumulate drift; reconcile immediately on shared-contract changes.');
   if(levels.explore>=4&&levels.focus<=2)warnings.push('Broad exploration may dominate a narrow task; record findings, then return to the selected action.');
   const changed=Object.entries(levels).filter(([key,n])=>n!==3).map(([key,n])=>key+'='+n);
@@ -138,6 +141,7 @@ def check(repo, write=False):
     folder = repo/'skills/agent-attention'
     outputs[folder/'references/attention.md'] = reference()
     outputs[folder/'scripts/attention.py'] = helper
+    outputs[folder/'scripts/checkpoint.py'] = (repo/'scripts/checkpoint.py').read_text(encoding='utf-8')
     errors = []
     for path, content in outputs.items():
         if write:
