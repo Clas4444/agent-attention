@@ -36,7 +36,14 @@ def unique(pairs):
 
 
 def plain(path):
-    if path.absolute()!=path.resolve(): raise ValueError('checkpoint aliases are not supported')
+    # Windows temp paths may use legitimate DOS 8.3 names (RUNNER~1).
+    # Resolution changes their spelling without crossing a link. Inspect the
+    # actual path entries instead of rejecting every spelling difference.
+    for entry in (path,*path.parents):
+        if entry.exists() or entry.is_symlink():
+            meta=entry.lstat()
+            if stat.S_ISLNK(meta.st_mode) or getattr(meta,'st_file_attributes',0)&0x400:
+                raise ValueError('checkpoint links and reparse points are not supported')
     if path.exists():
         meta=path.lstat()
         if not stat.S_ISREG(meta.st_mode) or meta.st_nlink!=1:

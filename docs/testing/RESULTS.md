@@ -2,6 +2,8 @@
 
 Current 0.1.1 checks: [effort direction and measurements](EFFORT-DIRECTION-2026-10-28.md)
 reports lower/balanced/higher settings, token/cache breakdowns and limitations.
+The [Windows checkpoint follow-up](WINDOWS-CHECKPOINT-REPAIR.md) records the first
+push's CI failure, correction and expanded 30-test local suite.
 
 Historical pre-0.1.1 repair: [behavioral mode smoke tests](BEHAVIOR-REPAIR-2026-10-28.md)
 separates observable work decisions from the earlier checkpoint-state tests.

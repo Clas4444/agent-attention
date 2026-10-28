@@ -12,6 +12,7 @@
 - Add real-Codex behavioral and effort-direction measurements, retaining failed
   attempts and limitations. Token ordering is an expectation, not a guarantee.
 - Repair the isolated-Python optional helper and validate usage accounting.
+- Accept legitimate Windows 8.3 temporary paths while retaining link rejection.
 
 ## 0.1.0 — 2026-10-28
 

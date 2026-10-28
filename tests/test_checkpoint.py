@@ -32,6 +32,21 @@ class CheckpointTests(unittest.TestCase):
             with self.assertRaises(ValueError):execute(action,self.path,task)
             self.assertEqual(self.path.read_bytes(),before)
 
+    @unittest.skipUnless(os.name=='nt','DOS short paths are Windows-specific')
+    def test_windows_short_parent_name_is_not_mistaken_for_a_link(self):
+        import ctypes
+        folder=Path(self.temp.name)/'long checkpoint directory name'
+        folder.mkdir()
+        buffer=ctypes.create_unicode_buffer(32768)
+        size=ctypes.windll.kernel32.GetShortPathNameW(str(folder),buffer,len(buffer))
+        if not size: self.fail('GetShortPathNameW failed')
+        short=Path(buffer.value)
+        if str(short).lower()==str(folder).lower():
+            self.skipTest('volume does not provide 8.3 aliases')
+        state=execute('init',short/'state.json','short-path-task')
+        self.assertEqual(state['task_id'],'short-path-task')
+        self.assertTrue((folder/'state.json').is_file())
+
     def test_legacy_or_other_semantics_require_explicit_new_profile(self):
         initial=self.init()
         for version in (None,'0.1.0','future'):
