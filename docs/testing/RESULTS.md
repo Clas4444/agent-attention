@@ -10,6 +10,10 @@ and 352-test result belong to the original repository, not this new one.
 
 Ten deterministic tests pass on the available Windows Python 3.14 runtime:
 
+[Captured commands, results and source hashes](initial-validation.json) also
+record the same ten tests passing under Python 3.12 and the generated-resource
+check. These are checkout-byte pins, not independent model-execution evidence.
+
 - Omitted settings / balanced produce no overrides.
 - All 3,125 profiles preserve requested levels and the same invariant floor.
 - Workflow labels can change without changing the task profile.
