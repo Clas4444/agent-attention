@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-28",
+  "version": "0.1.0",
+  "scope": "Standalone Windows checkout; deterministic tests only.",
+  "checks": [
+    {
+      "runtime": "Python 3.14",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_all_3125_profiles_preserve_requested_levels_and_invariants (test_attention.AttentionTests.test_all_3125_profiles_preserve_requested_levels_and_invariants) ... ok\ntest_bad_base_or_overrides_rejected (test_attention.AttentionTests.test_bad_base_or_overrides_rejected) ... ok\ntest_default_and_balanced_add_no_overrides (test_attention.AttentionTests.test_default_and_balanced_add_no_overrides) ... ok\ntest_five_illustrations_explain_every_level (test_attention.AttentionTests.test_five_illustrations_explain_every_level) ... ok\ntest_generated_resources_match (test_attention.AttentionTests.test_generated_resources_match) ... ok\ntest_invalid_profiles_and_command_labels_fail (test_attention.AttentionTests.test_invalid_profiles_and_command_labels_fail) ... ok\ntest_risky_profile_warns_without_rewriting (test_attention.AttentionTests.test_risky_profile_warns_without_rewriting) ... ok\ntest_single_installed_skill_runs_isolated_and_preserves_unrelated_files (test_attention.AttentionTests.test_single_installed_skill_runs_isolated_and_preserves_unrelated_files) ... ok\ntest_step_override_inherits_and_does_not_mutate_task (test_attention.AttentionTests.test_step_override_inherits_and_does_not_mutate_task) ... ok\ntest_workflow_switch_preserves_task_configuration (test_attention.AttentionTests.test_workflow_switch_preserves_task_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.215s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "runtime": "Python 3.12",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "test_all_3125_profiles_preserve_requested_levels_and_invariants (test_attention.AttentionTests.test_all_3125_profiles_preserve_requested_levels_and_invariants) ... ok\ntest_bad_base_or_overrides_rejected (test_attention.AttentionTests.test_bad_base_or_overrides_rejected) ... ok\ntest_default_and_balanced_add_no_overrides (test_attention.AttentionTests.test_default_and_balanced_add_no_overrides) ... ok\ntest_five_illustrations_explain_every_level (test_attention.AttentionTests.test_five_illustrations_explain_every_level) ... ok\ntest_generated_resources_match (test_attention.AttentionTests.test_generated_resources_match) ... ok\ntest_invalid_profiles_and_command_labels_fail (test_attention.AttentionTests.test_invalid_profiles_and_command_labels_fail) ... ok\ntest_risky_profile_warns_without_rewriting (test_attention.AttentionTests.test_risky_profile_warns_without_rewriting) ... ok\ntest_single_installed_skill_runs_isolated_and_preserves_unrelated_files (test_attention.AttentionTests.test_single_installed_skill_runs_isolated_and_preserves_unrelated_files) ... ok\ntest_step_override_inherits_and_does_not_mutate_task (test_attention.AttentionTests.test_step_override_inherits_and_does_not_mutate_task) ... ok\ntest_workflow_switch_preserves_task_configuration (test_attention.AttentionTests.test_workflow_switch_preserves_task_configuration) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.155s\n\nOK\n",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "scripts/attention_assets.py"
+      ],
+      "exit_code": 0,
+      "output": "PASS: attention resources and diagram\n",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": {
+    "scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+    "scripts/attention_assets.py": "1cbfdebd2f72e8a390bd49e66aaa3dc79fa295e7308a204a994175208c29801b",
+    "scripts/attention_illustrations.py": "2ae2e981040a49c44dc06c829c70de5eee68e1cabe23266134aa9239cae34ddc",
+    "skills/agent-attention/references/attention.md": "693cb0ce9f7f9e94623a2658c4974f6361d777da591d28620b9ed206c48d6965",
+    "skills/agent-attention/scripts/attention.py": "4bd4656148ff4dd336e3d375a1adc600806d25ad2407ba07da56dbcb26d7746d",
+    "skills/agent-attention/SKILL.md": "2b277c09543b545a56a9b87216b68152511009d8882d3eae1fa886bd1737c474",
+    "tests/test_attention.py": "e0a683cfed4671a21d9c83844f25d49091a36a98d0ab36e757d802a0aac8f125"
+  },
+  "status": "PASS",
+  "model_adherence": "NOT_RUN",
+  "token_savings": "NOT_RUN",
+  "native_picker": "NOT_RUN"
+}

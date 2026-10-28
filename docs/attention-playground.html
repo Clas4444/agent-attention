@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent attention playground</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6f4;color:#16313b;font:17px/1.5 system-ui,sans-serif}
+main{max-width:1040px;margin:auto;padding:40px 24px}h1{font-size:36px;margin-bottom:8px}p{color:#415d67}
+.layout{display:grid;grid-template-columns:1.1fr 1fr;gap:24px}.panel{padding:24px;background:#ffffff;border:1px solid #cddcda;border-radius:16px}
+.control{margin:0 0 25px}label{display:flex;justify-content:space-between;font-weight:650}input{width:100%;accent-color:#5de2b3;margin:16px 0 5px}
+.ends{display:flex;justify-content:space-between;font-size:13px;color:#415d67}small{display:block;color:#415d67;margin-top:6px}
+button{border:0;border-radius:8px;padding:12px 18px;background:#5de2b3;color:#101827;font-weight:700;cursor:pointer}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#e0eee8;padding:16px;border-radius:8px;font-size:14px}
+li{margin:10px 0}#warnings{color:#9a4c32}a{color:#126957}select{font:inherit;padding:6px;background:#ffffff;color:#16313b}
+@media(max-width:750px){.layout{grid-template-columns:1fr}h1{font-size:28px}}
+</style><main>
+<h1>Agent attention / experiment</h1>
+<p>Five independent controls. Level 3 keeps the ordinary balanced policy. This offline page previews guidance; it does not change Codex or run a task.</p>
+<div class="layout"><section class="panel" aria-label="Attention controls"><div id="controls"></div>
+<button id="reset" type="button">Reset to balanced</button></section>
+<section class="panel" aria-label="Resolved guidance"><label for="skill">Example workflow label</label>
+<select id="skill"><option>direct</option><option>loop-code</option><option>research</option></select>
+<h2 id="mode">Balanced</h2><pre id="command"></pre><ul id="guidance" aria-live="polite"></ul><ul id="warnings" aria-live="polite"></ul>
+<p>Required checks, permissions and task scope stay in force. Shared-contract changes always trigger reconciliation before dependent work. No minimum iteration count. Token savings are unmeasured.</p>
+<p><a href="GUIDE.md">Guide and tradeoffs</a></p></section></div>
+<p>Request → bounded action → check → reconcile when needed → next action or stop.</p>
+</main><script>
+const axes = {"focus": ["One bounded action; retain a pointer to the shared task checkpoint.", "One component and its immediate contract.", "Use the existing skill task scope; expand context when needed.", "Keep the changed component and its direct dependents in view.", "Keep the authorized end-to-end flow and cross-component contracts in view."], "sync": ["Reconcile at task completion; reconcile earlier if a shared contract changes.", "Reconcile after each completed group of related work.", "Use the existing skill checkpoints and reconcile at important boundaries.", "Reconcile after each change that affects another component.", "Reconcile after each step that changes shared state or assumptions."], "batch": ["One observable action per iteration.", "One small reversible change per iteration.", "Use the existing skill batch size for a complete bounded work item.", "Group related changes only when they share acceptance criteria.", "Plan a larger authorized stage, retaining reversible internal checkpoints."], "explore": ["Start from supplied sources; follow required dependencies when discovered.", "Inspect the target and immediate references first.", "Use the existing skill discovery strategy; expand for concrete unknowns.", "Proactively inspect direct dependencies and conflicting assumptions.", "Map the relevant authorized flow before selecting the first action."], "verify": ["Check the direct result plus all mandatory and risk-triggered checks.", "Check the changed area and its immediate contract.", "Use the existing skill risk-based verification.", "Add nearby regressions and relevant boundary cases.", "Add independent checks of consequential assumptions and affected contracts."]};
+const labels = {focus:'Attention width',sync:'Reconciliation cadence',batch:'Work per iteration',explore:'Exploration breadth',verify:'Verification depth'};
+const ends = {focus:['One action','Relevant flow'],sync:['At completion*','Shared-state steps'],batch:['One action','Larger stage'],explore:['Supplied sources*','Map relevant flow'],verify:['Direct result*','Independent checks']};
+const inputs = {};
+for (const key of Object.keys(axes)) {
+  const box = document.createElement('div'); box.className='control';
+  const label = document.createElement('label'); label.htmlFor=key;
+  label.append(document.createTextNode(labels[key]));
+  const value = document.createElement('output'); value.id=key+'-value'; label.append(value);
+  const input = document.createElement('input'); input.id=key; input.type='range'; input.min='1'; input.max='5'; input.step='1'; input.value='3';
+  const edge = document.createElement('div'); edge.className='ends';
+  for (const text of ends[key]) { const span=document.createElement('span');span.textContent=text;edge.append(span); }
+  const note = document.createElement('small'); note.id=key+'-note'; input.setAttribute('aria-describedby',note.id);
+  box.append(label,input,edge,note);document.getElementById('controls').append(box);inputs[key]=input;
+  input.addEventListener('input',render);
+}
+function items(id, values) {
+  const list=document.getElementById(id);list.replaceChildren();
+  for(const text of values){const item=document.createElement('li');item.textContent=text;list.append(item);}
+}
+function render() {
+  const levels={};const directives=[];const warnings=[];
+  for(const [key,input] of Object.entries(inputs)) {
+    const n=Number(input.value);levels[key]=n;
+    document.getElementById(key+'-value').textContent=n===3?'3 · balanced':String(n);
+    document.getElementById(key+'-note').textContent=axes[key][n-1];
+    if(n!==3)directives.push(key+': '+axes[key][n-1]);
+  }
+  if(levels.focus<=2&&levels.batch>=4)warnings.push('Narrow attention with a large batch can hide dependencies; split at contract boundaries.');
+  if(levels.sync<=2&&(levels.focus<=2||levels.batch>=4))warnings.push('Sparse reconciliation can accumulate drift; reconcile immediately on shared-contract changes.');
+  if(levels.explore>=4&&levels.focus<=2)warnings.push('Broad exploration may dominate a narrow task; record findings, then return to the selected action.');
+  const changed=Object.entries(levels).filter(([key,n])=>n!==3).map(([key,n])=>key+'='+n);
+  const setting=changed.length?changed.join(','):'balanced';
+  document.getElementById('mode').textContent=changed.length?'Custom profile':'Balanced';
+  document.getElementById('command').textContent='python scripts/attention.py --workflow '+document.getElementById('skill').value+' --attention "'+setting+'"';
+  items('guidance',directives.length?directives:['No overrides: use the existing skill workflow.']);items('warnings',warnings);
+  window.attentionPreview={levels,directives,warnings,setting};
+}
+document.getElementById('reset').addEventListener('click',()=>{for(const input of Object.values(inputs))input.value='3';render();});
+document.getElementById('skill').addEventListener('change',render);render();
+</script></html>

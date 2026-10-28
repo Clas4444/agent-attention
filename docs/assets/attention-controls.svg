@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+<title id="title">How attention settings change a loop</title><desc id="desc">Five behavior choices, each with five levels. No requested setting means balanced.</desc>
+<rect width="1440" height="900" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">AGENT ATTENTION / EXPERIMENT</text>
+<text x="40" y="90" font-size="34" fill="#16313b" font-weight="700">One task. Five independent behavior choices.</text>
+<text x="40" y="135" font-size="19" fill="#415d67">No requested setting: use the ordinary balanced workflow. Numbers are positions, not quality scores.</text>
+<rect x="40" y="175" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
+<text x="58" y="205" font-size="20" fill="#16313b" font-weight="700">Attention width</text>
+<text x="58" y="233" font-size="15" fill="#126957">focus</text>
+<text x="365" y="205" font-size="17" fill="#415d67">1 / One action</text>
+<text x="569" y="205" font-size="17" fill="#415d67">2 / One component</text>
+<text x="773" y="205" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
+<text x="977" y="205" font-size="17" fill="#415d67">4 / Direct dependents</text>
+<text x="1181" y="205" font-size="17" fill="#415d67">5 / Relevant whole</text>
+<text x="1181" y="230" font-size="17" fill="#415d67">flow</text>
+<rect x="40" y="287" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
+<text x="58" y="317" font-size="20" fill="#16313b" font-weight="700">Reconciliation cadence</text>
+<text x="58" y="345" font-size="15" fill="#126957">sync</text>
+<text x="365" y="317" font-size="17" fill="#415d67">1 / At completion*</text>
+<text x="569" y="317" font-size="17" fill="#415d67">2 / After a group</text>
+<text x="773" y="317" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
+<text x="977" y="317" font-size="17" fill="#415d67">4 / After shared</text>
+<text x="977" y="342" font-size="17" fill="#415d67">changes</text>
+<text x="1181" y="317" font-size="17" fill="#415d67">5 / After</text>
+<text x="1181" y="342" font-size="17" fill="#415d67">shared-state steps</text>
+<rect x="40" y="399" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
+<text x="58" y="429" font-size="20" fill="#16313b" font-weight="700">Work per iteration</text>
+<text x="58" y="457" font-size="15" fill="#126957">batch</text>
+<text x="365" y="429" font-size="17" fill="#415d67">1 / One action</text>
+<text x="569" y="429" font-size="17" fill="#415d67">2 / Small change</text>
+<text x="773" y="429" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
+<text x="977" y="429" font-size="17" fill="#415d67">4 / Related group</text>
+<text x="1181" y="429" font-size="17" fill="#415d67">5 / Larger stage</text>
+<rect x="40" y="511" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
+<text x="58" y="541" font-size="20" fill="#16313b" font-weight="700">Exploration breadth</text>
+<text x="58" y="569" font-size="15" fill="#126957">explore</text>
+<text x="365" y="541" font-size="17" fill="#415d67">1 / Supplied sources*</text>
+<text x="569" y="541" font-size="17" fill="#415d67">2 / Immediate</text>
+<text x="569" y="566" font-size="17" fill="#415d67">references</text>
+<text x="773" y="541" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
+<text x="977" y="541" font-size="17" fill="#415d67">4 / Direct</text>
+<text x="977" y="566" font-size="17" fill="#415d67">dependencies</text>
+<text x="1181" y="541" font-size="17" fill="#415d67">5 / Relevant flow map</text>
+<rect x="40" y="623" width="1360" height="96" rx="10" fill="#ffffff" stroke="#cddcda"/>
+<text x="58" y="653" font-size="20" fill="#16313b" font-weight="700">Verification depth</text>
+<text x="58" y="681" font-size="15" fill="#126957">verify</text>
+<text x="365" y="653" font-size="17" fill="#415d67">1 / Direct result*</text>
+<text x="569" y="653" font-size="17" fill="#415d67">2 / Immediate</text>
+<text x="569" y="678" font-size="17" fill="#415d67">contract</text>
+<text x="773" y="653" font-size="17" fill="#126957" font-weight="700">3 / Balanced</text>
+<text x="977" y="653" font-size="17" fill="#415d67">4 / Regression +</text>
+<text x="977" y="678" font-size="17" fill="#415d67">boundaries</text>
+<text x="1181" y="653" font-size="17" fill="#415d67">5 / Independent</text>
+<text x="1181" y="678" font-size="17" fill="#415d67">checks</text>
+<rect x="40" y="755" width="1360" height="105" rx="12" fill="#e0eee8"/>
+<text x="60" y="788" font-size="22" fill="#16313b" font-weight="700">Select useful action → act → check → reconcile when needed → next action or STOP</text>
+<text x="60" y="824" font-size="18" fill="#415d67">Narrow focus can reduce active context but increase rework. Wider context adds cost and cross-component awareness.</text>
+</g></svg>

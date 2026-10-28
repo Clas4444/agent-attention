@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">Exploration breadth — five loop behaviors</title><desc id="desc">Where should the loop look before selecting its next action?</desc>
+<rect width="1440" height="1040" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">AGENT ATTENTION / EXPLORE</text>
+<text x="40" y="90" font-size="36" fill="#16313b" font-weight="700">Exploration breadth</text>
+<text x="40" y="140" font-size="21" fill="#415d67">Where should the loop look before selecting its next action?</text>
+<text x="40" y="185" font-size="19" fill="#415d67">Choose the behavior that fits the task. Level 3 keeps the ordinary skill policy.</text>
+<rect x="40" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="58" y="257" font-size="15" fill="#126957" font-weight="700">01 / EXPLORE</text>
+<text x="58" y="296" font-size="22" fill="#16313b" font-weight="700">Supplied sources*</text>
+<text x="58" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="58" y="413" font-size="17" fill="#415d67">Start from supplied</text>
+<text x="58" y="438" font-size="17" fill="#415d67">sources; follow required</text>
+<text x="58" y="463" font-size="17" fill="#415d67">dependencies when</text>
+<text x="58" y="488" font-size="17" fill="#415d67">discovered.</text>
+<text x="58" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="58" y="623" font-size="17" fill="#415d67">A known target with</text>
+<text x="58" y="648" font-size="17" fill="#415d67">clear inputs</text>
+<text x="58" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="58" y="739" font-size="17" fill="#415d67">Follow required</text>
+<text x="58" y="764" font-size="17" fill="#415d67">dependencies if found.</text>
+<text x="58" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="58" y="844" font-size="16" fill="#6d4940">Ignore evidence outside the</text>
+<text x="58" y="868" font-size="16" fill="#6d4940">first file.</text>
+<rect x="316" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="334" y="257" font-size="15" fill="#126957" font-weight="700">02 / EXPLORE</text>
+<text x="334" y="296" font-size="22" fill="#16313b" font-weight="700">Immediate</text>
+<text x="334" y="326" font-size="22" fill="#16313b" font-weight="700">references</text>
+<text x="334" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="334" y="413" font-size="17" fill="#415d67">Inspect the target and</text>
+<text x="334" y="438" font-size="17" fill="#415d67">immediate references</text>
+<text x="334" y="463" font-size="17" fill="#415d67">first.</text>
+<text x="334" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="334" y="623" font-size="17" fill="#415d67">A localized task</text>
+<text x="334" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="334" y="739" font-size="17" fill="#415d67">Read direct imports and</text>
+<text x="334" y="764" font-size="17" fill="#415d67">contracts.</text>
+<text x="334" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="334" y="844" font-size="16" fill="#6d4940">Assume names prove</text>
+<text x="334" y="868" font-size="16" fill="#6d4940">behavior.</text>
+<rect x="592" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#126957" stroke-width="2"/>
+<text x="610" y="257" font-size="15" fill="#126957" font-weight="700">03 / BALANCED</text>
+<text x="610" y="296" font-size="22" fill="#16313b" font-weight="700">Balanced</text>
+<text x="610" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="610" y="413" font-size="17" fill="#415d67">Use the existing skill</text>
+<text x="610" y="438" font-size="17" fill="#415d67">discovery strategy;</text>
+<text x="610" y="463" font-size="17" fill="#415d67">expand for concrete</text>
+<text x="610" y="488" font-size="17" fill="#415d67">unknowns.</text>
+<text x="610" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="610" y="623" font-size="17" fill="#415d67">Ordinary uncertainty</text>
+<text x="610" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="610" y="739" font-size="17" fill="#415d67">Expand for a specific</text>
+<text x="610" y="764" font-size="17" fill="#415d67">open question.</text>
+<text x="610" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="610" y="844" font-size="16" fill="#6d4940">Search the whole repo</text>
+<text x="610" y="868" font-size="16" fill="#6d4940">repeatedly.</text>
+<rect x="868" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="886" y="257" font-size="15" fill="#126957" font-weight="700">04 / EXPLORE</text>
+<text x="886" y="296" font-size="22" fill="#16313b" font-weight="700">Direct</text>
+<text x="886" y="326" font-size="22" fill="#16313b" font-weight="700">dependencies</text>
+<text x="886" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="886" y="413" font-size="17" fill="#415d67">Proactively inspect</text>
+<text x="886" y="438" font-size="17" fill="#415d67">direct dependencies and</text>
+<text x="886" y="463" font-size="17" fill="#415d67">conflicting assumptions.</text>
+<text x="886" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="886" y="623" font-size="17" fill="#415d67">Likely cross-component</text>
+<text x="886" y="648" font-size="17" fill="#415d67">impact</text>
+<text x="886" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="886" y="739" font-size="17" fill="#415d67">Look proactively for</text>
+<text x="886" y="764" font-size="17" fill="#415d67">conflicting assumptions.</text>
+<text x="886" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="886" y="844" font-size="16" fill="#6d4940">Expand without a</text>
+<text x="886" y="868" font-size="16" fill="#6d4940">task-related reason.</text>
+<rect x="1144" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="1162" y="257" font-size="15" fill="#126957" font-weight="700">05 / EXPLORE</text>
+<text x="1162" y="296" font-size="22" fill="#16313b" font-weight="700">Relevant flow map</text>
+<text x="1162" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="1162" y="413" font-size="17" fill="#415d67">Map the relevant</text>
+<text x="1162" y="438" font-size="17" fill="#415d67">authorized flow before</text>
+<text x="1162" y="463" font-size="17" fill="#415d67">selecting the first</text>
+<text x="1162" y="488" font-size="17" fill="#415d67">action.</text>
+<text x="1162" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="1162" y="623" font-size="17" fill="#415d67">An unfamiliar connected</text>
+<text x="1162" y="648" font-size="17" fill="#415d67">system</text>
+<text x="1162" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="1162" y="739" font-size="17" fill="#415d67">Map the relevant route,</text>
+<text x="1162" y="764" font-size="17" fill="#415d67">then act.</text>
+<text x="1162" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="1162" y="844" font-size="16" fill="#6d4940">Keep exploring after enough</text>
+<text x="1162" y="868" font-size="16" fill="#6d4940">evidence.</text>
+<rect x="40" y="930" width="1360" height="76" rx="12" fill="#e0eee8"/>
+<text x="60" y="960" font-size="18" fill="#16313b" font-weight="700">Always: preserve permissions, required checks and task scope. Stop when complete or blocked.</text>
+<text x="60" y="987" font-size="16" fill="#415d67">* Required dependencies and shared-contract reconciliation override sparse timing. Token savings remain unmeasured.</text>
+</g></svg>

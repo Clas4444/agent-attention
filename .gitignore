@@ -1,0 +1,6 @@
+.loop/
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*

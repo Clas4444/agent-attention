@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">Attention width — five loop behaviors</title><desc id="desc">How much related work stays in active context?</desc>
+<rect width="1440" height="1040" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">AGENT ATTENTION / FOCUS</text>
+<text x="40" y="90" font-size="36" fill="#16313b" font-weight="700">Attention width</text>
+<text x="40" y="140" font-size="21" fill="#415d67">How much related work stays in active context?</text>
+<text x="40" y="185" font-size="19" fill="#415d67">Choose the behavior that fits the task. Level 3 keeps the ordinary skill policy.</text>
+<rect x="40" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="58" y="257" font-size="15" fill="#126957" font-weight="700">01 / FOCUS</text>
+<text x="58" y="296" font-size="22" fill="#16313b" font-weight="700">One action</text>
+<text x="58" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="58" y="413" font-size="17" fill="#415d67">One bounded action;</text>
+<text x="58" y="438" font-size="17" fill="#415d67">retain a pointer to the</text>
+<text x="58" y="463" font-size="17" fill="#415d67">shared task checkpoint.</text>
+<text x="58" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="58" y="623" font-size="17" fill="#415d67">A small isolated task</text>
+<text x="58" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="58" y="739" font-size="17" fill="#415d67">Keep a pointer to the</text>
+<text x="58" y="764" font-size="17" fill="#415d67">shared goal.</text>
+<text x="58" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="58" y="844" font-size="16" fill="#6d4940">Forget callers when a</text>
+<text x="58" y="868" font-size="16" fill="#6d4940">contract changes.</text>
+<rect x="316" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="334" y="257" font-size="15" fill="#126957" font-weight="700">02 / FOCUS</text>
+<text x="334" y="296" font-size="22" fill="#16313b" font-weight="700">One component</text>
+<text x="334" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="334" y="413" font-size="17" fill="#415d67">One component and its</text>
+<text x="334" y="438" font-size="17" fill="#415d67">immediate contract.</text>
+<text x="334" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="334" y="623" font-size="17" fill="#415d67">A local module change</text>
+<text x="334" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="334" y="739" font-size="17" fill="#415d67">Read its immediate</text>
+<text x="334" y="764" font-size="17" fill="#415d67">contract.</text>
+<text x="334" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="334" y="844" font-size="16" fill="#6d4940">Assume neighboring modules</text>
+<text x="334" y="868" font-size="16" fill="#6d4940">agree.</text>
+<rect x="592" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#126957" stroke-width="2"/>
+<text x="610" y="257" font-size="15" fill="#126957" font-weight="700">03 / BALANCED</text>
+<text x="610" y="296" font-size="22" fill="#16313b" font-weight="700">Balanced</text>
+<text x="610" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="610" y="413" font-size="17" fill="#415d67">Use the existing skill</text>
+<text x="610" y="438" font-size="17" fill="#415d67">task scope; expand</text>
+<text x="610" y="463" font-size="17" fill="#415d67">context when needed.</text>
+<text x="610" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="610" y="623" font-size="17" fill="#415d67">An ordinary scoped task</text>
+<text x="610" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="610" y="739" font-size="17" fill="#415d67">Expand for concrete</text>
+<text x="610" y="764" font-size="17" fill="#415d67">dependencies.</text>
+<text x="610" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="610" y="844" font-size="16" fill="#6d4940">Read every file by default.</text>
+<rect x="868" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="886" y="257" font-size="15" fill="#126957" font-weight="700">04 / FOCUS</text>
+<text x="886" y="296" font-size="22" fill="#16313b" font-weight="700">Direct dependents</text>
+<text x="886" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="886" y="413" font-size="17" fill="#415d67">Keep the changed</text>
+<text x="886" y="438" font-size="17" fill="#415d67">component and its direct</text>
+<text x="886" y="463" font-size="17" fill="#415d67">dependents in view.</text>
+<text x="886" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="886" y="623" font-size="17" fill="#415d67">An API or schema change</text>
+<text x="886" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="886" y="739" font-size="17" fill="#415d67">Compare affected caller</text>
+<text x="886" y="764" font-size="17" fill="#415d67">assumptions.</text>
+<text x="886" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="886" y="844" font-size="16" fill="#6d4940">Widen the authorized task.</text>
+<rect x="1144" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="1162" y="257" font-size="15" fill="#126957" font-weight="700">05 / FOCUS</text>
+<text x="1162" y="296" font-size="22" fill="#16313b" font-weight="700">Relevant whole</text>
+<text x="1162" y="326" font-size="22" fill="#16313b" font-weight="700">flow</text>
+<text x="1162" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="1162" y="413" font-size="17" fill="#415d67">Keep the authorized</text>
+<text x="1162" y="438" font-size="17" fill="#415d67">end-to-end flow and</text>
+<text x="1162" y="463" font-size="17" fill="#415d67">cross-component contracts</text>
+<text x="1162" y="488" font-size="17" fill="#415d67">in view.</text>
+<text x="1162" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="1162" y="623" font-size="17" fill="#415d67">An end-to-end contract</text>
+<text x="1162" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="1162" y="739" font-size="17" fill="#415d67">Keep cross-component</text>
+<text x="1162" y="764" font-size="17" fill="#415d67">constraints visible.</text>
+<text x="1162" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="1162" y="844" font-size="16" fill="#6d4940">Carry irrelevant detail</text>
+<text x="1162" y="868" font-size="16" fill="#6d4940">forever.</text>
+<rect x="40" y="930" width="1360" height="76" rx="12" fill="#e0eee8"/>
+<text x="60" y="960" font-size="18" fill="#16313b" font-weight="700">Always: preserve permissions, required checks and task scope. Stop when complete or blocked.</text>
+<text x="60" y="987" font-size="16" fill="#415d67">* Required dependencies and shared-contract reconciliation override sparse timing. Token savings remain unmeasured.</text>
+</g></svg>

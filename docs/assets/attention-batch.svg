@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">Work per iteration — five loop behaviors</title><desc id="desc">How much work is planned before the next loop checkpoint?</desc>
+<rect width="1440" height="1040" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">AGENT ATTENTION / BATCH</text>
+<text x="40" y="90" font-size="36" fill="#16313b" font-weight="700">Work per iteration</text>
+<text x="40" y="140" font-size="21" fill="#415d67">How much work is planned before the next loop checkpoint?</text>
+<text x="40" y="185" font-size="19" fill="#415d67">Choose the behavior that fits the task. Level 3 keeps the ordinary skill policy.</text>
+<rect x="40" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="58" y="257" font-size="15" fill="#126957" font-weight="700">01 / BATCH</text>
+<text x="58" y="296" font-size="22" fill="#16313b" font-weight="700">One action</text>
+<text x="58" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="58" y="413" font-size="17" fill="#415d67">One observable action per</text>
+<text x="58" y="438" font-size="17" fill="#415d67">iteration.</text>
+<text x="58" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="58" y="623" font-size="17" fill="#415d67">One hypothesis or risky</text>
+<text x="58" y="648" font-size="17" fill="#415d67">operation</text>
+<text x="58" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="58" y="739" font-size="17" fill="#415d67">Observe the result before</text>
+<text x="58" y="764" font-size="17" fill="#415d67">moving on.</text>
+<text x="58" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="58" y="844" font-size="16" fill="#6d4940">Change several debug</text>
+<text x="58" y="868" font-size="16" fill="#6d4940">hypotheses together.</text>
+<rect x="316" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="334" y="257" font-size="15" fill="#126957" font-weight="700">02 / BATCH</text>
+<text x="334" y="296" font-size="22" fill="#16313b" font-weight="700">Small change</text>
+<text x="334" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="334" y="413" font-size="17" fill="#415d67">One small reversible</text>
+<text x="334" y="438" font-size="17" fill="#415d67">change per iteration.</text>
+<text x="334" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="334" y="623" font-size="17" fill="#415d67">A narrow reversible edit</text>
+<text x="334" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="334" y="739" font-size="17" fill="#415d67">Keep rollback and checks</text>
+<text x="334" y="764" font-size="17" fill="#415d67">local.</text>
+<text x="334" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="334" y="844" font-size="16" fill="#6d4940">Split work into meaningless</text>
+<text x="334" y="868" font-size="16" fill="#6d4940">fragments.</text>
+<rect x="592" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#126957" stroke-width="2"/>
+<text x="610" y="257" font-size="15" fill="#126957" font-weight="700">03 / BALANCED</text>
+<text x="610" y="296" font-size="22" fill="#16313b" font-weight="700">Balanced</text>
+<text x="610" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="610" y="413" font-size="17" fill="#415d67">Use the existing skill</text>
+<text x="610" y="438" font-size="17" fill="#415d67">batch size for a complete</text>
+<text x="610" y="463" font-size="17" fill="#415d67">bounded work item.</text>
+<text x="610" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="610" y="623" font-size="17" fill="#415d67">A complete bounded work</text>
+<text x="610" y="648" font-size="17" fill="#415d67">item</text>
+<text x="610" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="610" y="739" font-size="17" fill="#415d67">Finish a useful</text>
+<text x="610" y="764" font-size="17" fill="#415d67">acceptance item.</text>
+<text x="610" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="610" y="844" font-size="16" fill="#6d4940">Require extra rounds after</text>
+<text x="610" y="868" font-size="16" fill="#6d4940">completion.</text>
+<rect x="868" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="886" y="257" font-size="15" fill="#126957" font-weight="700">04 / BATCH</text>
+<text x="886" y="296" font-size="22" fill="#16313b" font-weight="700">Related group</text>
+<text x="886" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="886" y="413" font-size="17" fill="#415d67">Group related changes</text>
+<text x="886" y="438" font-size="17" fill="#415d67">only when they share</text>
+<text x="886" y="463" font-size="17" fill="#415d67">acceptance criteria.</text>
+<text x="886" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="886" y="623" font-size="17" fill="#415d67">Changes sharing one</text>
+<text x="886" y="648" font-size="17" fill="#415d67">acceptance goal</text>
+<text x="886" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="886" y="739" font-size="17" fill="#415d67">Check each dependency</text>
+<text x="886" y="764" font-size="17" fill="#415d67">boundary.</text>
+<text x="886" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="886" y="844" font-size="16" fill="#6d4940">Bundle unrelated fixes.</text>
+<rect x="1144" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="1162" y="257" font-size="15" fill="#126957" font-weight="700">05 / BATCH</text>
+<text x="1162" y="296" font-size="22" fill="#16313b" font-weight="700">Larger stage</text>
+<text x="1162" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="1162" y="413" font-size="17" fill="#415d67">Plan a larger authorized</text>
+<text x="1162" y="438" font-size="17" fill="#415d67">stage, retaining</text>
+<text x="1162" y="463" font-size="17" fill="#415d67">reversible internal</text>
+<text x="1162" y="488" font-size="17" fill="#415d67">checkpoints.</text>
+<text x="1162" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="1162" y="623" font-size="17" fill="#415d67">A coherent authorized</text>
+<text x="1162" y="648" font-size="17" fill="#415d67">stage</text>
+<text x="1162" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="1162" y="739" font-size="17" fill="#415d67">Keep reversible internal</text>
+<text x="1162" y="764" font-size="17" fill="#415d67">checkpoints.</text>
+<text x="1162" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="1162" y="844" font-size="16" fill="#6d4940">Make one unreviewable giant</text>
+<text x="1162" y="868" font-size="16" fill="#6d4940">change.</text>
+<rect x="40" y="930" width="1360" height="76" rx="12" fill="#e0eee8"/>
+<text x="60" y="960" font-size="18" fill="#16313b" font-weight="700">Always: preserve permissions, required checks and task scope. Stop when complete or blocked.</text>
+<text x="60" y="987" font-size="16" fill="#415d67">* Required dependencies and shared-contract reconciliation override sparse timing. Token savings remain unmeasured.</text>
+</g></svg>

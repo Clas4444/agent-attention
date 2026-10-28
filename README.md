@@ -1,0 +1,75 @@
+# Agent Attention
+
+An independent attention layer for AI agents: **five axes, five levels each,
+balanced by default**. Choose a task profile once and carry it across direct work,
+Loop or other skills. No downstream skill modification is required.
+
+Experimental version: **0.1.0**. This is behavioral guidance, not a model
+reasoning-effort setting or an enforced scheduler. Token savings are unmeasured.
+
+![Five independent behavior choices](docs/assets/attention-controls.svg)
+
+## Start
+
+Install the self-contained `skills/agent-attention` folder in your host's supported
+skill directory. For a Codex project, for example, copy that folder to
+`.agents/skills/agent-attention`; preserve any existing local customization.
+Open a fresh session and verify actual host discovery. Do not replace the host's
+skills directory or install the entire source repo as one skill.
+
+On a host supporting explicit skill mentions:
+
+```text
+Use $agent-attention with focus=2,sync=4 for this task.
+Keep the profile while implementing, testing and reviewing.
+```
+
+Read-only configuration preview from this repository:
+
+```text
+python scripts/attention.py --attention "focus=2,sync=4" --workflow direct
+python scripts/attention.py --attention balanced --workflow loop-code
+```
+
+The workflow label does not invoke anything. All unspecified axes remain 3.
+No attention request means ordinary host/workflow behavior.
+
+## What changes
+
+| Axis | Controls | Balanced |
+|---|---|---|
+| focus | active attention width | existing task scope |
+| sync | reconciliation cadence | important task boundaries |
+| batch | work per iteration | complete bounded item |
+| explore | discovery breadth | expand for concrete unknowns |
+| verify | additional checking depth | existing risk-based checks |
+
+Permissions, mandatory checks and correctness requirements remain. Shared-contract
+changes always trigger reconciliation before dependent work. More is not always
+better: broad context adds cost; narrow context can increase rework.
+
+[Full guide, level illustrations and tradeoffs](docs/GUIDE.md) ·
+[Offline configuration preview](docs/attention-playground.html) ·
+[Evidence and limitations](docs/testing/RESULTS.md)
+
+## Develop
+
+Python 3.11+, standard library only:
+
+```text
+python -m unittest discover -s tests -v
+python scripts/attention_assets.py
+```
+
+After changing generator sources, run `python scripts/attention_assets.py --write`.
+Generated outputs are checked in tests and CI.
+
+## Origin
+
+Extracted from the attention prototype in
+[agent-workflows](https://github.com/Clas4444/agent-workflows), based on prototype
+commit `e2b1b717b1e751a9218fa6ad22381c6fd7f55cbb` retained locally after deleting
+the remote experiment branch. This repo has separate history and checks. It does
+not include the 53 Loop skills or inherit their historical runtime PASS claims.
+
+MIT license; original copyright retained.

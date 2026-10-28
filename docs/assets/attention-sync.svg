@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040" role="img" aria-labelledby="title desc">
+<title id="title">Reconciliation cadence — five loop behaviors</title><desc id="desc">When should the loop compare local progress with shared state?</desc>
+<rect width="1440" height="1040" rx="20" fill="#f2f6f4"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#16313b">
+<text x="40" y="38" font-size="15" fill="#126957" font-weight="700">AGENT ATTENTION / SYNC</text>
+<text x="40" y="90" font-size="36" fill="#16313b" font-weight="700">Reconciliation cadence</text>
+<text x="40" y="140" font-size="21" fill="#415d67">When should the loop compare local progress with shared state?</text>
+<text x="40" y="185" font-size="19" fill="#415d67">Choose the behavior that fits the task. Level 3 keeps the ordinary skill policy.</text>
+<rect x="40" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="58" y="257" font-size="15" fill="#126957" font-weight="700">01 / SYNC</text>
+<text x="58" y="296" font-size="22" fill="#16313b" font-weight="700">At completion*</text>
+<text x="58" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="58" y="413" font-size="17" fill="#415d67">Reconcile at task</text>
+<text x="58" y="438" font-size="17" fill="#415d67">completion; reconcile</text>
+<text x="58" y="463" font-size="17" fill="#415d67">earlier if a shared</text>
+<text x="58" y="488" font-size="17" fill="#415d67">contract changes.</text>
+<text x="58" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="58" y="623" font-size="17" fill="#415d67">Independent work with</text>
+<text x="58" y="648" font-size="17" fill="#415d67">stable inputs</text>
+<text x="58" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="58" y="739" font-size="17" fill="#415d67">Reconcile earlier on</text>
+<text x="58" y="764" font-size="17" fill="#415d67">contract change.</text>
+<text x="58" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="58" y="844" font-size="16" fill="#6d4940">Defer a known conflict</text>
+<text x="58" y="868" font-size="16" fill="#6d4940">until delivery.</text>
+<rect x="316" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="334" y="257" font-size="15" fill="#126957" font-weight="700">02 / SYNC</text>
+<text x="334" y="296" font-size="22" fill="#16313b" font-weight="700">After a group</text>
+<text x="334" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="334" y="413" font-size="17" fill="#415d67">Reconcile after each</text>
+<text x="334" y="438" font-size="17" fill="#415d67">completed group of</text>
+<text x="334" y="463" font-size="17" fill="#415d67">related work.</text>
+<text x="334" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="334" y="623" font-size="17" fill="#415d67">Related tasks with few</text>
+<text x="334" y="648" font-size="17" fill="#415d67">shared edges</text>
+<text x="334" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="334" y="739" font-size="17" fill="#415d67">Check shared assumptions</text>
+<text x="334" y="764" font-size="17" fill="#415d67">at handoff.</text>
+<text x="334" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="334" y="844" font-size="16" fill="#6d4940">Pass stale checkpoints</text>
+<text x="334" y="868" font-size="16" fill="#6d4940">onward.</text>
+<rect x="592" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#126957" stroke-width="2"/>
+<text x="610" y="257" font-size="15" fill="#126957" font-weight="700">03 / BALANCED</text>
+<text x="610" y="296" font-size="22" fill="#16313b" font-weight="700">Balanced</text>
+<text x="610" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="610" y="413" font-size="17" fill="#415d67">Use the existing skill</text>
+<text x="610" y="438" font-size="17" fill="#415d67">checkpoints and reconcile</text>
+<text x="610" y="463" font-size="17" fill="#415d67">at important boundaries.</text>
+<text x="610" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="610" y="623" font-size="17" fill="#415d67">Normal task boundaries</text>
+<text x="610" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="610" y="739" font-size="17" fill="#415d67">Reconcile at important</text>
+<text x="610" y="764" font-size="17" fill="#415d67">milestones.</text>
+<text x="610" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="610" y="844" font-size="16" fill="#6d4940">Treat a saved plan as</text>
+<text x="610" y="868" font-size="16" fill="#6d4940">current proof.</text>
+<rect x="868" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="886" y="257" font-size="15" fill="#126957" font-weight="700">04 / SYNC</text>
+<text x="886" y="296" font-size="22" fill="#16313b" font-weight="700">After shared</text>
+<text x="886" y="326" font-size="22" fill="#16313b" font-weight="700">changes</text>
+<text x="886" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="886" y="413" font-size="17" fill="#415d67">Reconcile after each</text>
+<text x="886" y="438" font-size="17" fill="#415d67">change that affects</text>
+<text x="886" y="463" font-size="17" fill="#415d67">another component.</text>
+<text x="886" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="886" y="623" font-size="17" fill="#415d67">Several callers share a</text>
+<text x="886" y="648" font-size="17" fill="#415d67">contract</text>
+<text x="886" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="886" y="739" font-size="17" fill="#415d67">Compare dependencies</text>
+<text x="886" y="764" font-size="17" fill="#415d67">before proceeding.</text>
+<text x="886" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="886" y="844" font-size="16" fill="#6d4940">Recheck unrelated state</text>
+<text x="886" y="868" font-size="16" fill="#6d4940">after every edit.</text>
+<rect x="1144" y="225" width="256" height="680" rx="12" fill="#ffffff" stroke="#cddcda" stroke-width="1"/>
+<text x="1162" y="257" font-size="15" fill="#126957" font-weight="700">05 / SYNC</text>
+<text x="1162" y="296" font-size="22" fill="#16313b" font-weight="700">After shared-state</text>
+<text x="1162" y="326" font-size="22" fill="#16313b" font-weight="700">steps</text>
+<text x="1162" y="382" font-size="14" fill="#126957" font-weight="700">LOOP BEHAVIOR</text>
+<text x="1162" y="413" font-size="17" fill="#415d67">Reconcile after each step</text>
+<text x="1162" y="438" font-size="17" fill="#415d67">that changes shared state</text>
+<text x="1162" y="463" font-size="17" fill="#415d67">or assumptions.</text>
+<text x="1162" y="595" font-size="14" fill="#126957" font-weight="700">CHOOSE WHEN</text>
+<text x="1162" y="623" font-size="17" fill="#415d67">Closely coupled or</text>
+<text x="1162" y="648" font-size="17" fill="#415d67">changing inputs</text>
+<text x="1162" y="711" font-size="14" fill="#126957" font-weight="700">DO</text>
+<text x="1162" y="739" font-size="17" fill="#415d67">Keep short, explicit</text>
+<text x="1162" y="764" font-size="17" fill="#415d67">reconciliations.</text>
+<text x="1162" y="816" font-size="14" fill="#9a4c32" font-weight="700">AVOID</text>
+<text x="1162" y="844" font-size="16" fill="#6d4940">Let coordination replace</text>
+<text x="1162" y="868" font-size="16" fill="#6d4940">useful work.</text>
+<rect x="40" y="930" width="1360" height="76" rx="12" fill="#e0eee8"/>
+<text x="60" y="960" font-size="18" fill="#16313b" font-weight="700">Always: preserve permissions, required checks and task scope. Stop when complete or blocked.</text>
+<text x="60" y="987" font-size="16" fill="#415d67">* Required dependencies and shared-contract reconciliation override sparse timing. Token savings remain unmeasured.</text>
+</g></svg>
