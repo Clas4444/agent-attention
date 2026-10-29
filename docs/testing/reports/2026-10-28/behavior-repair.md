@@ -2,7 +2,7 @@
 
 Historical pre-0.1.1 snapshot: this experiment still used the old batch-size
 direction. Its results do not certify revised decomposition-depth semantics.
-See the effort-direction report linked from [current results](RESULTS.md).
+See the effort-direction report linked from [current results](../../results.md).
 
 The previous validation established profile-state transitions, not the intended
 change in working strategy. It must not be treated as evidence that all five
@@ -35,7 +35,7 @@ same host reasoning setting. Model identity is based on the CLI request, not
 independent backend attestation. Each instruction revision uses identical skill
 bytes across its two trials. The final pair uses a frozen skill snapshot.
 
-See [captured outcomes and trace hashes](BEHAVIOR-REPAIR-2026-10-28.json).
+See [captured outcomes and trace hashes](behavior-repair.json).
 Raw prompts, inputs and JSONL traces remain local under
 `C:/Code/attention-behavior-20261028` and its `-final` sibling; they are not
 published. The local harness is `.loop/behavior-trials.py`.

@@ -1,109 +1,78 @@
 # Agent Attention
 
-An independent attention layer for AI agents: **five axes, five levels each,
-balanced by default**. Choose a task profile once and carry it across direct work,
-Loop or other skills. No downstream skill modification is required.
+Five attention axes, five levels each, balanced by default. Apply a profile to an
+existing task, or design a reusable attention plan with the independent setup skill.
 
-Optional **attention setup** asks about the five-axis base profile, conditional
-temporary levels, tradeoffs and restoration. It works on the task you already
-have. No workflow graph, Loop skill or second repository is required.
+Version: **0.2.4**. Profiles are behavioral guidance, not native model reasoning
+settings or a scheduler. General token savings remain unproven.
 
-Version: **0.2.3**. This is behavioral guidance, not a model
-reasoning-effort setting or an enforced scheduler. General token savings are unproven.
+![Five attention axes](docs/assets/attention-controls.svg)
 
-![Five independent behavior choices](docs/assets/attention-controls.svg)
+## Choose a skill
 
-## Start
+| Need | Install the whole folder | Invoke |
+|---|---|---|
+| Apply task-wide levels and temporary overrides | `skills/agent-attention` | `$agent-attention` |
+| Design base levels, conditional contexts and restoration | `skills/attention-setup` | `$attention-setup` |
 
-Install the self-contained `skills/agent-attention` folder in your host's supported
-skill directory. For a Codex project, for example, copy that folder to
-`.agents/skills/agent-attention`; preserve any existing local customization.
-Open a fresh session and verify actual host discovery. Do not replace the host's
-skills directory or install the entire source repo as one skill.
-
-On a host supporting explicit skill mentions:
+Either skill works independently. Install one or both in your host's skill root;
+for a Codex project, use `.agents/skills/<skill-name>`. Preserve local customization,
+open a fresh session and verify host discovery. Copying a folder does not prove
+native picker activation. See the [skill catalog](skills/README.md).
 
 ```text
 Use $agent-attention with focus=2,sync=4 for this task.
-Keep the profile while implementing, testing and reviewing.
+Keep the profile across implementation, review and testing.
 ```
-
-Read-only configuration preview from this repository:
 
 ```text
-python scripts/attention.py --attention "focus=2,sync=4" --workflow direct
-python scripts/attention.py --attention balanced --workflow loop-code
+Use $attention-setup to design attention settings for my task.
+Keep the plan in context; save a private local map only if I ask.
 ```
 
-The workflow label does not invoke anything. All unspecified axes remain 3.
-No attention request means ordinary host/workflow behavior.
+The earlier `$agent-attention setup` request remains supported by the profile
+skill. It is not a separately registered picker alias. The independent setup skill
+has its own SKILL.md, UI metadata, reference, example and isolated Python helpers.
+It needs no workflow graph, routing cursor, Loop skill or other repository.
 
-New in this version: source-only acceptance checks reject premature exit, forged
-PASS output, protected-file side effects and bytecode shadowing. A bounded
-[three-case benchmark suite](benchmarks/README.md) adds ledger and dependency
-repairs, keeps per-task results separate and stops on environment failures.
-Host exclusions, single-axis designs and no-model planning remain available;
-see [axis campaigns](docs/testing/AXIS-CAMPAIGNS.md).
-See [harder-case results](docs/testing/CODEX-HARDER-2026-10-30.md) for the new
-measurements and limits. The earlier [composite study](docs/testing/CODEX-COMPOSITE-2026-10-30.md)
-is retained separately; neither is a general Codex average.
+## Attention levels
 
-```text
-python scripts/evaluate_effort.py --axis focus --levels 1 2 3 4 5 --repeats 2 --plan
-```
+| Axis | Controls |
+|---|---|
+| `focus` | Width of the relevant context kept active |
+| `sync` | Reconciliation of dependent work and assumptions |
+| `batch` | Decomposition and intermediate inspection depth |
+| `explore` | Breadth of relevant discovery |
+| `verify` | Additional verification depth |
 
-Apply the profile directly to the next read, change and check. Activation requires
-no helper calls, state files or transition summaries. Optional persistence is a
-separate explicit request, not the mechanism that makes the mode work.
+Levels 1–2 reduce discretionary work, 3 keeps ordinary behavior and 4–5 increase
+attention work. Unspecified axes stay 3. Permissions, mandatory checks and
+shared-contract reconciliation remain at every level. Total tokens need not be
+monotonic because of required work, retries and caching.
 
-## Optional attention setup
-
-Ask **`$agent-attention setup`** to design an attention plan. The agent asks about
-scope, base levels, optional conditions, benefits/drawbacks and when to restore
-the base. Keep it in context or explicitly request a private attention map.
-This configures attention; it does not invent task steps, routes or cycles.
-
-![Independent attention setup](docs/assets/attention-setup.svg)
-
-[Attention setup guide](docs/ATTENTION-SETUP.md) ·
-[Optional integration with an existing workflow](docs/WORKFLOW-SETUP.md)
-
-## What changes
-
-| Axis | Controls | Balanced |
-|---|---|---|
-| focus | active attention width | existing task scope |
-| sync | reconciliation cadence | important task boundaries |
-| batch | decomposition and intermediate inspection depth | complete bounded item |
-| explore | discovery breadth | expand for concrete unknowns |
-| verify | additional checking depth | existing risk-based checks |
-
-Permissions, mandatory checks and correctness requirements remain. Shared-contract
-changes always trigger reconciliation before dependent work. More is not always
-better: broad context adds cost; narrow context can increase rework.
-
-All axes now follow the same effort direction: 1–2 reduce discretionary work,
-3 is balanced, 4–5 increase it. Token use is expected to follow that direction,
-but retries, required checks and cache effects can change total usage.
-**0.1.0 migration:** `batch` previously meant batch size; in 0.1.1 it means
-decomposition depth. Re-select non-default batch levels instead of reusing old
-profiles unchanged. Older checkpoint files do not identify the semantic revision.
-
-[Full guide, level illustrations and tradeoffs](docs/GUIDE.md) ·
-[Offline configuration preview](docs/attention-playground.html) ·
-[Evidence and limitations](docs/testing/RESULTS.md)
+Read the [profile guide](docs/guides/attention-profiles.md),
+[setup guide](docs/guides/attention-setup.md) or
+[offline playground](docs/playground/index.html). Graph integration is
+[optional and separate](docs/guides/workflow-integration.md).
 
 ## Repository layout
 
-- `skills/agent-attention/`: the self-contained installable attention layer.
-- `scripts/attention*.py`, `scripts/checkpoint.py`, `scripts/workflow*.py`: core helpers and generators.
-- `scripts/evaluation/`: opt-in runner, acceptance oracle and suite orchestration;
-  top-level evaluation CLI entry points remain compatible.
-- `benchmarks/cases/`: versioned repair inputs and independent checker controls.
-- `tests/`: deterministic unit/integration checks; no real model calls.
-- `docs/testing/`: [current evidence and historical reports](docs/testing/README.md).
+| Location | Contents |
+|---|---|
+| `skills/` | Self-contained installable skills; bundled helpers are generated copies |
+| `scripts/` | Canonical helpers and stable CLI entry points |
+| `scripts/generators/` | Resource, reference and illustration generators |
+| `scripts/evaluation/` | Opt-in benchmark execution and acceptance checks |
+| `benchmarks/cases/` | Versioned repair tasks and checker controls |
+| `tests/` | Deterministic tests; no real model calls |
+| `docs/guides/` | Current user guides |
+| `docs/development/` | Layout rules, path migration and release maintenance |
+| `docs/testing/reports/<date>/` | Historical reports and paired JSON captures |
 
-## Develop
+See the [documentation index](docs/README.md) and
+[layout/naming rules](docs/development/repository-layout.md).
+
+## Develop and verify
 
 Python 3.11+, standard library only:
 
@@ -112,19 +81,20 @@ python -m unittest discover -s tests -v
 python scripts/attention_assets.py
 ```
 
-After changing generator sources, run `python scripts/attention_assets.py --write`.
-Generated outputs are checked in tests and CI.
+Edit generator sources before generated resources, then run
+`python scripts/attention_assets.py --write`. Keep raw traces and machine-local
+maps private. The [benchmark guide](benchmarks/README.md) explains opt-in model
+calls; [results](docs/testing/results.md) separate executed checks from limitations.
+This organization/packaging release adds no new model measurements.
 
-## Origin
+Profile semantics remain 0.1.1. For migration from 0.1.0, reselect `batch`: it now
+means decomposition depth rather than batch size. See the profile guide and
+[release notes](docs/development/release.md).
 
-Extracted from the attention prototype in
-[agent-workflows](https://github.com/Clas4444/agent-workflows), based on prototype
-commit `e2b1b717b1e751a9218fa6ad22381c6fd7f55cbb` retained locally after deleting
-the remote experiment branch. This repo has separate history and checks. It does
-not include the 53 Loop skills or inherit their historical runtime PASS claims.
+## Origin and license
 
-MIT license; original copyright retained.
-
-## Documentation
-
-[Documentation map](docs/README.md) · [Changelog](CHANGELOG.md) · [Release and compatibility](docs/RELEASE.md)
+Extracted from the [Agent Workflows](https://github.com/Clas4444/agent-workflows)
+attention prototype, based on commit `e2b1b717b1e751a9218fa6ad22381c6fd7f55cbb`.
+This repository has independent history and checks; it does not include the 53
+Loop skills or inherit their historical runtime results. MIT license; original
+copyright retained. See [CHANGELOG.md](CHANGELOG.md).

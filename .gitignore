@@ -1,4 +1,5 @@
 .loop/
+/AGENTS.md
 __pycache__/
 *.pyc
 .venv/

@@ -119,10 +119,38 @@ class AttentionSetupTests(unittest.TestCase):
             self.assertFalse((base/'.loop').exists())
 
     def test_generated_reference_and_picture_are_attention_specific(self):
-        from scripts.attention_setup_assets import check, REFERENCE, picture
+        from scripts.generators.setup import check, REFERENCE, picture
         self.assertEqual(check(ROOT), [])
         self.assertIn('No agent-workflows installation', REFERENCE)
         self.assertIn('ATTENTION SETUP', picture())
         self.assertNotIn('Repo 1', picture())
         self.assertNotIn('Repo 2', picture())
         self.assertIn('attention_setup.py', (ROOT/'skills/agent-attention/SKILL.md').read_text(encoding='utf-8'))
+
+
+    def test_direct_setup_skill_is_a_complete_isolated_entrypoint(self):
+        folder = ROOT/'skills/attention-setup'
+        entry = (folder/'SKILL.md').read_text(encoding='utf-8')
+        self.assertTrue(entry.startswith('---\nname: attention-setup\n'))
+        self.assertIn('description:', entry.split('---', 2)[1])
+        metadata = (folder/'agents/openai.yaml').read_text(encoding='utf-8')
+        self.assertIn('$attention-setup', metadata)
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            installed = base/'attention-setup'
+            shutil.copytree(folder, installed)
+            self.assertFalse((installed/'scripts/workflow_setup.py').exists())
+            facts = base/'facts.json'; facts.write_text('{"risk":"high"}',encoding='utf-8')
+            helper = str(installed/'scripts/attention_setup.py')
+            for command in ('questions','template','check','select','export'):
+                args = [sys.executable,'-I','-B',helper,command]
+                if command not in ('questions','template'):
+                    args += ['--file',str(installed/'assets/attention-example.json')]
+                if command=='select': args += ['--facts-file',str(facts)]
+                if command=='export': args += ['--project',str(base)]
+                result = subprocess.run(args,cwd=directory,capture_output=True,text=True,timeout=10)
+                self.assertEqual(result.returncode,0,result.stderr)
+                payload = json.loads(result.stdout)
+                if command=='select': self.assertEqual(payload['levels']['verify'],5)
+                if command in ('check','export'): self.assertEqual(payload['status'],'PASS')
+            self.assertTrue((base/'.attention/plans/my-attention/ATTENTION-MAP.md').is_file())

@@ -1,7 +1,7 @@
 # Publication check — 2026-10-29
 
 Historical 1.11.0 / 0.2.0 observation. For the corrected independent setup
-entry points and current checks, read [setup separation](SETUP-SEPARATION.md).
+entry points and current checks, read [setup separation](setup-separation.md).
 
 After the final presentation review, installation/direct use precedes optional
 setup in both READMEs. Topic navigation, compatibility, migration and rollback

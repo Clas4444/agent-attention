@@ -1,5 +1,5 @@
 import unittest
-from scripts.validation_metrics import summarize
+from scripts.evaluation.metrics import summarize
 
 
 class ValidationMetricsTests(unittest.TestCase):

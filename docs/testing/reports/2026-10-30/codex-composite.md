@@ -2,7 +2,7 @@
 
 Report date: 2026-10-30. Model attempts ran on 2026-10-29 (UTC).
 These are means for one small repair fixture, not average token consumption for
-Codex in general. See the [machine-readable record](CODEX-COMPOSITE-2026-10-30.json).
+Codex in general. See the [machine-readable record](codex-composite.json).
 
 ## Frozen comparison
 
@@ -103,7 +103,7 @@ axis or a quality advantage. One small task cannot establish broader correctness
 The initial sandbox prompt probe failed startup permissions. A proposed temporary
 credential-copy method was rejected by automatic review before execution and was
 abandoned. No credentials were copied. The accepted approach uses CLI-local
-exclusions, documented in [campaign preparation](AXIS-CAMPAIGNS.md).
+exclusions, documented in [campaign preparation](../../campaigns.md).
 The host-exclusion regression initially failed with an unsupported argument, then
 passed after implementation. Structured-quota regressions initially produced four
 failures across fourteen tests, then passed after repair. These failed attempts

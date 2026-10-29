@@ -1,7 +1,7 @@
-# Optional workflow integration bridge
+# Workflow integration
 
 For independent **`$agent-attention setup`**, use the
-[attention setup guide](ATTENTION-SETUP.md). It requires no workflow graph,
+[attention setup guide](attention-setup.md). It requires no workflow graph,
 agent-workflows installation, skills or routing cursor.
 
 This page describes the separate, explicit request to attach attention to an
@@ -9,7 +9,7 @@ existing compatible graph. The self-contained workflow_setup.py bridge is retain
 for graph-v1 compatibility; it is not the attention setup entry point. Existing
 skills and routes are supplied by that graph and remain unchanged.
 
-![Optional graph integration](assets/workflow-setup.svg)
+![Optional graph integration](../assets/workflow-setup.svg)
 
 ## When integrating with a supplied graph
 
@@ -56,7 +56,7 @@ of one another and remain independently installable.
 
 ## No existing graph?
 
-Use [independent attention setup](ATTENTION-SETUP.md). Do not manufacture a graph
+Use [independent attention setup](attention-setup.md). Do not manufacture a graph
 just to configure attention. To design task steps and skill choices, use
 agent-workflows workflow setup, or another separately selected workflow designer.
 The bridge retains its older graph template/check/export CLI for compatibility;
@@ -92,12 +92,13 @@ that every routed step or stopped business task passed.
 
 ## Compatibility and evidence
 
-Release 0.2.0 retains axis semantics version 0.1.1. Existing task-profile checkpoint
+Graph integration introduced in 0.2.0 retains axis semantics version 0.1.1. Existing task-profile checkpoint
 files remain compatible; workflow cursors are a separate graph-bound format and
 are not interchangeable with checkpoint.py state. Ordinary profile use still
 requires no graph or cursor. Setup does not alter installed downstream skills.
 
 Graph/attachment/private-export/installed-Python checks are deterministic tests,
 not new model attempts or native-discovery proof. Existing 0.1.1 model measurements
-retain their old pins. New real-agent interview/loop effectiveness and remote CI
-are NOT_RUN for this local candidate. See [setup checks](testing/WORKFLOW-SETUP.md).
+retain their old pins. New real-agent graph interviews/loop effectiveness are
+NOT_RUN. See the [historical graph capture](../testing/reports/2026-10-29/workflow-integration.md)
+and [current repository checks](../development/release.md); neither configures native reasoning.

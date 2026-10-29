@@ -2,11 +2,11 @@
 
 Đây là bản ghi lịch sử trước 0.1.1, kiểm trạng thái checkpoint. Nó không xác
 nhận chiều token hoặc nghĩa decomposition mới của `batch`; xem báo cáo mới
-trong [kết quả hiện tại](RESULTS.md).
+trong [kết quả hiện tại](../../results.md).
 
 Trạng thái: phiên nội bộ, chưa commit/push. Baseline là commit
 `aca95f0f3086e430abef9c8053e24bf573d3ac4a`. Kết quả chi tiết, input pins và hash
-log nằm trong [bản ghi JSON](CODEX-VALIDATION-2026-10-28.json).
+log nằm trong [bản ghi JSON](codex-validation.json).
 Phiên bắt đầu 13:40 UTC ngày 28/10/2026; kiểm tra/chốt báo cáo khoảng 14:03 UTC
 (20:40–21:03 giờ Việt Nam/Thái Lan), khoảng 23 phút.
 
@@ -15,7 +15,7 @@ Phiên bắt đầu 13:40 UTC ngày 28/10/2026; kiểm tra/chốt báo cáo kho�
 Kiểm xem instruction có dẫn đến thao tác quan sát được trên Codex hay chỉ là
 lời mô tả. Ba ca được ghi prompt/oracle trước khi chạy baseline:
 
-[Protocol và fixture đầu vào đã cố định](CODEX-VALIDATION-PROTOCOL-2026-10-28.json).
+[Protocol và fixture đầu vào đã cố định](codex-validation-protocol.json).
 
 1. Đổi trường `user` thành `user_id` qua hai module, giữ ID `001`; chuyển
    implementation → review với verify=5 → testing khôi phục task profile.
@@ -48,7 +48,7 @@ không chứng minh grader bắt được mọi kiểu gian lận.
 Suite cuối có **25 test PASS trên Python 3.14 và 3.12**, gồm 3.125 tổ hợp profile,
 state transitions và installation độc lập. Đây là test phần mềm, không phải 25
 lần model thực hiện workflow.
-[Output kiểm cuối và 12 source pins](CODEX-VALIDATION-CHECKS-2026-10-28.json)
+[Output kiểm cuối và 12 source pins](codex-validation-checks.json)
 ghi lại test/generator/compile ở working tree hiện tại. Các trial model có input
 pins riêng; không tự gán kết quả của snapshot cũ cho mọi sửa nhỏ về sau.
 

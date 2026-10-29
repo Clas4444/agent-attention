@@ -31,7 +31,7 @@ two repetitions. Each case runs low/balanced/high/high/balanced/low. Plans make 
 calls or writes. Real execution consumes account usage, requires working CLI
 authentication and stops the entire suite on quota, rate-limit or capacity errors.
 It never replaces failed attempts. Source drift between cases also stops execution.
-Inspect actual skill discovery first; see [campaign preparation](../docs/testing/AXIS-CAMPAIGNS.md).
+Inspect actual skill discovery first; see [campaign preparation](../docs/testing/campaigns.md).
 Exclusions do not certify full home/runtime isolation.
 
 ## Acceptance boundary

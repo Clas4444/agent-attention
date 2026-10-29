@@ -78,7 +78,7 @@ python scripts/evaluate_effort.py --output <new-external-directory> --cli <codex
 The output includes frozen skill resources, fixed protocol, raw JSONL traces,
 protected-input pins and per-trial outcomes. Local raw runs for this report are
 at `C:/Code/attention-effort-20261028` and its regression sibling. Published
-[measurements and hashes](EFFORT-DIRECTION-2026-10-28.json) exclude raw host output.
+[measurements and hashes](effort-direction.json) exclude raw host output.
 
 ## Scope and release checks
 

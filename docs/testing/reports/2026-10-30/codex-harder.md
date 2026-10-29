@@ -2,7 +2,7 @@
 
 Report date: 2026-10-30; model attempts ran on 2026-10-29 UTC (2026-10-30 in
 Asia/Bangkok). Source base: `262f0595c22478809591dad6d49352d1613bc4ab`.
-See the [sanitized trial data and frozen hashes](CODEX-HARDER-2026-10-30.json).
+See the [sanitized trial data and frozen hashes](codex-harder.json).
 
 ## Outcome
 
@@ -142,8 +142,8 @@ global environment stop. Source/case/skill hashes are recorded before calls;
 source drift between case blocks also stops execution. Real model calls remain
 opt-in and are never part of CI.
 
-The [benchmark guide](../../benchmarks/README.md), [testing index](README.md) and
-[documentation map](../README.md) distinguish evaluation machinery, installable
+The [benchmark guide](../../../../benchmarks/README.md), [testing index](../../README.md) and
+[documentation map](../../../README.md) distinguish evaluation machinery, installable
 helpers and historical evidence. Old files were not renamed or moved, preserving
 existing report links. Unrelated setup-packaging edits are excluded from publication.
 Attention instructions, generated skill resources and semantics 0.1.1 are unchanged.

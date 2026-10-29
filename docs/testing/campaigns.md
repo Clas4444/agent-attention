@@ -23,7 +23,7 @@ Use `--case cents`, `--case ledger` or `--case dependencies` to choose the task;
 the default remains cents. `scripts/evaluate_suite.py --plan` previews a bounded
 three-case composite suite with separate per-task summaries and a global stop.
 See the [benchmark/case guide](../../benchmarks/README.md) and
-[harder-case results](CODEX-HARDER-2026-10-30.md). Protocol schema 2 separates each
+[harder-case results](reports/2026-10-30/codex-harder.md). Protocol schema 2 separates each
 trial's source workspace from metadata and checks frozen sources in a fresh
 source-only acceptance copy. Older reports remain readable without relabeling.
 

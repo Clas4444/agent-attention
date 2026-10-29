@@ -7,12 +7,12 @@ prompts, commands, private machine paths, fixture Git metadata or backups.
 
 ## Reconciliation of model evidence
 
-The initial [Codex campaign](CODEX-VALIDATION-2026-10-28.md) already reports
+The initial [Codex campaign](../2026-10-28/codex-validation.md) already reports
 **12 attempts: 8 PASS, 1 FAIL and 3 environment blocks**. All 12 original result
 statuses match the published records; those observations are not rerun here.
 
-Four [behavior-repair traces](BEHAVIOR-REPAIR-2026-10-28.md) and eight
-[effort-direction traces](EFFORT-DIRECTION-2026-10-28.md) also already appear in
+Four [behavior-repair traces](../2026-10-28/behavior-repair.md) and eight
+[effort-direction traces](../2026-10-28/effort-direction.md) also already appear in
 published reports. Their **12 unique trace hashes match** the original archived
 bytes. Duplicate result/array representations were collapsed, not counted twice.
 The four behavior cases passed; the effort campaign had seven acceptance successes
@@ -32,15 +32,15 @@ on each recorded Python runtime. The installed-skill test omits the optional
 workflow bridge. These checks validate configuration plumbing, not real-model
 interview quality, native discovery or per-context attention behavior.
 
-See [independent setup checks](SETUP-SEPARATION.md),
-[earlier graph setup evidence](WORKFLOW-SETUP.md),
-[evaluator reliability](EVALUATOR-RELIABILITY.md) and
-[axis campaign protocol](AXIS-CAMPAIGNS.md). Six injected grader controls are
+See [independent setup checks](setup-separation.md),
+[earlier graph setup evidence](workflow-integration.md),
+[evaluator reliability](../2026-10-28/evaluator-reliability.md) and
+[axis campaign protocol](../../campaigns.md). Six injected grader controls are
 negative/positive deterministic checks; they are not additional model trials.
 
 ## Retention and reproducibility limits
 
-[Machine-readable reconciliation](ARCHIVE-RECONCILIATION.json) retains the archive
+[Machine-readable reconciliation](archive-reconciliation.json) retains the archive
 SHA-256, group inventory digests, relevant record/trace hashes and original
 observations. Hashes identify data; they do not reconstruct it or independently
 attest model execution. At the user's request, the local raw archive is to be

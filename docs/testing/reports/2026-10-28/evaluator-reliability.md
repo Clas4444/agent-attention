@@ -2,7 +2,7 @@
 
 This records the internal pre-setup candidate, included in 0.2.0 without a
 separate 0.1.2 publication. Current expanded counts are in
-[setup validation](WORKFLOW-SETUP.md); the 50-test count below is historical.
+[setup validation](../2026-10-29/workflow-integration.md); the 50-test count below is historical.
 
 This patch changes measurement reliability, not the five-axis policy. Semantic
 profile version remains 0.1.1, so existing 0.1.1 checkpoints remain compatible.

@@ -11,6 +11,9 @@ their instructions or recursively calling them.
 
 ## Optional attention setup
 
+For a separate setup entry point, install `attention-setup` and invoke
+`$attention-setup`. It is self-contained and does not require this profile skill.
+
 For an explicit `$agent-attention setup` or attention setup request, use
 [the attention interview](references/setup.md) and bundled
 [attention plan helper](scripts/attention_setup.py). This is independent of

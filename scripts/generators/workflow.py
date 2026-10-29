@@ -3,8 +3,8 @@ import argparse
 import json
 from pathlib import Path
 
-if __package__:
-    from .workflow_setup import template
+if __package__.startswith('scripts.'):
+    from ..workflow_setup import template
 else:
     from workflow_setup import template
 
@@ -166,7 +166,7 @@ def check(repo, write=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument('--repo', type=Path, default=Path(__file__).resolve().parents[2])
     parser.add_argument('--write', action='store_true')
     args = parser.parse_args(); errors = check(args.repo.resolve(), args.write)
     print('\n'.join(errors) if errors else 'PASS: workflow setup resources and illustration')

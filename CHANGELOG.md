@@ -1,5 +1,20 @@
 # Changes
 
+## 0.2.4 — 2026-10-30
+
+- Publish the standalone attention-setup skill already available locally, with
+  its own entry instructions, UI metadata, reference, example and isolated helpers.
+  Keep the main skill's older setup request compatible.
+- Group guides, development notes, playground and dated reports; standardize
+  document names and update live links. Preserve historical JSON bytes and report
+  bodies, retaining original paths/hashes as provenance in captured data.
+- Move resource generators into scripts/generators and audit metrics into
+  scripts/evaluation. Keep stable CLI/core-helper paths and illustration style.
+- Add layout/link/preservation gates and expand isolated setup execution checks.
+  Profile semantics remain 0.1.1; no new model measurements are claimed.
+- Stop tracking machine-local root AGENTS.md without deleting the local file;
+  keep public maintenance rules in the development guide.
+
 ## 0.2.3 — 2026-10-30
 
 - Reject five reproduced evaluator false-PASS cases: early exit, forged PASS

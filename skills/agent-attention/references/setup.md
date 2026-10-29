@@ -1,6 +1,7 @@
 # Optional attention setup
 
-For `$agent-attention setup`, design an attention plan for an existing task.
+Use `$attention-setup` from its independent skill, or `$agent-attention setup`
+from the profile skill, to design an attention plan for an existing task.
 This does not design the work sequence, select skills, create cycles or route statuses.
 No agent-workflows installation, graph, cursor or workflow helper is required.
 
@@ -36,6 +37,7 @@ shared-contract reconciliation and risk-triggered checks remain at every level.
 Levels 1–2 reduce discretionary effort; 3 balanced; 4–5 increase effort. They do
 not configure native model thinking or guarantee token ordering or savings.
 
-Only if the user explicitly wants graph integration, use the separate optional
-workflow_setup.py bridge to attach attention to an existing graph. Preserve that
-graph's skills and routes. The bridge is not the attention setup entry point.
+Only if the user explicitly wants graph integration, use the optional bridge
+bundled with agent-attention to attach attention to an existing graph. The
+standalone attention-setup skill does not bundle workflow_setup.py. Preserve
+the graph's skills and routes; integration is separate from attention setup.

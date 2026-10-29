@@ -1,7 +1,7 @@
-# Task-wide attention
+# Attention profiles
 
 For base levels, conditional context overrides and an optional local attention
-map, use [attention setup](ATTENTION-SETUP.md). It is independent of any workflow
+map, use [attention setup](attention-setup.md). It is independent of any workflow
 graph or second repository. Ordinary direct profiles below still need no setup.
 
 Activate one independent attention layer at the start of a task. It stays with the
@@ -40,11 +40,11 @@ initialize a new state file with an explicitly re-selected profile.
 Each card explains loop behavior, choose-when guidance, DO and AVOID. Levels are
 alternatives, not an instruction to execute all five cards in sequence.
 
-![Attention width](assets/attention-focus.svg)
-![Reconciliation cadence](assets/attention-sync.svg)
-![Decomposition depth](assets/attention-batch.svg)
-![Exploration breadth](assets/attention-explore.svg)
-![Verification depth](assets/attention-verify.svg)
+![Attention width](../assets/attention-focus.svg)
+![Reconciliation cadence](../assets/attention-sync.svg)
+![Decomposition depth](../assets/attention-batch.svg)
+![Exploration breadth](../assets/attention-explore.svg)
+![Verification depth](../assets/attention-verify.svg)
 
 ## Scope, inheritance and overrides
 
@@ -118,13 +118,12 @@ packaging and generated artifacts. They cannot prove model adherence or token
 savings. Compare identical tasks, source snapshots, models and acceptance oracles
 before making cost or quality claims. Include failures, retries, cached/input/output
 tokens when supplied, elapsed time, rework and stale assumptions; unavailable usage
-fields stay unknown. See [results](testing/RESULTS.md).
+fields stay unknown. See [results](../testing/results.md).
 
-The 0.1.2 evaluator requires actual turn completion plus independent acceptance
-for PASS. It retains invalid usage and oracle errors as failed results, and stops
-remaining trials on pre-action HTTP 429 instead of repeatedly calling the model.
-See [evaluator result rules](testing/EVALUATOR-RELIABILITY.md). This maintenance
-patch preserves 0.1.1 profile semantics and checkpoint compatibility.
+Current evaluation requires a completed CLI turn, independent acceptance and
+protected-source integrity. The [results index](../testing/results.md) separates
+current checks from historical measurements. Earlier evaluator repairs retain
+their original versions and evidence limits.
 
 ## Optional explicit checkpoint helper
 

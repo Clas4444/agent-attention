@@ -34,7 +34,7 @@ new real-model setup interviews, adherence and token comparisons are NOT_RUN.
 - Generated resources, local links, compilation and whitespace checks pass.
   Both setup figures were rendered and visually inspected; style is preserved.
 
-[Product-specific capture and hashes](SETUP-SEPARATION.json) records exact local
+[Product-specific capture and hashes](setup-separation.json) records exact local
 checks. Skips do not certify unavailable symlink paths. No new model calls or
 native-picker trials were performed. Prior CI was green for 1.11.0/0.2.0; it is
 not evidence for these changed sources. Remote CI must use the new commit IDs.

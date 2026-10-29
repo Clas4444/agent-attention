@@ -1,7 +1,7 @@
 # Setup validation — 1.11.0 / 0.2.0 candidates
 
 Historical 1.11.0 / 0.2.0 observation. For the corrected independent setup
-entry points and current checks, read [setup separation](SETUP-SEPARATION.md).
+entry points and current checks, read [setup separation](setup-separation.md).
 
 agent-workflows supplies conditional skills; agent-attention supplies conditional per-step attention.
 Both vendor the same self-contained workflow graph contract v1. Their runtime
@@ -32,7 +32,7 @@ against their generators, then all native skill roots are synchronized.
 | agent-workflows changed-area check | 62 tests, 61 pass and one directory-symlink skip on Python 3.12 | Focused changed-area check, not a second full campaign |
 | agent-attention, 0.2.0 | 73 tests, 72 pass and one directory-symlink skip on both available Python runtimes | Local deterministic tests, not new model or native-discovery trials |
 
-Each repository has its own [captured candidate checks](SETUP-CANDIDATE-CHECKS.json).
+Each repository has its own [captured candidate checks](setup-candidate-checks.json).
 agent-workflows's final session is setup-1110-20261029-hardened, input fingerprint
 `9b1bd72842c6d009656d88f52ae4677e6aecec932504928c6e7ffe6c3b084b55`.
 The earlier failed routing campaign and pre-hardening PASS are retained as separate
@@ -41,7 +41,7 @@ the dirty working-tree input fingerprint identifies this local candidate.
 
 ## Cross-repository integration
 
-[Recorded fixture observations](WORKFLOW-SETUP.json) use actual local Python
+[Recorded fixture observations](workflow-integration.json) use actual local Python
 assertions and two targeted fixture edits. The original agent-workflows graph is exported,
 agent-attention attaches modes without changing skills/routes, and shared helpers select
 and advance the same cursor. Selected instruction paths are present in a real
@@ -64,7 +64,7 @@ published Git commit.
 
 ## Limits and publication
 
-See the [current expectation audit](EXPECTATION-AUDIT.md) for observed deviations,
+See the [current expectation audit](expectation-audit.md) for observed deviations,
 unsupported assumptions and pending checks; implementation is not host evidence.
 
 Native skill-picker discovery, real-model setup interview quality, arbitrary

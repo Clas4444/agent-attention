@@ -1,0 +1,6 @@
+interface:
+  display_name: "Attention Setup"
+  short_description: "Set attention levels, conditional contexts and restoration."
+  default_prompt: "Use $attention-setup to design the setup for my task."
+policy:
+  allow_implicit_invocation: false

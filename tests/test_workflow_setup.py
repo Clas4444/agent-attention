@@ -19,7 +19,7 @@ class WorkflowSetupTests(unittest.TestCase):
         return template('both')
 
     def test_generated_workflow_resources_match_source(self):
-        from scripts.workflow_assets import check
+        from scripts.generators.workflow import check
         self.assertEqual(check(ROOT),[])
 
     def test_installed_setup_payload_is_self_contained(self):

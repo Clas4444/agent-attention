@@ -1,12 +1,23 @@
-# Optional attention setup
+# Attention setup
 
-Ask **`$agent-attention setup`** to design how the agent allocates attention to
-your existing task. Install only `skills/agent-attention`; no agent-workflows
-checkout, Loop skill, workflow graph or routing cursor is required. Natural
-language “attention setup” expresses the same request; native picker syntax
-depends on your host.
+Design base levels, conditional contexts, tradeoffs and restoration for an
+existing task. This configures attention; it does not create work steps or routes.
 
-![Set a base, choose context overrides and restore it](assets/attention-setup.svg)
+## Choose an entry point
+
+Install the entire `skills/attention-setup` folder and invoke **`$attention-setup`**.
+It has its own SKILL.md, UI metadata, reference, example and bundled helpers. It
+runs independently of the profile skill, Agent Workflows and any workflow graph.
+
+If `skills/agent-attention` is already installed, the older **`$agent-attention setup`**
+request remains supported using the same helper/schema. That two-word request is
+not a separately registered picker entry. Natural-language attention setup is
+also supported; native picker discovery and syntax depend on the host.
+
+Both paths reuse known task facts. Copying a folder does not prove host discovery;
+see the [skill catalog](../../skills/README.md) for installation choices.
+
+![Set a base, choose context overrides and restore it](../assets/attention-setup.svg)
 
 ## What this setup designs
 
@@ -79,13 +90,15 @@ Force-add or manual sharing can publish ignored data: keep machine maps private.
 ## Optional integration
 
 If you already have a compatible graph and explicitly want per-binding attention,
-see [workflow integration](WORKFLOW-SETUP.md). That bridge preserves the existing
+see [workflow integration](workflow-integration.md). That bridge preserves the existing
 skills and task routes. You do not need it for attention setup or normal profiles.
 
 ## Evidence
 
 The standalone tests verify levels, conditional choice, missing facts, restoration,
-private export and an installed skill in a directory without agent-workflows.
+private export and each installed skill in a directory without Agent Workflows
+or the other skill folder.
 They are deterministic plumbing checks, not model-behavior or token benchmarks.
 Earlier shared-graph measurements retain their original scope. See the
-[setup separation checks](testing/SETUP-SEPARATION.md) for current results.
+[original setup separation capture](../testing/reports/2026-10-29/setup-separation.md).
+Current packaging checks are recorded in the [release verification](../development/release.md).
