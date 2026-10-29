@@ -14,3 +14,7 @@ Choose the task below; historical evidence keeps its original version and scope.
 | Current expectation audit | [testing/EXPECTATION-AUDIT.md](testing/EXPECTATION-AUDIT.md) |
 | Setup integration evidence | [testing/WORKFLOW-SETUP.md](testing/WORKFLOW-SETUP.md) |
 | Release, compatibility and rollback | [RELEASE.md](RELEASE.md) |
+
+## Archived experiment reconciliation
+
+[Published findings and retained failures](testing/ARCHIVE-RECONCILIATION.md) · [Audit data](testing/ARCHIVE-RECONCILIATION.json)

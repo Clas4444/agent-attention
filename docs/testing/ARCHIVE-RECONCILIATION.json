@@ -1,0 +1,801 @@
+{
+  "date": "2026-10-29",
+  "product": "agent-attention",
+  "version_unchanged": "0.2.1",
+  "kind": "HISTORICAL_ARCHIVE_RECONCILIATION",
+  "archive_sha256": "b0384a6ada65dfd21142d82c211714bea8f066c3de12ff00cb8b13ce5bc9bf4e",
+  "archive_bytes": 5131518,
+  "manifest_files_verified": 3321,
+  "inventory_groups": [
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/behavior-trials.py",
+      "file_count": 1,
+      "uncompressed_bytes": 4665,
+      "inventory_sha256": "021d97ba7602408a9b36d23a4fe4509c769208ec2aef26827170e85f5f6ab720"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/browser-effort-check.cjs",
+      "file_count": 1,
+      "uncompressed_bytes": 2030,
+      "inventory_sha256": "30808503275794f9923ed12de3a5e1d7a27b6e1cffa3a355011c15db7be7880d"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/browser-effort-check.json",
+      "file_count": 1,
+      "uncompressed_bytes": 53,
+      "inventory_sha256": "4544ab483729739a81f3e65bd5edc766683f4643f68f29f1d56cad08877c0451"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/capture-behavior-report.py",
+      "file_count": 1,
+      "uncompressed_bytes": 2495,
+      "inventory_sha256": "68bed0d6fc41edf00180ad1521ec1c2752e2c59d44b4b99145c2771d52c919b4"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/capture-initial.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1680,
+      "inventory_sha256": "d1c7fa4c938da452824f65c89d1fbcaa0886ceec9c545aa038481ff645a434fe"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/capture-setup-candidate.py",
+      "file_count": 1,
+      "uncompressed_bytes": 2657,
+      "inventory_sha256": "7da3b7bafad3ac5374cc5fbaf94457f5d26f29243cccce39069a23c8b4732d72"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/capture-validation-checks.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1666,
+      "inventory_sha256": "67f9100ad54dfb15f91c8e35bc7a52eec25f9afa30e13d982e0e8e3ab99b4581"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/ci-status.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1626,
+      "inventory_sha256": "f503c8e733162958ea8dfacf34254afc8730a04c9a0a2a9416bda882273c3eb5"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/codex-eval-20261028",
+      "file_count": 257,
+      "uncompressed_bytes": 790336,
+      "inventory_sha256": "1d634f28d88b772208d96b394172af7294bb40011ba389e454857c920170ad40"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/compare-token-paths.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1150,
+      "inventory_sha256": "1c279d9f16ed4a5603b375e0eb0df6400db64b7076e59adeabafc9ac2300695c"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/eval-session.py",
+      "file_count": 1,
+      "uncompressed_bytes": 8775,
+      "inventory_sha256": "d3d75e4418662454d9af2dd1f352dce6826b1974966df33a072b4476ce062a2d"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/export-effort-report.py",
+      "file_count": 1,
+      "uncompressed_bytes": 4193,
+      "inventory_sha256": "6a0587903d6795214e9030273760aa6448e918bd2fc875e1fe7db8174c6411a4"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/grade-controls.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1544,
+      "inventory_sha256": "c9a9289fe674a5b69ee3d17330bd98ff8b265f84a58e6abb8819659608a045ce"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/internal-attention-state.json",
+      "file_count": 1,
+      "uncompressed_bytes": 1282,
+      "inventory_sha256": "b032736e4bb2ef5aa6ab6128a20486201a9b11a50c8d482a638c0b9f2018b4c6"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/publication-paths.json",
+      "file_count": 1,
+      "uncompressed_bytes": 843,
+      "inventory_sha256": "d526e7e6ef37431c76f6747872cb5189876d187f4217cab2d5f7e72c38477408"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/separated-attention-021",
+      "file_count": 7,
+      "uncompressed_bytes": 29212,
+      "inventory_sha256": "795877b5bae1fdf339244bef00f2cf3d2c997c5455ff3253c325f1b689dde016"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/separated-attention-021-final",
+      "file_count": 3,
+      "uncompressed_bytes": 27390,
+      "inventory_sha256": "b7f66091a59423280dd7f3cd32db4098ef8626982f02274059c335f938152f38"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/separation-push-ci.json",
+      "file_count": 1,
+      "uncompressed_bytes": 524,
+      "inventory_sha256": "70e53eb804874fc5b36751a351f64eebd3d282b967167edaced0b2ea85bd0adf"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/setup-0200-final",
+      "file_count": 7,
+      "uncompressed_bytes": 24890,
+      "inventory_sha256": "24e504ff98070633f91fd7c2a44dde044b92228969cc9cf18aeecb86896c8bcb"
+    },
+    {
+      "logical_group": "AgentSkills/agent-attention/.loop/summarize-eval.py",
+      "file_count": 1,
+      "uncompressed_bytes": 3152,
+      "inventory_sha256": "fe85894e296f0ba779f12baac99afc138ee3e1ff1e389e55e1f61a08633fb357"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/CODEQL-REPAIR-20261028.md",
+      "file_count": 1,
+      "uncompressed_bytes": 2125,
+      "inventory_sha256": "4b0e1e1a89f52f25fd3ce9144df18f3e2b1c1fea1cd5748909ac1afccb8c9705"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/DUAL-REPO-READY-20261028.md",
+      "file_count": 1,
+      "uncompressed_bytes": 2603,
+      "inventory_sha256": "94b69ff367d17ed9cd5f93c1a00a32bb84fe81037dfe276775fd1e11d92105cb"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/SETUP-HANDOFF-20261029.md",
+      "file_count": 1,
+      "uncompressed_bytes": 2630,
+      "inventory_sha256": "7f4de1e6cd54e228dc6f366b54e4208ae2a9d7d0662a3f2e96455f1cc596b43a"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/agent-attention-discussion-published.json",
+      "file_count": 1,
+      "uncompressed_bytes": 227,
+      "inventory_sha256": "aaa3e79b69f91bc57f7c5a613f7b132ecb217085393998442561b35c57af96ee"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/agent-attention-discussion.md",
+      "file_count": 1,
+      "uncompressed_bytes": 3344,
+      "inventory_sha256": "b3912f0185131f47be87d632ebc3afda2b019875e4e3eddcce1b071e5f2f2356"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/apply-repository-settings.py",
+      "file_count": 1,
+      "uncompressed_bytes": 932,
+      "inventory_sha256": "760f34e3f9253a5f2041ca97e4ae73d3b9bffd81889e3d23642dbe8e771053d5"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-browser-check.cjs",
+      "file_count": 1,
+      "uncompressed_bytes": 4000,
+      "inventory_sha256": "61e36b2a7602148b85bfea7001c2317ded5a1343bfb65cb854e265b2588242c7"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-capture.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1731,
+      "inventory_sha256": "3cc12cceab1927fa9606eee7e47db607e5e12064b995173e2636c389127a31e9"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-illustrations-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 223375,
+      "inventory_sha256": "c188abf959ff0f4535754d8ed5d75d5fbefbf0fff7f1533fe0da22d6b31b5e31"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-pilot-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 222542,
+      "inventory_sha256": "d81b129922eab7563dc61a1635cfda5455bb9fa094258ce32f3b7880a3bd8fbb"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-pilot-final-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 222546,
+      "inventory_sha256": "a71253391adc5a9cb7a8f3c14b56772d2abc4b552985742cd50390b30a4e1cdf"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-prepare.py",
+      "file_count": 1,
+      "uncompressed_bytes": 774,
+      "inventory_sha256": "883a9c32d91149e807f60ab352f3dbaceec4a634949e001c40792c244a3fbcb7"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/attention-ui-replay.json",
+      "file_count": 1,
+      "uncompressed_bytes": 2270,
+      "inventory_sha256": "db99b1d9cd2d838d66ea6700172c89e02383d020b80c26b4095134301d926031"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/backups",
+      "file_count": 469,
+      "uncompressed_bytes": 2843807,
+      "inventory_sha256": "4d10e4893c73982fc8230e9ceb04e3a1cba1ead01f080a318f39864ebed4fbbb"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/bundle-atlas-20261026",
+      "file_count": 25,
+      "uncompressed_bytes": 224664,
+      "inventory_sha256": "264629f471ce5e22b1eaf11aacc001950e9af9d89a15c40b7d2f877d77c41e98"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/capture-patch-observations.py",
+      "file_count": 1,
+      "uncompressed_bytes": 3603,
+      "inventory_sha256": "614cabd84ab1029cc76a4c79532d21933ebe8650ff0a37d806c66f9d2367a101"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/capture-setup-release.py",
+      "file_count": 1,
+      "uncompressed_bytes": 3343,
+      "inventory_sha256": "9f4d6174d1ba757c8c86afae53efced9acd975a090cc6963327af698cfe8f921"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/continuation-20261026",
+      "file_count": 40,
+      "uncompressed_bytes": 514944,
+      "inventory_sha256": "ec5e1cc63ab61bf97776b3f8779bb43bdde347561a16d2c7a5adfc4cbad2d66d"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/discovery-20261026",
+      "file_count": 1848,
+      "uncompressed_bytes": 4894234,
+      "inventory_sha256": "2f2c91b24fc6d5cf661b48054256593d7ce9ce429c31446048d1574026a1d4cc"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/discussion-context.json",
+      "file_count": 1,
+      "uncompressed_bytes": 2560,
+      "inventory_sha256": "17752a280253cb1acc7784d05229a882a00eb294bebbcb49d4e7c71197cbcec8"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/discussion-publish.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1231,
+      "inventory_sha256": "b7a75ec1e6f811b53777706f29e40aeb65c931d929e330e92087dd719cd93f7d"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/discussion-read.py",
+      "file_count": 1,
+      "uncompressed_bytes": 763,
+      "inventory_sha256": "a87c24c4dea1a7de99b3e93428e87df5e16372054803ae9f3792b8b9988cfd97"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/docs-review-20261026",
+      "file_count": 76,
+      "uncompressed_bytes": 933109,
+      "inventory_sha256": "23efc3077d2fe3d2d50d279ba584253b86eca0ae3861b587ec281ba7ca7df6a8"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/dual-repo-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 215968,
+      "inventory_sha256": "1008aeb691e76eb2769d0c922981a372a8ede093ca46320e3affdb0dfe9d5b41"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/dual-repo-expanded-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 216925,
+      "inventory_sha256": "7fa28d34cba335365877cb5700fa6f5c150231c250ede69bef8be5500087d2ca"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/github-repository-transition.py",
+      "file_count": 1,
+      "uncompressed_bytes": 2441,
+      "inventory_sha256": "47c30821d6cd92e33050f90276ffbc434581b0b58d955e32f69a9b6554e6b389"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/patch-1.10.1-20261026",
+      "file_count": 20,
+      "uncompressed_bytes": 220812,
+      "inventory_sha256": "0c0caba5209e39b4beecf8bf122ae4f5c3e2c785ace4e3d7bceb35dd62802e7f"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/patch-1.10.2-20261028",
+      "file_count": 15,
+      "uncompressed_bytes": 215822,
+      "inventory_sha256": "65f7393ab29b0910fd520d77ceca33125aa5d12a515d085c9bc6e899f13a3580"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/publication-paths.json",
+      "file_count": 1,
+      "uncompressed_bytes": 1582,
+      "inventory_sha256": "e28001a670dd2c49043f5b1da28264fe110a0025d4cd1bb8d5414ead7f65dedf"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/publish-1110-20261029",
+      "file_count": 15,
+      "uncompressed_bytes": 223706,
+      "inventory_sha256": "5b5e4f320235b39add11744494171fc1593b5de9f40a5b96d0221745db7801fd"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/redos-after.json",
+      "file_count": 1,
+      "uncompressed_bytes": 398,
+      "inventory_sha256": "1abefdd64fa4bf7dddd1b4521dec64f3d4b39a929c46fd494906fb6dac57613f"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/redos-before.json",
+      "file_count": 1,
+      "uncompressed_bytes": 379,
+      "inventory_sha256": "3bc03948ba43f4c85441ba2dc18faab11e5303fdafe74ae50b730c6b2c21534a"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/redos-equivalence.json",
+      "file_count": 1,
+      "uncompressed_bytes": 169,
+      "inventory_sha256": "d3d85f5fbe30768d9a144a873d074a158c47c867664cdbe2d36564434f42f1bf"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/redos-equivalence.py",
+      "file_count": 1,
+      "uncompressed_bytes": 1264,
+      "inventory_sha256": "cdb25176bd93d4c43d35c0f1c32a924540de62ddb62f9284044ea37ccc79fc86"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/redos-repro.py",
+      "file_count": 1,
+      "uncompressed_bytes": 811,
+      "inventory_sha256": "6b90c41f4bdaf7f2a8fdb0dde946194105c1c32aee2049f24b18839970818c79"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/repository-settings.py",
+      "file_count": 1,
+      "uncompressed_bytes": 3328,
+      "inventory_sha256": "398d53c6f6254154bc808ebad28dd4604417686e654cc66a43c58368b06c9a88"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/repository_settings_client.py",
+      "file_count": 1,
+      "uncompressed_bytes": 254,
+      "inventory_sha256": "4847a88f1e5936b31ad8d54f4ecb74622cd6832021d4fd306f6e7df12a43922c"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/separated-1111-20261029",
+      "file_count": 15,
+      "uncompressed_bytes": 223709,
+      "inventory_sha256": "105ad581db4129e199167abec84adb44ed9261bee80d392b87f2b0016d49cfe9"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/separated-1111-final-20261029",
+      "file_count": 15,
+      "uncompressed_bytes": 223715,
+      "inventory_sha256": "99146ddfbba96cac381cb54a5b2c33904884037e8a0757f88d73bebff5f0193c"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/separation-push-ci.json",
+      "file_count": 1,
+      "uncompressed_bytes": 520,
+      "inventory_sha256": "fe0be493f5086474edfc149a8f8f870c1d0589a27859e89fcc6b8ccca92d6d66"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/settings-applied.json",
+      "file_count": 1,
+      "uncompressed_bytes": 625,
+      "inventory_sha256": "5bee6febf4b0437310e6a470e33bfd3fe87ed965a80bac741c5d4bc4d208d694"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/settings-audit.json",
+      "file_count": 1,
+      "uncompressed_bytes": 6492,
+      "inventory_sha256": "cc13b074d406531c9dbe8929151c76a2f1509f74a9322ba45a47f8ec5bcd551f"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-1110-20261029-final",
+      "file_count": 15,
+      "uncompressed_bytes": 225592,
+      "inventory_sha256": "552e16faf0a39cbb2ff73822e67ddd50ad79427fc5ef208033de526c2052d796"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-1110-20261029-final-r2",
+      "file_count": 15,
+      "uncompressed_bytes": 223713,
+      "inventory_sha256": "932a9b3bcf29bb653b882ec6e74d9cc64d9d70e853a62ac4603c9b27f6228fa5"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-1110-20261029-hardened",
+      "file_count": 16,
+      "uncompressed_bytes": 234377,
+      "inventory_sha256": "4898e169d5fe7735f56cdbb6d9a11e35ee5f7b0b07d3438a0376ef7fe7c4b1c2"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-cross-repo-20261029",
+      "file_count": 19,
+      "uncompressed_bytes": 31991,
+      "inventory_sha256": "54ea674d7d2f8f2555c83269e43983b54f08076a5b51d4f381286e337c1356df"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-cross-repo-20261029-final",
+      "file_count": 19,
+      "uncompressed_bytes": 32257,
+      "inventory_sha256": "58e5674ef49349d9e66478a3bcdd60eec62bd862d01e3d2bcd00d102a7152f83"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/setup-cross-repo-20261029-final-hardened",
+      "file_count": 19,
+      "uncompressed_bytes": 32275,
+      "inventory_sha256": "2c48332e1fcf092277003162085dd043870f9dc94f5291b299c1aad84683cfcb"
+    },
+    {
+      "logical_group": "AgentSkills/agent-workflows/.loop/workflow-cross-repo-demo.py",
+      "file_count": 1,
+      "uncompressed_bytes": 5445,
+      "inventory_sha256": "6d9890c027654dc13e15a4ac0ee70c99abdaa9ed1a819fc45d797be9bc6ec8c6"
+    },
+    {
+      "logical_group": "attention-behavior-20261028",
+      "file_count": 30,
+      "uncompressed_bytes": 98365,
+      "inventory_sha256": "49ded6dcf63c83b834f83877ac8c9be55c563852bcdbea598012005fbe096f49"
+    },
+    {
+      "logical_group": "attention-behavior-20261028-final",
+      "file_count": 34,
+      "uncompressed_bytes": 115289,
+      "inventory_sha256": "b28b44bc6ccfffde2853b1b6540a3946585a5baded3a20746a38e0e9354f735b"
+    },
+    {
+      "logical_group": "attention-effort-20261028",
+      "file_count": 90,
+      "uncompressed_bytes": 268288,
+      "inventory_sha256": "89f420ff0df54cd7c41d9879c67c5dedf188acf220e37a955a94bf414a13b728"
+    },
+    {
+      "logical_group": "attention-effort-regression-20261028",
+      "file_count": 114,
+      "uncompressed_bytes": 178490,
+      "inventory_sha256": "d38eb5617a0e5ecc4b08676de94a1c0128ec35514e17d89863606311a260a738"
+    },
+    {
+      "logical_group": "legacy-temp/loop-batch-demo",
+      "file_count": 13,
+      "uncompressed_bytes": 4370,
+      "inventory_sha256": "9424d3f44197075cc50a130e1f2afbb203c30bcb8b0fda03db67508f641fa062"
+    },
+    {
+      "logical_group": "legacy-temp/loop-prompt-demo",
+      "file_count": 2,
+      "uncompressed_bytes": 1522,
+      "inventory_sha256": "f0183dd0fded49b659d5e53eacf7fd102ee701a51ab9858412f5d316ef81d6b2"
+    },
+    {
+      "logical_group": "legacy-temp/unicode-loop-debug",
+      "file_count": 2,
+      "uncompressed_bytes": 612,
+      "inventory_sha256": "853f8bdee7a8f9f31bb24d8448dbabd5d5145c44ac6cb5f19478a7cdb6494b4b"
+    },
+    {
+      "logical_group": "legacy-temp/unicode-loop-debug2",
+      "file_count": 2,
+      "uncompressed_bytes": 793,
+      "inventory_sha256": "4d1730e1ebb4653e36a98d9c84053c41b7618ebed23000b808ede604b6bc1792"
+    }
+  ],
+  "verification_records": [],
+  "verification_status_counts": {},
+  "newly_indexed_verification_records": 0,
+  "real_model_trace_reconciliation": [
+    {
+      "artifact": "attention-effort-20261028/1-low/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "6ef7f46246521b6a87667fa66f68501c5abd99e853c41d7070d9e7bfc0b51c72",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-20261028/2-balanced/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "dc66b3767fb9919c64df1f868cecbc7c13c18c88f1bcf96eea70f32d8e911d33",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-20261028/3-high/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "c3bcb30a9e761b5892ef68c9f5df50f3996746348e432e293c3f2b96da2d3d51",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-20261028/4-high/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "b4c80ca79dfab8a1ca2dc03f8b75ab9d067eb3e85e40261760037284821e6eb4",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-20261028/5-balanced/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "08a11eb802f302dd3eb95ee253b16d8c0e9056aabb816ba8e37a24494962f328",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-20261028/6-low/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "e2b8f24793a25f85b0087963af053b0958284ebc169ef6d0e4b77b7ce19966cb",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-20261028/results.json"
+      ]
+    },
+    {
+      "artifact": "attention-effort-regression-20261028/1-high/result.json",
+      "raw_status": "PASS",
+      "trace_sha256": "4790887ba6efaabc2ac7403b16a47d70ef07f3aa99010e6d40369e6179f2c03f",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-regression-20261028/results.json"
+      ],
+      "published_classification": "PASS"
+    },
+    {
+      "artifact": "attention-effort-regression-20261028/2-balanced/result.json",
+      "raw_status": "FAIL",
+      "trace_sha256": "6faa7830b36b5824696f98ccf0ccc1cc3ad403a859934cfc545a88c42bb0c27f",
+      "prior_public_trace_references": [
+        "docs\\testing\\EFFORT-DIRECTION-2026-10-28.json"
+      ],
+      "duplicate_artifact_references": [
+        "attention-effort-regression-20261028/results.json"
+      ],
+      "published_classification": "BLOCKED_ENVIRONMENT"
+    },
+    {
+      "artifact": "attention-behavior-20261028/narrow/events.jsonl",
+      "raw_status": "PASS",
+      "trace_sha256": "dc3173eec917f1742a8bd8c660bcddd0ce932a0bf1f27e3a865450d542950337",
+      "prior_public_trace_references": [
+        "docs/testing/BEHAVIOR-REPAIR-2026-10-28.json"
+      ]
+    },
+    {
+      "artifact": "attention-behavior-20261028/wide/events.jsonl",
+      "raw_status": "PASS",
+      "trace_sha256": "0648eab35f68cfb2fc4d5cc72f4fb0ff4155e3454e511bd2ae50b44b1667aeab",
+      "prior_public_trace_references": [
+        "docs/testing/BEHAVIOR-REPAIR-2026-10-28.json"
+      ]
+    },
+    {
+      "artifact": "attention-behavior-20261028-final/narrow/events.jsonl",
+      "raw_status": "PASS",
+      "trace_sha256": "a9855a1d1a2c562ea063a06bba76aa525ba7cb48d19c119ceaefebef3d4a056e",
+      "prior_public_trace_references": [
+        "docs/testing/BEHAVIOR-REPAIR-2026-10-28.json"
+      ]
+    },
+    {
+      "artifact": "attention-behavior-20261028-final/wide/events.jsonl",
+      "raw_status": "PASS",
+      "trace_sha256": "dd3e10f388a557fec2acaaac0d236c6a47a167ed8b964657028bc71ff488613f",
+      "prior_public_trace_references": [
+        "docs/testing/BEHAVIOR-REPAIR-2026-10-28.json"
+      ]
+    }
+  ],
+  "model_calls_this_audit": 0,
+  "raw_retention": "Local archive scheduled for deletion after remote report verification, as requested. Raw traces are not included in these reports and cannot be reconstructed from hashes.",
+  "scope": "An inventory and historical-observation audit, not a rerun or independent backend attestation. Repeated fixture/campaign attempts are not independent model trials.",
+  "real_model_trace_unique_count": 12,
+  "local_candidate_captures": [
+    {
+      "artifact": "AgentSkills/agent-attention/.loop/separated-attention-021/report.json",
+      "record_sha256": "c89ef1541a497504eedc9de3c864b837b10706806bf1022ac33fba91113f5e33",
+      "status": "PASS",
+      "checks": [
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 84,
+          "skipped": 2
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 84,
+          "skipped": 2
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ],
+      "historical_only": true
+    },
+    {
+      "artifact": "AgentSkills/agent-attention/.loop/separated-attention-021-final/report.json",
+      "record_sha256": "60a9d43b66458e5cd4069d8896a89fd8c1205ec56f07cd1f9dac1f1ca943a1b9",
+      "status": "PASS",
+      "checks": [
+        {
+          "runtime": "python314",
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 84,
+          "skipped": 2
+        },
+        {
+          "runtime": "python312",
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 84,
+          "skipped": 2
+        }
+      ],
+      "historical_only": true
+    },
+    {
+      "artifact": "AgentSkills/agent-attention/.loop/setup-0200-final/report.json",
+      "record_sha256": "58b0162bc57e22b2a4d8a4f6a9581dfadca962ba903410084c051ba280b7233b",
+      "status": "PASS",
+      "checks": [
+        {
+          "id": "unit-python314",
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 73,
+          "skipped": 1
+        },
+        {
+          "id": "unit-python312",
+          "status": "PASS",
+          "exit_code": 0,
+          "discovered": 73,
+          "skipped": 1
+        },
+        {
+          "id": "generated",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "id": "navigation",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "id": "compile",
+          "status": "PASS",
+          "exit_code": 0
+        },
+        {
+          "id": "diff",
+          "status": "PASS",
+          "exit_code": 0
+        }
+      ],
+      "historical_only": true
+    }
+  ],
+  "initial_model_campaign_published_counts": {
+    "attempts": 12,
+    "successes": 8,
+    "failures": 1,
+    "environment_blocked": 3,
+    "evaluated_attempts": 9,
+    "success_rate": 0.8888888888888888,
+    "status": "MEASURED"
+  },
+  "initial_model_campaign_original_status_matches": [
+    {
+      "version": "baseline",
+      "case": "handoff",
+      "raw_status": "FAIL",
+      "published_classification": "BLOCKED_ENVIRONMENT",
+      "archived_record_sha256": "ccf4f3d78bfa450e64cbaf1db49c9d92a890ccfa324b9e26a42dc493a6e54179"
+    },
+    {
+      "version": "baseline",
+      "case": "invalid",
+      "raw_status": "FAIL",
+      "published_classification": "BLOCKED_ENVIRONMENT",
+      "archived_record_sha256": "3ce6a5b4d48e7d39ae096c11b74ec676f92312984153184e7b55d36f404cf484"
+    },
+    {
+      "version": "baseline",
+      "case": "source-injection",
+      "raw_status": "FAIL",
+      "published_classification": "BLOCKED_ENVIRONMENT",
+      "archived_record_sha256": "faba59afdc822b56f30746b53be7afca7b40da578338f2aa0e0f99811e85a4d7"
+    },
+    {
+      "version": "baseline-clean",
+      "case": "handoff",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "7aad55af8a885b7ceac21323d5209b60b173e95cabc06fa1c8958790e7addee8"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "handoff",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "9a4011a22d45f5ace221168e385f10a12d4d8b005ce4f15f82d1e4b0b871eb02"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "invalid",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "4281de6f9e587b7098c3b72f11b28e1ea6d414bceb7ba429a078bf66743f26fa"
+    },
+    {
+      "version": "baseline-reviewed",
+      "case": "source-injection",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "9d15a7c8123b12ab7d78b808a83ae475c56fd7d7c11aece5facee4d144343902"
+    },
+    {
+      "version": "candidate",
+      "case": "handoff",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "985e4b41c5829e1f0416a2bf5a4bfa16d9bd85e19d9104480f4e1d83e6fe7922"
+    },
+    {
+      "version": "candidate",
+      "case": "invalid",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "313559d88d738442febfe249886dd579478fbe9b4c582de76e3d5e715b40f0d5"
+    },
+    {
+      "version": "candidate",
+      "case": "source-injection",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "2f16cecd59fc8a9bc7e3830ed7ed30b29eb1573dde2ead1665dd1adba73c48fb"
+    },
+    {
+      "version": "final",
+      "case": "handoff",
+      "raw_status": "FAIL",
+      "published_classification": "FAIL",
+      "archived_record_sha256": "2fe811237ac2090e3e725c2d75ae7ee63cba260ba87d5f9f033ee06f8777d5b5"
+    },
+    {
+      "version": "final-clean",
+      "case": "handoff",
+      "raw_status": "PASS",
+      "published_classification": "PASS",
+      "archived_record_sha256": "995814e54c541fcc74307da466a7cc6604edde4e0914f82490a0698da149db25"
+    }
+  ]
+}
