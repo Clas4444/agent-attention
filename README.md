@@ -8,8 +8,8 @@ Optional **attention setup** asks about the five-axis base profile, conditional
 temporary levels, tradeoffs and restoration. It works on the task you already
 have. No workflow graph, Loop skill or second repository is required.
 
-Version: **0.2.1**. This is behavioral guidance, not a model
-reasoning-effort setting or an enforced scheduler. Token savings are unmeasured.
+Version: **0.2.2**. This is behavioral guidance, not a model
+reasoning-effort setting or an enforced scheduler. General token savings are unproven.
 
 ![Five independent behavior choices](docs/assets/attention-controls.svg)
 
@@ -38,9 +38,12 @@ python scripts/attention.py --attention balanced --workflow loop-code
 The workflow label does not invoke anything. All unspecified axes remain 3.
 No attention request means ordinary host/workflow behavior.
 
-New in this version: preview controlled **single-axis comparisons** without
-calling a model, then execute the selected design and summarize quality/token
-results separately. See [axis campaigns](docs/testing/AXIS-CAMPAIGNS.md).
+New in this version: exclude unrelated host skills from evaluator calls without
+changing global settings. Inspect discovery before comparing profiles; see
+[axis campaigns](docs/testing/AXIS-CAMPAIGNS.md). The evaluator also supports
+single-axis designs and no-model planning.
+The [repeated Codex comparison](docs/testing/CODEX-COMPOSITE-2026-10-30.md)
+reports task-specific means, failed attempts and limits; it is not a general Codex average.
 
 ```text
 python scripts/evaluate_effort.py --axis focus --levels 1 2 3 4 5 --repeats 2 --plan

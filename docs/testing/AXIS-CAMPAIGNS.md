@@ -29,9 +29,34 @@ python scripts/evaluate_effort.py --axis focus --levels 1 3 5 --repeats 2 --outp
 
 The frozen protocol includes profile settings, planned order, source hashes and
 acceptance criteria. Each trial retains input pins, prompt, raw trace and outcome.
-The evaluator updates summary.json after each recorded trial. A pre-action 429
-stops the campaign and records remaining labels as not run. Interrupted or failed
+The evaluator updates summary.json after each recorded trial. HTTP 429, structured
+usage-limit errors and model-capacity errors stop the campaign and record remaining
+labels as not run. Pre-action environment failures are BLOCKED_ENVIRONMENT;
+failures after actions or source changes remain FAIL but still stop new calls. Interrupted or failed
 attempts are not replaced with passing retries in the original record.
+
+## Keep host skills out of the comparison
+
+`--ignore-user-config` skips the user configuration file, not the installed
+skill catalog. An unrelated global skill can add context or instructions to all
+profiles. Do not infer isolation from this flag or from a model's claim.
+
+Inspect actual discovery using the installed CLI's no-model prompt inspector
+when available (`codex debug prompt-input`). Prepare a private JSON array of
+exact external `SKILL.md` paths observed in that catalog, then pass
+`--disabled-skills-file <private-json-file>` to the evaluator. These become
+per-invocation `skills.config` exclusions; installed files and global settings
+are unchanged. The local candidate skill must remain enabled. Plugins and
+multi-agent execution are disabled for evaluator calls as well as apps/memories.
+See the official [skill configuration documentation](https://learn.chatgpt.com/docs/build-skills).
+
+Reinspect the fixture's actual catalog after exclusions. It should contain only
+the fixture candidate, with the fixture's own instructions and no parent project
+instructions. Keep discovery evidence and machine paths private. The protocol
+records the exclusions but deliberately does not certify isolation. A shared
+authentication home, service cache and unverified runtime context still limit
+the comparison; label full isolation NOT_VERIFIED when it was not established.
+No credential copying is required by this option.
 
 ## Read a saved report without running the model
 

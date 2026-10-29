@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest import mock
 
-from scripts.evaluate_effort import classify_trial, run
+from scripts.evaluate_effort import classify_trial, environment_failure, run
 
 
 class ClassificationTests(unittest.TestCase):
@@ -16,6 +16,16 @@ class ClassificationTests(unittest.TestCase):
 
     def test_429_before_work_is_environment_block(self):
         self.assertEqual(classify_trial(None, [], 'HTTP 429 Too Many Requests', [], 1), 'BLOCKED_ENVIRONMENT')
+
+    def test_structured_quota_before_work_is_environment_block(self):
+        events=[{'type':'turn.failed','error':{'message':"You've hit your usage limit."}}]
+        self.assertEqual(classify_trial(1,events,'',[],1),'BLOCKED_ENVIRONMENT')
+
+    def test_model_text_and_command_output_cannot_spoof_environment_blocks(self):
+        events=[{'type':'item.completed','item':{'type':'agent_message','text':"You've hit your usage limit."}},
+                {'type':'item.completed','item':{'type':'command_execution',
+                  'aggregated_output':'HTTP 429 Too Many Requests'}}]
+        self.assertIsNone(environment_failure(events,''))
 
     def test_429_does_not_excuse_work_or_protected_changes(self):
         event={'type':'item.started','item':{'type':'command_execution'}}
@@ -31,7 +41,7 @@ class ClassificationTests(unittest.TestCase):
 
 
 class RunnerTests(unittest.TestCase):
-    def exercise(self, mode, order=('low',), campaign=None):
+    def exercise(self, mode, order=('low',), campaign=None, disabled_skills=()):
         real_run=subprocess.run
         calls=[]
         def fixture(command, *args, **kwargs):
@@ -42,6 +52,14 @@ class RunnerTests(unittest.TestCase):
             if mode=='429':
                 return subprocess.CompletedProcess(command,1,'{"type":"turn.started"}\n','HTTP 429 Too Many Requests')
             folder=Path(command[command.index('-C')+1])
+            if mode in ('json-quota','json-quota-after-work','json-capacity'):
+                events=[]
+                if mode=='json-quota-after-work':
+                    (folder/'discount.py').write_text('def discount(cents):\n    return cents * 9 // 10\n')
+                    events.append({'type':'item.started','item':{'type':'command_execution'}})
+                message='Selected model is at capacity.' if mode=='json-capacity' else "You've hit your usage limit."
+                events.append({'type':'turn.failed','error':{'message':message}})
+                return subprocess.CompletedProcess(command,1,'\n'.join(json.dumps(e) for e in events),'')
             if mode=='429-after-delete':
                 (folder/'discount.py').unlink()
                 return subprocess.CompletedProcess(command,1,'','HTTP 429 Too Many Requests')
@@ -56,7 +74,7 @@ class RunnerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             output=Path(temporary)/'campaign'
             with mock.patch('scripts.evaluate_effort.subprocess.run',side_effect=fixture), contextlib.redirect_stdout(io.StringIO()):
-                results=run(output,'fixture-codex',5,order,campaign)
+                results=run(output,'fixture-codex',5,order,campaign,disabled_skills=disabled_skills)
             self.assertTrue((output/'protocol.json').is_file())
             self.assertTrue((output/f'1-{order[0]}/input-pins.json').is_file())
             summary=json.loads((output/'summary.json').read_text())
@@ -74,6 +92,15 @@ class RunnerTests(unittest.TestCase):
         results,_,_=self.exercise('pass')
         self.assertEqual(results[0]['status'],'PASS')
         self.assertEqual(results[0]['usage']['total_tokens'],110)
+
+    def test_host_skill_exclusions_are_forwarded_without_changing_global_config(self):
+        paths=['C:/fixture/user skills/example/SKILL.md']
+        results,calls,_=self.exercise('pass',disabled_skills=paths)
+        command=calls[0]
+        self.assertIn('skills.config=[{path="C:/fixture/user skills/example/SKILL.md",enabled=false}]',command)
+        self.assertIn('plugins',command)
+        self.assertIn('multi_agent',command)
+        self.assertEqual(results[0]['status'],'PASS')
 
     def test_single_axis_design_executes_and_summarizes_correct_profiles(self):
         from scripts.effort_campaign import campaign_plan
@@ -109,3 +136,12 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(len(calls),1)
         self.assertEqual(results[0]['status'],'BLOCKED_ENVIRONMENT')
         self.assertEqual(remaining,['high'])
+
+    def test_json_environment_failures_stop_even_after_partial_work(self):
+        for mode,status in [('json-quota','BLOCKED_ENVIRONMENT'),
+                            ('json-quota-after-work','FAIL'),('json-capacity','BLOCKED_ENVIRONMENT')]:
+            with self.subTest(mode=mode):
+                results,calls,remaining=self.exercise(mode,('low','high'))
+                self.assertEqual(len(calls),1)
+                self.assertEqual(results[0]['status'],status)
+                self.assertEqual(remaining,['high'])

@@ -1,0 +1,661 @@
+{
+  "report_schema": 1,
+  "date": "2026-10-30",
+  "run_date_utc": "2026-10-29",
+  "title": "Repeated Codex composite-profile fixture comparison",
+  "source_base_commit": "8fa035134a05008821471893c6f1ba72430ed2f6",
+  "cli_version": "0.165.0-alpha.1.2",
+  "requested_model": "gpt-6.1-sol",
+  "native_reasoning_effort": "medium",
+  "run_evaluator_hash": null,
+  "run_evaluator_hash_note": "Not captured before execution; published evaluator includes the subsequent structured-quota fix. Frozen skill/fixture hashes are recorded.",
+  "model_identity": "CLI request, not independent backend attestation",
+  "platform": "Windows",
+  "python": "3.14.7",
+  "campaign": {
+    "design": "composite",
+    "axis": null,
+    "profiles": {
+      "low": "focus=1,sync=1,batch=1,explore=1,verify=1",
+      "balanced": "focus=3,sync=3,batch=3,explore=3,verify=3",
+      "high": "focus=5,sync=5,batch=5,explore=5,verify=5"
+    },
+    "order": [
+      "low",
+      "balanced",
+      "high",
+      "high",
+      "balanced",
+      "low",
+      "low",
+      "balanced",
+      "high",
+      "high",
+      "balanced",
+      "low"
+    ],
+    "planned_trials": 12,
+    "other_axes": "changed together",
+    "model_calls": "NONE while planning; execution consumes account usage",
+    "order_policy": "alternating forward/reverse; not randomized",
+    "writes": "NONE"
+  },
+  "skill_sha256": {
+    "SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+    "assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+    "assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+    "references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+    "references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+    "scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+    "scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+  },
+  "published_evaluator_sha256": "f02f94a314f84c364ec016557148267d8eb5572bc8f5ba154b13502c9e27d5b8",
+  "fixture_sha256": {
+    "discount.py": "c96f658db193d019294ea07cdabb6ef590ad7c62a3678e0f2e67b8a9376e51d2",
+    "shipping.py": "7039b4331d9bd12b4659a0a9ac3a46e31133b8e7dc5118994a1d992ec04a228e",
+    "checkout.py": "d9ed61112acb36e6305baa61478a86f26bcf0139307f4a64b63b34807fac62bb",
+    "FLOW.md": "386a0571b037d4e8c5da15a082b1ddd022932333b741936a94ba93b3960024c3",
+    "checks.py": "e6e6938d9cec8676d2615cd91c671965632340bc3a522ba91390d8f3c0fa504a",
+    "AGENTS.md": "d167b2e810f67bf04ef7b56168e7cdc14cf9ea872bb10f6913a5b404344d68ba"
+  },
+  "oracle_controls": [
+    {
+      "control": "original",
+      "exit_code": 1,
+      "expected_accept": false
+    },
+    {
+      "control": "correct",
+      "exit_code": 0,
+      "expected_accept": true
+    },
+    {
+      "control": "wrong-valid-format",
+      "exit_code": 1,
+      "expected_accept": false
+    },
+    {
+      "control": "missing",
+      "exit_code": 1,
+      "expected_accept": false
+    }
+  ],
+  "isolation": {
+    "catalog_entries": [
+      "fixture-local skills/agent-attention/SKILL.md"
+    ],
+    "fixture_instructions": true,
+    "parent_instructions": false,
+    "full_home_isolation": "NOT_VERIFIED: existing authentication home shared",
+    "probe_exit": 0,
+    "excluded_host_skill_count": 177,
+    "comparison": "NOT_VERIFIED as a fully isolated A/B; controlled same-home fixture comparison only"
+  },
+  "summary": {
+    "design": "composite",
+    "axis": null,
+    "planned_trials": 12,
+    "recorded_trials": 12,
+    "not_run": 0,
+    "groups": {
+      "low": {
+        "levels": {
+          "focus": 1,
+          "sync": 1,
+          "batch": 1,
+          "explore": 1,
+          "verify": 1
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 3,
+          "FAIL": 1,
+          "BLOCKED_ENVIRONMENT": 0
+        },
+        "not_run": 0,
+        "success_rate": 0.75,
+        "usage_samples": 3,
+        "usage_missing": 1,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 56656.333333333336,
+        "mean_cached_input_tokens": 52138.666666666664,
+        "mean_uncached_input_tokens": 4517.666666666667,
+        "mean_output_tokens": 344.6666666666667,
+        "mean_total_tokens": 57001,
+        "total_tokens_samples": [
+          62429,
+          62425,
+          46149
+        ],
+        "median_total_tokens": 62425,
+        "min_total_tokens": 46149,
+        "max_total_tokens": 62429,
+        "sample_stdev_total_tokens": 9398.107894677523,
+        "mean_elapsed_seconds": 17.7645,
+        "acceptance_passes": 3
+      },
+      "balanced": {
+        "levels": {
+          "focus": 3,
+          "sync": 3,
+          "batch": 3,
+          "explore": 3,
+          "verify": 3
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 3,
+          "FAIL": 1,
+          "BLOCKED_ENVIRONMENT": 0
+        },
+        "not_run": 0,
+        "success_rate": 0.75,
+        "usage_samples": 3,
+        "usage_missing": 1,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 56702.666666666664,
+        "mean_cached_input_tokens": 52224,
+        "mean_uncached_input_tokens": 4478.666666666667,
+        "mean_output_tokens": 406.3333333333333,
+        "mean_total_tokens": 57109,
+        "total_tokens_samples": [
+          62266,
+          46352,
+          62709
+        ],
+        "median_total_tokens": 62266,
+        "min_total_tokens": 46352,
+        "max_total_tokens": 62709,
+        "sample_stdev_total_tokens": 9318.468168105743,
+        "mean_elapsed_seconds": 21.33975,
+        "acceptance_passes": 3
+      },
+      "high": {
+        "levels": {
+          "focus": 5,
+          "sync": 5,
+          "batch": 5,
+          "explore": 5,
+          "verify": 5
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 2,
+          "FAIL": 2,
+          "BLOCKED_ENVIRONMENT": 0
+        },
+        "not_run": 0,
+        "success_rate": 0.5,
+        "usage_samples": 2,
+        "usage_missing": 2,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 70872,
+        "mean_cached_input_tokens": 63808,
+        "mean_uncached_input_tokens": 7064,
+        "mean_output_tokens": 663.5,
+        "mean_total_tokens": 71535.5,
+        "total_tokens_samples": [
+          63112,
+          79959
+        ],
+        "median_total_tokens": 71535.5,
+        "min_total_tokens": 63112,
+        "max_total_tokens": 79959,
+        "sample_stdev_total_tokens": 11912.627942649766,
+        "mean_elapsed_seconds": 25.87825,
+        "acceptance_passes": 3
+      }
+    },
+    "status": "MEASURED",
+    "limits": [
+      "Means include failed attempts with available usage; missing usage is not zero.",
+      "Cached input is a subset of input, not an extra token quantity.",
+      "Single-axis control on this task is not proof of general causal effects or cost savings."
+    ]
+  },
+  "audited_summary": {
+    "design": "composite",
+    "axis": null,
+    "planned_trials": 12,
+    "recorded_trials": 12,
+    "not_run": 0,
+    "groups": {
+      "low": {
+        "levels": {
+          "focus": 1,
+          "sync": 1,
+          "batch": 1,
+          "explore": 1,
+          "verify": 1
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 3,
+          "FAIL": 0,
+          "BLOCKED_ENVIRONMENT": 1
+        },
+        "not_run": 0,
+        "success_rate": 1.0,
+        "usage_samples": 3,
+        "usage_missing": 1,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 56656.333333333336,
+        "mean_cached_input_tokens": 52138.666666666664,
+        "mean_uncached_input_tokens": 4517.666666666667,
+        "mean_output_tokens": 344.6666666666667,
+        "mean_total_tokens": 57001
+      },
+      "balanced": {
+        "levels": {
+          "focus": 3,
+          "sync": 3,
+          "batch": 3,
+          "explore": 3,
+          "verify": 3
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 3,
+          "FAIL": 0,
+          "BLOCKED_ENVIRONMENT": 1
+        },
+        "not_run": 0,
+        "success_rate": 1.0,
+        "usage_samples": 3,
+        "usage_missing": 1,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 56702.666666666664,
+        "mean_cached_input_tokens": 52224,
+        "mean_uncached_input_tokens": 4478.666666666667,
+        "mean_output_tokens": 406.3333333333333,
+        "mean_total_tokens": 57109
+      },
+      "high": {
+        "levels": {
+          "focus": 5,
+          "sync": 5,
+          "batch": 5,
+          "explore": 5,
+          "verify": 5
+        },
+        "planned": 4,
+        "observed": 4,
+        "counts": {
+          "PASS": 2,
+          "FAIL": 2,
+          "BLOCKED_ENVIRONMENT": 0
+        },
+        "not_run": 0,
+        "success_rate": 0.5,
+        "usage_samples": 2,
+        "usage_missing": 2,
+        "tool_command_failures": 0,
+        "mean_input_tokens": 70872,
+        "mean_cached_input_tokens": 63808,
+        "mean_uncached_input_tokens": 7064,
+        "mean_output_tokens": 663.5,
+        "mean_total_tokens": 71535.5
+      }
+    },
+    "status": "MEASURED",
+    "limits": [
+      "Means include failed attempts with available usage; missing usage is not zero.",
+      "Cached input is a subset of input, not an extra token quantity.",
+      "Single-axis control on this task is not proof of general causal effects or cost savings."
+    ]
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "profile": "low",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 62050,
+        "cached_input_tokens": 57984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 379,
+        "reasoning_output_tokens": 40,
+        "uncached_input_tokens": 4066,
+        "total_tokens": 62429
+      },
+      "elapsed_seconds": 28.445,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "ff1730d03c1b585f2d4f66abc0a5c7b3f4c89768cf411e94ec8a2b6656bf1916",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 3,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 2,
+      "profile": "balanced",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 61936,
+        "cached_input_tokens": 56320,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 330,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 5616,
+        "total_tokens": 62266
+      },
+      "elapsed_seconds": 25.756,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "9731a51b1b59de8d8f0a3ff4a20b92fb545df6c01e6d450ed60a4cc014654988",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 2,
+      "failed_commands": 0,
+      "file_change_events": 1,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 3,
+      "profile": "high",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 62490,
+        "cached_input_tokens": 54400,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 622,
+        "reasoning_output_tokens": 22,
+        "uncached_input_tokens": 8090,
+        "total_tokens": 63112
+      },
+      "elapsed_seconds": 25.444,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "971d5884e5a643ac4779c9714bf217525d37c09e5e730303d5bd9d54139dfc2a",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 3,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 2,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 4,
+      "profile": "high",
+      "status": "FAIL",
+      "usage": null,
+      "elapsed_seconds": 34.293,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "eb751b74600217af54e54e7dbe50ddb81f3a9045b6813ef6201a08d60162c6e2",
+      "failure_category": "MODEL_CAPACITY_AFTER_WORK",
+      "audited_status": "FAIL",
+      "command_count": 6,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 2,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 5,
+      "profile": "balanced",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 45905,
+        "cached_input_tokens": 43904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 447,
+        "reasoning_output_tokens": 109,
+        "uncached_input_tokens": 2001,
+        "total_tokens": 46352
+      },
+      "elapsed_seconds": 30.7,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "c7cfe3d8b42bca20638dbdd0fe51f91723cc3e6c259ec539d2f0fc47c380e6eb",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 2,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 6,
+      "profile": "low",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 62078,
+        "cached_input_tokens": 57984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 347,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 4094,
+        "total_tokens": 62425
+      },
+      "elapsed_seconds": 21.564,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "0e992999ac7892ba1bfaec8ce15c32381065c76fd127b322445df9294827bfe4",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 3,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 7,
+      "profile": "low",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 45841,
+        "cached_input_tokens": 40448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 308,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 5393,
+        "total_tokens": 46149
+      },
+      "elapsed_seconds": 18.66,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "125b989ad52f283c0588c8459e50f3d38f3e79d67a5ac710b098f819f9f3e0e7",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 2,
+      "failed_commands": 0,
+      "file_change_events": 1,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 8,
+      "profile": "balanced",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 62267,
+        "cached_input_tokens": 56448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 442,
+        "reasoning_output_tokens": 26,
+        "uncached_input_tokens": 5819,
+        "total_tokens": 62709
+      },
+      "elapsed_seconds": 26.549,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "75fc737b38ad63ebea5dc3bb8f974ffe90ff88c7fc9f6caae29f30e4e49c9779",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 3,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 9,
+      "profile": "high",
+      "status": "PASS",
+      "usage": {
+        "input_tokens": 79254,
+        "cached_input_tokens": 73216,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 705,
+        "reasoning_output_tokens": 55,
+        "uncached_input_tokens": 6038,
+        "total_tokens": 79959
+      },
+      "elapsed_seconds": 35.539,
+      "protected_changes": [],
+      "acceptance_exit": 0,
+      "trace_sha256": "4106891ad08508d7fefaf8d13193fafacb172c25d642dc0696ec600e656e1f2b",
+      "failure_category": "NONE",
+      "audited_status": "PASS",
+      "command_count": 6,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 1,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 10,
+      "profile": "high",
+      "status": "FAIL",
+      "usage": null,
+      "elapsed_seconds": 8.237,
+      "protected_changes": [],
+      "acceptance_exit": 1,
+      "trace_sha256": "38d13617c419ebd1507a7d29b9c412712dba072c97c78853574799c4e4180e09",
+      "failure_category": "QUOTA_LIMIT",
+      "audited_status": "FAIL",
+      "command_count": 1,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": true
+    },
+    {
+      "trial": 11,
+      "profile": "balanced",
+      "status": "FAIL",
+      "usage": null,
+      "elapsed_seconds": 2.354,
+      "protected_changes": [],
+      "acceptance_exit": 1,
+      "trace_sha256": "6720aa78048a561cdc5f5af173a3c261ba0d60aa34deccb55b970cd4caf33e05",
+      "failure_category": "QUOTA_LIMIT",
+      "audited_status": "BLOCKED_ENVIRONMENT",
+      "command_count": 0,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": false
+    },
+    {
+      "trial": 12,
+      "profile": "low",
+      "status": "FAIL",
+      "usage": null,
+      "elapsed_seconds": 2.389,
+      "protected_changes": [],
+      "acceptance_exit": 1,
+      "trace_sha256": "01cf23426e41115231cfd07e334a2ba590dff310eddb9343f9fb3354bf8e59e3",
+      "failure_category": "QUOTA_LIMIT",
+      "audited_status": "BLOCKED_ENVIRONMENT",
+      "command_count": 0,
+      "failed_commands": 0,
+      "file_change_events": 0,
+      "boundary_check_commands": 0,
+      "candidate_skill_read": false
+    }
+  ],
+  "publication_checks": {
+    "tests": 88,
+    "passed": 86,
+    "skipped": 2,
+    "generated_assets": "PASS",
+    "source": "Staged publication snapshot, excluding unrelated setup packaging; code unchanged after validation"
+  },
+  "attempts_retained": [
+    {
+      "check": "initial sandbox prompt inspection",
+      "status": "FAIL",
+      "reason": "CLI startup denied by sandbox"
+    },
+    {
+      "check": "credential-copy isolation proposal",
+      "status": "BLOCKED",
+      "reason": "Automatic review rejected credential exposure; no copy executed"
+    },
+    {
+      "check": "skip_host_skill_discovery flag probe",
+      "status": "FAIL",
+      "reason": "177 host skills remained discoverable"
+    },
+    {
+      "check": "per-invocation host exclusions probe",
+      "status": "PASS",
+      "reason": "Fixture candidate only; no parent project instructions"
+    },
+    {
+      "check": "regression before evaluator change",
+      "status": "FAIL",
+      "tests": 12,
+      "errors": 9,
+      "reason": "disabled_skills argument unsupported"
+    },
+    {
+      "check": "regression after evaluator change",
+      "status": "PASS",
+      "tests": 12
+    },
+    {
+      "check": "structured quota regression before repair",
+      "status": "FAIL",
+      "tests": 14,
+      "failures": 4
+    },
+    {
+      "check": "structured quota regression after repair",
+      "status": "PASS",
+      "tests": 14
+    },
+    {
+      "check": "real model rerun after quota repair",
+      "status": "BLOCKED",
+      "reason": "Account usage limit; no new real calls"
+    },
+    {
+      "check": "repository suite",
+      "status": "PASS",
+      "tests": 89,
+      "passed": 87,
+      "skipped": 2,
+      "reason": "Symlink creation unavailable"
+    }
+  ],
+  "limits": [
+    "Original recorded statuses are retained. Trials 11 and 12 are pre-action quota blocks on audit, but were incorrectly recorded FAIL by the old runner. Trial 10 had a read action and remains FAIL. No new model calls after detecting the quota bug.",
+    "One small integer-cent repair task; four planned attempts per profile; no broad Codex average.",
+    "Descriptive arithmetic means over observed usage, including failed attempts if available; missing usage is unknown, never zero.",
+    "Full home/runtime isolation is NOT_VERIFIED. Shared authentication home and service cache remain.",
+    "Order alternates forward/reverse but is not randomized; observations need not be independent.",
+    "Composite profiles change all five axes; no per-axis causal attribution.",
+    "Total=input+output. Cache is part of input; reasoning is part of output. No pricing or monetary-cost inference.",
+    "Raw traces remain private locally; hashes identify files, not independent attestation.",
+    "Unrelated uncommitted setup packaging is excluded from this publication; tested working-tree suite includes that packaging."
+  ]
+}

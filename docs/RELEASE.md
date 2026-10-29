@@ -1,6 +1,19 @@
-# Release 0.2.1 — 2026-10-29
+# Release 0.2.2 — 2026-10-30
 
-Attention setup now designs a standalone attention plan: scope, five-axis base,
+The evaluation helper now accepts a private list of host skill exclusions for
+each invocation. It does not change global settings or copy credentials.
+Plugins and multi-agent execution are disabled during controlled calls. Inspect
+the actual fixture context; exclusions alone do not establish full isolation.
+See [campaign preparation](testing/AXIS-CAMPAIGNS.md).
+Structured quota/capacity failures also stop new invocations, even after partial
+work; partial attempts remain FAIL rather than being excused as environment blocks.
+
+This patch changes evaluation plumbing, not attention instructions or profile
+semantics. Existing skill installations do not need a payload update for this fix.
+Rollback the evaluator script if needed; keep original trial records and do not
+merge results from different protocols.
+
+Attention setup introduced in 0.2.1 designs a standalone attention plan: scope, five-axis base,
 conditional context overrides, tradeoffs and restoration. It needs no workflow
 graph, Loop skill, cursor or agent-workflows installation. See
 [attention setup](ATTENTION-SETUP.md).
@@ -24,8 +37,10 @@ an actual host. Setup does not start a task or configure native thinking.
 [Setup separation checks](testing/SETUP-SEPARATION.md) cover the independent
 installed-skill path, conditions and restoration. Earlier graph/model captures
 retain their original scope and hashes; they do not certify changed instructions.
-New real-model interviews/adherence/token comparisons and reproducible archives
-are NOT_RUN. Selecting levels is configuration, not evidence of executed behavior.
+The [repeated Codex fixture comparison](testing/CODEX-COMPOSITE-2026-10-30.md)
+retains partial failures and missing usage. A fresh real-model rerun after the
+quota repair is BLOCKED; broad interviews/adherence and general savings remain
+unverified. Selecting levels is configuration, not evidence of executed behavior.
 
 ## Rollback
 

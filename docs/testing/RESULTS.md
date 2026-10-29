@@ -1,9 +1,17 @@
 # Standalone repository validation
 
-Current 0.2.1: [independent attention setup](../ATTENTION-SETUP.md) and
+Current 0.2.2: [repeated Codex composite-profile comparison](CODEX-COMPOSITE-2026-10-30.md)
+records twelve attempts, eight completed sessions with usage and task-specific
+means. It also retains capacity/quota failures and missing usage, fixes evaluator
+host-context and structured-quota handling, and keeps full isolation NOT_VERIFIED.
+The real-model rerun after the quota repair is BLOCKED, not PASS. These means are
+not a universal Codex average or a claim of general token savings.
+
+The 0.2.1 [independent attention setup](../ATTENTION-SETUP.md) and
 [setup separation checks](SETUP-SEPARATION.md). Workflow integration is optional;
 the earlier 0.2.0 shared-graph capture is historical. New model interviews and
-attention-behavior/token comparisons remain NOT_RUN.
+setup-interview comparisons remain NOT_RUN. The new composite run above is a
+separate fixture comparison, not a setup interview.
 
 Included internal 0.1.2 work: [evaluator reliability](EVALUATOR-RELIABILITY.md)
 adds deterministic failure-path coverage without new model performance claims.

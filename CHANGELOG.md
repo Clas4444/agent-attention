@@ -1,5 +1,16 @@
 # Changes
 
+## 0.2.2 — 2026-10-30
+
+- Add evaluator-only host skill exclusions without modifying global settings;
+  disable plugins and multi-agent execution in controlled calls. Record exclusions
+  privately and require actual discovery evidence before claiming isolation.
+- Preserve profile semantics 0.1.1 and installed attention guidance unchanged.
+- Stop new calls on structured usage-limit/capacity errors, including failures
+  after partial work. Keep partial attempts FAIL and remaining trials NOT_RUN.
+- Publish the repeated Codex fixture comparison, including unavailable usage and
+  original failed attempts; these are task-specific means, not global Codex averages.
+
 ## 0.2.1 — 2026-10-29
 
 - Separate attention setup from workflow design. Interview for task scope, base

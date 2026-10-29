@@ -9,6 +9,7 @@ Choose the task below; historical evidence keeps its original version and scope.
 | Attach modes to an existing graph (optional) | [Workflow integration](WORKFLOW-SETUP.md) |
 | Offline profile preview | [attention-playground.html](attention-playground.html) |
 | Measured results and limitations | [testing/RESULTS.md](testing/RESULTS.md) |
+| Repeated Codex low/balanced/high fixture means | [Composite comparison](testing/CODEX-COMPOSITE-2026-10-30.md) |
 | Single-axis comparison protocol | [testing/AXIS-CAMPAIGNS.md](testing/AXIS-CAMPAIGNS.md) |
 | Evaluator reliability | [testing/EVALUATOR-RELIABILITY.md](testing/EVALUATOR-RELIABILITY.md) |
 | Current expectation audit | [testing/EXPECTATION-AUDIT.md](testing/EXPECTATION-AUDIT.md) |

@@ -58,18 +58,40 @@ def assess_usage(usage):
                 total_tokens=usage['input_tokens'] + usage['output_tokens'])
 
 
+def environment_failure(events, stderr):
+    """Inspect transport failures, never model messages or command output."""
+    messages = [stderr]
+    for event in events:
+        if event.get('type') == 'error':
+            messages.append(event.get('message'))
+        elif event.get('type') == 'turn.failed':
+            error = event.get('error')
+            messages.append(error.get('message') if isinstance(error, dict) else error)
+    text = '\n'.join(message for message in messages if isinstance(message, str)).casefold()
+    if 'hit your usage limit' in text:
+        return 'QUOTA_LIMIT'
+    if '429 too many requests' in text or 'http 429' in text:
+        return 'RATE_LIMIT'
+    if 'selected model is at capacity' in text:
+        return 'MODEL_CAPACITY'
+    return None
+
+
 def classify_trial(code, events, stderr, changed, acceptance_exit, work_changed=False):
     """An environment hint cannot excuse failed or partially executed work."""
     actions = [e for e in events if e.get('type') in ('item.started', 'item.completed')
                and e.get('item', {}).get('type') in ('command_execution', 'file_change', 'mcp_tool_call')]
     completed = any(e.get('type') == 'turn.completed' for e in events)
-    if not actions and not completed and not changed and not work_changed and ('429 Too Many Requests' in stderr
-                                                        or 'HTTP 429' in stderr):
+    if not actions and not completed and not changed and not work_changed and environment_failure(events, stderr):
         return 'BLOCKED_ENVIRONMENT'
     return 'PASS' if code == 0 and completed and not changed and acceptance_exit == 0 else 'FAIL'
 
 
-def run(output, cli, timeout, order=ORDER, campaign=None):
+def run(output, cli, timeout, order=ORDER, campaign=None, disabled_skills=()):
+    if (not isinstance(disabled_skills, (list, tuple))
+            or any(not isinstance(path, str) or not path or '\n' in path or '\r' in path
+                   for path in disabled_skills)):
+        raise ValueError('disabled skills must be a list of exact SKILL.md paths')
     campaign = campaign or dict(campaign_plan(), order=list(order), planned_trials=len(order))
     profiles = campaign['profiles']
     if (not order or list(order) != list(campaign['order'])
@@ -86,7 +108,9 @@ def run(output, cli, timeout, order=ORDER, campaign=None):
     protocol = {'order': order, 'profiles': profiles, 'campaign': campaign, 'task': TASK,
                 'files': FILES, 'skill_sha256': skill_hashes,
                 'oracle': 'CLI completed, protected hashes unchanged, unchanged checks.py passes',
-                'model_requested': 'gpt-6.1-sol', 'reasoning_effort': 'medium'}
+                'model_requested': 'gpt-6.1-sol', 'reasoning_effort': 'medium',
+                'disabled_host_skills': list(disabled_skills),
+                'isolation': 'NOT_VERIFIED: inspect actual prompt discovery; exclusions alone are not proof'}
     (output / 'protocol.json').write_text(json.dumps(protocol, indent=2), encoding='utf-8')
     results = []
     for number, label in enumerate(order, 1):
@@ -109,8 +133,13 @@ def run(output, cli, timeout, order=ORDER, campaign=None):
         (folder / 'prompt.txt').write_text(prompt, encoding='utf-8')
         command = [cli, 'exec', '--ignore-user-config', '--ephemeral', '--json',
                    '--skip-git-repo-check', '--disable', 'apps', '--disable', 'memories',
+                   '--disable', 'plugins', '--disable', 'multi_agent',
                    '-m', 'gpt-6.1-sol', '--approve-for-me',
                    '-c', 'model_reasoning_effort="medium"', '-C', str(folder), '-']
+        if disabled_skills:
+            # CLI-local overrides preserve the user's installed skills/settings.
+            exclusions = ','.join('{path='+json.dumps(path)+',enabled=false}' for path in disabled_skills)
+            command[-1:-1] = ['-c', 'skills.config=['+exclusions+']']
         start = time.monotonic()
         try:
             proc = subprocess.run(command, input=prompt, text=True, encoding='utf-8',
@@ -149,10 +178,12 @@ def run(output, cli, timeout, order=ORDER, campaign=None):
         work_changed = any(not (folder/name).is_file() or digest(folder/name) != pins[name]
                            for name in ('discount.py', 'checkout.py'))
         classification = classify_trial(code, events, err, changed, check.returncode if check else None, work_changed)
+        stop_reason = environment_failure(events, err)
         if usage_error:
             classification = 'FAIL'
         result = {'trial': number, 'profile': label,
                   'status': classification, 'usage_error': usage_error, 'acceptance_error': acceptance_error,
+                  'environment_failure': stop_reason,
                   'exit_code': code, 'elapsed_seconds': round(time.monotonic()-start, 3),
                   'protected_changes': changed, 'acceptance_exit': check.returncode if check else None,
                   'usage': usage, 'trace_sha256': digest(folder/'events.jsonl'),
@@ -162,7 +193,9 @@ def run(output, cli, timeout, order=ORDER, campaign=None):
         print(json.dumps({k: v for k, v in result.items() if k != 'actions'}), flush=True)
         (output/'results.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
         (output/'summary.json').write_text(json.dumps(summarize_campaign(campaign, results), indent=2), encoding='utf-8')
-        if classification == 'BLOCKED_ENVIRONMENT':
+        # A quota/capacity failure after actions stays FAIL, but must still stop
+        # new calls. Otherwise a partially executed attempt exhausts the plan.
+        if stop_reason:
             (output/'not-run.json').write_text(json.dumps(list(order[number:]), indent=2), encoding='utf-8')
             break
     return results
@@ -179,6 +212,8 @@ if __name__ == '__main__':
     parser.add_argument('--levels', nargs='+', type=int)
     parser.add_argument('--repeats', type=int, default=2)
     parser.add_argument('--plan', action='store_true', help='Preview profiles and maximum model calls without writing or executing')
+    parser.add_argument('--disabled-skills-file', type=Path,
+                        help='Private JSON list of exact host SKILL.md paths to exclude for this invocation only')
     args = parser.parse_args()
     if args.axis and args.profiles:
         parser.error('--axis and --profiles are different comparison designs')
@@ -195,5 +230,6 @@ if __name__ == '__main__':
         raise SystemExit(0)
     if args.output is None:
         parser.error('--output is required for model execution; use --plan for a read-only preview')
-    outcomes = run(args.output, args.cli, args.timeout, campaign['order'], campaign)
+    disabled_skills = json.loads(args.disabled_skills_file.read_text(encoding='utf-8')) if args.disabled_skills_file else []
+    outcomes = run(args.output, args.cli, args.timeout, campaign['order'], campaign, disabled_skills)
     raise SystemExit(0 if all(row['status'] == 'PASS' for row in outcomes) else 1)
