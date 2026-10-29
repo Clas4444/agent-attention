@@ -6,11 +6,17 @@ there. All model invocations are billable/consume host usage; inspect before use
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 import time
+
+if __package__:
+    from .effort_campaign import campaign_plan, summarize_campaign
+else:
+    from effort_campaign import campaign_plan, summarize_campaign
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {
@@ -41,6 +47,8 @@ def assess_usage(usage):
     """Keep unavailable usage unknown; reject impossible totals."""
     if usage is None:
         return None
+    if not isinstance(usage, dict):
+        raise ValueError('usage must be an object')
     fields = ('input_tokens', 'cached_input_tokens', 'output_tokens')
     if any(type(usage.get(k)) is not int or usage[k] < 0 for k in fields):
         raise ValueError('invalid usage')
@@ -50,7 +58,23 @@ def assess_usage(usage):
                 total_tokens=usage['input_tokens'] + usage['output_tokens'])
 
 
-def run(output, cli, timeout, order=ORDER):
+def classify_trial(code, events, stderr, changed, acceptance_exit, work_changed=False):
+    """An environment hint cannot excuse failed or partially executed work."""
+    actions = [e for e in events if e.get('type') in ('item.started', 'item.completed')
+               and e.get('item', {}).get('type') in ('command_execution', 'file_change', 'mcp_tool_call')]
+    completed = any(e.get('type') == 'turn.completed' for e in events)
+    if not actions and not completed and not changed and not work_changed and ('429 Too Many Requests' in stderr
+                                                        or 'HTTP 429' in stderr):
+        return 'BLOCKED_ENVIRONMENT'
+    return 'PASS' if code == 0 and completed and not changed and acceptance_exit == 0 else 'FAIL'
+
+
+def run(output, cli, timeout, order=ORDER, campaign=None):
+    campaign = campaign or dict(campaign_plan(), order=list(order), planned_trials=len(order))
+    profiles = campaign['profiles']
+    if (not order or list(order) != list(campaign['order'])
+            or any(label not in profiles or not re.fullmatch('[a-z][a-z0-9-]{0,63}',label) for label in order)):
+        raise ValueError('execution order must match known campaign profile labels')
     output = output.resolve()
     if output == ROOT or ROOT in output.parents:
         raise ValueError('output must be outside the source repository')
@@ -59,7 +83,7 @@ def run(output, cli, timeout, order=ORDER):
     shutil.copytree(ROOT / 'skills/agent-attention', frozen)
     skill_hashes = {p.relative_to(frozen).as_posix(): digest(p)
                     for p in frozen.rglob('*') if p.is_file()}
-    protocol = {'order': order, 'profiles': PROFILES, 'task': TASK,
+    protocol = {'order': order, 'profiles': profiles, 'campaign': campaign, 'task': TASK,
                 'files': FILES, 'skill_sha256': skill_hashes,
                 'oracle': 'CLI completed, protected hashes unchanged, unchanged checks.py passes',
                 'model_requested': 'gpt-6.1-sol', 'reasoning_effort': 'medium'}
@@ -81,7 +105,7 @@ def run(output, cli, timeout, order=ORDER):
         pins = {p.relative_to(folder).as_posix(): digest(p)
                 for p in folder.rglob('*') if p.is_file() and '.git' not in p.relative_to(folder).parts}
         (folder/'input-pins.json').write_text(json.dumps(pins, indent=2), encoding='utf-8')
-        prompt = TASK.format(profile=PROFILES[label])
+        prompt = TASK.format(profile=profiles[label])
         (folder / 'prompt.txt').write_text(prompt, encoding='utf-8')
         command = [cli, 'exec', '--ignore-user-config', '--ephemeral', '--json',
                    '--skip-git-repo-check', '--disable', 'apps', '--disable', 'memories',
@@ -101,35 +125,75 @@ def run(output, cli, timeout, order=ORDER):
         protected = [name for name in pins if name not in ('discount.py', 'checkout.py')]
         changed = [name for name in protected if not (folder/name).is_file()
                    or digest(folder/name) != pins[name]]
-        check = subprocess.run([sys.executable, '-B', 'checks.py'], cwd=folder,
-                               capture_output=True, text=True, timeout=15) if not changed else None
+        acceptance_error = None
+        try:
+            check = subprocess.run([sys.executable, '-B', 'checks.py'], cwd=folder,
+                                   capture_output=True, text=True, timeout=15) if not changed else None
+        except (subprocess.TimeoutExpired, OSError) as error:
+            check, acceptance_error = None, type(error).__name__
         events = []
         for line in out.splitlines():
-            try: events.append(json.loads(line))
+            try:
+                event = json.loads(line)
+                if isinstance(event, dict) and isinstance(event.get('item', {}), dict):
+                    events.append(event)
             except ValueError: pass
         actions = [e['item'] for e in events if e.get('type') == 'item.completed'
                    and e.get('item', {}).get('type') in ('command_execution', 'file_change')]
         usage = next((e.get('usage') for e in events if e.get('type') == 'turn.completed'), None)
+        usage_error = None
+        try:
+            usage = assess_usage(usage)
+        except ValueError as error:
+            usage, usage_error = None, str(error)
+        work_changed = any(not (folder/name).is_file() or digest(folder/name) != pins[name]
+                           for name in ('discount.py', 'checkout.py'))
+        classification = classify_trial(code, events, err, changed, check.returncode if check else None, work_changed)
+        if usage_error:
+            classification = 'FAIL'
         result = {'trial': number, 'profile': label,
-                  'status': 'PASS' if code == 0 and not changed and check and check.returncode == 0 else 'FAIL',
+                  'status': classification, 'usage_error': usage_error, 'acceptance_error': acceptance_error,
                   'exit_code': code, 'elapsed_seconds': round(time.monotonic()-start, 3),
                   'protected_changes': changed, 'acceptance_exit': check.returncode if check else None,
-                  'usage': assess_usage(usage), 'trace_sha256': digest(folder/'events.jsonl'),
+                  'usage': usage, 'trace_sha256': digest(folder/'events.jsonl'),
                   'actions': [{k: v for k, v in a.items() if k != 'aggregated_output'} for a in actions]}
         (folder/'result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
         results.append(result)
         print(json.dumps({k: v for k, v in result.items() if k != 'actions'}), flush=True)
         (output/'results.json').write_text(json.dumps(results, indent=2), encoding='utf-8')
+        (output/'summary.json').write_text(json.dumps(summarize_campaign(campaign, results), indent=2), encoding='utf-8')
+        if classification == 'BLOCKED_ENVIRONMENT':
+            (output/'not-run.json').write_text(json.dumps(list(order[number:]), indent=2), encoding='utf-8')
+            break
     return results
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', required=True, type=Path)
+    parser.add_argument('--output', type=Path)
     parser.add_argument('--cli', default='codex')
     parser.add_argument('--timeout', default=180, type=int)
-    parser.add_argument('--profiles', nargs='+', choices=PROFILES, default=ORDER,
+    parser.add_argument('--profiles', nargs='+', choices=PROFILES,
                         help='Default six-trial counterbalanced order; override only for explicitly labeled regressions')
+    parser.add_argument('--axis', choices=('focus', 'sync', 'batch', 'explore', 'verify'))
+    parser.add_argument('--levels', nargs='+', type=int)
+    parser.add_argument('--repeats', type=int, default=2)
+    parser.add_argument('--plan', action='store_true', help='Preview profiles and maximum model calls without writing or executing')
     args = parser.parse_args()
-    outcomes = run(args.output, args.cli, args.timeout, args.profiles)
+    if args.axis and args.profiles:
+        parser.error('--axis and --profiles are different comparison designs')
+    if args.levels is not None and not args.axis:
+        parser.error('--levels requires --axis')
+    try:
+        campaign = campaign_plan(args.axis, args.levels or (1,3,5), args.repeats)
+    except ValueError as error:
+        parser.error(str(error))
+    if args.profiles:
+        campaign.update(order=args.profiles, planned_trials=len(args.profiles))
+    if args.plan:
+        print(json.dumps(campaign, indent=2))
+        raise SystemExit(0)
+    if args.output is None:
+        parser.error('--output is required for model execution; use --plan for a read-only preview')
+    outcomes = run(args.output, args.cli, args.timeout, campaign['order'], campaign)
     raise SystemExit(0 if all(row['status'] == 'PASS' for row in outcomes) else 1)

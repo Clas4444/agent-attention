@@ -1,5 +1,9 @@
 # Task-wide attention
 
+For conditional per-step profiles and a local route map, use the optional
+[workflow setup](WORKFLOW-SETUP.md) introduced in 0.2.0. The direct profile path
+below remains available without designing a graph.
+
 Activate one independent attention layer at the start of a task. It stays with the
 task when the agent switches tools, workflows or skills. For example:
 
@@ -115,6 +119,12 @@ savings. Compare identical tasks, source snapshots, models and acceptance oracle
 before making cost or quality claims. Include failures, retries, cached/input/output
 tokens when supplied, elapsed time, rework and stale assumptions; unavailable usage
 fields stay unknown. See [results](testing/RESULTS.md).
+
+The 0.1.2 evaluator requires actual turn completion plus independent acceptance
+for PASS. It retains invalid usage and oracle errors as failed results, and stops
+remaining trials on pre-action HTTP 429 instead of repeatedly calling the model.
+See [evaluator result rules](testing/EVALUATOR-RELIABILITY.md). This maintenance
+patch preserves 0.1.1 profile semantics and checkpoint compatibility.
 
 ## Optional explicit checkpoint helper
 

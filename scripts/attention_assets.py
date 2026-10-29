@@ -6,9 +6,11 @@ import json
 from pathlib import Path
 
 if __package__:
+    from .workflow_assets import check as check_workflow
     from .attention import AXES
     from .attention_illustrations import axis_diagram, overview
 else:
+    from workflow_assets import check as check_workflow
     from attention import AXES
     from attention_illustrations import axis_diagram, overview
 
@@ -149,7 +151,7 @@ def check(repo, write=False):
             path.write_text(content, encoding='utf-8', newline='\n')
         elif not path.is_file() or path.read_text(encoding='utf-8') != content:
             errors.append('stale attention resource: '+path.relative_to(repo).as_posix())
-    return errors
+    return errors + check_workflow(repo, write)
 
 
 def main():

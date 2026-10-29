@@ -4,7 +4,11 @@ An independent attention layer for AI agents: **five axes, five levels each,
 balanced by default**. Choose a task profile once and carry it across direct work,
 Loop or other skills. No downstream skill modification is required.
 
-Experimental version: **0.1.1**. This is behavioral guidance, not a model
+Optional **workflow setup** now asks questions to design conditional per-step
+profiles, bounded cycles and a local agent map. Reuse a Repo 1 graph and attach
+modes without replacing its skills or routes, or design an attention-only loop.
+
+Version: **0.2.0**. This is behavioral guidance, not a model
 reasoning-effort setting or an enforced scheduler. Token savings are unmeasured.
 
 ![Five independent behavior choices](docs/assets/attention-controls.svg)
@@ -34,9 +38,29 @@ python scripts/attention.py --attention balanced --workflow loop-code
 The workflow label does not invoke anything. All unspecified axes remain 3.
 No attention request means ordinary host/workflow behavior.
 
+New in this version: preview controlled **single-axis comparisons** without
+calling a model, then execute the selected design and summarize quality/token
+results separately. See [axis campaigns](docs/testing/AXIS-CAMPAIGNS.md).
+
+```text
+python scripts/evaluate_effort.py --axis focus --levels 1 2 3 4 5 --repeats 2 --plan
+```
+
 Apply the profile directly to the next read, change and check. Activation requires
 no helper calls, state files or transition summaries. Optional persistence is a
 separate explicit request, not the mechanism that makes the mode work.
+
+## Optional workflow setup
+
+For setup, ask **`$agent-attention setup`** and provide the existing workflow if
+there is one. The agent asks only for missing details, shows conditional bindings
+and result routes, validates the design, then exports a new local map. Setup is
+optional; it does not start a job or change native thinking settings. `/…` picker
+syntax depends on the host; no `/workflow` alias is registered here.
+
+![Conditional skills and per-step attention](docs/assets/workflow-setup.svg)
+
+[Setup and attachment guide](docs/WORKFLOW-SETUP.md)
 
 ## What changes
 
@@ -84,3 +108,7 @@ the remote experiment branch. This repo has separate history and checks. It does
 not include the 53 Loop skills or inherit their historical runtime PASS claims.
 
 MIT license; original copyright retained.
+
+## Documentation
+
+[Documentation map](docs/README.md) · [Changelog](CHANGELOG.md) · [Release and compatibility](docs/RELEASE.md)

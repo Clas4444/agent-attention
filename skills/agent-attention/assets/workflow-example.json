@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "id": "my-workflow",
+  "goal": "Complete and verify the user-defined outcome",
+  "entry": "work",
+  "limits": {
+    "max_cycles": 3,
+    "max_steps": 20
+  },
+  "fact_keys": [
+    "kind",
+    "risk",
+    "done"
+  ],
+  "fact_sources": {
+    "kind": "User task classification",
+    "risk": "User-confirmed risk assessment",
+    "done": "Observed acceptance checks against the user goal"
+  },
+  "boundaries": [
+    "Keep external actions within existing user authorization"
+  ],
+  "steps": [
+    {
+      "id": "work",
+      "title": "Do one useful work item",
+      "sources": [
+        "README.md"
+      ],
+      "acceptance": [
+        "The requested item is ready for verification"
+      ],
+      "bindings": [
+        {
+          "when": {
+            "kind": "bug"
+          },
+          "attention": {
+            "focus": 2,
+            "batch": 4
+          }
+        },
+        {
+          "when": {},
+          "attention": {
+            "focus": 3
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "status": "PASS",
+          "next": "verify"
+        },
+        {
+          "status": "FAIL",
+          "next": "work"
+        },
+        {
+          "status": "BLOCKED",
+          "next": "STOP"
+        },
+        {
+          "status": "NOT_RUN",
+          "next": "STOP"
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "title": "Verify criteria and choose next action",
+      "sources": [
+        "README.md"
+      ],
+      "acceptance": [
+        "Required checks ran; gaps and completion are recorded"
+      ],
+      "cycle_end": true,
+      "bindings": [
+        {
+          "when": {
+            "risk": "high"
+          },
+          "attention": {
+            "verify": 5
+          }
+        },
+        {
+          "when": {},
+          "attention": {
+            "verify": 3
+          }
+        }
+      ],
+      "transitions": [
+        {
+          "status": "PASS",
+          "when": {
+            "done": true
+          },
+          "next": "DONE"
+        },
+        {
+          "status": "PASS",
+          "next": "work"
+        },
+        {
+          "status": "FAIL",
+          "next": "work"
+        },
+        {
+          "status": "BLOCKED",
+          "next": "STOP"
+        },
+        {
+          "status": "NOT_RUN",
+          "next": "STOP"
+        }
+      ]
+    }
+  ]
+}

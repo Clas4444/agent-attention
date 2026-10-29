@@ -10,3 +10,9 @@ Run `python -m unittest discover -s tests -v`,
 `python scripts/attention_assets.py`, and `git diff --check`.
 Keep raw/private logs under ignored .loop. Historical prototype results do not
 certify this standalone repository. Record new source hashes and actual checks.
+
+Optional graph setup uses scripts/workflow_setup.py and scripts/workflow_assets.py.
+Graph contract v1 is vendored identically in agent-workflows; neither repo imports
+the other at runtime. Edit core sources, regenerate bundled resources, and keep
+the shared contract tests aligned. Profile semantics remain 0.1.1; release 0.2.0
+does not silently migrate profile state. New map exports must remain local by default.

@@ -1,0 +1,229 @@
+{
+  "kind": "deterministic-cross-repo-integration",
+  "status": "PASS",
+  "model_calls": 0,
+  "meaning": "Real fixture edits/checks drive a shared cursor; no model interview or skill effectiveness claim.",
+  "core_sha256": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f",
+  "skills_preserved": true,
+  "routes_preserved": true,
+  "final_state": {
+    "workflow_sha256": "6cec39a4e5bf8878ecd635f6ed56a91f5a2605226212ee0a48535d472929b11e",
+    "step": "DONE",
+    "steps_completed": 5,
+    "cycles_completed": 2,
+    "status": "DONE",
+    "facts": {
+      "kind": "bug",
+      "risk": "high",
+      "done": true
+    },
+    "last": {
+      "step": "verify",
+      "status": "PASS",
+      "evidence": "Multiplication boundaries and full goal checks passed",
+      "reason": "ROUTE"
+    },
+    "execution": "NONE",
+    "evidence_scope": "Caller-supplied observation; routing does not verify task execution."
+  },
+  "records": [
+    {
+      "selected": {
+        "step": "work",
+        "skills": [
+          "loop-debug"
+        ],
+        "attention": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 4,
+          "explore": 3,
+          "verify": 3
+        },
+        "attention_requested": true,
+        "instruction_paths": [
+          ".agents/skills/loop-debug/SKILL.md"
+        ],
+        "skill_availability": "NOT_RUN",
+        "goal": "Repair both arithmetic operations and verify integer boundaries",
+        "boundaries": [
+          "Keep external actions within existing user authorization"
+        ],
+        "sources": [
+          "arithmetic.py",
+          "checks.py"
+        ],
+        "acceptance": [
+          "The requested item is ready for verification"
+        ],
+        "execution": "NONE",
+        "scope": "Read only listed sources and selected installed instructions; no permissions granted."
+      },
+      "observation": "FAIL",
+      "next": "work",
+      "cycles_completed": 0,
+      "steps_completed": 1,
+      "evidence": "Addition assertion actually failed before repair"
+    },
+    {
+      "selected": {
+        "step": "work",
+        "skills": [
+          "loop-debug"
+        ],
+        "attention": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 4,
+          "explore": 3,
+          "verify": 3
+        },
+        "attention_requested": true,
+        "instruction_paths": [
+          ".agents/skills/loop-debug/SKILL.md"
+        ],
+        "skill_availability": "NOT_RUN",
+        "goal": "Repair both arithmetic operations and verify integer boundaries",
+        "boundaries": [
+          "Keep external actions within existing user authorization"
+        ],
+        "sources": [
+          "arithmetic.py",
+          "checks.py"
+        ],
+        "acceptance": [
+          "The requested item is ready for verification"
+        ],
+        "execution": "NONE",
+        "scope": "Read only listed sources and selected installed instructions; no permissions granted."
+      },
+      "observation": "PASS",
+      "next": "verify",
+      "cycles_completed": 0,
+      "steps_completed": 2,
+      "evidence": "Addition check passed after targeted fixture edit"
+    },
+    {
+      "selected": {
+        "step": "verify",
+        "skills": [
+          "loop-review"
+        ],
+        "attention": {
+          "focus": 3,
+          "sync": 4,
+          "batch": 3,
+          "explore": 3,
+          "verify": 5
+        },
+        "attention_requested": true,
+        "instruction_paths": [
+          ".agents/skills/loop-review/SKILL.md"
+        ],
+        "skill_availability": "NOT_RUN",
+        "goal": "Repair both arithmetic operations and verify integer boundaries",
+        "boundaries": [
+          "Keep external actions within existing user authorization"
+        ],
+        "sources": [
+          "arithmetic.py",
+          "checks.py"
+        ],
+        "acceptance": [
+          "Required checks ran; gaps and completion are recorded"
+        ],
+        "execution": "NONE",
+        "scope": "Read only listed sources and selected installed instructions; no permissions granted."
+      },
+      "observation": "PASS",
+      "next": "work",
+      "cycles_completed": 1,
+      "steps_completed": 3,
+      "evidence": "Addition boundary checks passed; full goal still fails on multiply"
+    },
+    {
+      "selected": {
+        "step": "work",
+        "skills": [
+          "loop-debug"
+        ],
+        "attention": {
+          "focus": 2,
+          "sync": 4,
+          "batch": 4,
+          "explore": 3,
+          "verify": 3
+        },
+        "attention_requested": true,
+        "instruction_paths": [
+          ".agents/skills/loop-debug/SKILL.md"
+        ],
+        "skill_availability": "NOT_RUN",
+        "goal": "Repair both arithmetic operations and verify integer boundaries",
+        "boundaries": [
+          "Keep external actions within existing user authorization"
+        ],
+        "sources": [
+          "arithmetic.py",
+          "checks.py"
+        ],
+        "acceptance": [
+          "The requested item is ready for verification"
+        ],
+        "execution": "NONE",
+        "scope": "Read only listed sources and selected installed instructions; no permissions granted."
+      },
+      "observation": "PASS",
+      "next": "verify",
+      "cycles_completed": 1,
+      "steps_completed": 4,
+      "evidence": "Multiplication check passed after second fixture edit"
+    },
+    {
+      "selected": {
+        "step": "verify",
+        "skills": [
+          "loop-review"
+        ],
+        "attention": {
+          "focus": 3,
+          "sync": 4,
+          "batch": 3,
+          "explore": 3,
+          "verify": 5
+        },
+        "attention_requested": true,
+        "instruction_paths": [
+          ".agents/skills/loop-review/SKILL.md"
+        ],
+        "skill_availability": "NOT_RUN",
+        "goal": "Repair both arithmetic operations and verify integer boundaries",
+        "boundaries": [
+          "Keep external actions within existing user authorization"
+        ],
+        "sources": [
+          "arithmetic.py",
+          "checks.py"
+        ],
+        "acceptance": [
+          "Required checks ran; gaps and completion are recorded"
+        ],
+        "execution": "NONE",
+        "scope": "Read only listed sources and selected installed instructions; no permissions granted."
+      },
+      "observation": "PASS",
+      "next": "DONE",
+      "cycles_completed": 2,
+      "steps_completed": 5,
+      "evidence": "Multiplication boundaries and full goal checks passed"
+    }
+  ],
+  "exported_maps_ignored_by_default": true,
+  "native_discovery": "NOT_RUN",
+  "model_setup_effectiveness": "NOT_RUN",
+  "instruction_sha256": {
+    "repo_1_gateway": "c14d43ff2d338c2b7c17190bf982aad47fb6714e403ed8120f829e32e85b2a29",
+    "repo_2_attention": "b8ee9b6cdae5becc6d24c1cebdc7406e508d857e89ecd4ea9653d666ee875246"
+  },
+  "bundled_core_copies_match": true
+}

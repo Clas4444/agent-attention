@@ -1,6 +1,15 @@
 # Standalone repository validation
 
-Current 0.1.1 checks: [effort direction and measurements](EFFORT-DIRECTION-2026-10-28.md)
+Current local 0.2.0 candidate: [workflow setup](WORKFLOW-SETUP.md) and
+[current expectation audit](EXPECTATION-AUDIT.md). Remote CI and new model setup
+interviews remain NOT_RUN until explicitly exercised.
+
+Included internal 0.1.2 work: [evaluator reliability](EVALUATOR-RELIABILITY.md)
+adds deterministic failure-path coverage without new model performance claims.
+The new [axis campaign tool](AXIS-CAMPAIGNS.md) supports controlled designs and
+read-only reporting; new real-model single-axis measurements remain NOT_RUN.
+
+Historical 0.1.1 checks: [effort direction and measurements](EFFORT-DIRECTION-2026-10-28.md)
 reports lower/balanced/higher settings, token/cache breakdowns and limitations.
 The [Windows checkpoint follow-up](WINDOWS-CHECKPOINT-REPAIR.md) records the first
 push's CI failure, correction and expanded 30-test local suite.

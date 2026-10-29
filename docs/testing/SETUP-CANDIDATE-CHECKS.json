@@ -1,0 +1,68 @@
+{
+  "release_candidate": "0.2.0",
+  "date": "2026-10-29",
+  "status": "PASS",
+  "checks": [
+    {
+      "id": "unit-python314",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "3c241f3b4f989bf34a4c9fd19b0bd87d61cfb11f5a583cf2d841973e1a1cfb9f",
+      "discovered": 73,
+      "skipped": 1,
+      "skip_reasons": [
+        "directory symlink creation is unavailable"
+      ]
+    },
+    {
+      "id": "unit-python312",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "dafe8777bd0a5313a30bc28b0103ddd950c0609c7c79a9ed28b5bfc6923a1d53",
+      "discovered": 73,
+      "skipped": 1,
+      "skip_reasons": [
+        "directory symlink creation is unavailable"
+      ]
+    },
+    {
+      "id": "generated",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "b4288339e04517de3ebe5df27a92e6d843dd0a86c34c59932f0de274bc7c6137"
+    },
+    {
+      "id": "navigation",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "4729a11b4d26748887ef84b229b87b903a1938df4b5966d13acfb5b43212b775"
+    },
+    {
+      "id": "compile",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "id": "diff",
+      "status": "PASS",
+      "exit_code": 0,
+      "log_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  ],
+  "source_sha256": {
+    "scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f",
+    "scripts/workflow_assets.py": "95ab2d3f347c5de692bc1dd1fb05a0b69e3640889d8cfe452e3b251d26d73883",
+    "scripts/evaluate_effort.py": "b88a8467fa704ef3abf532ffddb9d222018b740ddb73ba7207460e2e70f5106e",
+    "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+    "skills/agent-attention/SKILL.md": "b8ee9b6cdae5becc6d24c1cebdc7406e508d857e89ecd4ea9653d666ee875246",
+    "skills/agent-attention/scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f",
+    "tests/test_workflow_setup.py": "e11318587af98bf747504b357cb26f1121e1dc41b13ff7a7a8d28a6f8ea5c25a"
+  },
+  "model_calls": 0,
+  "native_discovery": "NOT_RUN",
+  "remote_ci": "NOT_RUN",
+  "build_reproducibility": "NOT_RUN",
+  "shared_core_matches_repo1": true,
+  "scope": "Windows local deterministic checks. Log hashes refer to UTF-8 local captures; no independent backend attestation."
+}
