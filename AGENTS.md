@@ -16,3 +16,9 @@ Graph contract v1 is vendored identically in agent-workflows; neither repo impor
 the other at runtime. Edit core sources, regenerate bundled resources, and keep
 the shared contract tests aligned. Profile semantics remain 0.1.1; release 0.2.0
 does not silently migrate profile state. New map exports must remain local by default.
+
+Attention setup is independent: scripts/attention_setup.py designs base levels,
+conditional context overrides and restoration; scripts/attention_setup_assets.py
+packages its helper/reference/example and attention-setup.svg. It never requires
+a graph or imports agent-workflows. workflow_setup.py remains an optional legacy
+graph integration bridge; do not route ordinary attention setup through it.

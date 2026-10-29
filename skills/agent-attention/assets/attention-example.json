@@ -1,0 +1,24 @@
+{
+  "attention_schema": 1,
+  "id": "my-attention",
+  "scope": "Current authorized task; replace with the actual task and attention tradeoffs",
+  "base": {},
+  "fact_sources": {
+    "risk": "Observed task risk confirmed during setup"
+  },
+  "rules": [
+    {
+      "id": "high-risk",
+      "when": {
+        "risk": "high"
+      },
+      "levels": {
+        "verify": 5,
+        "sync": 4
+      },
+      "reason": "Check consequential assumptions and reconcile dependent work"
+    }
+  ],
+  "sources": [],
+  "restore": "base-after-context"
+}

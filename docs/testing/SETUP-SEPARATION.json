@@ -1,0 +1,36 @@
+{
+  "product": "agent-attention",
+  "version": "0.2.1",
+  "date": "2026-10-29",
+  "status": "PASS",
+  "checks": [
+    {
+      "runtime": "python314",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "46e8438df4b723db4bdb2f7530d68c9e4d4383eb42a8e89440db0098d7d921da",
+      "discovered": 84,
+      "skipped": 2
+    },
+    {
+      "runtime": "python312",
+      "exit_code": 0,
+      "status": "PASS",
+      "log_sha256": "fb1e7ee12027cf6fea9c09b7a06102a90893b0077c880cc434a69e05d5c51ac9",
+      "discovered": 84,
+      "skipped": 2
+    }
+  ],
+  "source_sha256": {
+    "scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+    "scripts/attention_setup_assets.py": "51e1953f8828d32d7df53d740e91acfdf76ede649814c6fc37317a587b74508c",
+    "tests/test_attention_setup.py": "98f29919041fc53e02ae407b1176cc39c140d69ef03e12a56e170d94d25bba03",
+    "skills/agent-attention/SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+    "skills/agent-attention/references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+    "skills/agent-attention/references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "docs/assets/attention-setup.svg": "266ad9c9746f28e6b00debe99c11c67503b86820ed9ffe2a5e29f62331a2a0f9"
+  },
+  "model_calls": 0,
+  "real_model_setup": "NOT_RUN",
+  "scope": "Final LF-normalized independent attention setup; isolated installed-skill test omits graph helper. Two Windows directory symlink tests skipped, not PASS."
+}

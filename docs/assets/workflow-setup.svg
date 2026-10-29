@@ -4,9 +4,9 @@
 <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#126957" stroke-width="1.5"/></marker></defs>
 <rect width="1400" height="930" rx="20" fill="#f2f6f4"/>
 <g font-family="Arial, sans-serif" fill="#16313b">
-<text x="40" y="40" font-size="15" fill="#126957" font-weight="700">OPTIONAL / WORKFLOW SETUP</text>
-<text x="40" y="87" font-size="35" font-weight="700">Design the loop before running it</text>
-<text x="40" y="122" font-size="19" fill="#415d67">Repo 1 attaches skills. Repo 2 attaches attention. Both follow the same conditional graph.</text>
+<text x="40" y="40" font-size="15" fill="#126957" font-weight="700">OPTIONAL / WORKFLOW INTEGRATION</text>
+<text x="40" y="87" font-size="35" font-weight="700">Attach attention to an existing graph</text>
+<text x="40" y="122" font-size="19" fill="#415d67">Optional graph bridge only. For independent attention setup, use the attention setup guide.</text>
 <g fill="white" stroke="#cddcda"><rect x="40" y="155" width="305" height="135" rx="12"/><rect x="378" y="155" width="305" height="135" rx="12"/><rect x="716" y="155" width="305" height="135" rx="12"/><rect x="1054" y="155" width="306" height="135" rx="12"/></g>
 <g font-size="20" font-weight="700"><text x="60" y="190">1 / Ask and clarify</text><text x="398" y="190">2 / Design and check</text><text x="736" y="190">3 / Export local map</text><text x="1074" y="190">4 / Run when requested</text></g>
 <g font-size="17" fill="#415d67"><text x="60" y="224">Outcome, steps, branches,</text><text x="60" y="251">source pointers and limits.</text><text x="398" y="224">Explicit fallback for each status.</text><text x="398" y="251">Clarify unknown condition facts.</text><text x="736" y="224">Exact files for each step.</text><text x="736" y="251">Keep the current route visible.</text><text x="1074" y="224">Setup alone does not execute.</text><text x="1074" y="251">Keep normal permissions.</text></g>

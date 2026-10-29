@@ -9,19 +9,19 @@ else:
     from workflow_setup import template
 
 
-REFERENCE = '''# Optional workflow setup
+REFERENCE = '''# Optional workflow integration bridge
 
-Use only for an explicit setup/design request. Existing direct workflows remain
+Use only for an explicit integration request with a supplied graph. Ordinary
+attention setup uses attention_setup.py and references/setup.md. Direct profiles remain
 available without a graph. Use the bundled workflow_setup.py; it is self-contained
 under isolated Python and never executes skills, tasks, shell expressions or models.
 
 ## Interview, then design
 
-Ask two or three related questions at a time, reusing known answers. Start with
-outcome/completion criteria and desired steps. Then ask about exact source pointers,
-PASS/FAIL/BLOCKED/NOT_RUN routes, conditional skill/profile choices, fact provenance,
-cycle end, limits, project root and output location. `questions --layer skills`
-or `questions --layer attention` prints the checklist. Do not manufacture answers.
+Confirm the supplied graph and preserve its work steps, skills, criteria and
+status routes. Ask only for missing task/per-binding attention levels, their
+conditions, tradeoffs and restoration. New graph conditions require a separately
+reviewed graph revision; do not silently design a new workflow during attachment.
 
 Show the ordered graph and branch priorities in the conversation. Clarify missing
 conditions before dependent work; use existing authorization instead of asking for
@@ -59,7 +59,7 @@ it does not turn a routed STOP or an unexecuted task into PASS.
 
 ## Check and export a local map
 
-`check --file draft.json` validates graph structure. Repo 1 should also supply
+`check --file draft.json` validates graph structure. agent-workflows should also supply
 `--catalog <skill-dir>/assets/catalog.json` to check canonical registered skills.
 This does not establish that instructions are installed or native picker discovery.
 Inspect selected instruction paths before execution; missing ones are BLOCKED.
@@ -100,7 +100,7 @@ not autonomously observed by this read-only routing helper.
 
 ## Attach attention to an existing skills graph
 
-Repo 2 can reuse Repo 1's graph. Use `attach --file workflow.json --patch modes.json`.
+agent-attention can reuse a graph from agent-workflows. Use `attach --file workflow.json --patch modes.json`.
 A patch contains optional task attention and steps keyed by step ID, for example:
 
 ```json
@@ -122,9 +122,9 @@ def picture():
 <defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#126957" stroke-width="1.5"/></marker></defs>
 <rect width="1400" height="930" rx="20" fill="#f2f6f4"/>
 <g font-family="Arial, sans-serif" fill="#16313b">
-<text x="40" y="40" font-size="15" fill="#126957" font-weight="700">OPTIONAL / WORKFLOW SETUP</text>
-<text x="40" y="87" font-size="35" font-weight="700">Design the loop before running it</text>
-<text x="40" y="122" font-size="19" fill="#415d67">Repo 1 attaches skills. Repo 2 attaches attention. Both follow the same conditional graph.</text>
+<text x="40" y="40" font-size="15" fill="#126957" font-weight="700">OPTIONAL / WORKFLOW INTEGRATION</text>
+<text x="40" y="87" font-size="35" font-weight="700">Attach attention to an existing graph</text>
+<text x="40" y="122" font-size="19" fill="#415d67">Optional graph bridge only. For independent attention setup, use the attention setup guide.</text>
 <g fill="white" stroke="#cddcda"><rect x="40" y="155" width="305" height="135" rx="12"/><rect x="378" y="155" width="305" height="135" rx="12"/><rect x="716" y="155" width="305" height="135" rx="12"/><rect x="1054" y="155" width="306" height="135" rx="12"/></g>
 <g font-size="20" font-weight="700"><text x="60" y="190">1 / Ask and clarify</text><text x="398" y="190">2 / Design and check</text><text x="736" y="190">3 / Export local map</text><text x="1074" y="190">4 / Run when requested</text></g>
 <g font-size="17" fill="#415d67"><text x="60" y="224">Outcome, steps, branches,</text><text x="60" y="251">source pointers and limits.</text><text x="398" y="224">Explicit fallback for each status.</text><text x="398" y="251">Clarify unknown condition facts.</text><text x="736" y="224">Exact files for each step.</text><text x="736" y="251">Keep the current route visible.</text><text x="1074" y="224">Setup alone does not execute.</text><text x="1074" y="251">Keep normal permissions.</text></g>
@@ -151,7 +151,7 @@ def check(repo, write=False):
     if not folder.is_dir():
         folder = repo/'skills/agent-attention'; layer = 'attention'
     outputs = {folder/'scripts/workflow_setup.py': (repo/'scripts/workflow_setup.py').read_text(encoding='utf-8'),
-               folder/'references/setup.md': REFERENCE,
+               folder/'references/workflow-integration.md': REFERENCE,
                folder/'assets/workflow-example.json': json.dumps(template(layer), indent=2)+'\n',
                repo/'docs/assets/workflow-setup.svg': picture()}
     errors = []

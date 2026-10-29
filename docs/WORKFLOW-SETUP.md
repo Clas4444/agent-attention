@@ -1,14 +1,17 @@
-# Optional attention workflow setup
+# Optional workflow integration bridge
 
-Use `$agent-attention setup` to design per-step attention choices, or attach them
-to a workflow from [Repo 1](https://github.com/Clas4444/agent-workflows). A direct
-task-wide profile still works without any setup or graph. Natural-language
-"agent-attention setup" expresses the intent; native slash/picker syntax depends
-on the host. This repo does not add a `/workflow` alias.
+For independent **`$agent-attention setup`**, use the
+[attention setup guide](ATTENTION-SETUP.md). It requires no workflow graph,
+agent-workflows installation, skills or routing cursor.
 
-![Interview, map and bounded conditional cycle](assets/workflow-setup.svg)
+This page describes the separate, explicit request to attach attention to an
+existing compatible graph. The self-contained workflow_setup.py bridge is retained
+for graph-v1 compatibility; it is not the attention setup entry point. Existing
+skills and routes are supplied by that graph and remain unchanged.
 
-## Interview and conditional modes
+![Optional graph integration](assets/workflow-setup.svg)
+
+## When integrating with a supplied graph
 
 The agent asks two or three related questions at a time and reuses known answers.
 It gathers the outcome, step list, criteria, exact source pointers, condition
@@ -26,7 +29,7 @@ Profiles affect work choices described in the attention guide; they do not set
 native model effort, permissions or a token budget. Higher levels allocate more
 discretionary attention, without guaranteed per-run token ordering.
 
-## Attach to an existing Repo 1 graph
+## Attach to an existing agent-workflows graph
 
 Use the shared schema_version=1 graph. It has steps, ordered pre-work bindings,
 post-observation transitions, exact sources, criteria, condition fact names,
@@ -51,28 +54,13 @@ that do not exist in the graph, explicitly revise the ordered graph in the setup
 interview; attach does not invent branches. The two repos need no runtime import
 of one another and remain independently installable.
 
-## Design without Repo 1
+## No existing graph?
 
-```text
-python scripts/workflow_setup.py questions --layer attention
-python scripts/workflow_setup.py template --layer attention
-python scripts/workflow_setup.py check --file draft.json
-python scripts/workflow_setup.py export --file draft.json --project C:/MyProject
-```
-
-The example template is not a completed interview. Replace it with the user's
-answers and a real task. No skills need to be named in an attention-only graph.
-The `both` template is available for an explicitly combined design. Helpers are
-bundled under the installed skill's scripts/; source-repo paths above are examples.
-No Python? Draft with existing tools and mark helper validation NOT_RUN.
-
-Export creates a NEW local .loop/workflows/&lt;id&gt; directory with workflow.json,
-AGENT-MAP.md, diagram.mmd and a local .gitignore ignoring all its contents.
-Existing designs and project-wide ignore settings are preserved. --output can
-select another normalized project-relative directory; output aliases are blocked.
-An I/O failure may leave a partial new folder, so inspect it before retrying.
-Force-add can still publish ignored files: sanitize only deliberately shared
-copies, and keep the machine-local map local.
+Use [independent attention setup](ATTENTION-SETUP.md). Do not manufacture a graph
+just to configure attention. To design task steps and skill choices, use
+agent-workflows workflow setup, or another separately selected workflow designer.
+The bridge retains its older graph template/check/export CLI for compatibility;
+those graph tools are optional and are not required to install or use this skill.
 
 ## Follow the current route
 

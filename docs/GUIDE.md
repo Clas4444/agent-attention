@@ -1,8 +1,8 @@
 # Task-wide attention
 
-For conditional per-step profiles and a local route map, use the optional
-[workflow setup](WORKFLOW-SETUP.md) introduced in 0.2.0. The direct profile path
-below remains available without designing a graph.
+For base levels, conditional context overrides and an optional local attention
+map, use [attention setup](ATTENTION-SETUP.md). It is independent of any workflow
+graph or second repository. Ordinary direct profiles below still need no setup.
 
 Activate one independent attention layer at the start of a task. It stays with the
 task when the agent switches tools, workflows or skills. For example:

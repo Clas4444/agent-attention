@@ -4,11 +4,11 @@ An independent attention layer for AI agents: **five axes, five levels each,
 balanced by default**. Choose a task profile once and carry it across direct work,
 Loop or other skills. No downstream skill modification is required.
 
-Optional **workflow setup** now asks questions to design conditional per-step
-profiles, bounded cycles and a local agent map. Reuse a Repo 1 graph and attach
-modes without replacing its skills or routes, or design an attention-only loop.
+Optional **attention setup** asks about the five-axis base profile, conditional
+temporary levels, tradeoffs and restoration. It works on the task you already
+have. No workflow graph, Loop skill or second repository is required.
 
-Version: **0.2.0**. This is behavioral guidance, not a model
+Version: **0.2.1**. This is behavioral guidance, not a model
 reasoning-effort setting or an enforced scheduler. Token savings are unmeasured.
 
 ![Five independent behavior choices](docs/assets/attention-controls.svg)
@@ -50,17 +50,17 @@ Apply the profile directly to the next read, change and check. Activation requir
 no helper calls, state files or transition summaries. Optional persistence is a
 separate explicit request, not the mechanism that makes the mode work.
 
-## Optional workflow setup
+## Optional attention setup
 
-For setup, ask **`$agent-attention setup`** and provide the existing workflow if
-there is one. The agent asks only for missing details, shows conditional bindings
-and result routes, validates the design, then exports a new local map. Setup is
-optional; it does not start a job or change native thinking settings. `/…` picker
-syntax depends on the host; no `/workflow` alias is registered here.
+Ask **`$agent-attention setup`** to design an attention plan. The agent asks about
+scope, base levels, optional conditions, benefits/drawbacks and when to restore
+the base. Keep it in context or explicitly request a private attention map.
+This configures attention; it does not invent task steps, routes or cycles.
 
-![Conditional skills and per-step attention](docs/assets/workflow-setup.svg)
+![Independent attention setup](docs/assets/attention-setup.svg)
 
-[Setup and attachment guide](docs/WORKFLOW-SETUP.md)
+[Attention setup guide](docs/ATTENTION-SETUP.md) ·
+[Optional integration with an existing workflow](docs/WORKFLOW-SETUP.md)
 
 ## What changes
 

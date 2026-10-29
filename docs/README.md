@@ -5,7 +5,8 @@ Choose the task below; historical evidence keeps its original version and scope.
 | Need | Read |
 |---|---|
 | Profiles, levels and illustrated tradeoffs | [GUIDE.md](GUIDE.md) |
-| Design or attach conditional modes | [WORKFLOW-SETUP.md](WORKFLOW-SETUP.md) |
+| Design independent attention settings | [Attention setup](ATTENTION-SETUP.md) |
+| Attach modes to an existing graph (optional) | [Workflow integration](WORKFLOW-SETUP.md) |
 | Offline profile preview | [attention-playground.html](attention-playground.html) |
 | Measured results and limitations | [testing/RESULTS.md](testing/RESULTS.md) |
 | Single-axis comparison protocol | [testing/AXIS-CAMPAIGNS.md](testing/AXIS-CAMPAIGNS.md) |

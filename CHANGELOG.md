@@ -1,5 +1,15 @@
 # Changes
 
+## 0.2.1 — 2026-10-29
+
+- Separate attention setup from workflow design. Interview for task scope, base
+  levels, conditional attention contexts, tradeoffs and restoration only.
+- Add a standalone attention-plan helper and private ATTENTION-MAP.md export;
+  require no workflow graph, cursor, Loop skill or agent-workflows installation.
+- Keep the existing graph-v1 helper as an optional integration bridge. Add distinct
+  attention setup guidance/illustration, preserving the existing visual style.
+- Test an installed attention skill with its graph bridge deliberately omitted.
+
 ## 0.2.0 — 2026-10-29
 
 - Add optional `$agent-attention setup`: interview for per-step conditional
