@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "cents",
+  "description": "Integer arithmetic and a cross-file shipping threshold",
+  "files": {
+    "discount.py": "def discount(cents):\n    return cents * 0.9\n",
+    "shipping.py": "def shipping(cents):\n    return 500 if cents < 5000 else 0\n",
+    "checkout.py": "from discount import discount\nfrom shipping import shipping\ndef total(cents):\n    return discount(cents) + shipping(cents)\n",
+    "FLOW.md": "Nonnegative integer cents. discount returns integer cents after 10 percent off, rounded down. Shipping is free from 5000 cents AFTER discount. checkout combines both. No other callers.\n",
+    "checks.py": "from discount import discount\nfrom shipping import shipping\nfrom checkout import total\nassert discount(101) == 90 and type(discount(101)) is int\nassert discount(10**18 + 1) == (10**18 + 1) * 9 // 10\nassert shipping(5000) == 0 and shipping(4999) == 500\nassert total(5500) == 5450 and total(6000) == 5400\nassert total(5555) == 5499 and total(5556) == 5000\nprint('PASS')\n",
+    "AGENTS.md": "Isolated evaluation fixture. Only edit discount.py and checkout.py. FLOW.md describes the relevant flow. Run python checks.py; do not edit checks.py, shipping.py, FLOW.md or installed skill. No network, other repositories, global skills or extra agents.\n"
+  },
+  "allowed_edits": [
+    "discount.py",
+    "checkout.py"
+  ],
+  "task": "Use the installed .agents/skills/agent-attention/SKILL.md explicitly with {profile} for this task. Fix discount.py to return integer cents rounded down; fix checkout.py so free shipping uses the discounted amount. Preserve the shipping API. Only edit discount.py and checkout.py. Run python checks.py. Apply the profile to your working decisions. Stop when complete; keep the final response concise.",
+  "reference": {
+    "discount.py": "def discount(cents):\n    return cents * 9 // 10\n",
+    "checkout.py": "from discount import discount\nfrom shipping import shipping\ndef total(cents):\n    amount = discount(cents)\n    return amount + shipping(amount)\n"
+  }
+}

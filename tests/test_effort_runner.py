@@ -1,8 +1,11 @@
 import contextlib
 import io
+import importlib.util
 import json
+import py_compile
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 import unittest
 from unittest import mock
@@ -45,10 +48,11 @@ class RunnerTests(unittest.TestCase):
         real_run=subprocess.run
         calls=[]
         def fixture(command, *args, **kwargs):
-            if command[-1]=='checks.py' and mode=='oracle-timeout':
+            if command[0]==sys.executable and mode=='oracle-timeout':
                 raise subprocess.TimeoutExpired(command,15)
             if command[0]!='fixture-codex': return real_run(command,*args,**kwargs)
             calls.append(command)
+            if mode=='missing-cli': raise FileNotFoundError('fixture CLI is unavailable')
             if mode=='429':
                 return subprocess.CompletedProcess(command,1,'{"type":"turn.started"}\n','HTTP 429 Too Many Requests')
             folder=Path(command[command.index('-C')+1])
@@ -66,6 +70,21 @@ class RunnerTests(unittest.TestCase):
             (folder/'discount.py').write_text('def discount(cents):\n    return cents * 9 // 10\n')
             (folder/'checkout.py').write_text('from discount import discount\nfrom shipping import shipping\ndef total(cents):\n    amount = discount(cents)\n    return amount + shipping(amount)\n')
             if mode=='tamper': (folder/'checks.py').write_text("print('forged PASS')\n")
+            if mode=='early-exit': (folder/'discount.py').write_text("raise SystemExit(0)\n")
+            if mode=='forged-pass': (folder/'discount.py').write_text("print('PASS'); raise SystemExit(0)\n")
+            if mode=='oracle-side-effect':
+                with (folder/'discount.py').open('a') as stream:
+                    stream.write("from pathlib import Path\nPath('FLOW.md').write_text('changed during checking')\n")
+            if mode=='extra-file': (folder/'extra.py').write_text("print('outside allowed edits')\n")
+            if mode=='bytecode-shadow':
+                control=folder/'cache-control.py'
+                control.write_text((folder/'discount.py').read_text())
+                (folder/'discount.py').write_text('def discount(cents):\n    return 0\n')
+                cached=Path(importlib.util.cache_from_source(str(folder/'discount.py')))
+                cached.parent.mkdir(exist_ok=True)
+                py_compile.compile(str(control),cfile=str(cached),doraise=True,
+                                   invalidation_mode=py_compile.PycInvalidationMode.UNCHECKED_HASH)
+                control.unlink()
             usage={'input_tokens':100,'cached_input_tokens':80,'output_tokens':10}
             if mode=='invalid-usage': usage['cached_input_tokens']=101
             event={'type':'turn.completed','usage':usage}
@@ -122,6 +141,12 @@ class RunnerTests(unittest.TestCase):
         self.assertIsNone(results[0]['usage'])
         self.assertTrue(results[0]['usage_error'])
 
+    def test_early_exit_forged_pass_side_effect_and_extra_file_cannot_pass(self):
+        for mode in ('early-exit','forged-pass','oracle-side-effect','extra-file','bytecode-shadow'):
+            with self.subTest(mode=mode):
+                results,_,_=self.exercise(mode)
+                self.assertEqual(results[0]['status'],'FAIL')
+
     def test_oracle_timeout_is_saved_as_failure(self):
         results,_,_=self.exercise('oracle-timeout')
         self.assertEqual(results[0]['status'],'FAIL')
@@ -135,6 +160,14 @@ class RunnerTests(unittest.TestCase):
         results,calls,remaining=self.exercise('429',('low','high'))
         self.assertEqual(len(calls),1)
         self.assertEqual(results[0]['status'],'BLOCKED_ENVIRONMENT')
+        self.assertEqual(remaining,['high'])
+
+    def test_missing_cli_is_recorded_as_blocked_and_stops_remaining_trials(self):
+        results,calls,remaining=self.exercise('missing-cli',('low','high'))
+        self.assertEqual(len(calls),1)
+        self.assertEqual(results[0]['status'],'BLOCKED_ENVIRONMENT')
+        self.assertEqual(results[0]['startup_error'],'FileNotFoundError')
+        self.assertEqual(results[0]['environment_failure'],'CLI_STARTUP_ERROR')
         self.assertEqual(remaining,['high'])
 
     def test_json_environment_failures_stop_even_after_partial_work(self):
