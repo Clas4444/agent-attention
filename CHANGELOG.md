@@ -1,5 +1,19 @@
 # Changes
 
+## 0.2.3 — 2026-10-30
+
+- Reject five reproduced evaluator false-PASS cases: early exit, forged PASS
+  output, protected-file mutation during acceptance, extra source files and
+  cached bytecode shadowing. Check frozen sources in a fresh oracle workspace.
+- Separate trial source workspaces from private metadata; detect source aliases
+  and capture evaluator/case hashes before execution. Preserve old report readers.
+- Group evaluation code under scripts/evaluation, keeping existing CLI/import
+  entry points. Add versioned cents, ledger and dependency benchmark fixtures,
+  reference/rejection controls and a bounded eighteen-call suite with global stop.
+- Keep attention instructions, generators and profile semantics 0.1.1 unchanged.
+- Record CLI startup failures as environment-blocked attempts and stop the suite
+  instead of exiting without trial/remaining-work records.
+
 ## 0.2.2 — 2026-10-30
 
 - Add evaluator-only host skill exclusions without modifying global settings;

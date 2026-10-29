@@ -8,7 +8,7 @@ Optional **attention setup** asks about the five-axis base profile, conditional
 temporary levels, tradeoffs and restoration. It works on the task you already
 have. No workflow graph, Loop skill or second repository is required.
 
-Version: **0.2.2**. This is behavioral guidance, not a model
+Version: **0.2.3**. This is behavioral guidance, not a model
 reasoning-effort setting or an enforced scheduler. General token savings are unproven.
 
 ![Five independent behavior choices](docs/assets/attention-controls.svg)
@@ -38,12 +38,15 @@ python scripts/attention.py --attention balanced --workflow loop-code
 The workflow label does not invoke anything. All unspecified axes remain 3.
 No attention request means ordinary host/workflow behavior.
 
-New in this version: exclude unrelated host skills from evaluator calls without
-changing global settings. Inspect discovery before comparing profiles; see
-[axis campaigns](docs/testing/AXIS-CAMPAIGNS.md). The evaluator also supports
-single-axis designs and no-model planning.
-The [repeated Codex comparison](docs/testing/CODEX-COMPOSITE-2026-10-30.md)
-reports task-specific means, failed attempts and limits; it is not a general Codex average.
+New in this version: source-only acceptance checks reject premature exit, forged
+PASS output, protected-file side effects and bytecode shadowing. A bounded
+[three-case benchmark suite](benchmarks/README.md) adds ledger and dependency
+repairs, keeps per-task results separate and stops on environment failures.
+Host exclusions, single-axis designs and no-model planning remain available;
+see [axis campaigns](docs/testing/AXIS-CAMPAIGNS.md).
+See [harder-case results](docs/testing/CODEX-HARDER-2026-10-30.md) for the new
+measurements and limits. The earlier [composite study](docs/testing/CODEX-COMPOSITE-2026-10-30.md)
+is retained separately; neither is a general Codex average.
 
 ```text
 python scripts/evaluate_effort.py --axis focus --levels 1 2 3 4 5 --repeats 2 --plan
@@ -89,6 +92,16 @@ profiles unchanged. Older checkpoint files do not identify the semantic revision
 [Full guide, level illustrations and tradeoffs](docs/GUIDE.md) ·
 [Offline configuration preview](docs/attention-playground.html) ·
 [Evidence and limitations](docs/testing/RESULTS.md)
+
+## Repository layout
+
+- `skills/agent-attention/`: the self-contained installable attention layer.
+- `scripts/attention*.py`, `scripts/checkpoint.py`, `scripts/workflow*.py`: core helpers and generators.
+- `scripts/evaluation/`: opt-in runner, acceptance oracle and suite orchestration;
+  top-level evaluation CLI entry points remain compatible.
+- `benchmarks/cases/`: versioned repair inputs and independent checker controls.
+- `tests/`: deterministic unit/integration checks; no real model calls.
+- `docs/testing/`: [current evidence and historical reports](docs/testing/README.md).
 
 ## Develop
 

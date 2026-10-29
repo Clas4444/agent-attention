@@ -1,0 +1,1160 @@
+{
+  "report_schema": 1,
+  "date": "2026-10-30",
+  "run_date_utc": "2026-10-29",
+  "version": "0.2.3",
+  "source_base_commit": "262f0595c22478809591dad6d49352d1613bc4ab",
+  "model_requested": "gpt-6.1-sol",
+  "native_reasoning_effort": "medium",
+  "cli_version": "0.165.0-alpha.1.2",
+  "platform": "Windows",
+  "python": "3.14.7",
+  "protocol_schema": 2,
+  "planned_trials": 18,
+  "recorded_trials": 16,
+  "stop_reason": "MODEL_CAPACITY",
+  "not_run": [
+    {
+      "case_id": "cents",
+      "trial": 5,
+      "profile": "balanced"
+    },
+    {
+      "case_id": "cents",
+      "trial": 6,
+      "profile": "low"
+    }
+  ],
+  "source_sha256": {
+    "scripts/evaluate_effort.py": "7ad7dd6a0f5a2ad095030b332be98dd03fae487889490293850d7fc68811aaeb",
+    "scripts/evaluate_suite.py": "cb36b4003e14f733257faa60a2f4dc5b01f0a0b313c30f652770e8a0aedcd128",
+    "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+    "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+    "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+    "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+    "scripts/evaluation/runner.py": "e1dfc061b07abb3f546231f73dae840d1a13158ca37dc6bd2513b9c9b1d799a0",
+    "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad",
+    "benchmarks/cases/ledger.json": "c387dd434add5ddb72c98c843c704554b4aaad2eacc63065c24ff33697a22850",
+    "benchmarks/cases/dependencies.json": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+    "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda",
+    "skills/agent-attention/SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+    "skills/agent-attention/assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+    "skills/agent-attention/assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+    "skills/agent-attention/references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "skills/agent-attention/references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+    "skills/agent-attention/references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "skills/agent-attention/scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "skills/agent-attention/scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+    "skills/agent-attention/scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+    "skills/agent-attention/scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+  },
+  "discovery": {
+    "skill_count": 1,
+    "candidate_only": true,
+    "parent_project_instructions": false,
+    "full_home_isolation": "NOT_VERIFIED",
+    "excluded_host_skill_count": 177
+  },
+  "cases": {
+    "ledger": {
+      "description": "Atomic state changes, validation, replay identity, and receipt aliasing",
+      "campaign": {
+        "design": "composite",
+        "axis": null,
+        "profiles": {
+          "low": "focus=1,sync=1,batch=1,explore=1,verify=1",
+          "balanced": "focus=3,sync=3,batch=3,explore=3,verify=3",
+          "high": "focus=5,sync=5,batch=5,explore=5,verify=5"
+        },
+        "order": [
+          "low",
+          "balanced",
+          "high",
+          "high",
+          "balanced",
+          "low"
+        ],
+        "planned_trials": 6,
+        "other_axes": "changed together",
+        "model_calls": "NONE while planning; execution consumes account usage",
+        "order_policy": "alternating forward/reverse; not randomized",
+        "writes": "NONE",
+        "case_id": "ledger",
+        "case_sha256": "c387dd434add5ddb72c98c843c704554b4aaad2eacc63065c24ff33697a22850",
+        "description": "Atomic state changes, validation, replay identity, and receipt aliasing"
+      },
+      "case_sha256": "c387dd434add5ddb72c98c843c704554b4aaad2eacc63065c24ff33697a22850",
+      "evaluator_sha256": {
+        "scripts/evaluate_effort.py": "7ad7dd6a0f5a2ad095030b332be98dd03fae487889490293850d7fc68811aaeb",
+        "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+        "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+        "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+        "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+        "scripts/evaluation/runner.py": "e1dfc061b07abb3f546231f73dae840d1a13158ca37dc6bd2513b9c9b1d799a0",
+        "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad"
+      },
+      "skill_sha256": {
+        "SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+        "assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+        "assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+        "references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+        "references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+        "references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+        "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+        "scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+        "scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+        "scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+      },
+      "summary": {
+        "design": "composite",
+        "axis": null,
+        "planned_trials": 6,
+        "recorded_trials": 6,
+        "not_run": 0,
+        "groups": {
+          "low": {
+            "levels": {
+              "focus": 1,
+              "sync": 1,
+              "batch": 1,
+              "explore": 1,
+              "verify": 1
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 56296.5,
+            "mean_cached_input_tokens": 49216,
+            "mean_uncached_input_tokens": 7080.5,
+            "mean_output_tokens": 616,
+            "mean_total_tokens": 56912.5,
+            "samples_total_tokens": [
+              48168,
+              65657
+            ],
+            "median_total_tokens": 56912.5,
+            "min_total_tokens": 48168,
+            "max_total_tokens": 65657,
+            "sample_stdev_total_tokens": 12366.59049617153
+          },
+          "balanced": {
+            "levels": {
+              "focus": 3,
+              "sync": 3,
+              "batch": 3,
+              "explore": 3,
+              "verify": 3
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 56324,
+            "mean_cached_input_tokens": 50816,
+            "mean_uncached_input_tokens": 5508,
+            "mean_output_tokens": 670.5,
+            "mean_total_tokens": 56994.5,
+            "samples_total_tokens": [
+              65565,
+              48424
+            ],
+            "median_total_tokens": 56994.5,
+            "min_total_tokens": 48424,
+            "max_total_tokens": 65565,
+            "sample_stdev_total_tokens": 12120.517336318611
+          },
+          "high": {
+            "levels": {
+              "focus": 5,
+              "sync": 5,
+              "batch": 5,
+              "explore": 5,
+              "verify": 5
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 128514,
+            "mean_cached_input_tokens": 116288,
+            "mean_uncached_input_tokens": 12226,
+            "mean_output_tokens": 1489.5,
+            "mean_total_tokens": 130003.5,
+            "samples_total_tokens": [
+              121470,
+              138537
+            ],
+            "median_total_tokens": 130003.5,
+            "min_total_tokens": 121470,
+            "max_total_tokens": 138537,
+            "sample_stdev_total_tokens": 12068.191434510807
+          }
+        },
+        "status": "MEASURED",
+        "limits": [
+          "Means include failed attempts with available usage; missing usage is not zero.",
+          "Cached input is a subset of input, not an extra token quantity.",
+          "Single-axis control on this task is not proof of general causal effects or cost savings."
+        ]
+      },
+      "trials": [
+        {
+          "trial": 1,
+          "case_id": "ledger",
+          "profile": "low",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 47609,
+            "cached_input_tokens": 43008,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 559,
+            "reasoning_output_tokens": 55,
+            "uncached_input_tokens": 4601,
+            "total_tokens": 48168
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 21.933,
+          "trace_sha256": "5ef70901a92ece651493098c52fb83fe02c9a48753ab49f20303cd70a135a9af",
+          "command_count": 2,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 2,
+          "case_id": "ledger",
+          "profile": "balanced",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 64917,
+            "cached_input_tokens": 60032,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 648,
+            "reasoning_output_tokens": 63,
+            "uncached_input_tokens": 4885,
+            "total_tokens": 65565
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 21.067,
+          "trace_sha256": "97846a07fcd51faa1ac9a8723216d1bc46a7e66f074aa353e7280e9f44e16b8b",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 3,
+          "case_id": "ledger",
+          "profile": "high",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 119997,
+            "cached_input_tokens": 108672,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1473,
+            "reasoning_output_tokens": 124,
+            "uncached_input_tokens": 11325,
+            "total_tokens": 121470
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 47.824,
+          "trace_sha256": "819aeb455b09282b6ea5f37036ea7eee660fc5482dc8a68d9e85e41813577bc8",
+          "command_count": 8,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 4,
+          "case_id": "ledger",
+          "profile": "high",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 137031,
+            "cached_input_tokens": 123904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1506,
+            "reasoning_output_tokens": 166,
+            "uncached_input_tokens": 13127,
+            "total_tokens": 138537
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 54.743,
+          "trace_sha256": "8568a18addcdb694e0a0173b46a3a2d6b93c08bc74586c8856b3036d355d7eaf",
+          "command_count": 8,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 5,
+          "case_id": "ledger",
+          "profile": "balanced",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 47731,
+            "cached_input_tokens": 41600,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 693,
+            "reasoning_output_tokens": 106,
+            "uncached_input_tokens": 6131,
+            "total_tokens": 48424
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 23.12,
+          "trace_sha256": "e3ab549ab9011a56e73b2fbb1743f49875e908cbce02dcfb1d582d2386d7cfee",
+          "command_count": 2,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 6,
+          "case_id": "ledger",
+          "profile": "low",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 64984,
+            "cached_input_tokens": 55424,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 673,
+            "reasoning_output_tokens": 80,
+            "uncached_input_tokens": 9560,
+            "total_tokens": 65657
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 30.461,
+          "trace_sha256": "b3ea2d0794e0a2eda9bc6083cefeb22cb1e5637681c551182dc782d60385f6fa",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        }
+      ]
+    },
+    "dependencies": {
+      "description": "Transitive closure, stable topological order, cycles, and deep chains",
+      "campaign": {
+        "design": "composite",
+        "axis": null,
+        "profiles": {
+          "low": "focus=1,sync=1,batch=1,explore=1,verify=1",
+          "balanced": "focus=3,sync=3,batch=3,explore=3,verify=3",
+          "high": "focus=5,sync=5,batch=5,explore=5,verify=5"
+        },
+        "order": [
+          "low",
+          "balanced",
+          "high",
+          "high",
+          "balanced",
+          "low"
+        ],
+        "planned_trials": 6,
+        "other_axes": "changed together",
+        "model_calls": "NONE while planning; execution consumes account usage",
+        "order_policy": "alternating forward/reverse; not randomized",
+        "writes": "NONE",
+        "case_id": "dependencies",
+        "case_sha256": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+        "description": "Transitive closure, stable topological order, cycles, and deep chains"
+      },
+      "case_sha256": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+      "evaluator_sha256": {
+        "scripts/evaluate_effort.py": "7ad7dd6a0f5a2ad095030b332be98dd03fae487889490293850d7fc68811aaeb",
+        "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+        "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+        "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+        "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+        "scripts/evaluation/runner.py": "e1dfc061b07abb3f546231f73dae840d1a13158ca37dc6bd2513b9c9b1d799a0",
+        "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad"
+      },
+      "skill_sha256": {
+        "SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+        "assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+        "assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+        "references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+        "references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+        "references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+        "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+        "scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+        "scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+        "scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+      },
+      "summary": {
+        "design": "composite",
+        "axis": null,
+        "planned_trials": 6,
+        "recorded_trials": 6,
+        "not_run": 0,
+        "groups": {
+          "low": {
+            "levels": {
+              "focus": 1,
+              "sync": 1,
+              "batch": 1,
+              "explore": 1,
+              "verify": 1
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 47246.5,
+            "mean_cached_input_tokens": 42880,
+            "mean_uncached_input_tokens": 4366.5,
+            "mean_output_tokens": 623.5,
+            "mean_total_tokens": 47870,
+            "samples_total_tokens": [
+              47847,
+              47893
+            ],
+            "median_total_tokens": 47870.0,
+            "min_total_tokens": 47847,
+            "max_total_tokens": 47893,
+            "sample_stdev_total_tokens": 32.526911934581186
+          },
+          "balanced": {
+            "levels": {
+              "focus": 3,
+              "sync": 3,
+              "batch": 3,
+              "explore": 3,
+              "verify": 3
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 64409.5,
+            "mean_cached_input_tokens": 57600,
+            "mean_uncached_input_tokens": 6809.5,
+            "mean_output_tokens": 794,
+            "mean_total_tokens": 65203.5,
+            "samples_total_tokens": [
+              65031,
+              65376
+            ],
+            "median_total_tokens": 65203.5,
+            "min_total_tokens": 65031,
+            "max_total_tokens": 65376,
+            "sample_stdev_total_tokens": 243.9518395093589
+          },
+          "high": {
+            "levels": {
+              "focus": 5,
+              "sync": 5,
+              "batch": 5,
+              "explore": 5,
+              "verify": 5
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 2,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 1.0,
+            "usage_samples": 2,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 82423.5,
+            "mean_cached_input_tokens": 72320,
+            "mean_uncached_input_tokens": 10103.5,
+            "mean_output_tokens": 1408,
+            "mean_total_tokens": 83831.5,
+            "samples_total_tokens": [
+              83507,
+              84156
+            ],
+            "median_total_tokens": 83831.5,
+            "min_total_tokens": 83507,
+            "max_total_tokens": 84156,
+            "sample_stdev_total_tokens": 458.91230099006935
+          }
+        },
+        "status": "MEASURED",
+        "limits": [
+          "Means include failed attempts with available usage; missing usage is not zero.",
+          "Cached input is a subset of input, not an extra token quantity.",
+          "Single-axis control on this task is not proof of general causal effects or cost savings."
+        ]
+      },
+      "trials": [
+        {
+          "trial": 1,
+          "case_id": "dependencies",
+          "profile": "low",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 47205,
+            "cached_input_tokens": 42880,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 642,
+            "reasoning_output_tokens": 46,
+            "uncached_input_tokens": 4325,
+            "total_tokens": 47847
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 24.406,
+          "trace_sha256": "1a6a12aa6ff1c87653430df4358f65b7ab2b18b0172366fd7be5159e781d278d",
+          "command_count": 2,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 2,
+          "case_id": "dependencies",
+          "profile": "balanced",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 64322,
+            "cached_input_tokens": 55296,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 709,
+            "reasoning_output_tokens": 49,
+            "uncached_input_tokens": 9026,
+            "total_tokens": 65031
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 28.433,
+          "trace_sha256": "3a67755fe311a723f5c8d3c576a6fff1e0a7630f6785b92520c5b070db7e9b2a",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 3,
+          "case_id": "dependencies",
+          "profile": "high",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 82003,
+            "cached_input_tokens": 71680,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1504,
+            "reasoning_output_tokens": 162,
+            "uncached_input_tokens": 10323,
+            "total_tokens": 83507
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 43.808,
+          "trace_sha256": "7c7fd3784c2c65a1b2a075c430db9f2c4825295227a25c9e7f98f985635e4e4d",
+          "command_count": 4,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 4,
+          "case_id": "dependencies",
+          "profile": "high",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 82844,
+            "cached_input_tokens": 72960,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1312,
+            "reasoning_output_tokens": 119,
+            "uncached_input_tokens": 9884,
+            "total_tokens": 84156
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 40.428,
+          "trace_sha256": "880747e87da27f021f463ae51357d98429ec9549fa9015e24089f9e32da640b4",
+          "command_count": 4,
+          "failed_commands": 0,
+          "file_change_events": 2,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 5,
+          "case_id": "dependencies",
+          "profile": "balanced",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 64497,
+            "cached_input_tokens": 59904,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 879,
+            "reasoning_output_tokens": 50,
+            "uncached_input_tokens": 4593,
+            "total_tokens": 65376
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 26.567,
+          "trace_sha256": "c4c9bd2b696ac7f08aaf9ff9312ebeca4333536da7216226d8bfe3fdb203cdd9",
+          "command_count": 4,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 6,
+          "case_id": "dependencies",
+          "profile": "low",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 47288,
+            "cached_input_tokens": 42880,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 605,
+            "reasoning_output_tokens": 42,
+            "uncached_input_tokens": 4408,
+            "total_tokens": 47893
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 21.867,
+          "trace_sha256": "000830ec6588bfde79c15feb4993ee0a13aebac76d02a07b3f15f6cc21217d72",
+          "command_count": 4,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        }
+      ]
+    },
+    "cents": {
+      "description": "Integer arithmetic and a cross-file shipping threshold",
+      "campaign": {
+        "design": "composite",
+        "axis": null,
+        "profiles": {
+          "low": "focus=1,sync=1,batch=1,explore=1,verify=1",
+          "balanced": "focus=3,sync=3,batch=3,explore=3,verify=3",
+          "high": "focus=5,sync=5,batch=5,explore=5,verify=5"
+        },
+        "order": [
+          "low",
+          "balanced",
+          "high",
+          "high",
+          "balanced",
+          "low"
+        ],
+        "planned_trials": 6,
+        "other_axes": "changed together",
+        "model_calls": "NONE while planning; execution consumes account usage",
+        "order_policy": "alternating forward/reverse; not randomized",
+        "writes": "NONE",
+        "case_id": "cents",
+        "case_sha256": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda",
+        "description": "Integer arithmetic and a cross-file shipping threshold"
+      },
+      "case_sha256": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda",
+      "evaluator_sha256": {
+        "scripts/evaluate_effort.py": "7ad7dd6a0f5a2ad095030b332be98dd03fae487889490293850d7fc68811aaeb",
+        "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+        "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+        "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+        "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+        "scripts/evaluation/runner.py": "e1dfc061b07abb3f546231f73dae840d1a13158ca37dc6bd2513b9c9b1d799a0",
+        "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad"
+      },
+      "skill_sha256": {
+        "SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+        "assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+        "assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+        "references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+        "references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+        "references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+        "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+        "scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+        "scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+        "scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+      },
+      "summary": {
+        "design": "composite",
+        "axis": null,
+        "planned_trials": 6,
+        "recorded_trials": 4,
+        "not_run": 2,
+        "groups": {
+          "low": {
+            "levels": {
+              "focus": 1,
+              "sync": 1,
+              "batch": 1,
+              "explore": 1,
+              "verify": 1
+            },
+            "planned": 2,
+            "observed": 1,
+            "counts": {
+              "PASS": 1,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 1,
+            "success_rate": 1.0,
+            "usage_samples": 1,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 45922,
+            "mean_cached_input_tokens": 41984,
+            "mean_uncached_input_tokens": 3938,
+            "mean_output_tokens": 364,
+            "mean_total_tokens": 46286,
+            "samples_total_tokens": [
+              46286
+            ],
+            "median_total_tokens": 46286,
+            "min_total_tokens": 46286,
+            "max_total_tokens": 46286,
+            "sample_stdev_total_tokens": null
+          },
+          "balanced": {
+            "levels": {
+              "focus": 3,
+              "sync": 3,
+              "batch": 3,
+              "explore": 3,
+              "verify": 3
+            },
+            "planned": 2,
+            "observed": 1,
+            "counts": {
+              "PASS": 1,
+              "FAIL": 0,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 1,
+            "success_rate": 1.0,
+            "usage_samples": 1,
+            "usage_missing": 0,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 62225,
+            "mean_cached_input_tokens": 57984,
+            "mean_uncached_input_tokens": 4241,
+            "mean_output_tokens": 371,
+            "mean_total_tokens": 62596,
+            "samples_total_tokens": [
+              62596
+            ],
+            "median_total_tokens": 62596,
+            "min_total_tokens": 62596,
+            "max_total_tokens": 62596,
+            "sample_stdev_total_tokens": null
+          },
+          "high": {
+            "levels": {
+              "focus": 5,
+              "sync": 5,
+              "batch": 5,
+              "explore": 5,
+              "verify": 5
+            },
+            "planned": 2,
+            "observed": 2,
+            "counts": {
+              "PASS": 1,
+              "FAIL": 1,
+              "BLOCKED_ENVIRONMENT": 0
+            },
+            "not_run": 0,
+            "success_rate": 0.5,
+            "usage_samples": 1,
+            "usage_missing": 1,
+            "tool_command_failures": 0,
+            "mean_input_tokens": 62484,
+            "mean_cached_input_tokens": 54272,
+            "mean_uncached_input_tokens": 8212,
+            "mean_output_tokens": 619,
+            "mean_total_tokens": 63103,
+            "samples_total_tokens": [
+              63103
+            ],
+            "median_total_tokens": 63103,
+            "min_total_tokens": 63103,
+            "max_total_tokens": 63103,
+            "sample_stdev_total_tokens": null
+          }
+        },
+        "status": "MEASURED",
+        "limits": [
+          "Means include failed attempts with available usage; missing usage is not zero.",
+          "Cached input is a subset of input, not an extra token quantity.",
+          "Single-axis control on this task is not proof of general causal effects or cost savings."
+        ]
+      },
+      "trials": [
+        {
+          "trial": 1,
+          "case_id": "cents",
+          "profile": "low",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 45922,
+            "cached_input_tokens": 41984,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 364,
+            "reasoning_output_tokens": 70,
+            "uncached_input_tokens": 3938,
+            "total_tokens": 46286
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 19.537,
+          "trace_sha256": "5804e32fd3609b43ff0d099a6c5856f443fef5c4bd237b3583955ff16f270d30",
+          "command_count": 2,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 2,
+          "case_id": "cents",
+          "profile": "balanced",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 62225,
+            "cached_input_tokens": 57984,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 371,
+            "reasoning_output_tokens": 0,
+            "uncached_input_tokens": 4241,
+            "total_tokens": 62596
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 19.181,
+          "trace_sha256": "05f580dc9c9a792fc7f2c249359591c2feb287f5ab190ae98e3d6066c8d0812e",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 3,
+          "case_id": "cents",
+          "profile": "high",
+          "status": "PASS",
+          "environment_failure": null,
+          "usage": {
+            "input_tokens": 62484,
+            "cached_input_tokens": 54272,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 619,
+            "reasoning_output_tokens": 18,
+            "uncached_input_tokens": 8212,
+            "total_tokens": 63103
+          },
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 28.657,
+          "trace_sha256": "c5c61dff625f599a7f69181aec26bb4eaf176f0b0649f53de5e5d58f192f6ada",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 2,
+          "candidate_skill_read": true
+        },
+        {
+          "trial": 4,
+          "case_id": "cents",
+          "profile": "high",
+          "status": "FAIL",
+          "environment_failure": "MODEL_CAPACITY",
+          "usage": null,
+          "usage_error": null,
+          "acceptance_error": null,
+          "acceptance_exit": 0,
+          "oracle_process_exit": 0,
+          "protected_changes": [],
+          "elapsed_seconds": 35.423,
+          "trace_sha256": "440d5686c44bd2931c6063af9cfddb600563dc5722acff5cd53c4ce23344ff42",
+          "command_count": 3,
+          "failed_commands": 0,
+          "file_change_events": 0,
+          "candidate_skill_read": true
+        }
+      ]
+    }
+  },
+  "counts": {
+    "PASS": 15,
+    "FAIL": 1,
+    "BLOCKED_ENVIRONMENT": 0
+  },
+  "baseline_regressions": {
+    "revision": "262f059",
+    "tests": 16,
+    "false_pass_cases": 5,
+    "status": "FAIL",
+    "cases": [
+      "early-exit",
+      "forged-pass",
+      "oracle-side-effect",
+      "extra-file",
+      "bytecode-shadow"
+    ]
+  },
+  "oracle_controls": {
+    "ledger": {
+      "reference": "PASS",
+      "broken": "REJECTED",
+      "wrong-content": "REJECTED",
+      "missing": "REJECTED",
+      "early-exit": "REJECTED",
+      "forged-pass": "REJECTED"
+    },
+    "dependencies": {
+      "reference": "PASS",
+      "broken": "REJECTED",
+      "wrong-content": "REJECTED",
+      "missing": "REJECTED",
+      "early-exit": "REJECTED",
+      "forged-pass": "REJECTED"
+    },
+    "cents": {
+      "reference": "PASS",
+      "broken": "REJECTED",
+      "wrong-content": "REJECTED",
+      "missing": "REJECTED",
+      "early-exit": "REJECTED",
+      "forged-pass": "REJECTED"
+    }
+  },
+  "historical_recheck": [
+    {
+      "trial": 1,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 2,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 3,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 4,
+      "original_status": "FAIL",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 5,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 6,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 7,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 8,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 9,
+      "original_status": "PASS",
+      "fresh_oracle_pass": true
+    },
+    {
+      "trial": 10,
+      "original_status": "FAIL",
+      "fresh_oracle_pass": false
+    },
+    {
+      "trial": 11,
+      "original_status": "FAIL",
+      "fresh_oracle_pass": false
+    },
+    {
+      "trial": 12,
+      "original_status": "FAIL",
+      "fresh_oracle_pass": false
+    }
+  ],
+  "validation": {
+    "working_tree_tests": 100,
+    "working_tree_passed": 97,
+    "working_tree_skipped": 3,
+    "generated_assets": "PASS",
+    "diff_check": "PASS",
+    "publication_snapshot": {
+      "status": "PASS",
+      "tests": 99,
+      "passed": 96,
+      "skipped": 3,
+      "source_tree": "f8c2b7fc8d3397789e704c0d88e0d9f8c46ec0bc",
+      "generated_assets": "PASS",
+      "scope": "Code/fixture snapshot excluding unrelated setup packaging; documentation-only changes follow this validation."
+    }
+  },
+  "limits": [
+    "Descriptive per-case means only; two samples per profile on each harder case, one known-usage sample per profile on the interrupted cents case.",
+    "Full home/runtime isolation is NOT_VERIFIED. Discovery probe shows only the fixture candidate, but authentication home and service cache remain shared.",
+    "The CLI requested model is not independent backend attestation; native reasoning effort remains medium.",
+    "Within-case order alternates forward/reverse; case blocks are sequential and not randomized. No independence or significance assumption.",
+    "All five axes change together; no per-axis causal attribution or general Codex token/cost average.",
+    "Input includes cached input; output includes reported reasoning. Do not add either subset twice. Missing usage is unknown, not zero.",
+    "No retry/replacement after model capacity. Two remaining attempts are NOT_RUN, not zero-cost samples.",
+    "The oracle resists the five tested bypasses but is not an OS sandbox for arbitrary hostile Python.",
+    "Old reports remain unchanged and are not pooled with the new oracle campaign. Historical rechecking is acceptance replay, not new model usage."
+  ],
+  "published_source_sha256": {
+    "scripts/evaluate_effort.py": "7ad7dd6a0f5a2ad095030b332be98dd03fae487889490293850d7fc68811aaeb",
+    "scripts/evaluate_suite.py": "cb36b4003e14f733257faa60a2f4dc5b01f0a0b313c30f652770e8a0aedcd128",
+    "scripts/effort_campaign.py": "cb31a9e719a43cfe2a0b46154ee12988723197c10cdbe56b9c07b3a67c92f767",
+    "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+    "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+    "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+    "scripts/evaluation/runner.py": "e4cf62dc11b32bbe99eaa02586f9d310267d189c136f8b4d78e3f98f6752b3ac",
+    "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad",
+    "benchmarks/cases/ledger.json": "c387dd434add5ddb72c98c843c704554b4aaad2eacc63065c24ff33697a22850",
+    "benchmarks/cases/dependencies.json": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+    "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda",
+    "skills/agent-attention/SKILL.md": "a8c7eed01727d130e728703245101da819d2248693a3365921f630b7d1ad6bb8",
+    "skills/agent-attention/assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+    "skills/agent-attention/assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+    "skills/agent-attention/references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "skills/agent-attention/references/setup.md": "be7b13be19affac508161d4f9d3a06c398dd6bced844e55de47667ef663adc8a",
+    "skills/agent-attention/references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "skills/agent-attention/scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "skills/agent-attention/scripts/attention_setup.py": "35b0c7b7dedf555c956d7296117dff9c827aa57b31dc3d02d8a0f3e6cccf4f6f",
+    "skills/agent-attention/scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+    "skills/agent-attention/scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f"
+  },
+  "post_campaign_change": {
+    "path": "scripts/evaluation/runner.py",
+    "change": "Record CLI startup OSError as BLOCKED_ENVIRONMENT and stop remaining trials",
+    "baseline": {
+      "tests": 17,
+      "errors": 1,
+      "status": "FAIL"
+    },
+    "repaired": {
+      "tests": 17,
+      "status": "PASS"
+    },
+    "real_model_rerun": "NOT_RUN: suite had stopped on capacity; this startup branch used deterministic local fixtures only",
+    "note": "Measured and published source hashes are separate; acceptance/case/suite code is unchanged after real calls."
+  },
+  "publication_source_commit": "94c05ab23e312ff3126ac2b51904eb3f17150d61"
+}

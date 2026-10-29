@@ -1,6 +1,14 @@
 # Standalone repository validation
 
-Current 0.2.2: [repeated Codex composite-profile comparison](CODEX-COMPOSITE-2026-10-30.md)
+Current 0.2.3: [harder cases and acceptance repair](CODEX-HARDER-2026-10-30.md)
+records two complete six-attempt harder cases plus an interrupted cents block:
+fifteen completed sessions, one capacity-failed attempt and two NOT_RUN trials.
+Five independently reproduced evaluator false-PASS paths are repaired and the
+benchmark/evaluation code is separated from the installed attention helpers.
+Per-task means and limited sample sizes are explicit; general savings and full
+home/runtime isolation remain unverified.
+
+The 0.2.2 [repeated Codex composite-profile comparison](CODEX-COMPOSITE-2026-10-30.md)
 records twelve attempts, eight completed sessions with usage and task-specific
 means. It also retains capacity/quota failures and missing usage, fixes evaluator
 host-context and structured-quota handling, and keeps full isolation NOT_VERIFIED.

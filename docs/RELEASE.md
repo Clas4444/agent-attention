@@ -1,4 +1,30 @@
-# Release 0.2.2 — 2026-10-30
+# Release 0.2.3 — 2026-10-30
+
+Evaluation now uses a source-only acceptance copy, frozen checks, completion
+verification and source-integrity checks before/after execution. Five reproduced
+false-PASS paths are rejected. Trial workspaces are separate from private traces
+and metadata; protocol schema 2 records source/case hashes before model calls.
+
+Evaluation internals live in scripts/evaluation; the original CLI/import entry
+points remain compatible. New ledger and dependency fixtures extend the original
+cents case. The [benchmark guide](../benchmarks/README.md) describes the bounded
+suite and its independent checker controls. Results must remain per task; the
+suite does not establish a universal Codex token average or hostile-code sandbox.
+The [new campaign](testing/CODEX-HARDER-2026-10-30.md) records fifteen completed
+PASS sessions, one capacity failure after work and two NOT_RUN trials. Both
+harder cases complete six attempts each; original/failed records remain intact.
+
+This patch does not alter the installed attention payload or profile semantics.
+No global skill update is needed for this evaluator-only repair. To roll back,
+restore the previous evaluator sources while preserving raw reports and local
+attention plans. Schema-1 report reading remains supported; do not pool old/new
+oracle campaigns or silently replace historical outcomes.
+
+The publication source snapshot passes 99 deterministic tests: 96 PASS and three
+symlink skips, with generated resources PASS. Windows Python 3.14 was executed
+locally; the new Linux/Python 3.11/3.12 remote matrix remains NOT_VERIFIED here.
+
+## Previous evaluator repair (0.2.2)
 
 The evaluation helper now accepts a private list of host skill exclusions for
 each invocation. It does not change global settings or copy credentials.
