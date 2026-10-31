@@ -1,18 +1,47 @@
 """Independent attention setup: no companion checkout or graph is needed."""
 import copy
 import json
+import itertools
 from pathlib import Path
 import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
-from scripts.attention_setup import export, load, MissingFacts, questions, select, template, validate
+from scripts.attention_setup import agent_map, export, load, MissingFacts, questions, select, template, validate
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class AttentionSetupTests(unittest.TestCase):
+    def test_all_3125_base_combinations_restore_after_conflicting_contexts(self):
+        axes = ('focus', 'sync', 'batch', 'explore', 'verify')
+        for values in itertools.product(range(1, 6), repeat=5):
+            base = dict(zip(axes, values))
+            plan = template(); plan['base'] = base
+            plan['rules'].append({'id': 'editing', 'when': {'risk': 'edit'},
+                                  'levels': {'batch': 1, 'explore': 2}, 'reason': 'Bounded edit'})
+            frozen = copy.deepcopy(plan)
+            for risk, override in [('high', {'verify': 5, 'sync': 4}),
+                                   ('edit', {'batch': 1, 'explore': 2}), ('ordinary', {})]:
+                self.assertEqual(select(plan, {'risk': risk})['levels'], dict(base, **override))
+            self.assertEqual(plan, frozen)
+
+    def test_exported_map_is_self_contained_at_every_level_and_context(self):
+        from scripts.attention import AXES
+        for level in range(1, 6):
+            plan = template()
+            plan['base'] = dict.fromkeys(AXES, level)
+            mapped = agent_map(plan, Path('fixture'))
+            for axis in AXES:
+                self.assertIn(AXES[axis][level - 1], mapped)
+            selected = select(plan, {'risk': 'high'})
+            for axis, value in selected['levels'].items():
+                self.assertIn(AXES[axis][value - 1], mapped)
+            for invariant in selected['invariants']:
+                self.assertIn(invariant, mapped)
+            self.assertIn('Semantics: 0.1.1', mapped)
+
     def test_base_only_plan_needs_no_rules_facts_graph_or_skill(self):
         plan = template(); plan['rules'] = []; plan['fact_sources'] = {}; plan['base'] = {'focus': 2}
         result = select(plan)

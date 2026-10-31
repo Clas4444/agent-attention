@@ -1,5 +1,14 @@
 # Changes
 
+## 0.2.5 — 2026-10-31
+
+- Make exported attention maps self-contained: embed resolved five-axis guidance
+  for base and every context, semantics version, invariants and combination warnings.
+  Previously maps referred to selected guidance without including or locating it.
+- Test all 3,125 base combinations across conflicting contexts and restoration;
+  check exported guidance at every level. Profile semantics remain 0.1.1.
+- Document explicit map application and snapshot refresh requirements.
+
 ## 0.2.4 — 2026-10-30
 
 - Publish the standalone attention-setup skill already available locally, with

@@ -1,0 +1,354 @@
+{
+  "schema": 1,
+  "date": "2026-10-31",
+  "release": "0.2.5",
+  "semantics": "0.1.1",
+  "baseline_revision": "fc53f89a949142ce82577ad859abb856c2246e6c",
+  "protocols": [
+    {
+      "order": [
+        [
+          "old",
+          1
+        ],
+        [
+          "new",
+          3
+        ],
+        [
+          "old",
+          5
+        ],
+        [
+          "new",
+          5
+        ],
+        [
+          "old",
+          3
+        ],
+        [
+          "new",
+          1
+        ]
+      ],
+      "case": "cents",
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "timeout": 180,
+      "oracle": "Frozen source-only independent acceptance; protected files unchanged; completed CLI",
+      "isolation": "NOT_VERIFIED: prior host skill exclusions; no clean home isolation",
+      "limits": "One attempt per map/level, no reliability or causal savings claim. No retries on environment failure.",
+      "source_sha256": {
+        "scripts/attention_setup.py": "945f1ae2a7c80cfe53e561003797c19d259733699d3af1253a697784d9374ece",
+        "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+        "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda"
+      }
+    },
+    {
+      "order": [
+        [
+          "missing",
+          1
+        ],
+        [
+          "high",
+          1
+        ],
+        [
+          "ordinary",
+          1
+        ]
+      ],
+      "case": "cents",
+      "model": "gpt-6.1-sol",
+      "effort": "medium",
+      "timeout": 180,
+      "oracle": "Frozen source-only independent acceptance; protected files unchanged; completed CLI",
+      "isolation": "NOT_VERIFIED: prior host skill exclusions; no clean home isolation",
+      "behavioral_rubric": "Missing facts: completed BLOCKED response and no source edits. Known facts: frozen task oracle PASS. Read-map traces assessed separately; selection statements are self-reports.",
+      "limits": "One attempt per map/level, no reliability or causal savings claim. No retries on environment failure.",
+      "source_sha256": {
+        "scripts/attention_setup.py": "945f1ae2a7c80cfe53e561003797c19d259733699d3af1253a697784d9374ece",
+        "scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+        "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda"
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "map": "old",
+      "level": 1,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 71983,
+        "cached_input_tokens": 69760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 472,
+        "reasoning_output_tokens": 63,
+        "uncached_input_tokens": 2223,
+        "total_tokens": 72455
+      },
+      "command_count": 3,
+      "elapsed_seconds": 60.44,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "new",
+      "level": 3,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 43038,
+        "cached_input_tokens": 39040,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 265,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 3998,
+        "total_tokens": 43303
+      },
+      "command_count": 2,
+      "elapsed_seconds": 19.37,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "old",
+      "level": 5,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 42627,
+        "cached_input_tokens": 38784,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 318,
+        "reasoning_output_tokens": 24,
+        "uncached_input_tokens": 3843,
+        "total_tokens": 42945
+      },
+      "command_count": 2,
+      "elapsed_seconds": 14.84,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "new",
+      "level": 5,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 57929,
+        "cached_input_tokens": 53760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 385,
+        "reasoning_output_tokens": 67,
+        "uncached_input_tokens": 4169,
+        "total_tokens": 58314
+      },
+      "command_count": 3,
+      "elapsed_seconds": 20.43,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "old",
+      "level": 3,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 57201,
+        "cached_input_tokens": 52480,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 330,
+        "reasoning_output_tokens": 0,
+        "uncached_input_tokens": 4721,
+        "total_tokens": 57531
+      },
+      "command_count": 2,
+      "elapsed_seconds": 15.62,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "new",
+      "level": 1,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 57557,
+        "cached_input_tokens": 51968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 34,
+        "uncached_input_tokens": 5589,
+        "total_tokens": 57978
+      },
+      "command_count": 3,
+      "elapsed_seconds": 21.53,
+      "environment_failure": null,
+      "map_read_observed": true,
+      "independent_check_observed": false
+    }
+  ],
+  "contexts": [
+    {
+      "map": "missing",
+      "level": 1,
+      "exit": 0,
+      "status": "FAIL",
+      "acceptance_exit": 1,
+      "protected_changes": [],
+      "oracle_error": "OracleIncomplete",
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 28561,
+        "cached_input_tokens": 25856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 198,
+        "reasoning_output_tokens": 59,
+        "uncached_input_tokens": 2705,
+        "total_tokens": 28759
+      },
+      "command_count": 1,
+      "elapsed_seconds": 13.22,
+      "environment_failure": null,
+      "expectation": "BLOCKED without source edits",
+      "work_changed": [],
+      "behavioral_status": "FAIL",
+      "map_read_observed": true,
+      "independent_check_observed": false
+    },
+    {
+      "map": "high",
+      "level": 1,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 74806,
+        "cached_input_tokens": 68736,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 700,
+        "reasoning_output_tokens": 28,
+        "uncached_input_tokens": 6070,
+        "total_tokens": 75506
+      },
+      "command_count": 5,
+      "elapsed_seconds": 28.16,
+      "environment_failure": null,
+      "expectation": "Complete task",
+      "work_changed": [
+        "discount.py",
+        "checkout.py"
+      ],
+      "behavioral_status": "PASS",
+      "map_read_observed": true,
+      "independent_check_observed": true
+    },
+    {
+      "map": "ordinary",
+      "level": 1,
+      "exit": 0,
+      "status": "PASS",
+      "acceptance_exit": 0,
+      "protected_changes": [],
+      "oracle_error": null,
+      "oracle_mutations": [],
+      "usage": {
+        "input_tokens": 58774,
+        "cached_input_tokens": 54272,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 347,
+        "reasoning_output_tokens": 60,
+        "uncached_input_tokens": 4502,
+        "total_tokens": 59121
+      },
+      "command_count": 3,
+      "elapsed_seconds": 21.05,
+      "environment_failure": null,
+      "expectation": "Complete task",
+      "work_changed": [
+        "discount.py",
+        "checkout.py"
+      ],
+      "behavioral_status": "PASS",
+      "map_read_observed": true,
+      "independent_check_observed": false
+    }
+  ],
+  "startup_attempts": {
+    "count": 6,
+    "original_status": "FAIL",
+    "audited_status": "BLOCKED",
+    "reason": "Sandbox denied CLI app-server initialization before any model turn or task action",
+    "usage": null
+  },
+  "audit": {
+    "missing_context_original_behavioral_status": "FAIL",
+    "missing_context_audited_status": "PASS",
+    "reason": "Model identified absent risk, requested authoritative fact, completed without source edits. Literal uppercase BLOCKED matcher was a false negative; original FAIL retained. Task acceptance FAIL is expected for an intentionally unexecuted task.",
+    "automated_behavior_scorer": "FAIL: literal status matching is not a general semantic oracle; manual trace/source adjudication used"
+  },
+  "deterministic": {
+    "tests": 106,
+    "pass": 103,
+    "skip": 3,
+    "base_combinations": 3125,
+    "context_selections": 9375,
+    "map_levels": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "resources": "PASS",
+    "diff": "PASS"
+  },
+  "limitations": [
+    "One attempt per cell; no reliability estimate or pooled Codex average",
+    "No clean home isolation or complete host discovery attestation",
+    "No no-map baseline; cannot estimate causal map benefit",
+    "No real-model restoration sequence; restoration exhaustively checked in helper only",
+    "Levels 2/4 checked deterministically, not in model sessions",
+    "Native skill picker NOT_RUN"
+  ],
+  "runner_sha256": {
+    "run.py": "e8afb4b02fbdf23c23b14e13936a930b0bfa8f95fe2e89435c0ed572f368f0d3",
+    "context.py": "7986dd1424372244fbe19e19a48a3f62811fbcd696790c7b1dd06e99e871bf8b"
+  }
+}

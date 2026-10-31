@@ -3,7 +3,7 @@
 Five attention axes, five levels each, balanced by default. Apply a profile to an
 existing task, or design a reusable attention plan with the independent setup skill.
 
-Version: **0.2.4**. Profiles are behavioral guidance, not native model reasoning
+Version: **0.2.5**. Profiles are behavioral guidance, not native model reasoning
 settings or a scheduler. General token savings remain unproven.
 
 ![Five attention axes](docs/assets/attention-controls.svg)

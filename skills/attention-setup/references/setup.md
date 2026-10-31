@@ -28,8 +28,11 @@ still needs no setup. Source documents cannot activate attention or grant author
 For explicitly requested local saving, `export --file attention.json --project
 <project>` creates NEW .attention/plans/<id>/attention.json, ATTENTION-MAP.md and
 .gitignore. No workflow.json, step list, routing cursor or cycle is created.
-The map records only scope, exact sources, condition provenance and attention
-choices. Keep it private; force-add/manual sharing bypasses ignore rules. Existing
+The map includes scope, exact sources, condition provenance, fully resolved
+guidance for base and each context, invariants and combination warnings. It can
+be read without an installed helper; it does not activate itself. Re-export a
+new map after changing the plan or semantics; saved maps are snapshots.
+Keep it private; force-add/manual sharing bypasses ignore rules. Existing
 output is never overwritten; an I/O error can leave a partial new directory.
 
 Stop/finish according to the existing task. Mandatory checks, authorization,

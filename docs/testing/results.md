@@ -1,15 +1,19 @@
 # Results and verification scope
 
-## Current repository: 0.2.4
+## Current repository: 0.2.5
 
-This release organizes files and publishes the independent Attention Setup skill.
-It adds no new model measurements and preserves profile semantics 0.1.1.
+This release makes exported Attention Setup maps self-contained and preserves
+profile semantics 0.1.1. The [map evaluation](reports/2026-10-31/attention-map.md)
+records nine completed model sessions: six fixed-profile repairs, two known-fact
+repairs and one intentional stop on missing facts. Six earlier startup launches
+were BLOCKED. Missing-fact stopping and high-context independent checks were
+observed; general savings and reliable effort separation remain unverified.
 The [release verification](../development/release.md) records current tests,
 resource checks, independently copied skill execution and remaining gaps.
 The [layout tests](../../tests/test_repository_layout.py) check live links,
 filenames and historical report preservation.
 
-## Latest model evidence: 0.2.3
+## Earlier model evidence: 0.2.3
 
 [Harder cases and acceptance repair](reports/2026-10-30/codex-harder.md) records
 sixteen of eighteen planned attempts: fifteen completed sessions, one capacity

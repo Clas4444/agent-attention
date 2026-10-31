@@ -136,7 +136,8 @@ def questions():
 def agent_map(plan, project):
     validate(plan)
     lines = ['# Local attention map', '', 'Project: '+str(project), 'Scope: '+plan['scope'], '',
-             'Read attention.json and the selected attention guidance only.',
+             'Read attention.json for ordered conditions; apply the matching guidance below.',
+             'Semantics: '+attention.SEMANTICS_VERSION,
              'Use the existing task/skills. This plan supplies no task order, cycle or status routes.',
              'Recompute from base for each context; do not carry the last override forward.',
              'First matching rule wins; missing relevant facts block selection, not a guessed base.',
@@ -148,6 +149,17 @@ def agent_map(plan, project):
     for rule in plan['rules']:
         lines += ['- '+rule['id']+': '+json.dumps(rule['when'], sort_keys=True)+' → '+json.dumps(rule['levels'], sort_keys=True),
                   '  Reason: '+rule['reason']]
+    base = dict.fromkeys(attention.AXES, 3)
+    base.update(plan['base'])
+    lines += ['', '## Required invariants']
+    resolved = attention.resolve(','.join(f'{k}={v}' for k, v in base.items()))
+    lines += ['- '+item for item in resolved['invariants']]
+    for label, override in [('Base / restore', {}), *[(r['id'], r['levels']) for r in plan['rules']]]:
+        effective = dict(base, **override)
+        resolved = attention.resolve(','.join(f'{k}={v}' for k, v in effective.items()))
+        lines += ['', '## Guidance: '+label]
+        lines += [f'- {axis}={level}: '+attention.AXES[axis][level-1] for axis, level in effective.items()]
+        lines += ['- Tradeoff: '+warning for warning in resolved['warnings']]
     return '\n'.join(lines)+'\n'
 
 

@@ -54,6 +54,22 @@ checks, permission boundaries and shared-contract reconciliation remain. These
 are behavioral instructions; selecting a level does not prove adherence, set
 native model thinking or guarantee token ordering/savings.
 
+### Choose a useful change between levels
+
+| Level | Intended change | When useful | Cost or limitation |
+|---|---|---|---|
+| 1 | Reduce optional discovery, splitting and checking | Small change with supplied sources and clear acceptance | Retain dependency pointers; required checks still run |
+| 2 | Include the immediate component contract | Local changes with a nearby caller | Can miss broader interactions |
+| 3 | Follow the existing task's risk-based approach | Default when no specific tradeoff is established | Does not add a special coverage guarantee |
+| 4 | Include direct dependencies, boundary cases and reconciliation | A changed contract or nearby regression risk | More inspection and checks |
+| 5 | Include the authorized flow and independent consequential checks | Cross-component work or a consequential assumption | Extra decomposition and checking can be redundant on simple work |
+
+Each axis still has its own meaning: focus controls context breadth; sync controls
+reconciliation frequency; batch controls decomposition; explore controls discovery;
+verify controls checking. Prefer a targeted override such as verify=5 for a risky
+assumption over raising all five axes by habit. Restore the base when that risk
+ends. A higher number is an effort tradeoff, not an observed quality improvement.
+
 ## Optional helper and local map
 
 Apply clear agreed settings directly in context. Files and helper calls are
@@ -83,6 +99,11 @@ Only an explicit saving request calls for export. It creates a NEW local
 `.attention/plans/<id>/` with attention.json, ATTENTION-MAP.md and an ignore file.
 No workflow.json, steps, transitions, cycles, cursor or diagram is required.
 The map covers scope, exact sources, condition provenance and attention choices.
+It embeds resolved instructions for all five axes in the base and every context,
+including balanced axes, mandatory invariants and combination warnings. An agent
+can read the map without an installed helper, but must be told to apply it; an
+ignored file is not automatically discovered. Maps are snapshots: changing the
+JSON or semantics requires exporting a new map or using a fresh helper selection.
 Existing output is never overwritten. Path escapes, repository metadata and
 output aliases are rejected; I/O errors may leave a partial new directory.
 Force-add or manual sharing can publish ignored data: keep machine maps private.

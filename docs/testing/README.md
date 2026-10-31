@@ -12,6 +12,7 @@ Deterministic PASS does not establish native discovery or model adherence.
 
 ## Reports by date
 
+- [2026-10-31](reports/2026-10-31/): [attention map repair and behavior](reports/2026-10-31/attention-map.md), and sanitized JSON.
 - [2026-10-30](reports/2026-10-30/): [harder cases](reports/2026-10-30/codex-harder.md),
   [composite profiles](reports/2026-10-30/codex-composite.md), and paired JSON.
 - [2026-10-29](reports/2026-10-29/): [independent setup separation](reports/2026-10-29/setup-separation.md),
