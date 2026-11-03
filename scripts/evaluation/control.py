@@ -15,7 +15,8 @@ def failure_reason(events, stderr):
         ('QUOTA_LIMIT', ('monthly quota', 'usage limit', 'quota exceeded')),
         ('RATE_LIMIT', ('http 429', '429 too many', 'rate limit')),
         ('MODEL_CAPACITY', ('at capacity', 'capacity exceeded')),
-        ('AUTH_FAILURE', ('authentication failed', 'not authenticated', 'unauthorized', 'login required'))]:
+        ('AUTH_FAILURE', ('authentication failed', 'not authenticated', 'unauthorized', 'login required',
+                          'no authentication information found'))]:
         if any(n in text for n in needles): return label
     return None
 

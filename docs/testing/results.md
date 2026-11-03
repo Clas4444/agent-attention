@@ -1,5 +1,24 @@
 # Results and verification scope
 
+## Current scoped-product delivery (version remains 0.2.6)
+
+[COORD-02](reports/2026-11-03/coord-02/README.md) records 24 completed Codex CLI
+sessions:24 functional, integrity and mandatory-check PASS. First3 used a draft
+coordination wire; only10 pairs have both arms aligned. The separate
+[FUNCTION-03](reports/2026-11-03/function-03/README.md) compiled-API evaluation
+records12 completed sessions, all12 functional/integrity/full-check PASS.
+Batch intermediate feedback and sync source-read cadence differ in single cases;
+focus and verify contrast are NOT_DEMONSTRATED. All actual model names are
+NOT_REPORTED. Neither campaign proves causal/general token savings, native picker
+activation or live combined integration. Do not pool their different designs.
+
+Current product adds compact handoff, lazy axis references, strict explicit opt-in
+and exception-safe Python scope restoration. Post-campaign acceptance gates reject
+missing mandatory evidence/accounting faults. Final tests and exact delivery/CI
+state are in [task checkpoint](../../task/FUNCTION-03-RESULTS.json). Frozen measured
+sources, sanitized commands, candidate outputs, budgets and byte receipts accompany
+the public packets. Raw traces remain private and cannot be publicly replayed.
+
 ## Current repository: 0.2.6
 
 The [Copilot integrity audit](reports/2026-11-03/copilot-integrity.md) reproduces

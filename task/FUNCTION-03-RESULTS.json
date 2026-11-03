@@ -1,0 +1,180 @@
+{
+  "repo": "agent-attention",
+  "state": "PARTIAL",
+  "base_sha": "0698c709243a77d40b6f7affb4b2a5ec1dfc184c",
+  "changed_paths": [
+    "docs/testing/reports/2026-11-03/coord-02/README.md",
+    "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.png",
+    "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.svg",
+    "docs/testing/reports/2026-11-03/coord-02/budget-receipt.json",
+    "docs/testing/reports/2026-11-03/coord-02/chart-data.json",
+    "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-01-sources.zip",
+    "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-02-sources.zip",
+    "docs/testing/reports/2026-11-03/coord-02/final-gates.json",
+    "docs/testing/reports/2026-11-03/coord-02/historical-receipt-audit.json",
+    "docs/testing/reports/2026-11-03/coord-02/metadata-regression.json",
+    "docs/testing/reports/2026-11-03/coord-02/observations.json",
+    "docs/testing/reports/2026-11-03/coord-02/paired-effects.csv",
+    "docs/testing/reports/2026-11-03/coord-02/protocol-continuation.json",
+    "docs/testing/reports/2026-11-03/coord-02/protocol-initial.json",
+    "docs/testing/reports/2026-11-03/coord-02/quality-behavior.png",
+    "docs/testing/reports/2026-11-03/coord-02/quality-behavior.svg",
+    "docs/testing/reports/2026-11-03/coord-02/semantic-review.json",
+    "docs/testing/reports/2026-11-03/coord-02/sha256.json",
+    "docs/testing/reports/2026-11-03/coord-02/snapshot-index.json",
+    "docs/testing/reports/2026-11-03/coord-02/summary.json",
+    "docs/testing/reports/2026-11-03/coord-02/trace-evidence.json",
+    "docs/testing/reports/2026-11-03/function-03/README.md",
+    "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.png",
+    "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.svg",
+    "docs/testing/reports/2026-11-03/function-03/actual-costs.png",
+    "docs/testing/reports/2026-11-03/function-03/actual-costs.svg",
+    "docs/testing/reports/2026-11-03/function-03/before-after.json",
+    "docs/testing/reports/2026-11-03/function-03/budget-receipt.json",
+    "docs/testing/reports/2026-11-03/function-03/chart-data.json",
+    "docs/testing/reports/2026-11-03/function-03/compiled-product-01-sources.zip",
+    "docs/testing/reports/2026-11-03/function-03/final-gates.json",
+    "docs/testing/reports/2026-11-03/function-03/manual-review.json",
+    "docs/testing/reports/2026-11-03/function-03/observations.json",
+    "docs/testing/reports/2026-11-03/function-03/protocol.json",
+    "docs/testing/reports/2026-11-03/function-03/sha256.json",
+    "docs/testing/reports/2026-11-03/function-03/snapshot-index.json",
+    "docs/testing/reports/2026-11-03/function-03/source-table.csv",
+    "docs/testing/reports/2026-11-03/function-03/summary.json",
+    "docs/testing/reports/2026-11-03/function-03/trace-evidence.json",
+    "scripts/coord02_report.py",
+    "scripts/evaluation/codex_adapter.py",
+    "scripts/evaluation/coordination.py",
+    "scripts/evaluation/delivery.py",
+    "scripts/evaluation/function03.py",
+    "scripts/evaluation/function_cases.py",
+    "scripts/evaluation/trace_metrics.py",
+    "scripts/function03_report.py",
+    "skills/agent-attention/references/axes/batch.md",
+    "skills/agent-attention/references/axes/explore.md",
+    "skills/agent-attention/references/axes/focus.md",
+    "skills/agent-attention/references/axes/sync.md",
+    "skills/agent-attention/references/axes/verify.md",
+    "task/COORD-02-RESULTS.json",
+    "task/COORD-02.md",
+    "task/FUNCTION-03-RESULTS.json",
+    "task/FUNCTION-03.md",
+    "tests/fixtures/coordination-v1.json",
+    "tests/test_attention_compiler.py",
+    "tests/test_codex_adapter.py",
+    "tests/test_coord02_report.py",
+    "tests/test_coord_product.py",
+    "tests/test_coordination.py",
+    "tests/test_delivery.py",
+    "tests/test_function_cases.py",
+    "tests/test_function_report.py",
+    "tests/test_function_runner.py",
+    "tests/test_trace_metrics.py",
+    "CHANGELOG.md",
+    "README.md",
+    "docs/development/release.md",
+    "docs/guides/attention-profiles.md",
+    "docs/guides/attention-setup.md",
+    "docs/testing/README.md",
+    "docs/testing/results.md",
+    "scripts/attention.py",
+    "scripts/attention_setup.py",
+    "scripts/evaluation/control.py",
+    "scripts/evaluation/publication.py",
+    "scripts/generators/assets.py",
+    "scripts/generators/setup.py",
+    "skills/agent-attention/SKILL.md",
+    "skills/agent-attention/references/setup.md",
+    "skills/agent-attention/scripts/attention.py",
+    "skills/agent-attention/scripts/attention_setup.py",
+    "skills/attention-setup/SKILL.md",
+    "skills/attention-setup/references/setup.md",
+    "skills/attention-setup/scripts/attention.py",
+    "skills/attention-setup/scripts/attention_setup.py",
+    "task/TASK-STATUS.md",
+    "tests/test_integrity_report.py"
+  ],
+  "tests": [
+    {
+      "tests": 150,
+      "pass": 147,
+      "skip": 3,
+      "status": "PASS"
+    }
+  ],
+  "experiments": {
+    "task": "FUNCTION-03",
+    "CLI_attempts": 12,
+    "completed": 12,
+    "functional_PASS": 12,
+    "integrity_PASS": 12,
+    "full_checks_PASS": 12,
+    "remaining": 0,
+    "inflight": 0,
+    "cap": 12,
+    "actual_model": "NOT_REPORTED",
+    "Copilot_calls": 0,
+    "new_COORD02_calls": 0
+  },
+  "findings": [
+    {
+      "file": "scripts/attention.py",
+      "status": "PRODUCT_ADDITION_TESTED",
+      "finding": "Compact compiler and opt-in packet reject route/authority; scoped API restores after exit/exception/finish."
+    },
+    {
+      "file": "skills/agent-attention/SKILL.md",
+      "status": "LAZY_LOAD_CHANGED",
+      "finding": "7380-byte eager entry replaced by compact entry and per-axis references; byte reduction is not token-saving evidence."
+    },
+    {
+      "file": "scripts/attention.py",
+      "status": "FIXED_REGRESSION_PASS",
+      "finding": "Truthiness allowed false string/integer opt-in. Require literal boolean True; measured models already used True."
+    }
+  ],
+  "unresolved": [
+    "Focus and verify level contrasts not demonstrated",
+    "n=1 per condition; no causal or general token-saving conclusion",
+    "Native picker, live combined integration and real-model restoration NOT_RUN"
+  ],
+  "evidence_paths": [
+    "docs/testing/reports/2026-11-03/function-03/README.md",
+    "docs/testing/reports/2026-11-03/function-03/sha256.json",
+    "docs/testing/reports/2026-11-03/function-03/snapshot-index.json"
+  ],
+  "peer_contract_version": "coordination-v1",
+  "NO_COMMIT": false,
+  "NO_PUSH": false,
+  "NO_RELEASE": true,
+  "ready_for_review": true,
+  "delivery": {
+    "authorization": "conditional commit/push after final review and local gates",
+    "commit": null,
+    "pushed": false,
+    "checks": {
+      "local": {
+        "tests": 153,
+        "PASS": 150,
+        "skip": 3,
+        "assets": "PASS",
+        "whitespace": "PASS",
+        "public_candidates_oracle_PASS": 36
+      },
+      "remote": "NOT_RUN"
+    },
+    "limitations": [
+      "No additional model calls",
+      "No release/tag/version bump/global install",
+      "Focus/verify contrasts and live combined integration unproven"
+    ],
+    "review": {
+      "verdict": "LAND",
+      "fixed": [
+        "Strict opt-in requires literal boolean True",
+        "PASS requires mandatory trace evidence and no accounting/transport stop"
+      ],
+      "limitations": "No proof of all five behavioral contrasts, causal savings, native picker or live combined execution"
+    }
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "schema": 1,
+  "redactions": [
+    "shell executable path omitted",
+    "workspace/repository absolute paths replaced with labels",
+    "other machine paths replaced",
+    "agent messages/session IDs/output streams omitted",
+    "file-change paths reduced to fixture basenames"
+  ],
+  "attempts": [
+    {
+      "id": "01",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "91790128a4f6877b8385e453efa1a66b8aee69699159b50a4cd428ca5bd12371",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content amounts.py; Get-Content FLOW.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py; rg --files -g AGENTS.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            },
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged':total(cents), 'shipping_free':net(cents) >= 5000}\n"
+      }
+    },
+    {
+      "id": "02",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "5ed64039112366fe456778ac99f62a737a207ca60ca7a29588ba09ba84ce5117",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content amounts.py; Get-Content FLOW.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            },
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged':total(cents), 'shipping_free':net(cents) >= 5000}\n"
+      }
+    },
+    {
+      "id": "03",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "c7f4856f02313a1f2fc43435bc83b7ef3b5e46e743e47ea3cc0e458e64839820",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content FLOW.md; Get-Content amounts.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            },
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged':total(cents), 'shipping_free':net(cents) >= 5000}\n"
+      }
+    },
+    {
+      "id": "04",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "96f88755b968c8125d045cf3c8e2001b9f3b8d2e3a7c70f6558b694a79a8c980",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content amounts.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            },
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged':total(cents), 'shipping_free':net(cents) >= 5000}\n"
+      }
+    },
+    {
+      "id": "05",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "8e88eaf928b1519261362c97055d4d50d7952def83dff4e41ae7aec4a5ec16ae",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content INCIDENT.md; Get-Content CONTRACT.md; Get-Content router.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "rg --files -g '\"'! .git'\"'; Get-Content client.py",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content hypotheses.md; Get-Content legacy_router.py; Get-Content AGENTS.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "router.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "router.py": "def resolve(name, aliases, targets):\n    key = name.strip().casefold()\n    visited = set()\n    while key not in targets:\n        if key in visited or key not in aliases:\n            raise ValueError(\"Route does not reach a known target\")\n        visited.add(key)\n        key = aliases[key].strip().casefold()\n    return key\n"
+      }
+    },
+    {
+      "id": "06",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "415ef8b615f08a3e342228f0d007f6b7094386568b8559bc2a1f310f1a7c1774",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content CONTRACT.md; Get-Content SOURCE.json; Get-Content source_tool.py; Get-Content checks.py; Get-ChildItem -Name'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\n{\\\"source_version\\\":1,\\\"hours\\\":4,\\\"capacity\\\":6,\\\"status\\\":\\\"PASS\\\"}\n'@ | Set-Content -Encoding ascii draft.json\nGet-Content draft.json\nGet-Content SOURCE.json",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'python source_tool.py refresh\nGet-Content CONTRACT.md\nGet-Content SOURCE.json\nGet-Content change.log'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\n{\\\"source_version\\\":2,\\\"hours\\\":4,\\\"capacity\\\":2,\\\"status\\\":\\\"BLOCKED\\\",\\\"previous_status\\\":\\\"STALE\\\",\\\"approved\\\":false,\\\"sent\\\":false}\n'@ | Set-Content -Encoding ascii decision.json\nGet-Content decision.json\nGet-Content SOURCE.json\npython -B checks.py",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "draft.json": "{\"source_version\":1,\"hours\":4,\"capacity\":6,\"status\":\"PASS\"}\n",
+        "decision.json": "{\"source_version\":2,\"hours\":4,\"capacity\":2,\"status\":\"BLOCKED\",\"previous_status\":\"STALE\",\"approved\":false,\"sent\":false}\n"
+      }
+    },
+    {
+      "id": "07",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "c280f3fe590eb95172e6d5c59374cf804c735542b3fa245b21a2551862340d7d",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content INCIDENT.md; Get-Content router.py; Get-Content CONTRACT.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "Get-Content checks.py; rg --files -g '\"'! .git'\"'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content client.py; Get-Content hypotheses.md; Get-Content AGENTS.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "router.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "router.py": "def resolve(name, aliases, targets):\n    key = name.strip().casefold()\n    visited = set()\n    while key not in targets:\n        if key in visited or key not in aliases:\n            raise ValueError(\"Unknown, cyclic, or dangling route\")\n        visited.add(key)\n        key = aliases[key].strip().casefold()\n    return key\n"
+      }
+    },
+    {
+      "id": "08",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "580118c5ebb55fab69d403fcab0473b526196d1827c1270392b89f793a078b8a",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content CONTRACT.md; Get-Content SOURCE.json; Get-Content source_tool.py; Get-Content checks.py; rg --files -g AGENTS.md -g draft.json -g decision.json'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content AGENTS.md; Get-Content draft.json; Get-Content decision.json; Get-Content change.log'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "draft.json",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python source_tool.py refresh'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content SOURCE.json; Get-Content CONTRACT.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "decision.json",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "draft.json": "{\"source_version\":1,\"hours\":4,\"capacity\":6,\"status\":\"PASS\"}\n",
+        "decision.json": "{\"source_version\":2,\"hours\":4,\"capacity\":2,\"status\":\"BLOCKED\",\"previous_status\":\"STALE\",\"approved\":false,\"sent\":false}\n"
+      }
+    },
+    {
+      "id": "09",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "45e4c26486b20fc0272732994f9a66e1133e2ad0cd3d30fd9360c272be315e14",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content CONTRACT.md; Get-Content windows.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "windows.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\nfrom itertools import product\nfrom windows import normalize\n\ndef oracle(items):\n    if any(a > b for a, b in items):\n        raise ValueError\n    groups = [{(a, b)} for a, b in items if a < b]\n    while True:\n        for i in range(len(groups)):\n            for j in range(i):\n                if any(max(a, c) < min(b, d) for a, b in groups[i] for c, d in groups[j]):\n                    groups[j] |= groups.pop(i)\n                    break\n            else:\n                continue\n            break\n        else:\n            return sorted((min(a for a, b in g), max(b for a, b in g)) for g in groups)\n\nintervals = list(product(range(-1, 3), repeat=2))\ncount = 0\nfor size in range(4):\n    for items in product(intervals, repeat=size):\n        original = list(items)\n        data = list(items)\n        try:\n            expected = oracle(data)\n        except ValueError:\n            try:\n                normalize(data)\n            except ValueError:\n                pass\n            else:\n                raise AssertionError(('accepted reversed interval', data))\n        else:\n            actual = normalize(data)\n            assert actual == expected, (data, actual, expected)\n            assert normalize(actual) == actual\n            assert normalize(iter(data)) == expected\n        assert data == original\n        count += 1\nprint(f'PASS: {count} exhaustive cases; independent overlap-component oracle, rejection, nonmutation, idempotence, and iterator inputs')\n'@ | python -B -",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "windows.py": "def normalize(windows):\n    intervals = []\n    for start, end in windows:\n        if start > end:\n            raise ValueError('interval start exceeds end')\n        if start < end:\n            intervals.append((start, end))\n\n    result = []\n    for start, end in sorted(intervals):\n        if not result or start >= result[-1][1]:\n            result.append((start, end))\n        else:\n            result[-1] = (result[-1][0], max(result[-1][1], end))\n    return result\n"
+      }
+    },
+    {
+      "id": "10",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "5f4847a3461da0716c158d03a164492746375448af5179bc6661b4aaa9715616",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content CONTRACT.md; Get-Content windows.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "windows.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "python -B checks.py\n@'\nfrom windows import normalize\nfrom itertools import combinations_with_replacement\nintervals = [(a, b) for a in range(-2, 3) for b in range(a, 3)]\nfor count in range(5):\n    for sample in combinations_with_replacement(intervals, count):\n        original = list(sample)\n        actual = normalize(original)\n        assert original == list(sample)\n        assert actual == sorted(actual)\n        assert all(a < b for a, b in actual)\n        assert all(b <= c for (a, b), (c, d) in zip(actual, actual[1:]))\n        assert normalize(actual) == actual\n        # Independent overlap-component oracle, using a graph rather than a sweep.\n        remaining = set((a, b) for a, b in sample if a < b)\n        expected = []\n        while remaining:\n            component = {remaining.pop()}\n            while True:\n                linked = {x for x in remaining if any(max(x[0], y[0]) < min(x[1], y[1]) for y in component)}\n                if not linked:\n                    break\n                component.update(linked)\n                remaining.difference_update(linked)\n            expected.append((min(x[0] for x in component), max(x[1] for x in component)))\n        assert actual == sorted(expected), (sample, actual, expected)\nassert normalize([]) == []\nassert normalize(iter([(0, 1), (1, 2)])) == [(0, 1), (1, 2)]\nfor sample in [[(3, 2)], [(0, 4), (3, 2)], [(1, 1), (5, -1)]]:\n    try:\n        normalize(sample)\n    except ValueError:\n        pass\n    else:\n        raise AssertionError(sample)\nprint('Exhaustive contract checks PASS')\n'@ | python -B -",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "windows.py": "def normalize(windows):\n    result=[]\n    for start,end in sorted(windows):\n        if start>end:\n            raise ValueError('interval start exceeds end')\n        if start==end:\n            continue\n        if not result or start>=result[-1][1]:result.append((start,end))\n        else:result[-1]=(result[-1][0],max(result[-1][1],end))\n    return result\n"
+      }
+    },
+    {
+      "id": "11",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "a6922ba08137ef83bae55cee78dcc6ceb9cf9c74a944ea7805a2b48c6846c4f4",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content amounts.py; Get-Content FLOW.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            },
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged':total(cents), 'shipping_free':net(cents) >= 5000}\n"
+      }
+    },
+    {
+      "id": "12",
+      "campaign": "compiled-product-01",
+      "original_trace_sha256": "d8c42bbb85e8f211799df67403abbaa3c7acfba63ec074afff4d5c2f3bc66921",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content ENTRY.md; Get-Content amounts.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content checkout.py; Get-Content invoice.py; Get-Content app.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "amounts.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py net'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py checkout'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "invoice.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "amounts.py": "def net(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from amounts import net\ndef total(cents):\n    discounted = net(cents)\n    return discounted + (500 if discounted < 5000 else 0)\n",
+        "invoice.py": "from amounts import net\nfrom checkout import total\ndef summary(cents):\n    return {'charged': total(cents), 'shipping_free': net(cents) >= 5000}\n"
+      }
+    }
+  ]
+}

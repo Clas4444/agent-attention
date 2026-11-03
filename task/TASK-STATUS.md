@@ -1,4 +1,54 @@
-# Task status — 2026-11-03, presentation/recovery revision
+# Current delivery — local gates PASS, authorized push pending
+
+Final local suite153 tests:150 PASS,3 skips; assets/whitespace and public packet
+receipts PASS. All36 public candidate outputs pass frozen independent oracles.
+COORD-02 and FUNCTION-03 conditional commit/push now authorized. No additional
+model calls, retries, budget resets, release/tag, version bump or global install.
+The NO_PUSH text in the preserved experiment timelines below is historical.
+Public packets: [coordination](../docs/testing/reports/2026-11-03/coord-02/README.md)
+and [scoped product](../docs/testing/reports/2026-11-03/function-03/README.md).
+Check RESULTS.json for exact source commit, pushed state and CI/CodeQL results.
+
+# FUNCTION-03 current status — PARTIAL / READY_FOR_REVIEW / NO_PUSH
+
+12/12 new Codex CLI completed; functional12, integrity12, full checks12 PASS.
+Budget remaining0, inflight0. Actual model NOT_REPORTED in all12. Compact API,
+strict opt-in, lazy axis references and scope restoration are locally verified.
+150 deterministic tests:147 PASS,3 skips; assets and whitespace PASS.
+Batch/sync cadence differences observed once; focus/verify contrast unresolved.
+No causal/general token saving claim. Native picker/live combined/model restoration
+NOT_RUN. No commit, push, release, version bump or global install.
+
+See [FUNCTION-03](FUNCTION-03.md), [results](FUNCTION-03-RESULTS.json) and
+[evidence](../docs/testing/reports/2026-11-03/function-03/README.md). Previous timeline remains below.
+
+---
+
+# COORD-02 current status â€” READY_FOR_REVIEW / NO_PUSH
+
+- New pilot COMPLETE:24/24 CLI,24 completed turns,24 functional PASS,24 file
+  integrity PASS,24 audited mandatory checks. Budget remaining0, inflight0.
+- Actual model NOT_REPORTED in all24; requested configured CLI default unchanged.
+- Two snapshots preserve one order/cap. First3 wire-draft attempts retained;
+  continuation21 aligned.12 descriptive pairs; strict aligned subset10 pairs.
+- Helper/contract, local-vs-provider scope and atomic budget regressions pass;
+  product/model evidence are separate. Focus contrast remains unidentified.
+- Two paired-effect/quality PNG+SVG figures rendered/viewed; old historical66
+  remains separate. Old artifact hashes PASS, changed source receipts STALE.
+- Final local gates:139 tests,136 PASS,3 symlink skips; assets/links/diff PASS.
+  Remote CI NOT_RUN for this uncommitted diff; no prior SHA is reused.
+- NO_COMMIT / NO_PUSH / NO_PUBLISH / NO_RELEASE; HEAD remains base0698c70.
+- Next step: parent/human review. No pilot restart or budget reset; no more model
+  calls, Copilot retry, credential copying or old shared marker changes.
+
+See [COORD-02](COORD-02.md), [structured results](COORD-02-RESULTS.json) and
+[internal evidence](../docs/testing/reports/2026-11-03/coord-02/README.md).
+
+---
+
+## Historical timeline retained verbatim
+
+# Task status â€” 2026-11-03, presentation/recovery revision
 
 - State: OFFLINE_COMPLETE_AUTH_BLOCKED.
 - Historical audit unchanged: 364 package records / 409 experimental CLI;

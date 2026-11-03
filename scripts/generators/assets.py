@@ -6,9 +6,9 @@ import json
 from pathlib import Path
 
 if __package__.startswith('scripts.'):
-    from ..attention import AXES
+    from ..attention import AXES,MEASURES
 else:
-    from attention import AXES
+    from attention import AXES,MEASURES
 from .workflow import check as check_workflow
 from .setup import check as check_setup
 from .illustrations import axis_diagram, overview
@@ -57,6 +57,18 @@ def reference():
         'Avoid narrow focus + low decomposition + sparse sync for shared-contract changes.',
         'Do not lower mandatory checks, widen scope, run extra agents, or wait just',
         'because a slider is high. This helper prints guidance; it never executes tasks.', '']
+    return '\n'.join(lines)
+
+
+def axis_reference(axis):
+    lines=['# '+axis+' — '+MEASURES[axis],'',
+           'Load only this selected axis when its compact directive needs clarification.',
+           'Level3 is the existing workflow; lower/higher allocate less/more of this quantity.',
+           'Mandatory/risk-triggered checks, authority and changed-contract reconciliation remain.','',
+           '| Level | Observable guidance |','|---|---|']
+    lines += [f'| {i} | {value} |' for i,value in enumerate(AXES[axis],1)]
+    lines += ['', 'This axis is not a token target, route selector or minimum-iteration rule.',
+              'A temporary override inherits task axes and expires on scope exit.','']
     return '\n'.join(lines)
 
 
@@ -141,6 +153,7 @@ def check(repo, write=False):
     helper = (repo/'scripts/attention.py').read_text(encoding='utf-8')
     folder = repo/'skills/agent-attention'
     outputs[folder/'references/attention.md'] = reference()
+    outputs.update({folder/f'references/axes/{axis}.md':axis_reference(axis) for axis in AXES})
     outputs[folder/'scripts/attention.py'] = helper
     outputs[folder/'scripts/checkpoint.py'] = (repo/'scripts/checkpoint.py').read_text(encoding='utf-8')
     errors = []

@@ -1,0 +1,11 @@
+{
+  "artifact_status": "PASS",
+  "artifacts": 27,
+  "source_status": "STALE",
+  "stale_source_paths": [
+    "scripts/evaluation/control.py",
+    "scripts/evaluation/publication.py",
+    "task/TASK-STATUS.md",
+    "tests/test_integrity_report.py"
+  ]
+}

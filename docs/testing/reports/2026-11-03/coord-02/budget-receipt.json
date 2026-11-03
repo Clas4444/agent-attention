@@ -1,0 +1,155 @@
+{
+  "schema": 1,
+  "task": "COORD-02",
+  "cap": 24,
+  "reserved": 24,
+  "inflight": 0,
+  "remaining": 0,
+  "attempts": [
+    {
+      "id": "codex-single-axis-01.01-baseline",
+      "campaign": "codex-single-axis-01",
+      "ended": "2026-11-03T08:34:52.257292+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-01.01-attention",
+      "campaign": "codex-single-axis-01",
+      "ended": "2026-11-03T08:35:21.857735+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-01.02-attention",
+      "campaign": "codex-single-axis-01",
+      "ended": "2026-11-03T08:36:27.671781+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.02-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:39:18.063463+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.03-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:39:49.405238+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.03-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:40:18.241909+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.04-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:40:57.888294+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.04-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:41:27.277694+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.05-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:42:02.271355+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.05-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:42:33.790575+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.06-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:43:09.878335+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.06-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:43:42.030727+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.07-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:44:09.328964+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.07-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:44:59.206095+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.08-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:45:30.680035+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.08-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:46:02.457073+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.09-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:46:34.188107+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.09-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:47:05.111064+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.10-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:47:37.185247+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.10-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:48:04.113157+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.11-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:48:36.635414+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.11-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:49:08.281314+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.12-attention",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:49:28.163104+00:00",
+      "result": "PASS"
+    },
+    {
+      "id": "codex-single-axis-02.12-baseline",
+      "campaign": "codex-single-axis-02",
+      "ended": "2026-11-03T08:49:43.936046+00:00",
+      "result": "PASS"
+    }
+  ],
+  "method": "read-only SQLite snapshot; not authority to reset or resume"
+}

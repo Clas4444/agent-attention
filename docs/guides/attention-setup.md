@@ -72,6 +72,13 @@ ends. A higher number is an effort tradeoff, not an observed quality improvement
 
 ## Optional helper and local map
 
+For actual runtime handoff, `select --file attention.json --facts-file facts.json
+--format prompt` compiles the effective selection into short non-balanced
+directives and invariants. Keep base/scope in task context and restore it when
+the temporary condition ends. JSON remains the default. Python callers may use
+ProfileSession.scope for exception-safe restoration; no helper enforces host
+memory after a process kill. This handoff does not choose the next work step.
+
 Apply clear agreed settings directly in context. Files and helper calls are
 optional. From this repository:
 

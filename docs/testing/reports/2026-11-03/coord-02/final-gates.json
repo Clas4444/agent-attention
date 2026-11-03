@@ -1,0 +1,32 @@
+{
+  "review": "LAND after reproduced guard fixes",
+  "deterministic_tests": 153,
+  "deterministic_PASS": 150,
+  "deterministic_skips": 3,
+  "status": "PASS",
+  "assets": "PASS",
+  "whitespace": "PASS",
+  "model_calls_new_in_delivery": 0,
+  "remote_CI": "NOT_RUN_BEFORE_PUSH",
+  "historical_receipt_audit": {
+    "artifact_status": "PASS",
+    "artifacts": 27,
+    "source_status": "STALE",
+    "stale_source_paths": [
+      "CHANGELOG.md",
+      "docs/development/release.md",
+      "docs/testing/README.md",
+      "docs/testing/results.md",
+      "README.md",
+      "scripts/evaluation/control.py",
+      "scripts/evaluation/publication.py",
+      "task/TASK-STATUS.md",
+      "tests/test_integrity_report.py"
+    ]
+  },
+  "limits": [
+    "n1 per condition; no causal/general savings claim",
+    "Focus/verify contrasts unresolved",
+    "Native picker/live combined/model restoration NOT_RUN"
+  ]
+}

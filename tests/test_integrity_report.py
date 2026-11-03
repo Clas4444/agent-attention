@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from scripts.evaluation.integrity_report import summarize, figures, write_svg
-from scripts.evaluation.publication import check
+from scripts.evaluation.publication import check,audit_historical
 
 ROOT=Path(__file__).resolve().parents[1]
 REPORT=ROOT/'docs/testing/reports/2026-11-03'
@@ -26,7 +26,9 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(decision['audited_reason'],'AUTH_FAILURE')
         self.assertTrue(decision['previous_marker_preserved'])
     def test_publication_hashes(self):
-        self.assertGreater(check(REPORT),10)
+        audit=audit_historical(REPORT)
+        self.assertEqual(audit['artifact_status'],'PASS')
+        self.assertGreater(audit['artifacts'],10)
     def test_zero_sample_is_unknown_not_zero_effect(self):
         pilot={'attempts':[], 'not_run':[str(i) for i in range(24)]}
         summary=summarize({'observations':[]},pilot)

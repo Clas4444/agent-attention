@@ -1,0 +1,1848 @@
+{
+  "axis-paired-effects": [
+    {
+      "type": "rect",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 620,
+      "color": "#ffffff"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 40,
+      "size": 25,
+      "text": "COORD-02 paired pilot: cost differences within each axis",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 70,
+      "size": 14,
+      "text": "NEW Codex CLI | 11 dependencies pairs (9 V1-aligned) | n=1/cell | Attention / baseline - 1",
+      "color": "#415d67"
+    },
+    {
+      "type": "line",
+      "x": 45,
+      "y": 105,
+      "x2": 75,
+      "y2": 105,
+      "color": "#2563eb"
+    },
+    {
+      "type": "text",
+      "x": 85,
+      "y": 110,
+      "size": 14,
+      "text": "Total tokens delta (%)",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 400,
+      "y": 105,
+      "x2": 430,
+      "y2": 105,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 440,
+      "y": 110,
+      "size": 14,
+      "text": "CLI wall-time delta (%)",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 765,
+      "y": 100,
+      "x2": 775,
+      "y2": 110,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 765,
+      "y": 110,
+      "x2": 775,
+      "y2": 100,
+      "color": "#374151"
+    },
+    {
+      "type": "text",
+      "x": 785,
+      "y": 110,
+      "size": 13,
+      "text": "draft/mixed wire",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 95,
+      "y": 150,
+      "size": 18,
+      "text": "focus",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 445.0,
+      "x2": 205,
+      "y2": 445.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 36,
+      "y": 449.0,
+      "size": 11,
+      "text": "-125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 377.5,
+      "x2": 205,
+      "y2": 377.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 36,
+      "y": 381.5,
+      "size": 11,
+      "text": "-62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 310.0,
+      "x2": 205,
+      "y2": 310.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 36,
+      "y": 314.0,
+      "size": 11,
+      "text": "0",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 242.5,
+      "x2": 205,
+      "y2": 242.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 36,
+      "y": 246.5,
+      "size": 11,
+      "text": "62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 175.0,
+      "x2": 205,
+      "y2": 175.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 36,
+      "y": 179.0,
+      "size": 11,
+      "text": "125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 70,
+      "y": 310.0,
+      "x2": 205,
+      "y2": 310.0,
+      "color": "#64748b"
+    },
+    {
+      "type": "circle",
+      "x": 70.0,
+      "y": 298.69977795956527,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 70.0,
+      "y": 298.69977795956527,
+      "x2": 137.5,
+      "y2": 299.0822429906542,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 137.5,
+      "y": 299.0822429906542,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 137.5,
+      "y": 299.0822429906542,
+      "x2": 205.0,
+      "y2": 298.6873564113547,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 205.0,
+      "y": 298.6873564113547,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 70.0,
+      "y": 313.1521595123072,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 70.0,
+      "y": 313.1521595123072,
+      "x2": 137.5,
+      "y2": 318.81277549167385,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 137.5,
+      "y": 318.81277549167385,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 137.5,
+      "y": 318.81277549167385,
+      "x2": 205.0,
+      "y2": 289.4148121829636,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 205.0,
+      "y": 289.4148121829636,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 67.0,
+      "y": 467,
+      "size": 13,
+      "text": "1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 134.5,
+      "y": 467,
+      "size": 13,
+      "text": "3",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 202.0,
+      "y": 467,
+      "size": 13,
+      "text": "5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 80,
+      "y": 494,
+      "size": 13,
+      "text": "Selected level",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 280,
+      "y": 150,
+      "size": 18,
+      "text": "sync",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 445.0,
+      "x2": 390,
+      "y2": 445.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 221,
+      "y": 449.0,
+      "size": 11,
+      "text": "-125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 377.5,
+      "x2": 390,
+      "y2": 377.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 221,
+      "y": 381.5,
+      "size": 11,
+      "text": "-62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 310.0,
+      "x2": 390,
+      "y2": 310.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 221,
+      "y": 314.0,
+      "size": 11,
+      "text": "0",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 242.5,
+      "x2": 390,
+      "y2": 242.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 221,
+      "y": 246.5,
+      "size": 11,
+      "text": "62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 175.0,
+      "x2": 390,
+      "y2": 175.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 221,
+      "y": 179.0,
+      "size": 11,
+      "text": "125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 255,
+      "y": 310.0,
+      "x2": 390,
+      "y2": 310.0,
+      "color": "#64748b"
+    },
+    {
+      "type": "circle",
+      "x": 255.0,
+      "y": 298.9928175288663,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 251.0,
+      "y": 294.9928175288663,
+      "x2": 259.0,
+      "y2": 302.9928175288663,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 251.0,
+      "y": 302.9928175288663,
+      "x2": 259.0,
+      "y2": 294.9928175288663,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 255.0,
+      "y": 298.9928175288663,
+      "x2": 322.5,
+      "y2": 299.0822429906542,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 322.5,
+      "y": 299.0822429906542,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 322.5,
+      "y": 299.0822429906542,
+      "x2": 390.0,
+      "y2": 297.8264234240083,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 390.0,
+      "y": 297.8264234240083,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 255.0,
+      "y": 187.8864039204279,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 251.0,
+      "y": 183.8864039204279,
+      "x2": 259.0,
+      "y2": 191.8864039204279,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 251.0,
+      "y": 191.8864039204279,
+      "x2": 259.0,
+      "y2": 183.8864039204279,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 255.0,
+      "y": 187.8864039204279,
+      "x2": 322.5,
+      "y2": 318.81277549167385,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 322.5,
+      "y": 318.81277549167385,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 322.5,
+      "y": 318.81277549167385,
+      "x2": 390.0,
+      "y2": 296.9733693920032,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 390.0,
+      "y": 296.9733693920032,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 252.0,
+      "y": 467,
+      "size": 13,
+      "text": "1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 319.5,
+      "y": 467,
+      "size": 13,
+      "text": "3",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 387.0,
+      "y": 467,
+      "size": 13,
+      "text": "5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 265,
+      "y": 494,
+      "size": 13,
+      "text": "Selected level",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 465,
+      "y": 150,
+      "size": 18,
+      "text": "batch",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 445.0,
+      "x2": 575,
+      "y2": 445.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 406,
+      "y": 449.0,
+      "size": 11,
+      "text": "-125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 377.5,
+      "x2": 575,
+      "y2": 377.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 406,
+      "y": 381.5,
+      "size": 11,
+      "text": "-62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 310.0,
+      "x2": 575,
+      "y2": 310.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 406,
+      "y": 314.0,
+      "size": 11,
+      "text": "0",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 242.5,
+      "x2": 575,
+      "y2": 242.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 406,
+      "y": 246.5,
+      "size": 11,
+      "text": "62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 175.0,
+      "x2": 575,
+      "y2": 175.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 406,
+      "y": 179.0,
+      "size": 11,
+      "text": "125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 440,
+      "y": 310.0,
+      "x2": 575,
+      "y2": 310.0,
+      "color": "#64748b"
+    },
+    {
+      "type": "circle",
+      "x": 440.0,
+      "y": 299.08742552280074,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 440.0,
+      "y": 299.08742552280074,
+      "x2": 507.5,
+      "y2": 299.0822429906542,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 507.5,
+      "y": 299.0822429906542,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 507.5,
+      "y": 299.0822429906542,
+      "x2": 575.0,
+      "y2": 273.7083089867944,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 575.0,
+      "y": 273.7083089867944,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 440.0,
+      "y": 320.8997521226248,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 440.0,
+      "y": 320.8997521226248,
+      "x2": 507.5,
+      "y2": 318.81277549167385,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 507.5,
+      "y": 318.81277549167385,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 507.5,
+      "y": 318.81277549167385,
+      "x2": 575.0,
+      "y2": 272.2831260031695,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 575.0,
+      "y": 272.2831260031695,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 437.0,
+      "y": 467,
+      "size": 13,
+      "text": "1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 504.5,
+      "y": 467,
+      "size": 13,
+      "text": "3",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 572.0,
+      "y": 467,
+      "size": 13,
+      "text": "5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 450,
+      "y": 494,
+      "size": 13,
+      "text": "Selected level",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 650,
+      "y": 150,
+      "size": 18,
+      "text": "explore",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 445.0,
+      "x2": 760,
+      "y2": 445.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 591,
+      "y": 449.0,
+      "size": 11,
+      "text": "-125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 377.5,
+      "x2": 760,
+      "y2": 377.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 591,
+      "y": 381.5,
+      "size": 11,
+      "text": "-62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 310.0,
+      "x2": 760,
+      "y2": 310.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 591,
+      "y": 314.0,
+      "size": 11,
+      "text": "0",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 242.5,
+      "x2": 760,
+      "y2": 242.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 591,
+      "y": 246.5,
+      "size": 11,
+      "text": "62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 175.0,
+      "x2": 760,
+      "y2": 175.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 591,
+      "y": 179.0,
+      "size": 11,
+      "text": "125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 625,
+      "y": 310.0,
+      "x2": 760,
+      "y2": 310.0,
+      "color": "#64748b"
+    },
+    {
+      "type": "circle",
+      "x": 625.0,
+      "y": 299.35468037863734,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 621.0,
+      "y": 295.35468037863734,
+      "x2": 629.0,
+      "y2": 303.35468037863734,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 621.0,
+      "y": 303.35468037863734,
+      "x2": 629.0,
+      "y2": 295.35468037863734,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 625.0,
+      "y": 299.35468037863734,
+      "x2": 692.5,
+      "y2": 299.0822429906542,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 692.5,
+      "y": 299.0822429906542,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 692.5,
+      "y": 299.0822429906542,
+      "x2": 760.0,
+      "y2": 274.1777662270158,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 760.0,
+      "y": 274.1777662270158,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 625.0,
+      "y": 326.6914895114872,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 621.0,
+      "y": 322.6914895114872,
+      "x2": 629.0,
+      "y2": 330.6914895114872,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 621.0,
+      "y": 330.6914895114872,
+      "x2": 629.0,
+      "y2": 322.6914895114872,
+      "color": "#374151"
+    },
+    {
+      "type": "line",
+      "x": 625.0,
+      "y": 326.6914895114872,
+      "x2": 692.5,
+      "y2": 318.81277549167385,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 692.5,
+      "y": 318.81277549167385,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 692.5,
+      "y": 318.81277549167385,
+      "x2": 760.0,
+      "y2": 311.1457887820715,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 760.0,
+      "y": 311.1457887820715,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 622.0,
+      "y": 467,
+      "size": 13,
+      "text": "1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 689.5,
+      "y": 467,
+      "size": 13,
+      "text": "3",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 757.0,
+      "y": 467,
+      "size": 13,
+      "text": "5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 635,
+      "y": 494,
+      "size": 13,
+      "text": "Selected level",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 835,
+      "y": 150,
+      "size": 18,
+      "text": "verify",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 445.0,
+      "x2": 945,
+      "y2": 445.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 776,
+      "y": 449.0,
+      "size": 11,
+      "text": "-125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 377.5,
+      "x2": 945,
+      "y2": 377.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 776,
+      "y": 381.5,
+      "size": 11,
+      "text": "-62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 310.0,
+      "x2": 945,
+      "y2": 310.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 776,
+      "y": 314.0,
+      "size": 11,
+      "text": "0",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 242.5,
+      "x2": 945,
+      "y2": 242.5,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 776,
+      "y": 246.5,
+      "size": 11,
+      "text": "62.5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 175.0,
+      "x2": 945,
+      "y2": 175.0,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 776,
+      "y": 179.0,
+      "size": 11,
+      "text": "125",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 810,
+      "y": 310.0,
+      "x2": 945,
+      "y2": 310.0,
+      "color": "#64748b"
+    },
+    {
+      "type": "circle",
+      "x": 810.0,
+      "y": 299.08016351956394,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 810.0,
+      "y": 299.08016351956394,
+      "x2": 877.5,
+      "y2": 299.0822429906542,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 877.5,
+      "y": 299.0822429906542,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "line",
+      "x": 877.5,
+      "y": 299.0822429906542,
+      "x2": 945.0,
+      "y2": 245.64683061460948,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 945.0,
+      "y": 245.64683061460948,
+      "r": 3.5,
+      "color": "#2563eb"
+    },
+    {
+      "type": "circle",
+      "x": 810.0,
+      "y": 312.8780287517851,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 810.0,
+      "y": 312.8780287517851,
+      "x2": 877.5,
+      "y2": 318.81277549167385,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 877.5,
+      "y": 318.81277549167385,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "line",
+      "x": 877.5,
+      "y": 318.81277549167385,
+      "x2": 945.0,
+      "y2": 220.34038181121167,
+      "color": "#ea580c"
+    },
+    {
+      "type": "circle",
+      "x": 945.0,
+      "y": 220.34038181121167,
+      "r": 3.5,
+      "color": "#ea580c"
+    },
+    {
+      "type": "text",
+      "x": 807.0,
+      "y": 467,
+      "size": 13,
+      "text": "1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 874.5,
+      "y": 467,
+      "size": 13,
+      "text": "3",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 942.0,
+      "y": 467,
+      "size": 13,
+      "text": "5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 820,
+      "y": 494,
+      "size": 13,
+      "text": "Selected level",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 40,
+      "y": 541,
+      "size": 13,
+      "text": "Other four axes remain 3. Balanced dependencies pair is shared across panels (one control).",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 40,
+      "y": 570,
+      "size": 13,
+      "text": "Lines connect measured levels for readability, not interpolation or monotonic-effect claims.",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 40,
+      "y": 598,
+      "size": 13,
+      "text": "Positive = Attention costs more. No confidence interval: one attempt per condition; no general savings.",
+      "color": "#16313b"
+    }
+  ],
+  "quality-behavior": [
+    {
+      "type": "rect",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 620,
+      "color": "#ffffff"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 40,
+      "size": 25,
+      "text": "COORD-02 functional, integrity and trace observations",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 70,
+      "size": 14,
+      "text": "NEW pilot | 24 attempted CLI | cost is interpreted alongside actual acceptance",
+      "color": "#415d67"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 112,
+      "size": 13,
+      "text": "Case / profile",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 295,
+      "y": 112,
+      "size": 13,
+      "text": "Functional B/A",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 455,
+      "y": 112,
+      "size": 13,
+      "text": "Integrity both",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 610,
+      "y": 112,
+      "size": 13,
+      "text": "Mandatory check B/A",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 820,
+      "y": 112,
+      "size": 13,
+      "text": "Commands B/A",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 145,
+      "size": 12,
+      "text": "cents/balanced",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 145,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 145,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 145,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 145,
+      "size": 13,
+      "text": "2/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 154,
+      "x2": 960,
+      "y2": 154,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 174,
+      "size": 12,
+      "text": "dependencies/balanced",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 174,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 174,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 174,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 174,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 183,
+      "x2": 960,
+      "y2": 183,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 203,
+      "size": 12,
+      "text": "dependencies/batch-1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 203,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 203,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 203,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 203,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 212,
+      "x2": 960,
+      "y2": 212,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 232,
+      "size": 12,
+      "text": "dependencies/batch-5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 232,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 232,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 232,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 232,
+      "size": 13,
+      "text": "3/4",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 241,
+      "x2": 960,
+      "y2": 241,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 261,
+      "size": 12,
+      "text": "dependencies/explore-1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 261,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 261,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 261,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 261,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 270,
+      "x2": 960,
+      "y2": 270,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 290,
+      "size": 12,
+      "text": "dependencies/explore-5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 290,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 290,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 290,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 290,
+      "size": 13,
+      "text": "3/5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 299,
+      "x2": 960,
+      "y2": 299,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 319,
+      "size": 12,
+      "text": "dependencies/focus-1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 319,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 319,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 319,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 319,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 328,
+      "x2": 960,
+      "y2": 328,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 348,
+      "size": 12,
+      "text": "dependencies/focus-5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 348,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 348,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 348,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 348,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 357,
+      "x2": 960,
+      "y2": 357,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 377,
+      "size": 12,
+      "text": "dependencies/sync-1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 377,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 377,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 377,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 377,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 386,
+      "x2": 960,
+      "y2": 386,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 406,
+      "size": 12,
+      "text": "dependencies/sync-5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 406,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 406,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 406,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 406,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 415,
+      "x2": 960,
+      "y2": 415,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 435,
+      "size": 12,
+      "text": "dependencies/verify-1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 435,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 435,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 435,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 435,
+      "size": 13,
+      "text": "3/3",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 444,
+      "x2": 960,
+      "y2": 444,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 464,
+      "size": 12,
+      "text": "dependencies/verify-5",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 310,
+      "y": 464,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 475,
+      "y": 464,
+      "size": 13,
+      "text": "PASS",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 665,
+      "y": 464,
+      "size": 13,
+      "text": "1/1",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 860,
+      "y": 464,
+      "size": 13,
+      "text": "3/5",
+      "color": "#16313b"
+    },
+    {
+      "type": "line",
+      "x": 32,
+      "y": 473,
+      "x2": 960,
+      "y2": 473,
+      "color": "#e5e7eb"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 550,
+      "size": 13,
+      "text": "B/A = baseline/attention. 1 = observed PASS/check; 0 = absent. Each row is one paired case.",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 578,
+      "size": 13,
+      "text": "Counts are trace observations, not proof of five-axis adherence; see semantic-review.json.",
+      "color": "#16313b"
+    },
+    {
+      "type": "text",
+      "x": 32,
+      "y": 606,
+      "size": 12,
+      "text": "No actual model name is inferred when transport does not report one. Historical data is separate.",
+      "color": "#16313b"
+    }
+  ]
+}

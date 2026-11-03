@@ -1,0 +1,16 @@
+{
+  "CLI_attempts": 12,
+  "completed_model_turns": 12,
+  "functional_PASS": 12,
+  "file_integrity_PASS": 12,
+  "full_mandatory_checks_audited": 12,
+  "missing_usage": 0,
+  "actual_model_reported": 0,
+  "scope": "FUNCTION-03 only; no COORD/historical pooling",
+  "n": "one invocation per condition",
+  "limits": [
+    "No reliability, causal effect or general token-saving claim.",
+    "2/4 levels only compiler/unit tested, not model tested.",
+    "Compiled API entry measured; native picker/direct skill loading not measured."
+  ]
+}

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#ffffff"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">COORD-02 functional, integrity and trace observations</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">NEW pilot | 24 attempted CLI | cost is interpreted alongside actual acceptance</text>
+<text x="32" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Case / profile</text>
+<text x="295" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Functional B/A</text>
+<text x="455" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Integrity both</text>
+<text x="610" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Mandatory check B/A</text>
+<text x="820" y="112" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Commands B/A</text>
+<text x="32" y="145" font-family="Arial,sans-serif" font-size="12" fill="#16313b">cents/balanced</text>
+<text x="310" y="145" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="145" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="145" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="145" font-family="Arial,sans-serif" font-size="13" fill="#16313b">2/3</text>
+<line x1="32" y1="154" x2="960" y2="154" stroke="#e5e7eb"/>
+<text x="32" y="174" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/balanced</text>
+<text x="310" y="174" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="174" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="174" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="174" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="183" x2="960" y2="183" stroke="#e5e7eb"/>
+<text x="32" y="203" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/batch-1</text>
+<text x="310" y="203" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="203" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="203" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="203" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="212" x2="960" y2="212" stroke="#e5e7eb"/>
+<text x="32" y="232" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/batch-5</text>
+<text x="310" y="232" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="232" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="232" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="232" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/4</text>
+<line x1="32" y1="241" x2="960" y2="241" stroke="#e5e7eb"/>
+<text x="32" y="261" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/explore-1</text>
+<text x="310" y="261" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="261" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="261" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="261" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="270" x2="960" y2="270" stroke="#e5e7eb"/>
+<text x="32" y="290" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/explore-5</text>
+<text x="310" y="290" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="290" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="290" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="290" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/5</text>
+<line x1="32" y1="299" x2="960" y2="299" stroke="#e5e7eb"/>
+<text x="32" y="319" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/focus-1</text>
+<text x="310" y="319" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="319" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="319" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="319" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="328" x2="960" y2="328" stroke="#e5e7eb"/>
+<text x="32" y="348" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/focus-5</text>
+<text x="310" y="348" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="348" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="348" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="348" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="357" x2="960" y2="357" stroke="#e5e7eb"/>
+<text x="32" y="377" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/sync-1</text>
+<text x="310" y="377" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="377" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="377" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="377" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="386" x2="960" y2="386" stroke="#e5e7eb"/>
+<text x="32" y="406" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/sync-5</text>
+<text x="310" y="406" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="406" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="406" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="406" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="415" x2="960" y2="415" stroke="#e5e7eb"/>
+<text x="32" y="435" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/verify-1</text>
+<text x="310" y="435" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="435" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="435" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="435" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/3</text>
+<line x1="32" y1="444" x2="960" y2="444" stroke="#e5e7eb"/>
+<text x="32" y="464" font-family="Arial,sans-serif" font-size="12" fill="#16313b">dependencies/verify-5</text>
+<text x="310" y="464" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="475" y="464" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS</text>
+<text x="665" y="464" font-family="Arial,sans-serif" font-size="13" fill="#16313b">1/1</text>
+<text x="860" y="464" font-family="Arial,sans-serif" font-size="13" fill="#16313b">3/5</text>
+<line x1="32" y1="473" x2="960" y2="473" stroke="#e5e7eb"/>
+<text x="32" y="550" font-family="Arial,sans-serif" font-size="13" fill="#16313b">B/A = baseline/attention. 1 = observed PASS/check; 0 = absent. Each row is one paired case.</text>
+<text x="32" y="578" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Counts are trace observations, not proof of five-axis adherence; see semantic-review.json.</text>
+<text x="32" y="606" font-family="Arial,sans-serif" font-size="12" fill="#16313b">No actual model name is inferred when transport does not report one. Historical data is separate.</text>
+</svg>

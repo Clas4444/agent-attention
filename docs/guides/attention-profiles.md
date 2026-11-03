@@ -19,6 +19,46 @@ No settings means ordinary behavior. Level 3 is balanced on each axis; five 3s
 produce no override directives. Settings do not modify model reasoning effort,
 tools, authentication, permissions or native host configuration.
 
+## Compact runtime contract
+
+Use Attention for an explicit HOW tradeoff inside an existing authorized task.
+For trivial actions or an unrequested profile, ordinary balanced work is enough.
+Workflow still owns WHAT/NEXT/STOP. Attention never chooses routes/skills or
+waives mandatory checks. Profile instructions have overhead; no general token
+saving or quality improvement is promised.
+
+`python scripts/attention.py --attention "focus=1,verify=5" --format prompt --scope work`
+compiles only those non-balanced axes and compact invariants. Default JSON is
+unchanged. The skill entry lazy-loads setup, the graph bridge and full semantics;
+an unclear axis can load its five-level reference individually. Saved full maps
+remain optional local artifacts, not a payload to re-read on every step.
+
+An integrating caller can compile once and pass the explicitly opted-in packet
+as task context, avoiding a model/tool roundtrip solely to print the profile.
+The agent should not reload the whole skill when that handoff is already clear.
+Native skill loading still has host-dependent overhead; smaller text alone is
+not evidence of lower total tokens.
+
+The axes have distinct quantities: focus is the active context while working;
+explore gathers evidence/hypotheses. Sync reconciles current sources/contracts;
+verify independently checks correctness. Batch decomposes consequential edits
+and feedback, rather than increasing batch size. Levels1..5 allocate increasing
+amounts of that particular quantity, not an increasing quality score.
+
+For in-process callers, `ProfileSession("focus=2").scope("review", "verify=5")`
+is a context manager: inherit unnamed axes from the task base, restore the previous
+scope on normal return/exception, and restore base after the outer scope. Finish
+clears overrides and rejects re-entry. Each new scope starts from base, not a
+previous override. A killed process still needs caller recovery; this is not a
+native model-memory enforcement mechanism.
+
+An explicit combined handoff uses `attention_contract=1`, a scope label and full
+levels. `from_artifact(..., opt_in=True)` rejects unsupported versions, partial
+levels and route/authority fields. Precedence is balanced defaults, explicit task
+base, then named step overrides; explicit balanced resets the step to all3.
+No peer runtime/installation is needed. These are additive interfaces; existing
+axis strings, JSON and semantics0.1.1 do not migrate or change silently.
+
 ## Effort direction and 0.1.0 migration
 
 All five axes use the same direction: levels 1–2 reduce discretionary work and

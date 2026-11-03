@@ -194,8 +194,10 @@ def main():
     parser.add_argument('--facts-file', type=Path)
     parser.add_argument('--project', type=Path)
     parser.add_argument('--output')
+    parser.add_argument('--format',choices=('json','prompt'),default='json')
     args = parser.parse_args()
     try:
+        if args.format=='prompt' and args.command!='select':raise ValueError('--format prompt is supported only for select')
         if args.command == 'questions': result = questions()
         elif args.command == 'template': result = template()
         else:
@@ -209,7 +211,11 @@ def main():
             else:
                 if args.project is None: raise ValueError('--project is required')
                 result = export(plan, args.project, args.output)
-        print(json.dumps(result, indent=2)); return 0
+        if args.format=='prompt':
+            value=','.join(f'{k}={v}' for k,v in result['levels'].items())
+            print(attention.compile_prompt(value,plan['id']),end='')
+        else:print(json.dumps(result, indent=2))
+        return 0
     except MissingFacts as error:
         print(json.dumps({'status': 'BLOCKED', 'missing_facts': error.keys, 'execution': 'NONE'})); return 2
     except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:

@@ -1,0 +1,30 @@
+{
+  "focus": {
+    "status": "NOT_DEMONSTRATED",
+    "observation": "All four conditions read four related sources before first edit and no distractors. Read counts do not identify active context breadth."
+  },
+  "batch": {
+    "status": "OBSERVED_ONCE",
+    "observation": "Level 1 grouped three edits; level 5 used three edit events and two intermediate subchecks. Both pass."
+  },
+  "sync": {
+    "status": "OBSERVED_ONCE",
+    "observation": "Level 5 has four explicit source reads versus two at level 1. Both refresh revision 1 to 2 and correctly block stale approval without sending."
+  },
+  "explore": {
+    "status": "LIMITED_OBSERVATION",
+    "observation": "Level 5 additionally reads legacy router; both investigate hypotheses and pass. Utility of extra read not established."
+  },
+  "verify": {
+    "status": "NOT_DEMONSTRATED",
+    "observation": "Both levels add independent exhaustive/property scripts and pass. Smoke-only negative control fails frozen boundary oracle; neither actual model condition fails."
+  },
+  "scope_restoration": {
+    "status": "DETERMINISTIC_PASS",
+    "observation": "Python scope API restores base after exit, return, exception, nested scope and finish. Real model within-session restoration NOT_RUN."
+  },
+  "entry": {
+    "status": "COMPILED_API_MEASURED",
+    "observation": "Caller compiles opted-in packet; no model compiler roundtrip or whole-skill read observed. Native picker/direct skill loading and live combined integration NOT_RUN."
+  }
+}

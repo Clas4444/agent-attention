@@ -26,6 +26,12 @@ to the existing task; export a NEW local attention plan/map only when saving
 was requested. Recompute from base for each context and restore when it ends.
 Missing relevant facts mean BLOCKED, not a guessed base.
 
+For execution handoff, use `select --file <plan> --facts-file <facts> --format prompt`
+to pass only the selected non-balanced directives and invariants. Load the full
+map/reference only when needed. JSON remains the default; setup still does not
+route work. In-process callers can use attention.py ProfileSession.scope to
+restore a task base on step exit/exception. Host-process kill recovery is separate.
+
 This skill does not design task routes, invoke skills, configure native model
 thinking or demonstrate token savings. No graph, cursor or Loop installation is
 required. Ordinary direct profiles remain available through agent-attention.

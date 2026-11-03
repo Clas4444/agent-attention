@@ -1,0 +1,9 @@
+{
+  "status": "REPRODUCED_METADATA_FALSE_POSITIVE",
+  "control": "Get-Content checks.py only; no Python test execution",
+  "before": true,
+  "after": false,
+  "source_sha256": "d604c69afbf927b3915d12d6f4e4135597676a5cefd2f5615911afc5ec3af4f6",
+  "model_calls": 0,
+  "real_pilot_impact": "All24 mandatory executions separately verified; original task labels unchanged"
+}

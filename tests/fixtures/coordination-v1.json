@@ -1,0 +1,20 @@
+{
+  "contract_version": 1,
+  "fixture_id": "coordination-v1",
+  "now": "2026-11-03T12:00:00+00:00",
+  "marker_time": "2026-11-03T11:00:00+00:00",
+  "cases": [
+    {"id":"local-cwd-peer","reason":"cwd","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":false},
+    {"id":"local-process-peer","reason":"process","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":null,"campaign":"attention-b","blocked":false},
+    {"id":"local-auth-home-peer","reason":"auth_home","marker_provider":"copilot","marker_domain":null,"marker_campaign":"workflow-a","provider":"copilot","account_domain":null,"campaign":"attention-b","blocked":false},
+    {"id":"local-parse-own","reason":"parse","marker_provider":"codex","marker_domain":null,"marker_campaign":"workflow-a","provider":"codex","account_domain":null,"campaign":"workflow-a","blocked":true},
+    {"id":"quota-same-domain","reason":"quota","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":true},
+    {"id":"quota-other-domain","reason":"quota","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-b","campaign":"attention-b","blocked":false},
+    {"id":"quota-other-provider","reason":"quota","marker_provider":"copilot","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":false},
+    {"id":"quota-unknown-marker-domain","reason":"quota","marker_provider":"codex","marker_domain":null,"marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":true},
+    {"id":"quota-unknown-request-domain","reason":"quota","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":null,"campaign":"attention-b","blocked":true},
+    {"id":"rate-same-domain","reason":"rate_limit","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":true},
+    {"id":"capacity-other-provider","reason":"capacity","marker_provider":"copilot","marker_domain":null,"marker_campaign":"workflow-a","provider":"codex","account_domain":null,"campaign":"attention-b","blocked":false},
+    {"id":"auth-account-same-domain","reason":"auth_account","marker_provider":"codex","marker_domain":"account-a","marker_campaign":"workflow-a","provider":"codex","account_domain":"account-a","campaign":"attention-b","blocked":true}
+  ]
+}

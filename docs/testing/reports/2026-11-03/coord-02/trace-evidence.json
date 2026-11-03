@@ -1,0 +1,913 @@
+{
+  "schema": 1,
+  "redactions": [
+    "shell executable path omitted",
+    "workspace/repository absolute paths replaced with labels",
+    "other machine paths replaced",
+    "agent messages/session IDs/output streams omitted",
+    "file-change paths reduced to fixture basenames"
+  ],
+  "attempts": [
+    {
+      "id": "01-baseline",
+      "campaign": "codex-single-axis-01",
+      "original_trace_sha256": "c36c53693496b1a5bea70ac52124a03bbed5081713a9eb82bc9e3d3b8dd6a1d9",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "01-attention",
+      "campaign": "codex-single-axis-01",
+      "original_trace_sha256": "275c42b9c10632b8e9a59deed8d57235d66eee5ac9b148282fcc07fc6a4300e2",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\ndef closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\\\"Unknown dependency: {name}\\\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n'@ | Set-Content graph.py\n@'\nimport heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) \"'!= len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n'\"'@ | Set-Content planner.py\npython -B checks.py",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "02-attention",
+      "campaign": "codex-single-axis-01",
+      "original_trace_sha256": "672ab6df521a8dbacf24cb9d782b5fc594a6ba8b61ed0080de530c99919498c7",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "02-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "68f91096c6a455b922a5eaaac3156de93619f1ca667a6f91cd26687d3575c2af",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    result = []\n    while ready:\n        name = heapq.heappop(ready)\n        result.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(result) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return result\n"
+      }
+    },
+    {
+      "id": "03-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "a851aaa0038b64ee93f374b43937213ec0d19dce7c0ff41fa0db48ddd431f27e",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "03-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "a2e01ff1c4156660ae419906516d8b60f5e7b11669632015e699ba71527702a0",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(required):\n        raise ValueError(\"Dependency cycle in requested closure\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "04-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "d8c702587cecce43df1c11524ee2910935029158f6b002fb6102707d031a0e31",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content planner.py -Raw'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content planner.py; python -B checks.py; git diff --stat; git diff -- graph.py planner.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "04-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "54f39bff95c2c87b512418aff4dd12507baa6aa04b32293ae11ffdd84b0f85ac",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "05-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "9769d6a2e920c2989b9c95c46505e934eaafc1a6cd087a886c335171e3d6d575",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nfrom heapq import heapify, heappop, heappush\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapify(ready)\n    ordered = []\n    while ready:\n        name = heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "05-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "a0165b2208525690fb184967ffab188906384a570d97b49d39a24da227368ca6",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    result = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in result:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        result.add(name)\n        pending.extend(dependencies[name])\n    return result\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    result = []\n    while ready:\n        name = heapq.heappop(ready)\n        result.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(result) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return result\n"
+      }
+    },
+    {
+      "id": "06-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "f09478df07601f3e5fad20a723b0551f663fb8c6ff048efdace056a6f00557f4",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py; Get-Content FLOW.md'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py; python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n",
+        "planner.py": "from graph import closure\nimport heapq\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "06-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "a54e93eb9aa93a883ad3f7b0a610dba83ce228f802715f906fdf5b0cfb2a8e3b",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    result = []\n    while ready:\n        name = heapq.heappop(ready)\n        result.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(result) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return result\n"
+      }
+    },
+    {
+      "id": "07-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "d6070cf34af97d0252d460b3c956efa58420dfa0c1e4317a9e790a220bf364a2",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\ndef closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\\\"Unknown dependency: {name}\\\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n'@ | Set-Content graph.py\n@'\nimport heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) \"'!= len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n'\"'@ | Set-Content planner.py\npython -B checks.py",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "07-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "d69d9dcfe617e07a96d670c53725f51555a069d1c18ae7e55f855300c7dc8537",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-ChildItem -Force; git status --short'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\ndef closure(requested, dependencies):\n    \\\"\\\"\\\"Return requested names and their transitive dependencies.\\\"\\\"\\\"\n    found = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in found:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\\\"Unknown dependency: {name}\\\")\n        found.add(name)\n        pending.extend(dependencies[name])\n    return found\n'@ | Set-Content graph.py\n@'\nimport heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    \\\"\\\"\\\"Order the closure, choosing the smallest ready name at each step.\\\"\\\"\\\"\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) \"'!= len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n'\"'@ | Set-Content planner.py\npython -B checks.py",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\nimport copy\nimport itertools\nfrom graph import closure\nfrom planner import plan\n\n# Exhaustive independent oracle over every directed graph on three nodes.\nnames = ('a', 'b', 'c')\nedges = list(itertools.product(names, repeat=2))\nfor mask in range(1 << len(edges)):\n    graph = {name: [] for name in names}\n    for bit, (node, dep) in enumerate(edges):\n        if mask & (1 << bit):\n            graph[node].extend([dep, dep])\n    for subset in range(1 << len(names)):\n        requested = [n for i, n in enumerate(names) if subset & (1 << i)]\n        saved = copy.deepcopy((requested, graph))\n        reached = set(requested)\n        while True:\n            expanded = reached | {d for n in reached for d in graph[n]}\n            if expanded == reached:\n                break\n            reached = expanded\n        assert closure(requested, graph) == reached\n        valid = [order for order in itertools.permutations(sorted(reached))\n                 if all(order.index(d) < order.index(n)\n                        for n in reached for d in graph[n])]\n        try:\n            actual = plan(requested, graph)\n        except ValueError:\n            assert not valid\n        else:\n            assert valid and actual == list(min(valid))\n        assert (requested, graph) == saved\nassert closure([], {'unused': ['missing']}) == set()\nassert plan([], {'unused': ['missing']}) == []\nchain = {str(i): [str(i-1)] if i else [] for i in range(5000)}\nassert plan(['4999'], chain) == [str(i) for i in range(5000)]\nprint('Exhaustive graph, duplicate-edge, immutability, and 5000-node checks: PASS')\n'@ | python -B -",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    \"\"\"Return requested names and their transitive dependencies.\"\"\"\n    found = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in found:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        found.add(name)\n        pending.extend(dependencies[name])\n    return found\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    \"\"\"Order the closure, choosing the smallest ready name at each step.\"\"\"\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "08-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "3d72f42974f0a1d6dfb3ec42f399bb5fff664bed92e395687985947b72cfa515",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "rg --files -g '\"'! .git'\"'; rg -n 'closure|plan\\\\(' -g '*.py' -g '*.md' -g '\"'!SKILL.md'\"'",
+          "exit_code": 1
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\nfrom pathlib import Path\nPath('graph.py').write_text('''def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\\\"Unknown dependency: {name}\\\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n''', encoding='utf-8')\nPath('planner.py').write_text('''import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) \"'!= len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n'\"''', encoding='utf-8')\n'@ | python -B -",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "08-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "79cb4fc3aa1c81aa9b930bec1eb28955a808e785380aaf20f7f876d39ed99d91",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    result = []\n    while ready:\n        name = heapq.heappop(ready)\n        result.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(result) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return result\n"
+      }
+    },
+    {
+      "id": "09-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "0cd1b976c41787707ab1d528a050edf2d811044a6711e9c2de9be60701d12c14",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "09-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "b1d3fd0701a9496f68b56a0e38235a6a4970cf30b77fa8c1b6c3c530b9551b38",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "10-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "61eca7963eac41062023e84fc5b59c4e01b66f7de27cb437e26470a97c542dc1",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "@'\nfrom pathlib import Path\nPath('graph.py').write_text('''def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\\\"Unknown dependency: {name}\\\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n''')\nPath('planner.py').write_text('''import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) \"'!= len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n'\"''')\n'@ | python -B -\npython -B checks.py\n git diff --stat",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    reached = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in reached:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        reached.add(name)\n        pending.extend(dependencies[name])\n    return reached\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\n\n\ndef plan(requested, dependencies):\n    nodes = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in nodes}\n    for name in nodes:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in nodes if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(nodes):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "10-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "323a2ed89c182a2a0f1dea6f54d7ffe849f198e9ad3fceb83927f7b8c43bec7a",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nfrom heapq import heapify, heappop, heappush\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in required}\n    for name in required:\n        prerequisites = set(dependencies[name])\n        remaining[name] = len(prerequisites)\n        for prerequisite in prerequisites:\n            consumers[prerequisite].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapify(ready)\n    ordered = []\n    while ready:\n        name = heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heappush(ready, consumer)\n\n    if len(ordered) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "11-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "0c6c268f3246b1a9a0c4b8baa7471e89bf7ee644b4c7799588b02a3b9ec1a12d",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    required = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in required:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        required.add(name)\n        pending.extend(dependencies[name])\n    return required\n",
+        "planner.py": "from graph import closure\nimport heapq\ndef plan(requested, dependencies):\n    required = closure(requested, dependencies)\n    consumers = {name: [] for name in required}\n    remaining = {}\n    for name in required:\n        unique_dependencies = set(dependencies[name])\n        remaining[name] = len(unique_dependencies)\n        for dependency in unique_dependencies:\n            consumers[dependency].append(name)\n\n    ready = [name for name in required if remaining[name] == 0]\n    heapq.heapify(ready)\n    result = []\n    while ready:\n        name = heapq.heappop(ready)\n        result.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n\n    if len(result) != len(required):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return result\n"
+      }
+    },
+    {
+      "id": "11-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "e89407424b094bd23a043c353a697e637ef27ea01bf48557ec94f04280e192fc",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content graph.py; Get-Content planner.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content graph.py; Get-Content planner.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "graph.py",
+              "kind": "update"
+            },
+            {
+              "path": "planner.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "graph.py": "def closure(requested, dependencies):\n    result = set()\n    pending = list(requested)\n    while pending:\n        name = pending.pop()\n        if name in result:\n            continue\n        if name not in dependencies:\n            raise ValueError(f\"Unknown dependency: {name}\")\n        result.add(name)\n        pending.extend(dependencies[name])\n    return result\n",
+        "planner.py": "import heapq\n\nfrom graph import closure\ndef plan(requested, dependencies):\n    names = closure(requested, dependencies)\n    remaining = {}\n    consumers = {name: [] for name in names}\n    for name in names:\n        required = set(dependencies[name])\n        remaining[name] = len(required)\n        for dependency in required:\n            consumers[dependency].append(name)\n\n    ready = [name for name in names if remaining[name] == 0]\n    heapq.heapify(ready)\n    ordered = []\n    while ready:\n        name = heapq.heappop(ready)\n        ordered.append(name)\n        for consumer in consumers[name]:\n            remaining[consumer] -= 1\n            if remaining[consumer] == 0:\n                heapq.heappush(ready, consumer)\n    if len(ordered) != len(names):\n        raise ValueError(\"Cycle in requested dependencies\")\n    return ordered\n"
+      }
+    },
+    {
+      "id": "12-attention",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "03b428e22a3c15e3e99eb0a61f164024e1f33de9f718c39cb50b9e6e8a4709d4",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content .agents/skills/agent-attention/SKILL.md; Get-Content FLOW.md; Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "command_execution",
+          "command": "'Get-Content shipping.py; git status --short'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "discount.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py; python checks.py; git diff -- discount.py checkout.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "discount.py": "def discount(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from discount import discount\nfrom shipping import shipping\ndef total(cents):\n    discounted = discount(cents)\n    return discounted + shipping(discounted)\n"
+      }
+    },
+    {
+      "id": "12-baseline",
+      "campaign": "codex-single-axis-02",
+      "original_trace_sha256": "2b07a2e436efd96a6a23ff52c4e1c48def3e9e761359f4ed109e3fb065a42995",
+      "actions": [
+        {
+          "type": "command_execution",
+          "command": "'Get-Content FLOW.md; Get-Content discount.py; Get-Content checkout.py; Get-Content checks.py'",
+          "exit_code": 0
+        },
+        {
+          "type": "file_change",
+          "changes": [
+            {
+              "path": "checkout.py",
+              "kind": "update"
+            },
+            {
+              "path": "discount.py",
+              "kind": "update"
+            }
+          ]
+        },
+        {
+          "type": "command_execution",
+          "command": "'python -B checks.py'",
+          "exit_code": 0
+        }
+      ],
+      "candidate_outputs": {
+        "discount.py": "def discount(cents):\n    return cents * 9 // 10\n",
+        "checkout.py": "from discount import discount\nfrom shipping import shipping\ndef total(cents):\n    discounted = discount(cents)\n    return discounted + shipping(discounted)\n"
+      }
+    }
+  ]
+}

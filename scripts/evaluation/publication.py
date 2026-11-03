@@ -26,6 +26,27 @@ def check(directory,write=False):
     return len(actual)
 
 
+def audit_historical(directory):
+    """Old source receipts become STALE as development proceeds; data stays pinned.
+
+    Never rewrite the old hash receipt to make a new task pass. Only immutable
+    report artifact mismatches fail this historical audit. Changed source/task
+    paths are explicitly STALE, not fresh verification of the historical release.
+    """
+    expected=json.loads((directory/'sha256.json').read_text(encoding='utf-8'))['sha256']
+    artifacts=[];stale=[]
+    prefix=directory.relative_to(ROOT).as_posix()+'/'
+    for name,digest in expected.items():
+        path=ROOT/name
+        same=path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest()==digest
+        if name.startswith(prefix):
+            if not same:raise ValueError('historical artifact changed: '+name)
+            artifacts.append(name)
+        elif not same:stale.append(name)
+    return {'artifact_status':'PASS','artifacts':len(artifacts),
+            'source_status':'STALE' if stale else 'PASS','stale_source_paths':stale}
+
+
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--directory',type=Path,required=True);p.add_argument('--write',action='store_true')
     a=p.parse_args();print('PASS:',check(a.directory.resolve(),a.write),'publication hashes')

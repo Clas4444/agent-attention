@@ -1,5 +1,17 @@
 # Changes
 
+## Unreleased — scoped handoff and bounded evaluation delivery
+
+- Add compact selected-axis prompts, strict opted-in attention contract1 and
+  Python scope restoration without changing the original25 directives/JSON.
+- Load per-axis skill references on demand; setup select can emit compact prompts.
+- Repair false-PASS gates for missing mandatory command evidence/accounting faults;
+  keep historical artifact hashes immutable and mark changed source receipts STALE.
+- Publish separate24-call coordination and12-call product evidence with source
+  snapshots, sanitized commands, budget receipts and reproduced charts. Focus and
+  verify contrast, native picker and live combined integration remain unproven.
+- No version bump, release/tag or global installation in this delivery.
+
 ## 0.2.6 — 2026-11-03
 
 - Revise research figures with all-66-pair token/time lines, explicit profile

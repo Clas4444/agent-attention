@@ -1,0 +1,759 @@
+{
+  "version": 1,
+  "contract": "coordination-v1",
+  "campaign": "codex-single-axis-02",
+  "NO_PUSH": true,
+  "frozen_at": "2026-11-03T08:38:47.088817+00:00",
+  "plan": [
+    {
+      "id": "02-baseline",
+      "pair": 2,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-1",
+      "levels": {
+        "focus": 3,
+        "sync": 1,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-baseline",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-attention",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-attention",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-baseline",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-baseline",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-attention",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-attention",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-baseline",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "07-baseline",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "07-attention",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "08-attention",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "08-baseline",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "09-baseline",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "09-attention",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "10-attention",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "10-baseline",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-baseline",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-attention",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-attention",
+      "pair": 12,
+      "case": "cents",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-baseline",
+      "pair": 12,
+      "case": "cents",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    }
+  ],
+  "seed": 20261103,
+  "maximum_task_cli": 24,
+  "max_inflight": 1,
+  "timeout_seconds": 180,
+  "hypothesis": "Single-axis low/high may change discretionary behavior/cost; correctness and mandatory checks must remain.",
+  "requested_model": "configured CLI default; no model or effort override",
+  "actual_model": "record only if transport explicitly reports it",
+  "preflight": {
+    "authenticated": true,
+    "auth_status_sha256": "16118df3eb3595e44a4721878cef0f79910e6564e10ff0e78e451e7c4e478947",
+    "credential_copy": false,
+    "provider": "codex",
+    "account_domain": null,
+    "arms": [
+      {
+        "arm": "baseline",
+        "skill_count": 0,
+        "candidate_context": true,
+        "parent_context": false,
+        "status": "PASS",
+        "scope": "model-visible context inventory; authentication home remains host-managed"
+      },
+      {
+        "arm": "attention",
+        "skill_count": 1,
+        "candidate_context": true,
+        "parent_context": false,
+        "status": "PASS",
+        "scope": "model-visible context inventory; authentication home remains host-managed"
+      }
+    ],
+    "status": "PASS",
+    "limitations": [
+      "Shared supported authentication cache; not full-home or OS isolation.",
+      "debug inventory is preflight evidence, not an attestation of the later runtime prompt.",
+      "Account/quota domain unknown; provider stops require identity review."
+    ]
+  },
+  "provider": "codex",
+  "account_domain": null,
+  "pins": {
+    "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+    "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+    "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+    "scripts/evaluation/codex_adapter.py": "d604c69afbf927b3915d12d6f4e4135597676a5cefd2f5615911afc5ec3af4f6",
+    "scripts/evaluation/control.py": "848231ce94c58f2b1e3695ca78939612e3fd59b4e72d9e3d96587865aef75abf",
+    "scripts/evaluation/coordination.py": "ec850189e1efdfdb711dedb85edf188996fd3f979f15fdf4f2431242b82200cd",
+    "scripts/evaluation/copilot_audit.py": "da4eb1411ea363e3ddf8da2f04c34a46e89671fc8b3cabb35c06c55cf8e50f85",
+    "scripts/evaluation/integrity_report.py": "6b7d6d833ca517c07a6060edb4d700478f6c2f19f2fccf5de5400b4141de476f",
+    "scripts/evaluation/metrics.py": "524d39de0d42ec3411f118a4c8a38c792c1fcc792eb64423f11a4d8594a2e108",
+    "scripts/evaluation/paired.py": "c96eeeb35d948938a2056fde1c92a2cf20aa5c0c03f1d8f3cfa44dc6fbebd03e",
+    "scripts/evaluation/pilot.py": "760d48de83e6155ddaf7a7389549ba1d9ce155b875f47de4dde01bb1611fd1c9",
+    "scripts/evaluation/publication.py": "cc099d504b98415144dcda617e9678ac78af1da7e026cf1f0296ae10e2be2a1f",
+    "scripts/evaluation/research_figures.py": "538076968fe14aba24ccd9c2d72683edea346a2c178e609f5cf489aa6cd0cea3",
+    "scripts/evaluation/runner.py": "e4cf62dc11b32bbe99eaa02586f9d310267d189c136f8b4d78e3f98f6752b3ac",
+    "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad",
+    "benchmarks/cases/dependencies.json": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+    "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda",
+    "tests/fixtures/coordination-v1.json": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+    "skills/agent-attention/assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+    "skills/agent-attention/assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+    "skills/agent-attention/references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "skills/agent-attention/references/setup.md": "30b0e5eca6796d32b1aebf869d51562387c643cf8328d938603f074395d50bb8",
+    "skills/agent-attention/references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "skills/agent-attention/scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "skills/agent-attention/scripts/attention_setup.py": "945f1ae2a7c80cfe53e561003797c19d259733699d3af1253a697784d9374ece",
+    "skills/agent-attention/scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+    "skills/agent-attention/scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f",
+    "skills/agent-attention/SKILL.md": "2017919da8e3460877c6a31a2ee3a0aa235ea48e174c9be35950cd7a1322f225"
+  },
+  "signatures": {
+    "focus": {
+      "low": "bounded changed component, retain required dependency pointers",
+      "high": "authorized end-to-end contract kept in view",
+      "tradeoff": "broader context may cost more; narrow scope can miss interactions"
+    },
+    "sync": {
+      "low": "reconcile at completion or immediately on shared-contract change",
+      "high": "reconcile after consequential shared-state/assumption change",
+      "tradeoff": "frequent reconciliation adds overhead; sparse sync risks drift"
+    },
+    "batch": {
+      "low": "group straightforward changes, mandatory acceptance retained",
+      "high": "reversible dependency steps and intermediate inspection",
+      "tradeoff": "more decomposition, not larger batches or guaranteed savings"
+    },
+    "explore": {
+      "low": "supplied sources then required dependencies",
+      "high": "map relevant authorized flow and conflicting assumptions",
+      "tradeoff": "broader discovery costs effort; must return to task"
+    },
+    "verify": {
+      "low": "direct result plus mandatory/risk-triggered checks",
+      "high": "independent consequential assumptions and boundary checks",
+      "tradeoff": "additional checking may be redundant; required checks never removed"
+    }
+  },
+  "primary": [
+    "frozen functional acceptance",
+    "protected/candidate integrity",
+    "input+output tokens"
+  ],
+  "secondary": [
+    "CLI wall seconds",
+    "read/edit/check/reconcile trace evidence"
+  ],
+  "rubric": "Task PASS requires completed turn, frozen oracle and integrity; signature observations are descriptive and cannot be inferred from tokens or state-file writes.",
+  "stop": "Local fault stops own campaign. QUOTA/RATE_LIMIT/CAPACITY/AUTH_ACCOUNT pauses same-provider matching/unknown domain; no provider switching.",
+  "limits": [
+    "n=1 per cell; no confidence intervals or causal/general savings claim",
+    "Historical66 are separate, confounded focus1 observations",
+    "Concurrent peer calls may affect wall time"
+  ],
+  "full_original_plan": [
+    {
+      "id": "01-baseline",
+      "pair": 1,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 1,
+        "verify": 3
+      }
+    },
+    {
+      "id": "01-attention",
+      "pair": 1,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "explore-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 1,
+        "verify": 3
+      }
+    },
+    {
+      "id": "02-attention",
+      "pair": 2,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "sync-1",
+      "levels": {
+        "focus": 3,
+        "sync": 1,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "02-baseline",
+      "pair": 2,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-1",
+      "levels": {
+        "focus": 3,
+        "sync": 1,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-baseline",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-attention",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-attention",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-baseline",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-baseline",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-attention",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-attention",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-baseline",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "07-baseline",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "07-attention",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "08-attention",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "08-baseline",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "09-baseline",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "09-attention",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "10-attention",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "10-baseline",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-baseline",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-attention",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-attention",
+      "pair": 12,
+      "case": "cents",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-baseline",
+      "pair": 12,
+      "case": "cents",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    }
+  ],
+  "continuation": {
+    "reason": "wire-contract alignment only; no outcome-based selection",
+    "previous_attempts": 3,
+    "previous_results_sha256": "bd8a27131c0be77e9f3ed12f7d10d116fe5f207c1416de261205253b3075cb56"
+  }
+}

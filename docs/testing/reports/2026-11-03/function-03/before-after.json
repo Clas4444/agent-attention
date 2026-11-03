@@ -1,0 +1,31 @@
+{
+  "negative_control": {
+    "old_compact_cli_exit": 2,
+    "new_compact_cli_exit": 0,
+    "kind": "actual non-model Python CLI control; not a model session"
+  },
+  "entry_bytes": {
+    "before": 7380,
+    "after": 3317
+  },
+  "one_axis_prompt_bytes": {
+    "focus": 465,
+    "sync": 477,
+    "batch": 520,
+    "explore": 475,
+    "verify": 487
+  },
+  "runtime_observed_after": {
+    "python": "3.14.7",
+    "codex_version": "codex-cli 0.166.0-alpha.5.1",
+    "limit": "CLI binary version queried after pilot; no before/after binary attestation claimed"
+  },
+  "post_pilot_fixes": [
+    "CLI rejects inapplicable scope/invalid workflow flags explicitly",
+    "Trace metadata distinguishes full checks from optional subchecks; original flags retained",
+    "Explicit opt-in now requires boolean True; false strings and integer 1 rejected. All measured calls used True, so measured source snapshots remain unchanged."
+  ],
+  "semantics_version": "0.1.1 unchanged; additive API/format only",
+  "version_bump": false,
+  "NO_PUSH": true
+}

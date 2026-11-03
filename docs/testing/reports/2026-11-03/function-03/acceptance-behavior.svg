@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#ffffff"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">FUNCTION-03: artifact acceptance and observed behavior</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">Evidence from actual commands/artifacts, not profile announcements or token proxies</text>
+<text x="25" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Condition</text>
+<text x="190" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Functional</text>
+<text x="300" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Integrity</text>
+<text x="400" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Full check</text>
+<text x="530" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Subchecks</text>
+<text x="655" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Source reads</text>
+<text x="810" y="125" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Extra scripts</text>
+<text x="25" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">balanced</text>
+<text x="210" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="157" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="165" x2="960" y2="165" stroke="#e5e7eb"/>
+<text x="25" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">neutral</text>
+<text x="210" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="185" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="193" x2="960" y2="193" stroke="#e5e7eb"/>
+<text x="25" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">focus-5</text>
+<text x="210" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="213" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="221" x2="960" y2="221" stroke="#e5e7eb"/>
+<text x="25" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">focus-1</text>
+<text x="210" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="241" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="249" x2="960" y2="249" stroke="#e5e7eb"/>
+<text x="25" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">explore-5</text>
+<text x="210" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="269" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="277" x2="960" y2="277" stroke="#e5e7eb"/>
+<text x="25" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">sync-5</text>
+<text x="210" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">4</text>
+<text x="855" y="297" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="305" x2="960" y2="305" stroke="#e5e7eb"/>
+<text x="25" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">explore-1</text>
+<text x="210" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="325" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="333" x2="960" y2="333" stroke="#e5e7eb"/>
+<text x="25" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">sync-1</text>
+<text x="210" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">2</text>
+<text x="855" y="353" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="361" x2="960" y2="361" stroke="#e5e7eb"/>
+<text x="25" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">verify-5</text>
+<text x="210" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="381" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<line x1="25" y1="389" x2="960" y2="389" stroke="#e5e7eb"/>
+<text x="25" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">verify-1</text>
+<text x="210" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="409" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<line x1="25" y1="417" x2="960" y2="417" stroke="#e5e7eb"/>
+<text x="25" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">batch-1</text>
+<text x="210" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="690" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="437" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="445" x2="960" y2="445" stroke="#e5e7eb"/>
+<text x="25" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">batch-5</text>
+<text x="210" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="310" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">PASS</text>
+<text x="430" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">1</text>
+<text x="565" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">2</text>
+<text x="690" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<text x="855" y="465" font-family="Arial,sans-serif" font-size="12" fill="#16313b">0</text>
+<line x1="25" y1="473" x2="960" y2="473" stroke="#e5e7eb"/>
+<text x="25" y="545" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Subchecks = net/checkout intermediate feedback. Source reads relate to sync revision changes.</text>
+<text x="25" y="574" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Both verify levels may add risk-triggered scripts. Focus active breadth is not inferred from read counts.</text>
+<text x="25" y="602" font-family="Arial,sans-serif" font-size="12" fill="#16313b">See manual-review.json for distinctions and unresolved cases; all helper/contract tests are separate.</text>
+</svg>

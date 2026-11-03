@@ -1,3 +1,17 @@
+# Scoped-product delivery — unreleased source changes
+
+Delivery authorization covers commit/push, not a new release/tag/version. Repository
+version remains0.2.6; profile semantics0.1.1 and all25 directives remain unchanged.
+The new compact API/format, scoped state and lazy skill entry are additive behavior
+changes, not merely reports. No local rule requires a version bump for this source
+delivery. A future release should choose its own scope from these unreleased notes.
+
+See [product evidence](../testing/reports/2026-11-03/function-03/README.md),
+[coordination evidence](../testing/reports/2026-11-03/coord-02/README.md) and
+[delivery checkpoint](../../task/FUNCTION-03-RESULTS.json). Local gates run against
+the final diff; remote CI/CodeQL must be checked on its exact pushed SHA. Original
+measured source archives and source receipts remain distinct from delivery source.
+
 # Release 0.2.6 — 2026-11-03
 
 ## Scope
@@ -31,7 +45,7 @@ it has no completed model sessions. The old marker and records are retained.
 Full suite target for this snapshot is 119 tests with three platform symlink
 skips; actual gate results are recorded in the task status after execution.
 Run python -m unittest discover -s tests -v, python scripts/attention_assets.py,
-python -m scripts.evaluation.publication --directory docs/testing/reports/2026-11-03,
+the historical artifact audit (changed source receipts are STALE),
 and git diff --check. Do not infer CI from historical runs; inspect exact SHA.
 
 ## Rollback

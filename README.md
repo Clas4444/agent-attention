@@ -85,7 +85,10 @@ Edit generator sources before generated resources, then run
 `python scripts/attention_assets.py --write`. Keep raw traces and machine-local
 maps private. The [benchmark guide](benchmarks/README.md) explains opt-in model
 calls; [results](docs/testing/results.md) separate executed checks from limitations.
-This organization/packaging release adds no new model measurements.
+New separate [paired Codex observations](docs/testing/reports/2026-11-03/coord-02/README.md) and
+[scoped product evaluation](docs/testing/reports/2026-11-03/function-03/README.md) record 24 and 12
+completed CLI sessions respectively. Focus/verify contrasts and general savings
+remain unproven; native combined integration is not measured.
 
 Profile semantics remain 0.1.1. For migration from 0.1.0, reselect `batch`: it now
 means decomposition depth rather than batch size. See the profile guide and

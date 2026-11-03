@@ -1,0 +1,279 @@
+{
+  "repo": "agent-attention",
+  "state": "READY_FOR_REVIEW",
+  "base_sha": "0698c709243a77d40b6f7affb4b2a5ec1dfc184c",
+  "changed_paths": [
+    "docs/testing/reports/2026-11-03/coord-02/README.md",
+    "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.png",
+    "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.svg",
+    "docs/testing/reports/2026-11-03/coord-02/budget-receipt.json",
+    "docs/testing/reports/2026-11-03/coord-02/chart-data.json",
+    "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-01-sources.zip",
+    "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-02-sources.zip",
+    "docs/testing/reports/2026-11-03/coord-02/final-gates.json",
+    "docs/testing/reports/2026-11-03/coord-02/historical-receipt-audit.json",
+    "docs/testing/reports/2026-11-03/coord-02/metadata-regression.json",
+    "docs/testing/reports/2026-11-03/coord-02/observations.json",
+    "docs/testing/reports/2026-11-03/coord-02/paired-effects.csv",
+    "docs/testing/reports/2026-11-03/coord-02/protocol-continuation.json",
+    "docs/testing/reports/2026-11-03/coord-02/protocol-initial.json",
+    "docs/testing/reports/2026-11-03/coord-02/quality-behavior.png",
+    "docs/testing/reports/2026-11-03/coord-02/quality-behavior.svg",
+    "docs/testing/reports/2026-11-03/coord-02/semantic-review.json",
+    "docs/testing/reports/2026-11-03/coord-02/sha256.json",
+    "docs/testing/reports/2026-11-03/coord-02/snapshot-index.json",
+    "docs/testing/reports/2026-11-03/coord-02/summary.json",
+    "docs/testing/reports/2026-11-03/coord-02/trace-evidence.json",
+    "docs/testing/reports/2026-11-03/function-03/README.md",
+    "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.png",
+    "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.svg",
+    "docs/testing/reports/2026-11-03/function-03/actual-costs.png",
+    "docs/testing/reports/2026-11-03/function-03/actual-costs.svg",
+    "docs/testing/reports/2026-11-03/function-03/before-after.json",
+    "docs/testing/reports/2026-11-03/function-03/budget-receipt.json",
+    "docs/testing/reports/2026-11-03/function-03/chart-data.json",
+    "docs/testing/reports/2026-11-03/function-03/compiled-product-01-sources.zip",
+    "docs/testing/reports/2026-11-03/function-03/final-gates.json",
+    "docs/testing/reports/2026-11-03/function-03/manual-review.json",
+    "docs/testing/reports/2026-11-03/function-03/observations.json",
+    "docs/testing/reports/2026-11-03/function-03/protocol.json",
+    "docs/testing/reports/2026-11-03/function-03/sha256.json",
+    "docs/testing/reports/2026-11-03/function-03/snapshot-index.json",
+    "docs/testing/reports/2026-11-03/function-03/source-table.csv",
+    "docs/testing/reports/2026-11-03/function-03/summary.json",
+    "docs/testing/reports/2026-11-03/function-03/trace-evidence.json",
+    "scripts/coord02_report.py",
+    "scripts/evaluation/codex_adapter.py",
+    "scripts/evaluation/coordination.py",
+    "scripts/evaluation/delivery.py",
+    "scripts/evaluation/function03.py",
+    "scripts/evaluation/function_cases.py",
+    "scripts/evaluation/trace_metrics.py",
+    "scripts/function03_report.py",
+    "skills/agent-attention/references/axes/batch.md",
+    "skills/agent-attention/references/axes/explore.md",
+    "skills/agent-attention/references/axes/focus.md",
+    "skills/agent-attention/references/axes/sync.md",
+    "skills/agent-attention/references/axes/verify.md",
+    "task/COORD-02-RESULTS.json",
+    "task/COORD-02.md",
+    "task/FUNCTION-03-RESULTS.json",
+    "task/FUNCTION-03.md",
+    "tests/fixtures/coordination-v1.json",
+    "tests/test_attention_compiler.py",
+    "tests/test_codex_adapter.py",
+    "tests/test_coord02_report.py",
+    "tests/test_coord_product.py",
+    "tests/test_coordination.py",
+    "tests/test_delivery.py",
+    "tests/test_function_cases.py",
+    "tests/test_function_report.py",
+    "tests/test_function_runner.py",
+    "tests/test_trace_metrics.py",
+    "CHANGELOG.md",
+    "README.md",
+    "docs/development/release.md",
+    "docs/guides/attention-profiles.md",
+    "docs/guides/attention-setup.md",
+    "docs/testing/README.md",
+    "docs/testing/results.md",
+    "scripts/attention.py",
+    "scripts/attention_setup.py",
+    "scripts/evaluation/control.py",
+    "scripts/evaluation/publication.py",
+    "scripts/generators/assets.py",
+    "scripts/generators/setup.py",
+    "skills/agent-attention/SKILL.md",
+    "skills/agent-attention/references/setup.md",
+    "skills/agent-attention/scripts/attention.py",
+    "skills/agent-attention/scripts/attention_setup.py",
+    "skills/attention-setup/SKILL.md",
+    "skills/attention-setup/references/setup.md",
+    "skills/attention-setup/scripts/attention.py",
+    "skills/attention-setup/scripts/attention_setup.py",
+    "task/TASK-STATUS.md",
+    "tests/test_integrity_report.py"
+  ],
+  "tests": [
+    {
+      "kind": "pre-model focused deterministic",
+      "tests": 35,
+      "pass": 34,
+      "skip": 1,
+      "status": "PASS",
+      "model_calls": 0
+    },
+    {
+      "kind": "final full local suite",
+      "tests": 139,
+      "pass": 136,
+      "skip": 3,
+      "status": "PASS",
+      "model_calls": 0
+    },
+    {
+      "kind": "generated resources / task links / diff",
+      "status": "PASS",
+      "model_calls": 0
+    },
+    {
+      "kind": "saved-observation/chart-data regeneration",
+      "status": "PASS",
+      "model_calls": 0
+    },
+    {
+      "kind": "historical report artifacts",
+      "status": "PASS",
+      "artifact_count": 27,
+      "source_receipt_status": "STALE"
+    },
+    {
+      "kind": "remote CI for uncommitted diff",
+      "status": "NOT_RUN",
+      "reason": "NO_PUSH; old SHA CI is not reused"
+    }
+  ],
+  "experiments": {
+    "new_experimental_CLI": 24,
+    "completed_model_sessions": 24,
+    "functional_PASS": 24,
+    "protected_file_integrity_PASS": 24,
+    "audited_mandatory_checks": 24,
+    "original_status_counts": {
+      "PASS": 24
+    },
+    "missing_usage": 0,
+    "retries": 0,
+    "timeouts": 0,
+    "provider_faults": 0,
+    "task_budget_cap": 24,
+    "budget_reserved": 24,
+    "budget_remaining": 0,
+    "inflight": 0,
+    "descriptive_pairs": 12,
+    "strict_v1_complete_pairs": 10,
+    "initial_wire_draft_attempts": 3,
+    "aligned_v1_attempts": 21,
+    "requested_model": "configured CLI default; no model/effort override",
+    "actual_model": null,
+    "actual_model_status": "NOT_REPORTED on all24",
+    "internal_model_requests": "NOT_REPORTED; not equated to CLI count",
+    "Copilot_calls": 0,
+    "combined_model_trials": "NOT_RUN",
+    "live_model_scope_restoration": "NOT_RUN",
+    "historical66": "SEPARATE / not pooled"
+  },
+  "findings": [
+    {
+      "file": "scripts/evaluation/control.py",
+      "line": 64,
+      "status": "LEGACY_LIMITATION",
+      "finding": "Legacy explicit marker API has no scope/domain; COORD-02 uses new local-default versioned coordinator."
+    },
+    {
+      "file": "scripts/evaluation/control.py",
+      "line": 7,
+      "status": "FIXED_HARNESS",
+      "finding": "Missing-auth root cause recognized before missing usage; old attempts unchanged."
+    },
+    {
+      "file": "scripts/evaluation/coordination.py",
+      "line": 112,
+      "status": "DETERMINISTIC_PASS",
+      "finding": "Transactional cap24/max1inflight across processes and campaign IDs; uncertain reservations never auto-expire."
+    },
+    {
+      "file": "scripts/evaluation/coordination.py",
+      "line": 49,
+      "status": "DETERMINISTIC_PASS",
+      "finding": "Local scope, matching/unknown provider-domain, other-provider and stale-marker cases match byte-identical common fixture."
+    },
+    {
+      "file": "scripts/evaluation/trace_metrics.py",
+      "line": 5,
+      "status": "REPRODUCED_AND_FIXED_METADATA",
+      "finding": "Reading/echoing checks.py falsely matched old proxy; conservative parser rejects it. All24 real mandatory executions audited separately."
+    },
+    {
+      "file": "scripts/attention_setup.py",
+      "line": 94,
+      "status": "HELPER_ONLY_PASS",
+      "finding": "Base recomputation is non-mutating across exception/early stop; does not attest live-model restoration."
+    },
+    {
+      "file": "scripts/workflow_setup.py",
+      "line": 289,
+      "status": "CONTRACT_ONLY_PASS",
+      "finding": "Opt-in version1 attachment preserves routes/skills/acceptance; no runtime peer dependency."
+    },
+    {
+      "file": "scripts/evaluation/publication.py",
+      "line": 29,
+      "status": "FIXED_RECEIPT_INTERPRETATION",
+      "finding": "Old immutable artifacts still pinned; mutable source/task mismatches explicitly STALE, not rewritten."
+    },
+    {
+      "file": "docs/testing/reports/2026-11-03/coord-02/semantic-review.json",
+      "line": 1,
+      "status": "DESCRIPTIVE_MODEL_EVIDENCE",
+      "finding": "One trace example for decomposition, reconciliation read, extra discovery and independent verification; focus contrast not identified."
+    },
+    {
+      "file": "docs/testing/reports/2026-11-03/coord-02/observations.json",
+      "line": 1,
+      "status": "EXPERIMENTAL_INTEGRITY_LIMIT",
+      "finding": "Initial3 wire-draft rows retained.12 descriptive pairs; only10 pairs both common-v1 aligned. No task/prompt/order/skill change across continuation."
+    }
+  ],
+  "unresolved": [
+    "Focus breadth effect not identified on this two-file fixture; no proof all5 axes reliably change behavior.",
+    "n=1 per cell; no causal effect, reliability, confidence interval or general savings claim.",
+    "Actual model identity, runtime prompt and full-home/OS isolation are not attested.",
+    "Initial3 wire draft limits experimental integrity; strict aligned subset10 pairs.",
+    "Combined/native picker and model context restoration are NOT_RUN; only helper contract tests cover those paths.",
+    "No budget remains; no restart, retry or provider/account switch is authorized."
+  ],
+  "evidence_paths": [
+    "docs/testing/reports/2026-11-03/coord-02/README.md",
+    "docs/testing/reports/2026-11-03/coord-02/sha256.json",
+    "docs/testing/reports/2026-11-03/coord-02/snapshot-index.json"
+  ],
+  "peer_contract_version": "coordination-v1",
+  "peer_fixture_sha256": "4d67c53d7b2fbe13c5fc5c9630e3cd8c0b307e2112adbb061bb959b3ed424a81",
+  "NO_PUSH": false,
+  "NO_COMMIT": false,
+  "NO_PUBLISH": false,
+  "NO_RELEASE": true,
+  "version_bump": false,
+  "HEAD_unchanged": true,
+  "next_step": "Parent/human review internal diff and limitations; do not run more models.",
+  "delivery": {
+    "authorization": "conditional commit/push after final review and local gates",
+    "commit": null,
+    "pushed": false,
+    "checks": {
+      "local": {
+        "tests": 153,
+        "PASS": 150,
+        "skip": 3,
+        "assets": "PASS",
+        "whitespace": "PASS",
+        "public_candidates_oracle_PASS": 36
+      },
+      "remote": "NOT_RUN"
+    },
+    "limitations": [
+      "No additional model calls",
+      "No release/tag/version bump/global install",
+      "Focus/verify contrasts and live combined integration unproven"
+    ],
+    "review": {
+      "verdict": "LAND",
+      "fixed": [
+        "Strict opt-in requires literal boolean True",
+        "PASS requires mandatory trace evidence and no accounting/transport stop"
+      ],
+      "limitations": "No proof of all five behavioral contrasts, causal savings, native picker or live combined execution"
+    }
+  }
+}

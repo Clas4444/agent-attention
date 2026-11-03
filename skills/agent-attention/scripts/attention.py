@@ -3,6 +3,7 @@
 import argparse
 import json
 import re
+from contextlib import contextmanager
 
 SEMANTICS_VERSION = '0.1.1'
 
@@ -101,16 +102,69 @@ def resolve(value=None, workflow='direct'):
         'execution': 'NONE', 'writes': 'NONE'}
 
 
+MEASURES={'focus':'active context width, not search breadth',
+          'sync':'reconciliation of changed sources/contracts, not test volume',
+          'batch':'decomposition and intermediate feedback, not batch size',
+          'explore':'evidence/hypothesis discovery, not active context width',
+          'verify':'independent correctness evidence, not source synchronization'}
+
+
+def compile_prompt(value=None,scope='task'):
+    """Compile only requested non-balanced guidance; no persistence or dispatch."""
+    resolved=resolve(value,scope)
+    lines=[f'Attention scope: {scope}. Semantics: {SEMANTICS_VERSION}.']
+    for axis,directive in resolved['directives'].items():
+        lines.append(f'Override: {axis}={resolved["levels"][axis]} ({MEASURES[axis]}): {directive}')
+    if not resolved['directives']:lines.append('Balanced: no discretionary override.')
+    lines += ['Keep task authority and mandatory/risk-triggered checks. Reconcile changed shared contracts before dependent work at every level.',
+              'No routing, extra permissions, model settings or token guarantee. Stop on completion/blocker; no minimum rounds. Restore the task base when this scope ends.']
+    lines += ['Tradeoff: '+warning for warning in resolved['warnings']]
+    return '\n'.join(lines)+'\n'
+
+
+def from_artifact(artifact,opt_in=False):
+    """Explicit combined handoff v1; routing/authority fields are not accepted."""
+    if opt_in is not True:raise ValueError('attention contract requires explicit opt-in')
+    if (not isinstance(artifact,dict) or set(artifact)!={'attention_contract','scope','levels'}
+            or type(artifact['attention_contract']) is not int or artifact['attention_contract']!=1):
+        raise ValueError('expected attention_contract 1, scope and full levels only; no route/authority fields')
+    levels=inherit(artifact['levels'])
+    value=','.join(f'{k}={v}' for k,v in levels.items())
+    packet=resolve(value,artifact['scope']);packet['scope']=artifact['scope']
+    packet['prompt']=compile_prompt(value,artifact['scope']);return packet
+
+
+class ProfileSession:
+    """In-process scoped HOW. The caller still owns execution and stop decisions."""
+    def __init__(self,value=None):
+        self.base=parse_attention(value);self.levels=self.base.copy();self.finished=False
+    @contextmanager
+    def scope(self,name,override=None):
+        if self.finished:raise ValueError('attention session finished')
+        effective=inherit(self.base,override)  # Never inherit a previous step's override.
+        previous=self.levels.copy()
+        packet=from_artifact({'attention_contract':1,'scope':name,'levels':effective},opt_in=True)
+        self.levels=effective.copy()
+        try:yield packet
+        finally:self.levels=self.base.copy() if self.finished else previous
+    def finish(self):
+        self.finished=True;self.levels=self.base.copy()
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--attention', default=None)
-    parser.add_argument('--workflow', default='direct', help='Descriptive label only; no dispatch')
+    parser.add_argument('--workflow', default='direct', help='JSON descriptive label only; prompt uses --scope; no dispatch')
+    parser.add_argument('--format',choices=('json','prompt'),default='json',help='Compact scope handoff; default JSON remains compatible')
+    parser.add_argument('--scope',default='task',help='Descriptive scope label, not a routing command')
     args = parser.parse_args(argv)
     try:
-        result = resolve(args.attention, args.workflow)
+        legacy=resolve(args.attention,args.workflow)
+        if args.format=='json' and args.scope!='task':raise ValueError('--scope applies only to --format prompt')
+        result = compile_prompt(args.attention,args.scope) if args.format=='prompt' else legacy
     except ValueError as error:
         parser.exit(2, 'FAIL: '+str(error)+'\n')
-    print(json.dumps(result, indent=2, ensure_ascii=True))
+    print(result,end='') if args.format=='prompt' else print(json.dumps(result, indent=2, ensure_ascii=True))
     return 0
 
 
