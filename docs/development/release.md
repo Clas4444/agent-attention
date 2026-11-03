@@ -23,7 +23,12 @@ scripts reproduce metrics and chart primitives from public files only. Original
 historical statuses and frozen pre-fix pilot pins remain separate from publication
 source hashes. The corrected harness has no new model-session evidence.
 
-Full suite target for this snapshot is 118 tests with three platform symlink
+The same-version presentation revision adds the all-66-pair token/time lines,
+profile mapping, labeled scatter and complete marginal coverage. A new authorized
+campaign passes absolute-path preflight then stops on missing authentication;
+it has no completed model sessions. The old marker and records are retained.
+
+Full suite target for this snapshot is 119 tests with three platform symlink
 skips; actual gate results are recorded in the task status after execution.
 Run python -m unittest discover -s tests -v, python scripts/attention_assets.py,
 python -m scripts.evaluation.publication --directory docs/testing/reports/2026-11-03,

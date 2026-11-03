@@ -1,0 +1,66 @@
+{
+  "attempts": [
+    {
+      "id": "01-baseline",
+      "pair": 1,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 1,
+        "verify": 3
+      },
+      "status": "BLOCKED_ENVIRONMENT",
+      "stop_reason": "MALFORMED_USAGE",
+      "functional": false,
+      "integrity": "PASS",
+      "policy": "NOT_VERIFIED: no OS external-effects attestation",
+      "protected_changes": [],
+      "oracle_error": "OracleIncomplete",
+      "usage": null,
+      "actual_model": null,
+      "exit_code": 1,
+      "seconds": 1.0328710000030696,
+      "started_at": "2026-11-03T07:12:38.857340+00:00",
+      "tool_starts": 0,
+      "tool_names": [],
+      "discovery": {
+        "observed": false,
+        "foreign_skill": false,
+        "builtin_skills": false
+      },
+      "trace_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "prompt_sha256": "a299b7e8557cef520de5212e139aadf6c452f688d815c2ea04df0cedcb7e5bfa",
+      "attempt": 1
+    }
+  ],
+  "not_run": [
+    "01-attention",
+    "02-attention",
+    "02-baseline",
+    "03-baseline",
+    "03-attention",
+    "04-attention",
+    "04-baseline",
+    "05-baseline",
+    "05-attention",
+    "06-attention",
+    "06-baseline",
+    "07-baseline",
+    "07-attention",
+    "08-attention",
+    "08-baseline",
+    "09-baseline",
+    "09-attention",
+    "10-attention",
+    "10-baseline",
+    "11-baseline",
+    "11-attention",
+    "12-attention",
+    "12-baseline"
+  ],
+  "reserved_without_result": []
+}

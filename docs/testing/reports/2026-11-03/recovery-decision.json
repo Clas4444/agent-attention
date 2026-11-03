@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "campaign": "single-axis-recovery-20261103",
+  "authorization": "User-approved new campaign after startup diagnosis; not a retry or old-grid resume",
+  "previous_marker_preserved": true,
+  "new_marker_written": true,
+  "preflight": [
+    {
+      "flag": "--version",
+      "exit": 0,
+      "stdout_sha256": "eba41141ce38608feab63e14551bbb9c0bba5d85acbcfe2a2352406b483a588a",
+      "absolute_workspace": true
+    },
+    {
+      "flag": "--help",
+      "exit": 0,
+      "stdout_sha256": "523ed8ff9db7be91f1ac927488de2d31b9cce85f875689a7fed9d2805e42bbf2",
+      "absolute_workspace": true
+    }
+  ],
+  "attempts": 1,
+  "model_sessions": 0,
+  "not_run": 23,
+  "original_stop_reason": "MALFORMED_USAGE",
+  "audited_reason": "AUTH_FAILURE",
+  "evidence": "CLI stderr: Error: No authentication information found.",
+  "stderr_sha256": "066b8f5bb1c60c1ea4177ab772cb62c7a1a22b66565360e3ffbe481327f64462",
+  "usage_sha256": "b41419975784021efb48049af4336ff475cc5f0918447f5566cc0acc323bffc0",
+  "no_credentials_copied": true,
+  "no_model_or_effort_override": true,
+  "no_resume_after_auth_failure": true
+}

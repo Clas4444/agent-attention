@@ -164,7 +164,9 @@ def write_svg(path,items):
             parts.append(f'<text x="{i["x"]}" y="{i["y"]}" font-family="Arial,sans-serif" font-size="{size}" fill="{color}">{label}</text>')
         elif kind=='rect':parts.append(f'<rect x="{i["x"]}" y="{i["y"]}" width="{i["w"]}" height="{i["h"]}" fill="{color}"/>')
         elif kind=='circle':parts.append(f'<circle cx="{i["x"]}" cy="{i["y"]}" r="{i["r"]}" fill="{color}"/>')
-        else:parts.append(f'<line x1="{i["x"]}" y1="{i["y"]}" x2="{i["x2"]}" y2="{i["y2"]}" stroke="{color}"/>')
+        else:
+            dash=' stroke-dasharray="6 4"' if i.get('dash') else ''
+            parts.append(f'<line x1="{i["x"]}" y1="{i["y"]}" x2="{i["x2"]}" y2="{i["y2"]}" stroke="{color}"{dash}/>')
     path.write_text('\n'.join(parts+['</svg>'])+'\n',encoding='utf-8',newline='\n')
 
 
@@ -176,6 +178,10 @@ def build(directory,png=False):
     summary=summarize(data,pilot)
     (directory/'summary.json').write_text(json.dumps(summary,indent=2)+'\n',encoding='utf-8',newline='\n')
     scenes=figures(summary,protocol)
+    from .research_figures import plots,source_tables
+    research,coverage=plots(summary,data)
+    scenes.update(research)
+    source_tables(directory,summary['grid']['pairs'],coverage)
     for name,items in scenes.items():write_svg(directory/(name+'.svg'),items)
     (directory/'chart-data.json').write_text(json.dumps(scenes,indent=2)+'\n',encoding='utf-8',newline='\n')
     if png:

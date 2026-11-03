@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[2]
 def manifest(directory):
     files=[p for p in directory.iterdir() if p.is_file() and p.name!='sha256.json']
     files += [ROOT/'scripts/evaluation'/name for name in
-              ('control.py','copilot_audit.py','integrity_report.py','paired.py','pilot.py','publication.py','render_figures.ps1')]
+              ('control.py','copilot_audit.py','integrity_report.py','research_figures.py','paired.py','pilot.py','publication.py','render_figures.ps1')]
     files += [ROOT/'tests'/name for name in ('test_campaign_control.py','test_integrity_report.py')]
     files += list((ROOT/'task').glob('*.md'))
     files += [ROOT/name for name in ('CHANGELOG.md','README.md','docs/development/release.md',

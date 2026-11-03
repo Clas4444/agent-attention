@@ -2,6 +2,11 @@
 
 ## 0.2.6 — 2026-11-03
 
+- Revise research figures with all-66-pair token/time lines, explicit profile
+  mapping, numerical scatter axes and full planned/completed/blocked coverage.
+  Add a separate user-authorized recovery dataset: preflight passes, but a real
+  authentication prerequisite blocks the first pilot CLI; old evidence remains.
+  This presentation/evidence update does not increase the version.
 - Add a bounded paired pilot harness with neutral baseline prompts, isolated
   per-attempt homes, frozen source pins, protected payload checks, shared stop
   markers and append-only reservations/results. Interrupted reservations remain

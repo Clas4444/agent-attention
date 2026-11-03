@@ -8,6 +8,11 @@ original statuses. The replacement pilot harness fixes stop/resume and baseline
 exposure controls. One new CLI startup failed before model execution; a shared
 marker stopped the remaining 23 calls. No new per-axis effect is established.
 Historical costs and quality are descriptive, not clean skill-vs-no-skill effects.
+The [presentation revision](reports/2026-11-03/recovery-and-figures.md) adds all-66
+paired token/time lines, labeled scatter and full marginal coverage. A separately
+authorized new pilot passes absolute-path preflight but stops after its first
+CLI on missing isolated-home authentication, with zero model sessions and
+23 NOT_RUN. The old attempt and new attempt are separate datasets.
 
 ## Previous map release: 0.2.5
 

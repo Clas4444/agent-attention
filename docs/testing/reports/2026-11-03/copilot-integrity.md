@@ -4,6 +4,12 @@
 Historical data and new attempts are separate. The research PDF is a secondary
 source; its hypothetical improvement targets are not observations.
 
+Updated presentation and the separately authorized auth-blocked recovery are in
+[the figure revision report](recovery-and-figures.md). Both old attempts/markers
+are retained; this original pilot's status is not overwritten.
+
+![All 66 historical pairs: token and wall-time lines](historical-lines.svg)
+
 ## Outcome
 
 - Reproduced all 364 historical package records: 20 standalone, 60 combined,
@@ -161,7 +167,9 @@ No completed model/session restoration or conditional behavior is claimed for
 this campaign. Existing exhaustive helper restoration and earlier model-map
 observations retain their own pins and are not relabeled as fresh pilot evidence.
 
-![New pilot missingness](single-axis-pilot.svg)
+The [original pilot missingness figure](single-axis-pilot.svg) is configuration
+status, not an empirical result. Use the historical series above as the measured
+cost figures and the [new coverage plot](grid-coverage.svg) for missingness.
 
 ![Quality, policy and integrity](quality-integrity.svg)
 

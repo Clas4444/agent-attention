@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#ffffff"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">Historical full-plan coverage by case and axis level</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">972 planned CLI cells | counts include both arms | each axis-level/case denominator = 162</text>
+<rect x="40" y="92" width="15" height="15" fill="#16a34a"/>
+<text x="61" y="106" font-family="Arial,sans-serif" font-size="13" fill="#16313b">COMPLETED</text>
+<rect x="265" y="92" width="15" height="15" fill="#ea580c"/>
+<text x="286" y="106" font-family="Arial,sans-serif" font-size="13" fill="#16313b">BLOCKED</text>
+<rect x="490" y="92" width="15" height="15" fill="#dc2626"/>
+<text x="511" y="106" font-family="Arial,sans-serif" font-size="13" fill="#16313b">FAILED</text>
+<rect x="715" y="92" width="15" height="15" fill="#cbd5e1"/>
+<text x="736" y="106" font-family="Arial,sans-serif" font-size="13" fill="#16313b">NOT_RUN</text>
+<text x="95" y="140" font-family="Arial,sans-serif" font-size="19" fill="#16313b">cents (planned=486)</text>
+<text x="85" y="159" font-family="Arial,sans-serif" font-size="11" fill="#16313b">132 completed / 152 blocked / 202 not run</text>
+<text x="27" y="191" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 1</text>
+<rect x="95" y="178" width="199.62962962962962" height="14" fill="#16a34a"/>
+<rect x="294.6296296296296" y="178" width="45.370370370370374" height="14" fill="#ea580c"/>
+<rect x="340.0" y="178" width="0.0" height="14" fill="#dc2626"/>
+<rect x="340.0" y="178" width="0.0" height="14" fill="#cbd5e1"/>
+<text x="349" y="190" font-family="Arial,sans-serif" font-size="11" fill="#16313b">132/30/0</text>
+<text x="27" y="213" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 3</text>
+<rect x="95" y="200" width="0.0" height="14" fill="#16a34a"/>
+<rect x="95.0" y="200" width="184.50617283950618" height="14" fill="#ea580c"/>
+<rect x="279.5061728395062" y="200" width="0.0" height="14" fill="#dc2626"/>
+<rect x="279.5061728395062" y="200" width="60.49382716049383" height="14" fill="#cbd5e1"/>
+<text x="349" y="212" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/122/40</text>
+<text x="27" y="235" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 5</text>
+<rect x="95" y="222" width="0.0" height="14" fill="#16a34a"/>
+<rect x="95.0" y="222" width="0.0" height="14" fill="#ea580c"/>
+<rect x="95.0" y="222" width="0.0" height="14" fill="#dc2626"/>
+<rect x="95.0" y="222" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="349" y="234" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="27" y="257" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 1</text>
+<rect x="95" y="244" width="81.66666666666667" height="14" fill="#16a34a"/>
+<rect x="176.66666666666669" y="244" width="81.66666666666667" height="14" fill="#ea580c"/>
+<rect x="258.33333333333337" y="244" width="0.0" height="14" fill="#dc2626"/>
+<rect x="258.33333333333337" y="244" width="81.66666666666667" height="14" fill="#cbd5e1"/>
+<text x="349" y="256" font-family="Arial,sans-serif" font-size="11" fill="#16313b">54/54/54</text>
+<text x="27" y="279" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 3</text>
+<rect x="95" y="266" width="81.66666666666667" height="14" fill="#16a34a"/>
+<rect x="176.66666666666669" y="266" width="81.66666666666667" height="14" fill="#ea580c"/>
+<rect x="258.33333333333337" y="266" width="0.0" height="14" fill="#dc2626"/>
+<rect x="258.33333333333337" y="266" width="81.66666666666667" height="14" fill="#cbd5e1"/>
+<text x="349" y="278" font-family="Arial,sans-serif" font-size="11" fill="#16313b">54/54/54</text>
+<text x="27" y="301" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 5</text>
+<rect x="95" y="288" width="36.2962962962963" height="14" fill="#16a34a"/>
+<rect x="131.2962962962963" y="288" width="66.54320987654322" height="14" fill="#ea580c"/>
+<rect x="197.83950617283952" y="288" width="0.0" height="14" fill="#dc2626"/>
+<rect x="197.83950617283952" y="288" width="142.1604938271605" height="14" fill="#cbd5e1"/>
+<text x="349" y="300" font-family="Arial,sans-serif" font-size="11" fill="#16313b">24/44/94</text>
+<text x="27" y="323" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 1</text>
+<rect x="95" y="310" width="81.66666666666667" height="14" fill="#16a34a"/>
+<rect x="176.66666666666669" y="310" width="75.61728395061728" height="14" fill="#ea580c"/>
+<rect x="252.28395061728395" y="310" width="0.0" height="14" fill="#dc2626"/>
+<rect x="252.28395061728395" y="310" width="87.71604938271605" height="14" fill="#cbd5e1"/>
+<text x="349" y="322" font-family="Arial,sans-serif" font-size="11" fill="#16313b">54/50/58</text>
+<text x="27" y="345" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 3</text>
+<rect x="95" y="332" width="63.51851851851852" height="14" fill="#16a34a"/>
+<rect x="158.51851851851853" y="332" width="72.5925925925926" height="14" fill="#ea580c"/>
+<rect x="231.11111111111114" y="332" width="0.0" height="14" fill="#dc2626"/>
+<rect x="231.11111111111114" y="332" width="108.88888888888889" height="14" fill="#cbd5e1"/>
+<text x="349" y="344" font-family="Arial,sans-serif" font-size="11" fill="#16313b">42/48/72</text>
+<text x="27" y="367" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 5</text>
+<rect x="95" y="354" width="54.44444444444444" height="14" fill="#16a34a"/>
+<rect x="149.44444444444446" y="354" width="81.66666666666667" height="14" fill="#ea580c"/>
+<rect x="231.11111111111114" y="354" width="0.0" height="14" fill="#dc2626"/>
+<rect x="231.11111111111114" y="354" width="108.88888888888889" height="14" fill="#cbd5e1"/>
+<text x="349" y="366" font-family="Arial,sans-serif" font-size="11" fill="#16313b">36/54/72</text>
+<text x="27" y="389" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 1</text>
+<rect x="95" y="376" width="72.5925925925926" height="14" fill="#16a34a"/>
+<rect x="167.5925925925926" y="376" width="72.5925925925926" height="14" fill="#ea580c"/>
+<rect x="240.18518518518522" y="376" width="0.0" height="14" fill="#dc2626"/>
+<rect x="240.18518518518522" y="376" width="99.81481481481481" height="14" fill="#cbd5e1"/>
+<text x="349" y="388" font-family="Arial,sans-serif" font-size="11" fill="#16313b">48/48/66</text>
+<text x="27" y="411" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 3</text>
+<rect x="95" y="398" width="63.51851851851852" height="14" fill="#16a34a"/>
+<rect x="158.51851851851853" y="398" width="81.66666666666667" height="14" fill="#ea580c"/>
+<rect x="240.18518518518522" y="398" width="0.0" height="14" fill="#dc2626"/>
+<rect x="240.18518518518522" y="398" width="99.81481481481481" height="14" fill="#cbd5e1"/>
+<text x="349" y="410" font-family="Arial,sans-serif" font-size="11" fill="#16313b">42/54/66</text>
+<text x="27" y="433" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 5</text>
+<rect x="95" y="420" width="63.51851851851852" height="14" fill="#16a34a"/>
+<rect x="158.51851851851853" y="420" width="75.61728395061728" height="14" fill="#ea580c"/>
+<rect x="234.1358024691358" y="420" width="0.0" height="14" fill="#dc2626"/>
+<rect x="234.1358024691358" y="420" width="105.8641975308642" height="14" fill="#cbd5e1"/>
+<text x="349" y="432" font-family="Arial,sans-serif" font-size="11" fill="#16313b">42/50/70</text>
+<text x="27" y="455" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 1</text>
+<rect x="95" y="442" width="66.54320987654322" height="14" fill="#16a34a"/>
+<rect x="161.54320987654322" y="442" width="78.64197530864197" height="14" fill="#ea580c"/>
+<rect x="240.1851851851852" y="442" width="0.0" height="14" fill="#dc2626"/>
+<rect x="240.1851851851852" y="442" width="99.81481481481481" height="14" fill="#cbd5e1"/>
+<text x="349" y="454" font-family="Arial,sans-serif" font-size="11" fill="#16313b">44/52/66</text>
+<text x="27" y="477" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 3</text>
+<rect x="95" y="464" width="66.54320987654322" height="14" fill="#16a34a"/>
+<rect x="161.54320987654322" y="464" width="75.61728395061728" height="14" fill="#ea580c"/>
+<rect x="237.1604938271605" y="464" width="0.0" height="14" fill="#dc2626"/>
+<rect x="237.1604938271605" y="464" width="102.8395061728395" height="14" fill="#cbd5e1"/>
+<text x="349" y="476" font-family="Arial,sans-serif" font-size="11" fill="#16313b">44/50/68</text>
+<text x="27" y="499" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 5</text>
+<rect x="95" y="486" width="66.54320987654322" height="14" fill="#16a34a"/>
+<rect x="161.54320987654322" y="486" width="75.61728395061728" height="14" fill="#ea580c"/>
+<rect x="237.1604938271605" y="486" width="0.0" height="14" fill="#dc2626"/>
+<rect x="237.1604938271605" y="486" width="102.8395061728395" height="14" fill="#cbd5e1"/>
+<text x="349" y="498" font-family="Arial,sans-serif" font-size="11" fill="#16313b">44/50/68</text>
+<text x="95" y="533" font-family="Arial,sans-serif" font-size="12" fill="#16313b">Completed / blocked / not run</text>
+<text x="565" y="140" font-family="Arial,sans-serif" font-size="19" fill="#16313b">dependencies (planned=486)</text>
+<text x="555" y="159" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0 completed / 0 blocked / 486 not run</text>
+<text x="497" y="191" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 1</text>
+<rect x="565" y="178" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="178" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="178" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="178" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="190" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="213" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 3</text>
+<rect x="565" y="200" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="200" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="200" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="200" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="212" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="235" font-family="Arial,sans-serif" font-size="11" fill="#16313b">focus 5</text>
+<rect x="565" y="222" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="222" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="222" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="222" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="234" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="257" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 1</text>
+<rect x="565" y="244" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="244" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="244" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="244" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="256" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="279" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 3</text>
+<rect x="565" y="266" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="266" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="266" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="266" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="278" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="301" font-family="Arial,sans-serif" font-size="11" fill="#16313b">sync 5</text>
+<rect x="565" y="288" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="288" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="288" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="288" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="300" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="323" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 1</text>
+<rect x="565" y="310" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="310" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="310" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="310" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="322" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="345" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 3</text>
+<rect x="565" y="332" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="332" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="332" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="332" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="344" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="367" font-family="Arial,sans-serif" font-size="11" fill="#16313b">batch 5</text>
+<rect x="565" y="354" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="354" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="354" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="354" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="366" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="389" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 1</text>
+<rect x="565" y="376" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="376" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="376" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="376" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="388" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="411" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 3</text>
+<rect x="565" y="398" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="398" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="398" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="398" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="410" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="433" font-family="Arial,sans-serif" font-size="11" fill="#16313b">explore 5</text>
+<rect x="565" y="420" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="420" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="420" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="420" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="432" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="455" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 1</text>
+<rect x="565" y="442" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="442" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="442" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="442" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="454" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="477" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 3</text>
+<rect x="565" y="464" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="464" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="464" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="464" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="476" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="497" y="499" font-family="Arial,sans-serif" font-size="11" fill="#16313b">verify 5</text>
+<rect x="565" y="486" width="0.0" height="14" fill="#16a34a"/>
+<rect x="565.0" y="486" width="0.0" height="14" fill="#ea580c"/>
+<rect x="565.0" y="486" width="0.0" height="14" fill="#dc2626"/>
+<rect x="565.0" y="486" width="245.0" height="14" fill="#cbd5e1"/>
+<text x="819" y="498" font-family="Arial,sans-serif" font-size="11" fill="#16313b">0/0/162</text>
+<text x="565" y="533" font-family="Arial,sans-serif" font-size="12" fill="#16313b">Completed / blocked / not run</text>
+<text x="40" y="568" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Each panel marginalizes other axes; rows overlap and must not be summed across axes.</text>
+<text x="40" y="596" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Complete source counts, including planned and failed: grid-coverage.csv. Successful focus only 1.</text>
+</svg>

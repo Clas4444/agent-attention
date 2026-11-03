@@ -12,7 +12,7 @@ foreach ($property in $scenes.PSObject.Properties) {
         switch ($item.type) {
             'rect' { $graphics.FillRectangle($brush,[single]$item.x,[single]$item.y,[single]$item.w,[single]$item.h) }
             'circle' { $graphics.FillEllipse($brush,[single]($item.x-$item.r),[single]($item.y-$item.r),[single](2*$item.r),[single](2*$item.r)) }
-            'line' { $pen = New-Object System.Drawing.Pen $color; $graphics.DrawLine($pen,[single]$item.x,[single]$item.y,[single]$item.x2,[single]$item.y2); $pen.Dispose() }
+            'line' { $pen = New-Object System.Drawing.Pen $color; if ($item.dash) { $pen.DashStyle = [System.Drawing.Drawing2D.DashStyle]::Dash }; $graphics.DrawLine($pen,[single]$item.x,[single]$item.y,[single]$item.x2,[single]$item.y2); $pen.Dispose() }
             'text' {
                 $font = New-Object System.Drawing.Font 'Arial',([single]$item.size),([System.Drawing.FontStyle]::Regular),([System.Drawing.GraphicsUnit]::Pixel)
                 $graphics.DrawString([string]$item.text,$font,$brush,[single]$item.x,[single]($item.y-$item.size))
