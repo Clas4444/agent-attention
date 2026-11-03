@@ -1,11 +1,17 @@
-# Current presentation correction — inline charts, local checks PASS
+# Current presentation delivery — pushed and verified
 
-The two FUNCTION-03 charts are now embedded in its public report. COORD-02 uses
-inline PNG with SVG downloads; the results page displays all four current figures
-and the testing index includes a preview. No model calls or measured data changes.
-Local gates:154 tests,151 PASS,3 skips; links/assets/whitespace and four rendered
-PNG views PASS. Original NO_PUSH flags remain immutable experiment metadata. See RESULTS.json
-for the forthcoming presentation commit/CI result and previous source delivery.
+Presentation commit7321d9def039aa5d2f1b72c16c4e43f6446514f7 pushed to main.
+Exact-SHA checks:4 CI configurations PASS,2 CodeQL jobs PASS. GitHub-rendered HTML
+contains both images in each report. All41 public report/index files match local
+SHA256. Receipt: PRESENTATION-ARTIFACTS.json; exact checks in RESULTS.json.
+Local gates:154 tests,151 PASS,3 skips; links/assets/whitespace PASS. All four PNGs
+were regenerated and viewed; chart/data bytes remain unchanged. No model calls.
+FUNCTION-03 now embeds two PNGs with SVG/CSV/JSON/script links; COORD-02 does too.
+The results page displays all four current figures; testing index has a preview.
+Published headings replace obsolete internal/NO_PUSH prose. Immutable experiment
+flags and original observations are retained; focus/verify remain unproven.
+This subsequent metadata checkpoint has its own CI, checked separately after push;
+the presentation commit's checks above do not stand in for that checkpoint.
 
 # Current delivery — source pushed and verified
 

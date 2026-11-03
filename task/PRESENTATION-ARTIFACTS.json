@@ -1,0 +1,187 @@
+{
+  "commit": "7321d9def039aa5d2f1b72c16c4e43f6446514f7",
+  "public_byte_status": "PASS",
+  "files": 41,
+  "artifacts": [
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.png",
+      "sha256": "e1399077157a2e7b2c6e575054fcaa29cc9c6dde0e080a24ed7e89af8c08bb48"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/axis-paired-effects.svg",
+      "sha256": "9e7152ec02d0804851676513d692cc39fab3c6d68260a625beb43170d8ebbee6"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/budget-receipt.json",
+      "sha256": "2e1612c12558ca84033bb98ac3870bf926c9c3526174c7fde0e35124c6b8159b"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/chart-data.json",
+      "sha256": "c01e9989238fa498c674462bc53282a92320915a25ff36a898595ed270f5ee00"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-01-sources.zip",
+      "sha256": "cff40b40088891b2c8e02fddf54eaceba2bf568ceedd025ee6cf5df3d2120d9b"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/codex-single-axis-02-sources.zip",
+      "sha256": "c7a2ed10f1f8fbd36ff1a970de416c1cb9d09ea55adae71e06fc9b5b4347185f"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/final-gates.json",
+      "sha256": "df9feca9f17614a1d1427fa6125a3165979efb1b2d2d0eb408c78b2d56a743c2"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/historical-receipt-audit.json",
+      "sha256": "c7d76fd0713e8b7d04cab12363833f9efc9e59802ece4c092974c71870977a73"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/metadata-regression.json",
+      "sha256": "730444c38c8939ca725a32275cfb62825bb6003e287791fd82d592324a287c3d"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/observations.json",
+      "sha256": "6dcecc7cb809ae722126db47fc249617e2832b5882df8260728357c18529a8d8"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/paired-effects.csv",
+      "sha256": "014119acdb6d15831ffac40c659fd1243b443ab53d9237c6084b9cfaa78ee861"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/protocol-continuation.json",
+      "sha256": "7b80484a94272695fbaf3b1cf02b3b4abdb8af728f73f89a35c4053760f19f0d"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/protocol-initial.json",
+      "sha256": "c79ce146c7a9cb5d087075f0f2a6dc10b8ba82ac52b6bc113cdecdbe64720735"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/quality-behavior.png",
+      "sha256": "8c507e0a1a26107853542a9a89f2c141fd23fee62a2151fd0de9c0de80d9c1c8"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/quality-behavior.svg",
+      "sha256": "cf568dc68632689e9a6c8f15cf60972c3c940050637c27bf8cd8981583f31538"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/README.md",
+      "sha256": "d9dacd5484a3a51bd8b3c07db45ee7b68f2d0f64c5282a8456eb6ca5fbaaa89e"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/semantic-review.json",
+      "sha256": "0a559d8ef4a62d47de2141a109bcabc861ad9d9d016613fe72d0761db11b4cf1"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/sha256.json",
+      "sha256": "2a8206efe40c2121df3fabd86ffb5c634c3f1e793a4b4ca29af03be567be33ed"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/snapshot-index.json",
+      "sha256": "82d4faeb96fc7a8b6967ad120db205c64e1d0378a8d577a0c436fc5fc4cbb77b"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/summary.json",
+      "sha256": "cf8ac91b8d09232886a41763ef21e3c8ebe3b73097e9256acb73b44ad4344673"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/coord-02/trace-evidence.json",
+      "sha256": "cd4179bb099d4c3785a17c3fad7a93ed7520527eb0be593a0338a5b290ae4c28"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.png",
+      "sha256": "3258532ff5fb9145d1a45a8629fd0eec19b818d3466656384ef1e13fcfd513b5"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/acceptance-behavior.svg",
+      "sha256": "e8ca1405bbfd8ec781c02b3bf9e6df9688138111d077c4dda8b078f3b874c55f"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/actual-costs.png",
+      "sha256": "4298ca89c6f9624552a5c5322b37b60adb044e95d69c6894e426652c1506224a"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/actual-costs.svg",
+      "sha256": "19d587e41264029359cafc2c03e16a74a5ae0e2dfab6b46734c2be73cfae4028"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/before-after.json",
+      "sha256": "bf21509571175b42886f3e36371440d7b344b23201d909b899cef50c094c6d4e"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/budget-receipt.json",
+      "sha256": "2d05ea7b91aa8ae47a5a8df23d408fb0d1181d43d38a5e5acbe8adc0da06d7c4"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/chart-data.json",
+      "sha256": "65cd5266598a8174607ddad8f07a3c784eb88e2e0d62c609cdef2940376a7125"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/compiled-product-01-sources.zip",
+      "sha256": "dd84c6130c12e02bc412348f2637aca9f9cba08fbc267aa45e3d5a1e82e07d37"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/final-gates.json",
+      "sha256": "3d311ca8f034455b2c824a95afc48b6a92a61b4aa02f09b460b541a686016848"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/manual-review.json",
+      "sha256": "53978cb8b9d9ebf80bbf919cd01d18942927d6fc433392011c0e3c8cfabb01ce"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/observations.json",
+      "sha256": "b4f10bb11e127a301726069ab9d52906680d25dff005cd165ef666fb81d1c322"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/protocol.json",
+      "sha256": "f1f1024b72b59287f30a6cf88bc79e2488a2a37129f81a35eac07c43357a2873"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/README.md",
+      "sha256": "8153449e3c3e3f0291970d3c65037bdd2dba7c03989ba1e25e251fadba63edef"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/sha256.json",
+      "sha256": "a76a0368035dd85ce9f4c13eb0373b3581e3777497182214fa49f3ad8c72bf87"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/snapshot-index.json",
+      "sha256": "eaac9cd7ae5b5192494a19c2d29401ed4580fc8d3666d98de6ee4368b4e72d63"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/source-table.csv",
+      "sha256": "9a35d524d2b565b049c6b53173754fd611fc756d99e93a2eadf4f6c0ab68b93a"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/summary.json",
+      "sha256": "362292987667dd32e67dd2983f31ce1721e200c990f5d60b79b7b6dc9c0a3443"
+    },
+    {
+      "path": "docs/testing/reports/2026-11-03/function-03/trace-evidence.json",
+      "sha256": "9c72af574b9dfb2b298a39d7d9a385308917922d993e0efce4c72233a814eeae"
+    },
+    {
+      "path": "docs/testing/README.md",
+      "sha256": "272fd0c0f40ce86606d058d13eaa0f3dab2319e11cd9332678ef2d120945733c"
+    },
+    {
+      "path": "docs/testing/results.md",
+      "sha256": "a641384c23306b9194ba2dfb70e3409e03f8111c528b9915d34c704344be8b7f"
+    }
+  ],
+  "GitHub_rendered_HTML": [
+    {
+      "report": "function-03",
+      "GitHub_rendered_image_elements": {
+        "actual-costs.png": true,
+        "acceptance-behavior.png": true
+      }
+    },
+    {
+      "report": "coord-02",
+      "GitHub_rendered_image_elements": {
+        "axis-paired-effects.png": true,
+        "quality-behavior.png": true
+      }
+    }
+  ]
+}

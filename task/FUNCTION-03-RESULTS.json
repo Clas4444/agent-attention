@@ -225,9 +225,9 @@
     "public_artifact_receipt": "task/DELIVERY-ARTIFACTS.json",
     "checkpoint_note": "Source commit checks below are exact-SHA results. This subsequent metadata checkpoint has its own CI, checked separately after push.",
     "presentation_correction": {
-      "state": "LOCAL_PASS_PUSH_PENDING",
-      "commit": null,
-      "pushed": false,
+      "state": "PUBLISHED_VERIFIED",
+      "commit": "7321d9def039aa5d2f1b72c16c4e43f6446514f7",
+      "pushed": true,
       "scope": "Inline PNG plus SVG/source links, current public headings, no model/data changes",
       "checks": {
         "local": {
@@ -241,8 +241,66 @@
           "chart_bytes": "UNCHANGED",
           "observations": "UNCHANGED"
         },
-        "remote": "NOT_RUN_BEFORE_PUSH"
-      }
+        "remote": {
+          "commit": "7321d9def039aa5d2f1b72c16c4e43f6446514f7",
+          "status": "PASS",
+          "jobs": [
+            {
+              "name": "Analyze (python)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659040452/job/125997082957"
+            },
+            {
+              "name": "Analyze (actions)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659040452/job/125997081873"
+            },
+            {
+              "name": "validate (windows-latest, 3.11)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659039789/job/125997070452"
+            },
+            {
+              "name": "validate (ubuntu-latest, 3.12)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659039789/job/125997070424"
+            },
+            {
+              "name": "validate (windows-latest, 3.12)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659039789/job/125997070184"
+            },
+            {
+              "name": "validate (ubuntu-latest, 3.11)",
+              "conclusion": "success",
+              "url": "https://github.com/Clas4444/agent-attention/actions/runs/41659039789/job/125997069854"
+            }
+          ]
+        },
+        "public_bytes": {
+          "commit": "7321d9def039aa5d2f1b72c16c4e43f6446514f7",
+          "status": "PASS",
+          "files": 41,
+          "GitHub_rendered_HTML": [
+            {
+              "report": "function-03",
+              "GitHub_rendered_image_elements": {
+                "actual-costs.png": true,
+                "acceptance-behavior.png": true
+              }
+            },
+            {
+              "report": "coord-02",
+              "GitHub_rendered_image_elements": {
+                "axis-paired-effects.png": true,
+                "quality-behavior.png": true
+              }
+            }
+          ]
+        }
+      },
+      "public_artifact_receipt": "task/PRESENTATION-ARTIFACTS.json",
+      "checkpoint_note": "Exact-SHA results below are for the presentation commit. The subsequent checkpoint-only commit is checked separately after push."
     }
   }
 }
