@@ -223,6 +223,26 @@
       "limitations": "No proof of all five behavioral contrasts, causal savings, native picker or live combined execution"
     },
     "public_artifact_receipt": "task/DELIVERY-ARTIFACTS.json",
-    "checkpoint_note": "Source commit checks below are exact-SHA results. This subsequent metadata checkpoint has its own CI, checked separately after push."
+    "checkpoint_note": "Source commit checks below are exact-SHA results. This subsequent metadata checkpoint has its own CI, checked separately after push.",
+    "presentation_correction": {
+      "state": "LOCAL_PASS_PUSH_PENDING",
+      "commit": null,
+      "pushed": false,
+      "scope": "Inline PNG plus SVG/source links, current public headings, no model/data changes",
+      "checks": {
+        "local": {
+          "tests": 154,
+          "PASS": 151,
+          "skip": 3,
+          "assets": "PASS",
+          "links": "PASS",
+          "whitespace": "PASS",
+          "render_view": "4 PNG PASS",
+          "chart_bytes": "UNCHANGED",
+          "observations": "UNCHANGED"
+        },
+        "remote": "NOT_RUN_BEFORE_PUSH"
+      }
+    }
   }
 }

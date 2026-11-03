@@ -1,3 +1,12 @@
+# Current presentation correction — inline charts, local checks PASS
+
+The two FUNCTION-03 charts are now embedded in its public report. COORD-02 uses
+inline PNG with SVG downloads; the results page displays all four current figures
+and the testing index includes a preview. No model calls or measured data changes.
+Local gates:154 tests,151 PASS,3 skips; links/assets/whitespace and four rendered
+PNG views PASS. Original NO_PUSH flags remain immutable experiment metadata. See RESULTS.json
+for the forthcoming presentation commit/CI result and previous source delivery.
+
 # Current delivery — source pushed and verified
 
 Source commit9c2d15a8acd940e71034680ed1a3b800b1296ca6 pushed to main.
@@ -15,7 +24,7 @@ Original experiment NO_PUSH timelines below are retained as historical records.
 Public packets: [coordination](../docs/testing/reports/2026-11-03/coord-02/README.md)
 and [scoped product](../docs/testing/reports/2026-11-03/function-03/README.md).
 
-# FUNCTION-03 current status — PARTIAL / READY_FOR_REVIEW / NO_PUSH
+# FUNCTION-03 experiment checkpoint — historical pre-publication state
 
 12/12 new Codex CLI completed; functional12, integrity12, full checks12 PASS.
 Budget remaining0, inflight0. Actual model NOT_REPORTED in all12. Compact API,
@@ -30,7 +39,7 @@ See [FUNCTION-03](FUNCTION-03.md), [results](FUNCTION-03-RESULTS.json) and
 
 ---
 
-# COORD-02 current status â€” READY_FOR_REVIEW / NO_PUSH
+# COORD-02 experiment checkpoint — historical pre-publication state
 
 - New pilot COMPLETE:24/24 CLI,24 completed turns,24 functional PASS,24 file
   integrity PASS,24 audited mandatory checks. Budget remaining0, inflight0.

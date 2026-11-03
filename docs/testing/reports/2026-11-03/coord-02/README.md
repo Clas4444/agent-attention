@@ -1,4 +1,4 @@
-# COORD-02 internal evidence — NO_PUSH
+# COORD-02 — published paired Codex observations
 
 Sanitized publication from the completed local review package. Base SHA `0698c709243a77d40b6f7affb4b2a5ec1dfc184c`; no version bump.
 
@@ -33,7 +33,13 @@ causal experiment. No provider-level fault occurred during either phase.
 
 ## Paired effects: n=1 per cell
 
-![Paired costs by axis and level](axis-paired-effects.svg)
+![Paired costs by axis and level](axis-paired-effects.png)
+
+Figure 1. Relative total-token and CLI wall-time deltas in percent; n=1 per
+paired condition. Legend distinguishes cost/time and x marks draft/mixed wire
+pairs. [Download SVG](axis-paired-effects.svg) · [Source CSV](paired-effects.csv) ·
+[Observations JSON](observations.json) · [Figure primitives](chart-data.json) ·
+[Reproduction script](../../../../../scripts/coord02_report.py).
 
 The four non-selected axes remain3. The same single balanced dependencies pair
 appears at level3 in each panel; those are not five independent controls. Lines
@@ -66,7 +72,13 @@ activity can affect time. Actual-model identity remains unverified.
 
 ## Behavior and quality, beyond cost
 
-![Actual acceptance, integrity and trace checks](quality-behavior.svg)
+![Actual acceptance, integrity and trace checks](quality-behavior.png)
+
+Figure 2. Acceptance and mandatory-command evidence alongside terminal-command
+counts for 24 CLI attempts. Each row is a baseline/attention pair; 1/1 means both
+arms passed the check. This is not evidence that all five axes have a proven benefit. Focus breadth is
+unidentified; verify adds checks in one case without improving saturated quality.
+[Download SVG](quality-behavior.svg) · [Source JSON](observations.json).
 
 [semantic-review.json](semantic-review.json) retains heuristic observations and
 separate manual interpretations, keyed to original trace SHA-256. The audited

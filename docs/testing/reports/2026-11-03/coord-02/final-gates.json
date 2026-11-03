@@ -28,5 +28,24 @@
     "n1 per condition; no causal/general savings claim",
     "Focus/verify contrasts unresolved",
     "Native picker/live combined/model restoration NOT_RUN"
-  ]
+  ],
+  "presentation_correction": {
+    "status": "PASS",
+    "expected_tests": 154,
+    "expected_PASS": 151,
+    "expected_skip": 3,
+    "model_calls": 0,
+    "rendered_and_viewed": [
+      "axis-paired-effects",
+      "quality-behavior"
+    ],
+    "chart_bytes_changed": false,
+    "observation_bytes_changed": false,
+    "tests": 154,
+    "PASS": 151,
+    "skip": 3,
+    "assets": "PASS",
+    "links": "PASS",
+    "whitespace": "PASS"
+  }
 }

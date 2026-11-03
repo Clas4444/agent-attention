@@ -15,6 +15,12 @@ Deterministic PASS does not establish native discovery or model adherence.
 - [COORD-02 paired observations](reports/2026-11-03/coord-02/README.md):24 CLI, draft-wire subset explicit.
 - [FUNCTION-03 scoped product evaluation](reports/2026-11-03/function-03/README.md):12 CLI, PARTIAL behavioral proof.
 
+![Latest scoped-product token/time measurements](reports/2026-11-03/function-03/actual-costs.png)
+
+Latest FUNCTION-03 preview:12 attempts, n=1 per condition; thousands of total
+tokens and CLI wall seconds. Focus/verify benefit and general savings are unproven.
+See [all four current figures and source links](results.md#current-evaluation-figures).
+
 ## Reports by date
 
 - [2026-11-03](reports/2026-11-03/): [revised line/scatter/coverage figures and recovery](reports/2026-11-03/recovery-and-figures.md), [original audit](reports/2026-11-03/copilot-integrity.md), portable records and SVG/PNG figures.

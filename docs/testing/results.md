@@ -19,6 +19,28 @@ state are in [task checkpoint](../../task/FUNCTION-03-RESULTS.json). Frozen meas
 sources, sanitized commands, candidate outputs, budgets and byte receipts accompany
 the public packets. Raw traces remain private and cannot be publicly replayed.
 
+## Current evaluation figures
+
+![FUNCTION-03 total tokens and wall seconds](reports/2026-11-03/function-03/actual-costs.png)
+
+FUNCTION-03:12 CLI attempts, n=1 per condition; total tokens in thousands and
+CLI wall seconds. [CSV and interpretation](reports/2026-11-03/function-03/README.md#actual-token-and-time-costs).
+
+![FUNCTION-03 acceptance and command evidence](reports/2026-11-03/function-03/acceptance-behavior.png)
+
+All12 pass artifact checks; command counts do not prove all five axes. Focus and
+verify contrast remain unproven. [JSON and caveats](reports/2026-11-03/function-03/README.md#observed-effects-and-limits).
+
+![COORD-02 paired cost and time deltas](reports/2026-11-03/coord-02/axis-paired-effects.png)
+
+COORD-02:12 descriptive pairs,10 fully wire-aligned; n=1 per paired condition.
+Percent deltas compare attention to neutral baseline. [CSV and draft-wire limits](reports/2026-11-03/coord-02/README.md#paired-effects-n1-per-cell).
+
+![COORD-02 acceptance and command counts](reports/2026-11-03/coord-02/quality-behavior.png)
+
+24 completed CLI attempts; saturated functional quality does not establish
+causal savings or five-axis adherence. [Interpretation and SVG downloads](reports/2026-11-03/coord-02/README.md#behavior-and-quality-beyond-cost).
+
 ## Current repository: 0.2.6
 
 The [Copilot integrity audit](reports/2026-11-03/copilot-integrity.md) reproduces

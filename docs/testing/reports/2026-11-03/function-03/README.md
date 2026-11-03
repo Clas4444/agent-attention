@@ -1,4 +1,4 @@
-# FUNCTION-03 — PARTIAL, ready for review, NO_PUSH
+# FUNCTION-03 — published scoped-product evaluation (PARTIAL)
 
 Twelve new Codex CLI attempts completed: functional 12/12, file integrity 12/12,
 full mandatory checks 12/12. Budget exhausted (12 reserved, zero active/remaining).
@@ -21,7 +21,32 @@ balanced defaults and legacy JSON remain compatible. Setup select can emit compa
 resolved guidance without a graph. Workflow still owns WHAT/NEXT/STOP. Attention
 only controls HOW and never waives mandatory or risk-triggered checks.
 
+## Actual token and time costs
+
+![Actual total tokens and CLI wall time for all twelve conditions](actual-costs.png)
+
+Figure 1. Total tokens (thousands, input + output) and CLI wall seconds for 12
+completed attempts, n=1 per condition. Gray=neutral, green=balanced, blue=level1,
+orange=level5. Focus includes neutral/balanced controls; the other cases compare
+only their two extremes. Different cases must not be pooled as an axis ranking.
+Cache/reasoning subcounts are not added twice. This is descriptive cost, not
+causal savings or evidence that every higher level is better.
+[Download SVG](actual-costs.svg) · [Source CSV](source-table.csv) ·
+[Observations JSON](observations.json) · [Figure primitives](chart-data.json) ·
+[Reproduction script](../../../../../scripts/function03_report.py).
+
 ## Observed effects and limits
+
+![Functional acceptance, integrity and actual command evidence for twelve attempts](acceptance-behavior.png)
+
+Figure 2. Each row is one completed CLI attempt; all 12 pass functional/integrity
+and full mandatory checks. Subchecks, source reads and extra scripts are counts
+of observed commands, not quality scores or active-context measurements. Two
+batch subchecks and 4 versus 2 sync source reads support single-case cadence
+observations. Focus and verify contrasts remain unproven; 12/12 functional PASS
+does not certify five-axis adherence. [Download SVG](acceptance-behavior.svg) ·
+[Source JSON](observations.json) · [Manual interpretation](manual-review.json).
+
 
 Batch level 5 introduced two intermediate feedback checks versus zero at level 1.
 Sync level 5 read changing source four times versus two; both correctly used the
@@ -53,13 +78,17 @@ integration and real-model scope restoration are NOT_RUN.
 
 Post-pilot CLI diagnostic, full-check metadata and strict opt-in corrections are
 unit-tested but not re-measured with models. Measured snapshots are preserved;
-current source hashes are separate. Final local suite: 153 tests, 150 PASS, three
-symlink skips; assets and whitespace PASS. Remote CI for this dirty diff NOT_RUN.
+current source hashes are separate. The source delivery passed 153 local tests (150 PASS, three symlink skips),
+assets and whitespace checks. Source commit 9c2d15a and checkpoint 4174d10 passed
+all four CI configurations and both CodeQL jobs. This presentation correction
+has separate final gates and exact-SHA CI recorded in the delivery checkpoint.
 A first local gate encountered sandbox temp access denial; an escalated normal-temp
 rerun passed. An incorrectly named single-test selector errored before execution;
 module rerun reproduced the opt-in failure, then the repaired full suite passed.
 
-Delivery is now authorized. No release/tag, version bump, global install or peer repo edit. See task checkpoint for exact delivery/CI state.
+The product and evidence are published. No release/tag, version bump, global
+install or peer repo edit was made. See the [delivery checkpoint](../../../../../task/FUNCTION-03-RESULTS.json)
+for exact commit/CI state; immutable experiment NO_PUSH flags below are historical.
 
 ## Published evidence and frozen source reproduction
 

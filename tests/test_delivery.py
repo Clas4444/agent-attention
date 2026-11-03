@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import re
 from scripts.evaluation.delivery import check
 from scripts.evaluation.function_cases import case
 from scripts.evaluation.cases import load_case
@@ -14,6 +15,17 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 class DeliveryTests(unittest.TestCase):
+    def test_published_reports_embed_both_png_charts_and_use_current_headings(self):
+        expected={'function-03':{'actual-costs.png','acceptance-behavior.png'},
+                  'coord-02':{'axis-paired-effects.png','quality-behavior.png'}}
+        for name,images in expected.items():
+            page=ROOT/'docs/testing/reports/2026-11-03'/name/'README.md'
+            body=page.read_text(encoding='utf-8')
+            self.assertTrue(images.issubset(set(re.findall(r'!\[[^\]]*\]\(([^)]+)\)',body))))
+            self.assertNotIn('NO_PUSH',body.splitlines()[0])
+            self.assertIn('Source',body)
+            for image in images:self.assertTrue((page.parent/image).is_file())
+
     def test_public_receipts_and_measured_source_archives(self):
         for name in ('coord-02','function-03'):
             result=check(ROOT/'docs/testing/reports/2026-11-03'/name)
