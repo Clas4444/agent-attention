@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#f2f6f4"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">Historical grid: progress and coverage</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">HISTORICAL | 972 planned CLI cells; partial fixed-order traversal, not full factorial</text>
+<rect x="40" y="115" width="124.93827160493827" height="60" fill="#126957"/>
+<text x="43" y="205" font-family="Arial,sans-serif" font-size="13" fill="#16313b">PASS: 132</text>
+<rect x="164.93827160493828" y="115" width="143.86831275720164" height="60" fill="#bc7640"/>
+<text x="167.93827160493828" y="205" font-family="Arial,sans-serif" font-size="13" fill="#16313b">BLOCKED: 152</text>
+<rect x="308.8065843621399" y="115" width="651.1934156378601" height="60" fill="#cddcda"/>
+<text x="311.8065843621399" y="205" font-family="Arial,sans-serif" font-size="13" fill="#16313b">NOT_RUN: 688</text>
+<text x="40" y="255" font-family="Arial,sans-serif" font-size="19" fill="#16313b">Completed attention profiles per axis level (n=66)</text>
+<text x="40" y="311" font-family="Arial,sans-serif" font-size="14" fill="#16313b">focus</text>
+<rect x="180" y="295" width="200.0" height="24" fill="#94bfb0"/>
+<text x="384" y="312" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L1: 66</text>
+<rect x="440" y="295" width="0.0" height="24" fill="#126957"/>
+<text x="644" y="312" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L3: 0</text>
+<rect x="700" y="295" width="0.0" height="24" fill="#16313b"/>
+<text x="904" y="312" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L5: 0</text>
+<text x="40" y="359" font-family="Arial,sans-serif" font-size="14" fill="#16313b">sync</text>
+<rect x="180" y="343" width="81.81818181818181" height="24" fill="#94bfb0"/>
+<text x="384" y="360" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L1: 27</text>
+<rect x="440" y="343" width="81.81818181818181" height="24" fill="#126957"/>
+<text x="644" y="360" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L3: 27</text>
+<rect x="700" y="343" width="36.36363636363637" height="24" fill="#16313b"/>
+<text x="904" y="360" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L5: 12</text>
+<text x="40" y="407" font-family="Arial,sans-serif" font-size="14" fill="#16313b">batch</text>
+<rect x="180" y="391" width="81.81818181818181" height="24" fill="#94bfb0"/>
+<text x="384" y="408" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L1: 27</text>
+<rect x="440" y="391" width="63.63636363636363" height="24" fill="#126957"/>
+<text x="644" y="408" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L3: 21</text>
+<rect x="700" y="391" width="54.54545454545455" height="24" fill="#16313b"/>
+<text x="904" y="408" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L5: 18</text>
+<text x="40" y="455" font-family="Arial,sans-serif" font-size="14" fill="#16313b">explore</text>
+<rect x="180" y="439" width="72.72727272727273" height="24" fill="#94bfb0"/>
+<text x="384" y="456" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L1: 24</text>
+<rect x="440" y="439" width="63.63636363636363" height="24" fill="#126957"/>
+<text x="644" y="456" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L3: 21</text>
+<rect x="700" y="439" width="63.63636363636363" height="24" fill="#16313b"/>
+<text x="904" y="456" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L5: 21</text>
+<text x="40" y="503" font-family="Arial,sans-serif" font-size="14" fill="#16313b">verify</text>
+<rect x="180" y="487" width="66.66666666666667" height="24" fill="#94bfb0"/>
+<text x="384" y="504" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L1: 22</text>
+<rect x="440" y="487" width="66.66666666666667" height="24" fill="#126957"/>
+<text x="644" y="504" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L3: 22</text>
+<rect x="700" y="487" width="66.66666666666667" height="24" fill="#16313b"/>
+<text x="904" y="504" font-family="Arial,sans-serif" font-size="12" fill="#16313b">L5: 22</text>
+<text x="40" y="585" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Focus 3/5 absent. Dependencies absent. Quota: one partial attempt + 151 without tool starts.</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#f2f6f4"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">Single-axis pilot: missingness, not a zero effect</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">NEW | 24 CLI planned; 1 startup blocked; 23 NOT_RUN; no completed model sessions</text>
+<text x="40" y="120" font-family="Arial,sans-serif" font-size="17" fill="#16313b">Other four axes = 3 | dependencies main case | balanced pair on cents</text>
+<text x="40" y="195" font-family="Arial,sans-serif" font-size="18" fill="#16313b">focus</text>
+<rect x="210" y="175" width="210" height="40" fill="#dce5e1"/>
+<text x="218" y="200" font-family="Arial,sans-serif" font-size="15" fill="#16313b">1: NOT_RUN</text>
+<rect x="450" y="175" width="210" height="40" fill="#dce5e1"/>
+<text x="458" y="200" font-family="Arial,sans-serif" font-size="15" fill="#16313b">3: NOT_RUN</text>
+<rect x="690" y="175" width="210" height="40" fill="#dce5e1"/>
+<text x="698" y="200" font-family="Arial,sans-serif" font-size="15" fill="#16313b">5: NOT_RUN</text>
+<text x="40" y="260" font-family="Arial,sans-serif" font-size="18" fill="#16313b">sync</text>
+<rect x="210" y="240" width="210" height="40" fill="#dce5e1"/>
+<text x="218" y="265" font-family="Arial,sans-serif" font-size="15" fill="#16313b">1: NOT_RUN</text>
+<rect x="450" y="240" width="210" height="40" fill="#dce5e1"/>
+<text x="458" y="265" font-family="Arial,sans-serif" font-size="15" fill="#16313b">3: NOT_RUN</text>
+<rect x="690" y="240" width="210" height="40" fill="#dce5e1"/>
+<text x="698" y="265" font-family="Arial,sans-serif" font-size="15" fill="#16313b">5: NOT_RUN</text>
+<text x="40" y="325" font-family="Arial,sans-serif" font-size="18" fill="#16313b">batch</text>
+<rect x="210" y="305" width="210" height="40" fill="#dce5e1"/>
+<text x="218" y="330" font-family="Arial,sans-serif" font-size="15" fill="#16313b">1: NOT_RUN</text>
+<rect x="450" y="305" width="210" height="40" fill="#dce5e1"/>
+<text x="458" y="330" font-family="Arial,sans-serif" font-size="15" fill="#16313b">3: NOT_RUN</text>
+<rect x="690" y="305" width="210" height="40" fill="#dce5e1"/>
+<text x="698" y="330" font-family="Arial,sans-serif" font-size="15" fill="#16313b">5: NOT_RUN</text>
+<text x="40" y="390" font-family="Arial,sans-serif" font-size="18" fill="#16313b">explore</text>
+<rect x="210" y="370" width="210" height="40" fill="#dce5e1"/>
+<text x="218" y="395" font-family="Arial,sans-serif" font-size="15" fill="#16313b">1: NOT_RUN</text>
+<rect x="450" y="370" width="210" height="40" fill="#dce5e1"/>
+<text x="458" y="395" font-family="Arial,sans-serif" font-size="15" fill="#16313b">3: NOT_RUN</text>
+<rect x="690" y="370" width="210" height="40" fill="#dce5e1"/>
+<text x="698" y="395" font-family="Arial,sans-serif" font-size="15" fill="#16313b">5: NOT_RUN</text>
+<text x="40" y="455" font-family="Arial,sans-serif" font-size="18" fill="#16313b">verify</text>
+<rect x="210" y="435" width="210" height="40" fill="#dce5e1"/>
+<text x="218" y="460" font-family="Arial,sans-serif" font-size="15" fill="#16313b">1: NOT_RUN</text>
+<rect x="450" y="435" width="210" height="40" fill="#dce5e1"/>
+<text x="458" y="460" font-family="Arial,sans-serif" font-size="15" fill="#16313b">3: NOT_RUN</text>
+<rect x="690" y="435" width="210" height="40" fill="#dce5e1"/>
+<text x="698" y="460" font-family="Arial,sans-serif" font-size="15" fill="#16313b">5: NOT_RUN</text>
+<text x="40" y="545" font-family="Arial,sans-serif" font-size="17" fill="#16313b">N=0 complete matched pairs. Costs and quality effects are unknown, not zero.</text>
+<text x="40" y="578" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Blocked baseline reservation belongs to explore=1; baseline receives no profile cue.</text>
+</svg>

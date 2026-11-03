@@ -1,5 +1,11 @@
 # Controlled attention campaigns
 
+For a skill-vs-no-skill pilot, use the new
+[paired protocol and integrity harness](reports/2026-11-03/copilot-integrity.md).
+It isolates homes, removes baseline cues, pins inputs and honors a shared stop
+marker. The older direct-profile runner below always installs the skill and is
+not a no-skill baseline. Do not use it to resume the historical Copilot grid.
+
 The original trial changed all five axes together. It could not establish which
 axis caused a difference. The new planner can vary one axis and keep the other
 four at balanced (3), with any unique set of levels from 1 through 5.

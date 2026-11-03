@@ -1,6 +1,15 @@
 # Results and verification scope
 
-## Current repository: 0.2.5
+## Current repository: 0.2.6
+
+The [Copilot integrity audit](reports/2026-11-03/copilot-integrity.md) reproduces
+20 standalone, 60 combined and 284 partial-grid historical records, preserving
+original statuses. The replacement pilot harness fixes stop/resume and baseline
+exposure controls. One new CLI startup failed before model execution; a shared
+marker stopped the remaining 23 calls. No new per-axis effect is established.
+Historical costs and quality are descriptive, not clean skill-vs-no-skill effects.
+
+## Previous map release: 0.2.5
 
 This release makes exported Attention Setup maps self-contained and preserves
 profile semantics 0.1.1. The [map evaluation](reports/2026-10-31/attention-map.md)

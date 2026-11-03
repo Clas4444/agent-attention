@@ -1,0 +1,407 @@
+{
+  "schema": 1,
+  "frozen_at": "2026-11-03T06:14:52.021517+00:00",
+  "hypothesis": "Single-axis extremes may change discretionary work; correctness and integrity must remain.",
+  "seed": 20261103,
+  "plan": [
+    {
+      "id": "01-baseline",
+      "pair": 1,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 1,
+        "verify": 3
+      }
+    },
+    {
+      "id": "01-attention",
+      "pair": 1,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "explore-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 1,
+        "verify": 3
+      }
+    },
+    {
+      "id": "02-attention",
+      "pair": 2,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "sync-1",
+      "levels": {
+        "focus": 3,
+        "sync": 1,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "02-baseline",
+      "pair": 2,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-1",
+      "levels": {
+        "focus": 3,
+        "sync": 1,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-baseline",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "03-attention",
+      "pair": 3,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-attention",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "04-baseline",
+      "pair": 4,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 5,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-baseline",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "05-attention",
+      "pair": 5,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "batch-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 1,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-attention",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "06-baseline",
+      "pair": 6,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "sync-5",
+      "levels": {
+        "focus": 3,
+        "sync": 5,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "07-baseline",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "07-attention",
+      "pair": 7,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 5
+      }
+    },
+    {
+      "id": "08-attention",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "08-baseline",
+      "pair": 8,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "explore-5",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 5,
+        "verify": 3
+      }
+    },
+    {
+      "id": "09-baseline",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "09-attention",
+      "pair": 9,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "verify-1",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 1
+      }
+    },
+    {
+      "id": "10-attention",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "10-baseline",
+      "pair": 10,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-5",
+      "levels": {
+        "focus": 5,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-baseline",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "baseline",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "11-attention",
+      "pair": 11,
+      "case": "dependencies",
+      "arm": "attention",
+      "profile": "focus-1",
+      "levels": {
+        "focus": 1,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-attention",
+      "pair": 12,
+      "case": "cents",
+      "arm": "attention",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    },
+    {
+      "id": "12-baseline",
+      "pair": 12,
+      "case": "cents",
+      "arm": "baseline",
+      "profile": "balanced",
+      "levels": {
+        "focus": 3,
+        "sync": 3,
+        "batch": 3,
+        "explore": 3,
+        "verify": 3
+      }
+    }
+  ],
+  "cli_limit": 24,
+  "per_call_seconds": 180,
+  "pins": {
+    "scripts/evaluation/__init__.py": "c9345ff559cf54af591d8cc7d9d1b8ff482b73923aef2d7d003ecf60e1e6f066",
+    "scripts/evaluation/acceptance.py": "acfd3afc77d2b44604eeb12bfaaf6c0a4ae62f06af8d12851b5c1d395271b8bd",
+    "scripts/evaluation/cases.py": "261eaa7047d8d55d418edcdbf26a0d1150de0b2e93e1b560a60e74e25daac562",
+    "scripts/evaluation/control.py": "9dc765990e3d14acfa7d1b4510d9cdb56c252b87eba2e44696d2c883abd6fbf1",
+    "scripts/evaluation/copilot_audit.py": "57342a0d8ab2ce4c0e37a03181aa0b015bde4586a459880192d746051b06cceb",
+    "scripts/evaluation/metrics.py": "524d39de0d42ec3411f118a4c8a38c792c1fcc792eb64423f11a4d8594a2e108",
+    "scripts/evaluation/paired.py": "c96eeeb35d948938a2056fde1c92a2cf20aa5c0c03f1d8f3cfa44dc6fbebd03e",
+    "scripts/evaluation/pilot.py": "61243c86851738043d95625dad13526011d5160484f6165b15569b6d6cbd3fdb",
+    "scripts/evaluation/runner.py": "e4cf62dc11b32bbe99eaa02586f9d310267d189c136f8b4d78e3f98f6752b3ac",
+    "scripts/evaluation/suite.py": "580bda3fd598f290b646dbd3be3bee62fdbf81867e18b1ca5f28033682857dad",
+    "skills/agent-attention/assets/attention-example.json": "9d5d7971eb18b9155cae9f2e8efb72b6cc260a8c3aaea749ddd00640757ac8a8",
+    "skills/agent-attention/assets/workflow-example.json": "bc2b63b2823895bbbd39e879c0403f7ffd31c26b3a971a4ad7a66aaa638757a9",
+    "skills/agent-attention/references/attention.md": "40a096107bd19c97e24a5ef1ce521a34ffa6cd74f5802b4c629f159e64d1e50c",
+    "skills/agent-attention/references/setup.md": "30b0e5eca6796d32b1aebf869d51562387c643cf8328d938603f074395d50bb8",
+    "skills/agent-attention/references/workflow-integration.md": "a69c57a2885794602cceb7b5c9e45f71e0f55b8e8463456966c0c85d514f5188",
+    "skills/agent-attention/scripts/attention.py": "edc1949a8ec941cba35df2b542d26682760db21c0e5768a14f10842ec1adbb64",
+    "skills/agent-attention/scripts/attention_setup.py": "945f1ae2a7c80cfe53e561003797c19d259733699d3af1253a697784d9374ece",
+    "skills/agent-attention/scripts/checkpoint.py": "ad9485a2eb4aeac750bb8a6ae20c46c5a454a3ead1457cc77e8f1796315dd922",
+    "skills/agent-attention/scripts/workflow_setup.py": "8538edf7c66d0d51bb96ed889cf3fd312c4fb0c7f9c9d66c2a3eeb5490d74c8f",
+    "skills/agent-attention/SKILL.md": "2017919da8e3460877c6a31a2ee3a0aa235ea48e174c9be35950cd7a1322f225",
+    "benchmarks/cases/dependencies.json": "d674db2474de1262111c0ffd099054b8fa550f6c708fceefde02989da3ce4ec3",
+    "benchmarks/cases/cents.json": "eacb9cb853a8c6c2b79cc50453807d21504cc91f2eb305638d28df211391ffda"
+  },
+  "model": "configured default, no model/effort override; actual reported model recorded",
+  "isolation": "New COPILOT_HOME and Git workspace per CLI; no credentials copied; trace discovery required.",
+  "primary": [
+    "frozen functional oracle",
+    "protected input integrity",
+    "total input+output tokens"
+  ],
+  "secondary": [
+    "wall seconds",
+    "tool starts",
+    "read/edit/check observations"
+  ],
+  "stop": "first quota/rate/capacity/auth, malformed/missing usage, CLI prerequisite or discovery leak; shared exclusive marker",
+  "resume": "append-only reservations/results; no auto retry, no marker removal",
+  "limits": "n=1 per cell, descriptive only; concurrent other-chat pilot confounds timing; not a full factorial",
+  "oracle": "fresh source-only frozen checks, completion marker, no protected/extra/alias files",
+  "argv_flags": [
+    "--no-custom-instructions",
+    "--no-ask-user",
+    "--no-auto-update",
+    "--sync-session=off",
+    "--disable-builtin-mcps",
+    "--no-color",
+    "--output-format",
+    "json",
+    "--stream",
+    "off",
+    "--allow-all-tools",
+    "--excluded-tools",
+    "task",
+    "web_fetch",
+    "web_search"
+  ],
+  "runtime_sha256": {
+    "0": "b59feb2088f80e1fa431c8f9c316861e660e5936f968fd97b802e550fed356c5",
+    "1": "b5ef2f9fd6017130d7093348cf117e53005b6caab7959c7d1c79660369497b6b"
+  }
+}

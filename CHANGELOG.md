@@ -1,5 +1,18 @@
 # Changes
 
+## 0.2.6 — 2026-11-03
+
+- Add a bounded paired pilot harness with neutral baseline prompts, isolated
+  per-attempt homes, frozen source pins, protected payload checks, shared stop
+  markers and append-only reservations/results. Interrupted reservations remain
+  unknown rather than being retried or mislabeled NOT_RUN.
+- Fix relative workspace resolution in the new pilot after its first startup
+  failure. Retain that blocked CLI attempt; do not clear its shared stop marker.
+- Publish a reproducible historical Copilot audit, public normalized records,
+  protocol, source hashes and SVG/PNG progress, pairing, pilot and integrity figures.
+  No new completed model sessions or per-axis effects are claimed; semantics
+  remain 0.1.1. No global skill payloads are changed.
+
 ## 0.2.5 — 2026-10-31
 
 - Make exported attention maps self-contained: embed resolved five-axis guidance

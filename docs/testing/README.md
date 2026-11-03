@@ -12,6 +12,7 @@ Deterministic PASS does not establish native discovery or model adherence.
 
 ## Reports by date
 
+- [2026-11-03](reports/2026-11-03/): [Copilot integrity audit and bounded pilot](reports/2026-11-03/copilot-integrity.md), portable records and SVG/PNG figures.
 - [2026-10-31](reports/2026-10-31/): [attention map repair and behavior](reports/2026-10-31/attention-map.md), and sanitized JSON.
 - [2026-10-30](reports/2026-10-30/): [harder cases](reports/2026-10-30/codex-harder.md),
   [composite profiles](reports/2026-10-30/codex-composite.md), and paired JSON.

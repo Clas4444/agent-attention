@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img">
+<rect x="0" y="0" width="1000" height="620" fill="#f2f6f4"/>
+<text x="32" y="40" font-family="Arial,sans-serif" font-size="25" fill="#16313b">Quality, policy and integrity alongside cost</text>
+<text x="32" y="70" font-family="Arial,sans-serif" font-size="14" fill="#415d67">Original statuses retained; functional rechecks are separate; no external-effects attestation</text>
+<text x="40" y="135" font-family="Arial,sans-serif" font-size="17" fill="#16313b">agent-attention-copilot-cli-20261102</text>
+<text x="40" y="165" font-family="Arial,sans-serif" font-size="14" fill="#16313b">Original: {&#x27;FAIL&#x27;: 20}</text>
+<text x="40" y="191" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Frozen cents functional: 20/20; historical policy/integrity NOT_VERIFIED</text>
+<text x="40" y="245" font-family="Arial,sans-serif" font-size="17" fill="#16313b">attention-grid-20261103</text>
+<text x="40" y="275" font-family="Arial,sans-serif" font-size="14" fill="#16313b">Original: {&#x27;PASS&#x27;: 132, &#x27;BLOCKED&#x27;: 152}</text>
+<text x="40" y="301" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Frozen cents functional: 132/284; historical policy/integrity NOT_VERIFIED</text>
+<text x="40" y="355" font-family="Arial,sans-serif" font-size="17" fill="#16313b">combined-campaign-20261102</text>
+<text x="40" y="385" font-family="Arial,sans-serif" font-size="14" fill="#16313b">Original: {&#x27;PASS&#x27;: 16, &#x27;FAIL&#x27;: 44}</text>
+<text x="40" y="411" font-family="Arial,sans-serif" font-size="13" fill="#16313b">Frozen cents functional: 30/30; historical policy/integrity NOT_VERIFIED</text>
+<text x="40" y="490" font-family="Arial,sans-serif" font-size="16" fill="#16313b">New pilot: protected inputs intact; no model/action; task acceptance not evaluated.</text>
+<text x="40" y="530" font-family="Arial,sans-serif" font-size="14" fill="#16313b">Harness controls: stop-first, append-only retry, cue-free baseline, functional/mutation rejection.</text>
+<text x="40" y="570" font-family="Arial,sans-serif" font-size="14" fill="#16313b">Do not interpret cheaper tokens as adherence or higher quality. Targets are not measurements.</text>
+</svg>
