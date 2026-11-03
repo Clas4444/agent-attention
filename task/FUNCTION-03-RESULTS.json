@@ -92,7 +92,8 @@
     "skills/attention-setup/scripts/attention.py",
     "skills/attention-setup/scripts/attention_setup.py",
     "task/TASK-STATUS.md",
-    "tests/test_integrity_report.py"
+    "tests/test_integrity_report.py",
+    "task/DELIVERY-ARTIFACTS.json"
   ],
   "tests": [
     {
@@ -150,8 +151,8 @@
   "ready_for_review": true,
   "delivery": {
     "authorization": "conditional commit/push after final review and local gates",
-    "commit": null,
-    "pushed": false,
+    "commit": "9c2d15a8acd940e71034680ed1a3b800b1296ca6",
+    "pushed": true,
     "checks": {
       "local": {
         "tests": 153,
@@ -161,7 +162,52 @@
         "whitespace": "PASS",
         "public_candidates_oracle_PASS": 36
       },
-      "remote": "NOT_RUN"
+      "remote": {
+        "commit": "9c2d15a8acd940e71034680ed1a3b800b1296ca6",
+        "status": "PASS",
+        "jobs": [
+          {
+            "name": "update-pip-graph",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653739770/job/125978426150"
+          },
+          {
+            "name": "Analyze (python)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653726279/job/125978379501"
+          },
+          {
+            "name": "Analyze (actions)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653726279/job/125978379086"
+          },
+          {
+            "name": "validate (windows-latest, 3.12)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653727812/job/125978374151"
+          },
+          {
+            "name": "validate (windows-latest, 3.11)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653727812/job/125978374088"
+          },
+          {
+            "name": "validate (ubuntu-latest, 3.12)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653727812/job/125978374044"
+          },
+          {
+            "name": "validate (ubuntu-latest, 3.11)",
+            "conclusion": "success",
+            "url": "https://github.com/Clas4444/agent-attention/actions/runs/41653727812/job/125978373711"
+          }
+        ]
+      },
+      "public_artifacts": {
+        "commit": "9c2d15a8acd940e71034680ed1a3b800b1296ca6",
+        "status": "PASS",
+        "count": 39
+      }
     },
     "limitations": [
       "No additional model calls",
@@ -175,6 +221,8 @@
         "PASS requires mandatory trace evidence and no accounting/transport stop"
       ],
       "limitations": "No proof of all five behavioral contrasts, causal savings, native picker or live combined execution"
-    }
+    },
+    "public_artifact_receipt": "task/DELIVERY-ARTIFACTS.json",
+    "checkpoint_note": "Source commit checks below are exact-SHA results. This subsequent metadata checkpoint has its own CI, checked separately after push."
   }
 }

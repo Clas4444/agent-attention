@@ -1,13 +1,19 @@
-# Current delivery — local gates PASS, authorized push pending
+# Current delivery — source pushed and verified
 
+Source commit9c2d15a8acd940e71034680ed1a3b800b1296ca6 pushed to main.
+Exact-SHA results:4 Windows/Linux × Python3.11/3.12 CI jobs PASS,2 CodeQL
+jobs PASS,dependency graph PASS. Public GitHub raw-byte comparison39/39 PASS.
 Final local suite153 tests:150 PASS,3 skips; assets/whitespace and public packet
 receipts PASS. All36 public candidate outputs pass frozen independent oracles.
-COORD-02 and FUNCTION-03 conditional commit/push now authorized. No additional
-model calls, retries, budget resets, release/tag, version bump or global install.
-The NO_PUSH text in the preserved experiment timelines below is historical.
+This metadata checkpoint has separate post-push CI; source results above do not
+stand in for that checkpoint's checks. See RESULTS.json and DELIVERY-ARTIFACTS.json.
+
+FUNCTION-03 behavioral proof remains PARTIAL:focus/verify contrast unresolved;
+no native picker/live combined/model restoration or general savings claim.
+No further model calls, budget reset, release/tag,version bump or global install.
+Original experiment NO_PUSH timelines below are retained as historical records.
 Public packets: [coordination](../docs/testing/reports/2026-11-03/coord-02/README.md)
 and [scoped product](../docs/testing/reports/2026-11-03/function-03/README.md).
-Check RESULTS.json for exact source commit, pushed state and CI/CodeQL results.
 
 # FUNCTION-03 current status — PARTIAL / READY_FOR_REVIEW / NO_PUSH
 
